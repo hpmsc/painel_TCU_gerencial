@@ -1,0 +1,14 @@
+# Prazos de comunicações do TCU (ofícios, avisos, diligências, oitivas).
+#
+# O painel já calcula sozinho um prazo PRESUMIDO de 15 dias corridos para toda
+# ciência registrada por órgão do MPO, contado a partir do dia útil da ciência.
+# Use este arquivo só para CORRIGIR esse número ou para INCLUIR uma comunicação
+# que a coleta automática não capturou. Só dados que constam do próprio ofício
+# do TCU — nada de estratégia ou nota interna (o site é público).
+#
+# Formatos (campos separados por | ):
+#   016.141/2026-1 | 7                                   -> todas as ciências do processo têm 7 dias
+#   016.141/2026-1 | Ofício 0159/2026 | 7                -> só esse documento tem 7 dias
+#   016.141/2026-1 | Ofício 0159/2026 | 18/09/2026 | 7   -> inclui a comunicação, ciência em 18/09
+#
+# O painel se atualiza na próxima coleta (dias úteis, 6h) ou ao salvar este arquivo.

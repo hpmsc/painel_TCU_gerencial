@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Etapas e Prazos TCU</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: faixa de prazos no topo, depois quadro de etapas em 5 colunas; cada cartão abre a própria linha do tempo.
+   Mesma identidade do painel principal (petróleo, Bricolage + Public Sans + JetBrains Mono). */
+:root{
+  --paper:#eaeeec; --surface:#fff; --surface-2:#f4f7f6; --col:#dfe5e3;
+  --ink:#131f1c; --ink-2:#3e504b; --muted:#6c7a74;
+  --line:#ccd6d2; --line-2:#e3e9e7;
+  --petrol:#0e4a44; --petrol-soft:#dcebe8;
+  --move:#1d5fa6; --move-bg:#e4edf8;
+  --red:#a3291f; --red-bg:#fbe9e6; --amber:#8f5400; --amber-bg:#fbefd9; --green:#0e6b4f; --green-bg:#e2f2ec;
+  --r:10px; --shadow:0 1px 2px rgba(19,31,28,.05), 0 10px 26px -18px rgba(19,31,28,.3);
+  --f-disp:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0f1614; --surface:#18221f; --surface-2:#1f2b28; --col:#131c1a;
+  --ink:#e6eeeb; --ink-2:#b5c3be; --muted:#8a9994; --line:#2e3d39; --line-2:#26332f;
+  --petrol:#6cc2b6; --petrol-soft:#1d3531; --move:#7fb1ea; --move-bg:#1b2b40;
+  --red:#f0877c; --red-bg:#3a1d1a; --amber:#e9b25a; --amber-bg:#352812; --green:#6fd0a8; --green-bg:#15302a;
+  --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#0f1614; --surface:#18221f; --surface-2:#1f2b28; --col:#131c1a;
+  --ink:#e6eeeb; --ink-2:#b5c3be; --muted:#8a9994; --line:#2e3d39; --line-2:#26332f;
+  --petrol:#6cc2b6; --petrol-soft:#1d3531; --move:#7fb1ea; --move-bg:#1b2b40;
+  --red:#f0877c; --red-bg:#3a1d1a; --amber:#e9b25a; --amber-bg:#352812; --green:#6fd0a8; --green-bg:#15302a;
+  --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark }
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:var(--petrol)}
+button,select,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--petrol);outline-offset:2px}
+.wrap{max-width:1500px;margin:0 auto;padding-inline:20px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+
+header{background:var(--surface);border-bottom:1px solid var(--line)}
+.hd{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;padding-block:16px}
+.hd h1{font:800 24px/1.15 var(--f-disp);letter-spacing:-.02em;margin:2px 0 0;text-wrap:balance}
+.hd p{margin:2px 0 0;color:var(--ink-2);font-size:13px}
+.hd nav a{font-size:13px;font-weight:600;text-decoration:none}
+.hd nav a:hover{text-decoration:underline}
+
+.ctl{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;padding-block:14px 0}
+.fld{display:flex;flex-direction:column;gap:3px}
+.fld label{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+select,input[type=search]{background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px;min-width:0}
+input[type=search]{width:170px}
+.tg{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:6px 10px;font-size:13px;cursor:pointer}
+.tg[aria-pressed="true"]{background:var(--petrol-soft);border-color:var(--petrol);color:var(--ink)}
+.tg .n{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.linkbtn{background:none;border:0;padding:0;color:var(--petrol);text-decoration:underline;cursor:pointer;font-size:12.5px}
+
+section{padding-top:22px}
+.sh{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:10px}
+.sh h2{font:600 18px/1.2 var(--f-disp);margin:0;letter-spacing:-.01em}
+.sh p{margin:0;color:var(--muted);font-size:12.5px}
+
+/* Prazos */
+.prazos{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.pz{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:var(--r);padding:10px 12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:4px;min-width:0}
+.pz.venc{border-left-color:var(--red)} .pz.logo{border-left-color:var(--amber)} .pz.ok{border-left-color:var(--green)}
+.pz-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.pz-tc{white-space:nowrap;font:600 12.5px var(--f-mono);background:none;border:0;padding:0;color:var(--petrol);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.pz-as{font-size:12.5px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pz-doc{font:11.5px var(--f-mono);color:var(--muted)}
+.pz-dt{font-size:12px;color:var(--ink-2)}
+.vazio{background:var(--surface);border:1px dashed var(--line);border-radius:var(--r);padding:14px;color:var(--muted);font-size:13px}
+.mais{margin-top:8px}
+
+.pill{display:inline-flex;align-items:center;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600;white-space:nowrap;background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line-2)}
+.p-red{background:var(--red-bg);color:var(--red);border-color:transparent}
+.p-amb{background:var(--amber-bg);color:var(--amber);border-color:transparent}
+.p-grn{background:var(--green-bg);color:var(--green);border-color:transparent}
+.p-mov{background:var(--move-bg);color:var(--move);border-color:transparent}
+
+/* Resumo da semana */
+.resumo{display:flex;flex-wrap:wrap;gap:8px}
+.rs{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;display:flex;align-items:baseline;gap:7px;font-size:12.5px;color:var(--ink-2)}
+.rs b{font:600 18px var(--f-mono);color:var(--ink)}
+.rs.mov b{color:var(--move)}
+
+/* Quadro */
+.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:start}
+.col{background:var(--col);border-radius:12px;padding:8px;min-width:0}
+.col-h{display:flex;justify-content:space-between;align-items:baseline;padding:4px 6px 8px;gap:8px}
+.col-h h3{margin:0;font:600 14px var(--f-disp)}
+.col-h small{display:block;color:var(--muted);font-size:11px;font-weight:400;font-family:var(--f-body)}
+.col-h .n{font:600 13px var(--f-mono);color:var(--muted)}
+.cards{display:flex;flex-direction:column;gap:7px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);min-width:0}
+.card.mov{box-shadow:inset 3px 0 0 var(--move),var(--shadow)}
+.card.parado{opacity:.62}
+.card.parado[open]{opacity:1}
+.card>summary{list-style:none;cursor:pointer;padding:8px 10px;display:flex;flex-direction:column;gap:4px}
+.card>summary::-webkit-details-marker{display:none}
+.card[open]{border-color:var(--petrol)}
+.seta{font-size:11px;font-weight:600;color:var(--move)}
+.seta.volta{color:var(--amber)}
+.c1{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.c1 .dir{display:inline-flex;align-items:center;gap:2px;flex-shrink:0}
+.tc{font:600 12.5px var(--f-mono);white-space:nowrap}
+.star{background:none;border:0;padding:0 2px;cursor:pointer;color:var(--muted);font-size:14px;line-height:1}
+.star[aria-pressed="true"]{color:var(--amber)}
+.as{font-size:12.5px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card[open] .as{-webkit-line-clamp:unset;display:block}
+.meta{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.nat{font-size:11px;color:var(--muted)}
+.abre{font-size:11px;color:var(--muted);display:flex;justify-content:space-between}
+.card[open] .abre .ic{transform:rotate(180deg)}
+.ic{display:inline-block;transition:transform .15s}
+
+.tl-wrap{border-top:1px dashed var(--line);padding:8px 10px 10px}
+.tl-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;font-size:11.5px;color:var(--muted)}
+.tl{list-style:none;margin:0 0 0 5px;padding:0 0 0 14px;border-left:2px solid var(--line)}
+.ev{position:relative;padding-bottom:8px;font-size:12px}
+.ev::before{content:"";position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--surface);border:2px solid var(--line)}
+.ev.janela::before{border-color:var(--move)}
+.ev.etp::before{background:var(--petrol);border-color:var(--petrol)}
+.ev.com::before{border-color:var(--amber)}
+.ev .d{font:11px var(--f-mono);color:var(--muted)}
+.ev .tag{font-size:10.5px;font-weight:600;color:var(--petrol);margin-left:4px}
+.ev.com .tag{color:var(--amber)}
+.ev .tx{color:var(--ink);overflow-wrap:anywhere}
+.ev.fora .tx{color:var(--ink-2)}
+.tl-more{font-size:12px}
+
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--muted);padding-block:16px 6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:-1px;margin-right:5px}
+footer{padding-block:6px 28px;font-size:12px;color:var(--muted)}
+footer p{margin:4px 0;max-width:90ch}
+
+dialog{border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:18px;width:min(520px,calc(100vw - 32px))}
+dialog::backdrop{background:rgba(10,20,18,.45)}
+dialog h3{margin:0 0 4px;font:600 17px var(--f-disp)}
+dialog p{margin:0 0 10px;font-size:13px;color:var(--ink-2)}
+dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-radius:8px;padding:8px;background:var(--surface-2);font:12.5px var(--f-mono)}
+.dl-act{display:flex;justify-content:flex-end;gap:8px;margin-top:10px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:6px 12px;cursor:pointer;font-size:13px}
+.btn.pri{background:var(--petrol);border-color:var(--petrol);color:var(--surface)}
+
+.status{padding:40px 0;color:var(--muted)}
+.priv{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:12px;padding:9px 12px;border:1px dashed var(--line);border-radius:var(--r);background:var(--surface);font-size:12.5px;color:var(--ink-2)}
+.priv.on{border-style:solid;border-color:var(--petrol);background:var(--petrol-soft)}
+.priv label.btn{display:inline-flex;align-items:center}
+.priv input[type=file]{position:absolute;width:1px;height:1px;opacity:0}
+.priv .chk{display:inline-flex;gap:5px;align-items:center}
+.rk{display:inline-flex;align-items:center;gap:4px;border-radius:5px;padding:1px 6px;font:600 11px var(--f-mono);white-space:nowrap}
+.rk5{background:var(--red);color:var(--surface)} .rk4{background:var(--red-bg);color:var(--red)}
+.rk3{background:var(--amber-bg);color:var(--amber)} .rk2{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+.rk1{background:transparent;color:var(--muted);border:1px solid var(--line-2)}
+.rk-med{font-size:11.5px;color:var(--ink-2);border-left:2px solid var(--line);padding-left:7px}
+.col-mais{width:100%;background:var(--surface-2);color:var(--ink-2)}
+
+@media (max-width:1100px){ .board{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (max-width:720px){ .board{grid-template-columns:minmax(0,1fr)} input[type=search]{width:100%} .fld{flex:1 1 140px} }
+@media (prefers-reduced-motion:reduce){ .ic{transition:none} }
+</style>
+<style>
+.abas{background:var(--surface);border-bottom:1px solid var(--line)}
+.abas .wrap{display:flex;gap:4px;overflow-x:auto}
+.abas a{display:inline-block;padding:10px 14px 9px;font:600 13.5px "Public Sans",system-ui,sans-serif;color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+.abas a:hover{color:var(--ink)}
+.abas a[aria-current="page"]{color:var(--petrol);border-bottom-color:var(--petrol)}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <div class="hd">
+   <div>
+    <p class="eyebrow">Tribunal de Contas da União · processos do MPO</p>
+    <h1>Etapas e prazos</h1>
+    <p id="sub">Carregando dados…</p>
+   </div>
+  </div>
+ </div>
+</header>
+<nav class="abas" aria-label="Seções do painel"><div class="wrap">
+  <a href="index.html">Processos do MPO</a>
+  <a href="kanban.html" aria-current="page">Etapas e prazos</a>
+</div></nav>
+
+<main class="wrap">
+ <div class="ctl" role="group" aria-label="Filtros">
+  <div class="fld"><label for="selA">Comparar desde</label><select id="selA"></select></div>
+  <div class="fld"><label for="selB">Até</label><select id="selB"></select></div>
+  <div class="fld"><label for="selOrg">Órgão</label>
+   <select id="selOrg"><option value="">Todos</option><option>MPO</option><option>SE</option><option>SOF</option><option>SMA</option><option>SEPLAN</option><option>AECI</option><option>SEST</option></select></div>
+  <div class="fld"><label for="q">Buscar</label><input type="search" id="q" placeholder="nº do TC ou assunto"></div>
+  <button class="tg" id="tgInt" type="button" aria-pressed="false">Incluir onde o MPO é só interessado <span class="n" id="nInt"></span></button>
+  <button class="tg" id="tgMov" type="button" aria-pressed="false">Só o que andou no período</button>
+  <button class="tg" id="tgMinha" type="button" aria-pressed="false">★ Minha lista <span class="n" id="nMinha">0</span></button>
+  <button class="linkbtn" id="editMinha" type="button">editar lista</button>
+ </div>
+
+ <div class="priv" id="priv">
+  <span id="privTxt"><b>Camada privada de risco:</b> não carregada. O arquivo é lido só neste navegador e não é enviado a lugar nenhum.</span>
+  <label class="btn" for="fileRisco">Carregar arquivo de risco (.csv)</label><input type="file" id="fileRisco" accept=".csv,text/csv,text/plain">
+  <span class="chk"><input type="checkbox" id="lembrar"><label for="lembrar">lembrar neste navegador</label></span>
+  <span class="fld" id="fldRisco" hidden><select id="selRisco" aria-label="Risco mínimo"><option value="0">Qualquer risco</option><option value="3">Risco 3 ou mais</option><option value="4">Risco 4 ou mais</option><option value="5">Só crítico</option></select></span>
+  <button class="linkbtn" id="tirarRisco" type="button" hidden>remover camada</button>
+ </div>
+
+ <section aria-labelledby="h-prazos">
+  <div class="sh"><h2 id="h-prazos">Prazos em aberto</h2><p id="prazoNota"></p></div>
+  <div class="prazos" id="prazos"></div>
+  <div class="mais"><button class="linkbtn" id="maisPrazos" type="button" hidden></button></div>
+ </section>
+
+ <section aria-labelledby="h-sem">
+  <div class="sh"><h2 id="h-sem">O que mudou no período</h2><p id="periodo"></p></div>
+  <div class="resumo" id="resumo"></div>
+ </section>
+
+ <section aria-labelledby="h-quadro">
+  <div class="sh"><h2 id="h-quadro">Etapa de cada processo</h2><p>Clique num cartão para abrir a linha do tempo.</p></div>
+  <div class="board" id="board"><div class="status">Carregando…</div></div>
+  <div class="legend">
+   <span><i style="background:var(--move)"></i>barra azul: teve movimentação no período</span>
+   <span>→ avançou de etapa &nbsp; ← voltou de etapa</span>
+   <span>esmaecido: sem movimentação há mais de 60 dias</span>
+   <span><i style="background:var(--petrol)"></i>mudança de etapa &nbsp;<i style="border:2px solid var(--amber);background:transparent"></i>comunicação</span>
+  </div>
+ </section>
+</main>
+
+<footer class="wrap">
+ <p><b>Como a etapa é definida.</b> Pela última movimentação pública que indica onde o processo está: envio à unidade técnica ou portaria de fiscalização (instrução), envio ao ministro ou exclusão de pauta (relator), inclusão em pauta, pedido de vista ou envio à Seses (pauta e sessão), acórdão ou apreciação (julgado), peça de recurso (recurso). Processo sigiloso gera pouca movimentação visível e pode aparecer numa etapa desatualizada.</p>
+ <p><b>Como o prazo é contado (teste).</b> Começa no dia útil em que um órgão do MPO registra a ciência da comunicação no TCU. Conta em dias corridos, sem o dia do início; se o fim cair em fim de semana ou feriado, passa para o próximo dia útil. Onde o arquivo <span class="mono">prazos.txt</span> não informa o número de dias, usa-se um prazo presumido de <span id="padrao">15</span> dias. O prazo sai da lista quando o TCU registra a resposta, quando a parte junta documento pelo Conecta ou quando o ciclo de comunicação é encerrado.</p>
+ <p><b>Minha lista</b> fica gravada só neste navegador. Não é enviada a lugar nenhum.</p>
+ <p><b>Camada privada de risco.</b> Arquivo CSV mantido pela SEAI e pelas secretarias, com as colunas <span class="mono">tc;faixa;faixa_latente;fase;medida;fonte;responsavel;revisado_em</span>. A página só lê o arquivo no seu navegador; ele não é publicado com o site.</p>
+ <p id="fonte"></p>
+</footer>
+
+<dialog id="dlg">
+ <form method="dialog" id="dlgForm">
+  <h3>Minha lista</h3>
+  <p>Cole os números de TC que você acompanha, um por linha ou separados por vírgula. A lista fica só neste navegador.</p>
+  <textarea id="dlgTxt" aria-label="Números de TC"></textarea>
+  <div class="dl-act"><button class="btn" value="cancel" type="submit">Cancelar</button><button class="btn pri" value="ok" type="submit" id="dlgOk">Salvar lista</button></div>
+ </form>
+</dialog>
+
+<script>
+(function(){
+"use strict";
+const ETAPAS = [
+  ["instrucao","Instrução","unidade técnica"],
+  ["relator","Relator","gabinete do ministro"],
+  ["pauta","Pauta e sessão","pautado, vista, Seses"],
+  ["julgado","Julgado","acórdão e cumprimento"],
+  ["recurso","Recurso","embargos, reexame, reconsideração"]
+];
+const ORDEM = {instrucao:0, relator:1, pauta:2, julgado:3, recurso:4, encerrado:5};
+const NOME = Object.fromEntries(ETAPAS.map(e=>[e[0],e[1]])); NOME.encerrado="Encerrado";
+const LS = "kanbanTCU.minhaLista";
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const br = iso => iso ? iso.slice(8,10)+"/"+iso.slice(5,7) : "";
+const brAno = iso => iso ? br(iso)+"/"+iso.slice(0,4) : "";
+const toD = iso => new Date(iso+"T12:00:00");
+const isoD = d => d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const addD = (iso,n) => { const d=toD(iso); d.setDate(d.getDate()+n); return isoD(d); };
+const diff = (a,b) => Math.round((toD(b)-toD(a))/864e5);
+
+let D, minha = new Set(), abertos = new Set();
+const st = {A:null, B:null, org:"", q:"", inter:false, soMov:false, soMinha:false, todosPrazos:false, expand:{}};
+const LIM_COL = 12;
+const LS_R = "kanbanTCU.risco";
+const NOME_R = {1:"Baixo",2:"Moderado",3:"Relevante",4:"Alto",5:"Crítico"};
+let risco = null; // Map tc -> {faixa, lat, fase, medida, fonte, resp, rev}
+let riscoMin = 0, riscoArq = "", riscoTxt = "";
+function parseCSV(txt){
+  txt = txt.replace(/^\uFEFF/, "");
+  const linhas = txt.split(/\r?\n/).filter(l=>l.trim());
+  if (!linhas.length) throw new Error("arquivo vazio");
+  const sep = (linhas[0].match(/;/g)||[]).length >= (linhas[0].match(/,/g)||[]).length ? ";" : ",";
+  const split = l => { const out=[]; let cur="", q=false; for (const ch of l){ if(ch==='"'){ q=!q; continue; } if(ch===sep && !q){ out.push(cur); cur=""; } else cur+=ch; } out.push(cur); return out.map(x=>x.trim()); };
+  const cab = split(linhas[0]).map(h=>h.toLowerCase());
+  const ix = n => cab.indexOf(n);
+  if (ix("tc")<0 || ix("faixa")<0) throw new Error("faltam as colunas tc e faixa na primeira linha");
+  const m = new Map();
+  for (const l of linhas.slice(1)){
+    const c = split(l), tc = (c[ix("tc")]||"").match(/\d{3}\.\d{3}\/\d{4}-\d/);
+    const f = parseInt(c[ix("faixa")],10);
+    if (!tc || !(f>=1 && f<=5)) continue;
+    const g = n => ix(n)>=0 ? (c[ix(n)]||"") : "";
+    const lat = parseInt(g("faixa_latente"),10);
+    m.set(tc[0], {faixa:f, lat:(lat>=1&&lat<=5)?lat:null, fase:g("fase"), medida:g("medida"), fonte:g("fonte"), resp:g("responsavel"), rev:g("revisado_em")});
+  }
+  if (!m.size) throw new Error("nenhuma linha válida (tc no formato NNN.NNN/AAAA-D e faixa de 1 a 5)");
+  return m;
+}
+function usarRisco(txt, nome, guardar){
+  risco = parseCSV(txt); riscoArq = nome; riscoTxt = txt;
+  if (guardar){ try{ localStorage.setItem(LS_R, JSON.stringify({nome, txt})); }catch(e){} }
+  atualizarPriv(); render();
+}
+function atualizarPriv(){
+  const on = !!risco;
+  $("priv").classList.toggle("on", on);
+  $("fldRisco").hidden = !on; $("tirarRisco").hidden = !on;
+  if (on){
+    const n = [...risco.values()], c = k => n.filter(r=>r.faixa===k).length;
+    $("privTxt").innerHTML = `<b>Camada privada de risco:</b> ${esc(riscoArq)} · ${n.length} processos · ${c(5)} crítico, ${c(4)} alto, ${c(3)} relevante. Lida só neste navegador.`;
+  } else {
+    $("privTxt").innerHTML = `<b>Camada privada de risco:</b> não carregada. O arquivo é lido só neste navegador e não é enviado a lugar nenhum.`;
+  }
+}
+function selo(num){
+  const r = risco && risco.get(num); if (!r) return "";
+  const lat = r.lat && r.lat !== r.faixa ? ` · lat. ${r.lat}` : "";
+  const t = `Risco ${r.faixa} ${NOME_R[r.faixa]}${r.fase?" ("+r.fase+")":""}${r.lat?" · latente "+r.lat:""} — ${r.medida}${r.resp?" · "+r.resp:""}${r.rev?" · revisado "+r.rev:""}`;
+  const fz = /verificar|potencial|proposta/i.test(r.fase) ? ` · ${esc(r.fase)}` : "";
+  return `<span class="rk rk${r.faixa}" title="${esc(t)}">R${r.faixa} ${NOME_R[r.faixa]}${lat}${fz}</span>`;
+}
+
+function lerMinha(){ try{ const v=JSON.parse(localStorage.getItem(LS)||"[]"); if(Array.isArray(v)) minha=new Set(v); }catch(e){} }
+function gravarMinha(){ try{ localStorage.setItem(LS, JSON.stringify([...minha])); }catch(e){} }
+
+function etapaEm(p, dia){
+  let e = p.etapa_base;
+  for (const ev of p.eventos){ if (ev.data > dia) break; if (ev.etapa) e = ev.etapa; }
+  return e;
+}
+function ultimaMudanca(p, dia){ // última troca efetiva de etapa até o dia
+  let e = p.etapa_base, r = null;
+  for (const ev of p.eventos){ if (ev.data > dia) break; if (ev.etapa && ev.etapa !== e){ r = {de:e, para:ev.etapa, data:ev.data}; e = ev.etapa; } }
+  return r;
+}
+function ultimaMov(p, dia){ let u=null; for (const ev of p.eventos){ if (ev.data>dia) break; u=ev.data; } return u; }
+function presente(p, dia){
+  if (!p.primeiro_visto || p.primeiro_visto > dia) return false;
+  return p.aberto || (p.ultimo_visto && p.ultimo_visto >= dia);
+}
+function filtra(p){
+  if (!st.inter && p.vinculo === "interessado" && !(risco && risco.has(p.numero)) && !minha.has(p.numero)) return false;
+  if (st.org && !(p.orgaos||[]).includes(st.org)) return false;
+  if (st.soMinha && !minha.has(p.numero)) return false;
+  if (risco && riscoMin && !((risco.get(p.numero)||{}).faixa >= riscoMin)) return false;
+  if (st.q){ const q=st.q.toLowerCase(); if (!(p.numero.includes(q) || (p.assunto||"").toLowerCase().includes(q) || (p.relator||"").toLowerCase().includes(q))) return false; }
+  return true;
+}
+function hojeRef(){ const h=isoD(new Date()); return h > D.hoje ? h : D.hoje; }
+
+function prazoInfo(c){
+  const hoje = hojeRef(), n = diff(hoje, c.vencimento);
+  if (n < 0) return {cls:"venc", pill:"p-red", txt:`vencido há ${-n} dia${n===-1?"":"s"}`};
+  if (n === 0) return {cls:"venc", pill:"p-red", txt:"vence hoje"};
+  if (n <= 5) return {cls:"logo", pill:"p-amb", txt:`vence em ${n} dia${n===1?"":"s"}`};
+  return {cls:"ok", pill:"p-grn", txt:`vence em ${n} dias`};
+}
+
+function renderPrazos(lista){
+  const itens = [];
+  for (const p of lista) for (const c of p.comunicacoes) if (c.status === "aberto") itens.push({p,c});
+  itens.sort((a,b)=> a.c.vencimento.localeCompare(b.c.vencimento));
+  const hoje = hojeRef();
+  const recentes = itens.filter(x => diff(x.c.vencimento, hoje) <= 30);
+  const antigos = itens.length - recentes.length;
+  const mostrar = st.todosPrazos ? itens : recentes;
+  $("prazoNota").textContent = itens.length
+    ? `${itens.length} comunicação(ões) com ciência do MPO e sem resposta registrada. Vencidas: confira se já foram respondidas por outro meio.`
+    : "";
+  $("prazos").innerHTML = mostrar.length ? mostrar.map(({p,c})=>{
+    const i = prazoInfo(c);
+    const fonte = c.fonte === "presumido" ? `prazo presumido de ${c.dias} dias` : `${c.dias} dias (prazos.txt)`;
+    return `<article class="pz ${i.cls}">
+      <div class="pz-top"><button class="pz-tc" type="button" data-abrir="${esc(p.numero)}">${esc(p.numero)}</button><span class="pill ${i.pill}">${i.txt}</span></div>
+      ${selo(p.numero)?`<div>${selo(p.numero)}</div>`:""}
+      <div class="pz-as">${esc(p.assunto)}</div>
+      <div class="pz-doc">${esc(c.doc)} · ${esc(c.dest)}</div>
+      <div class="pz-dt">Ciência ${brAno(c.ciencia)} → vence <b>${brAno(c.vencimento)}</b> · ${fonte}</div>
+    </article>`; }).join("")
+    : `<div class="vazio">Nenhum prazo em aberto para os filtros escolhidos.</div>`;
+  const b = $("maisPrazos");
+  if (antigos && !st.todosPrazos){ b.hidden=false; b.textContent=`Mostrar também ${antigos} vencido(s) há mais de 30 dias`; }
+  else if (st.todosPrazos && antigos){ b.hidden=false; b.textContent="Esconder vencidos há mais de 30 dias"; }
+  else b.hidden = true;
+}
+
+function card(p, A, B){
+  const eB = etapaEm(p,B), eA = presente(p,A) ? etapaEm(p,A) : null;
+  const noPeriodo = p.eventos.filter(ev => ev.data > A && ev.data <= B);
+  const mud = ultimaMudanca(p,B);
+  const mudouNoPeriodo = eA && eA !== eB && mud && mud.data > A;
+  const um = ultimaMov(p,B), dias = um ? diff(um,B) : 999;
+  let seta = "";
+  if (!eA) seta = `<span class="seta">＋ entrou no painel em ${br(p.primeiro_visto)}</span>`;
+  else if (mudouNoPeriodo){
+    const volta = ORDEM[mud.para] < ORDEM[mud.de] && mud.para !== "recurso";
+    seta = `<span class="seta ${volta?"volta":""}">${volta?"←":"→"} veio de ${NOME[mud.de]} em ${br(mud.data)}</span>`;
+  }
+  const abertas = p.comunicacoes.filter(c=>c.status==="aberto").sort((a,b)=>a.vencimento.localeCompare(b.vencimento));
+  let pz = "";
+  const hoje = hojeRef();
+  const atuais = abertas.filter(c => diff(c.vencimento, hoje) <= 30);
+  if (atuais.length){ const i=prazoInfo(atuais[0]); pz=`<span class="pill ${i.pill}">${i.txt}</span>`; }
+  else if (abertas.length){ pz=`<span class="pill" title="Ciência antiga sem resposta registrada">prazo antigo</span>`; }
+  const orgs = (p.orgaos||[]).filter(o=>o!=="MPO").join(" · ") || "MPO";
+  const ac = p.acordao ? `<span class="pill">Ac. ${esc(p.acordao)}</span>` : "";
+  const nmov = noPeriodo.length ? `<span class="pill p-mov">${noPeriodo.length} mov.</span>` : "";
+  const parado = dias > 60 ? `<span class="pill">parado há ${Math.floor(dias/7)} sem.</span>` : "";
+  const cls = ["card", noPeriodo.length?"mov":"", dias>60?"parado":""].join(" ");
+  return `<details class="${cls}" id="c-${p.numero.replace(/\D/g,"")}" data-num="${esc(p.numero)}">
+   <summary>
+    ${seta}
+    <div class="c1"><span class="tc">${esc(p.numero)}</span><span class="dir">${pz}<button class="star" type="button" data-star="${esc(p.numero)}" aria-pressed="${minha.has(p.numero)}" aria-label="Marcar na minha lista" title="Minha lista">${minha.has(p.numero)?"★":"☆"}</button></span></div>
+    <div class="as">${esc(p.assunto)}</div>
+    ${selo(p.numero) ? `<div class="meta">${selo(p.numero)}</div>` : ""}
+    <div class="meta"><span class="nat">${esc(p.natureza||"")}${p.relator?" · Min. "+esc(p.relator):""}</span></div>
+    <div class="meta"><span class="pill">${esc(orgs)}</span>${ac}${nmov}${parado}</div>
+    <div class="abre"><span>${um?"última mov. "+br(um):"sem movimentação registrada"}</span><span class="ic" aria-hidden="true">▾</span></div>
+   </summary>
+   ${risco && risco.get(p.numero) ? `<div class="tl-wrap"><div class="rk-med"><b>Risco:</b> ${esc(risco.get(p.numero).medida)}${risco.get(p.numero).fonte?" · fonte: "+esc(risco.get(p.numero).fonte):""}</div></div>` : ""}
+   <div class="tl-wrap" data-tl></div>
+  </details>`;
+}
+
+function timeline(p, A, B, todos){
+  const evs = p.eventos.filter(ev => ev.data <= B);
+  let e = p.etapa_base; const marc = [];
+  for (const ev of evs){
+    let tag = "", cls = [];
+    if (ev.etapa && ev.etapa !== e){ tag = `${NOME[e]} → ${NOME[ev.etapa]}`; e = ev.etapa; cls.push("etp"); }
+    if (ev.com === "ciencia"){ const c=p.comunicacoes.find(c=>c.doc===ev.doc && c.ciencia===ev.data); tag = tag || (c ? `ciência do MPO · vence ${br(c.vencimento)}` : "ciência"); cls.push("com"); }
+    else if (ev.com === "resposta"){ tag = tag || "resposta registrada"; cls.push("com"); }
+    else if (ev.com === "encerra"){ tag = tag || "ciclo de comunicação encerrado"; cls.push("com"); }
+    else if (ev.com === "juntada"){ tag = tag || "documento da parte"; cls.push("com"); }
+    cls.push(ev.data > A ? "janela" : "fora");
+    marc.push(`<li class="ev ${cls.join(" ")}"><span class="d">${brAno(ev.data)}</span>${tag?`<span class="tag">${esc(tag)}</span>`:""}<div class="tx">${esc(ev.desc)}</div></li>`);
+  }
+  marc.reverse();
+  const lim = todos ? marc.length : 8;
+  const link = p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">abrir no TCU ↗</a>` : "";
+  return `<div class="tl-top"><span>${evs.length} movimentações conhecidas · mais recente no topo</span>${link}</div>
+    ${marc.length ? `<ol class="tl">${marc.slice(0,lim).join("")}</ol>` : `<p class="nat">Nenhuma movimentação pública coletada.</p>`}
+    ${marc.length > lim ? `<button class="linkbtn tl-more" type="button" data-tlall>Ver as ${marc.length} movimentações</button>` : ""}`;
+}
+
+function render(){
+  const A = st.A, B = st.B;
+  const base = D.processos.filter(p => presente(p,B));
+  $("nInt").textContent = base.filter(p=>p.vinculo==="interessado").length;
+  $("nMinha").textContent = minha.size;
+  let lista = base.filter(filtra);
+  if (st.soMov) lista = lista.filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B));
+
+  renderPrazos(lista.filter(p=>p.aberto));
+
+  // resumo
+  const mov = lista.filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B));
+  const mud = lista.filter(p => presente(p,A) && etapaEm(p,A) !== etapaEm(p,B));
+  const novos = lista.filter(p => !presente(p,A));
+  const sairam = D.processos.filter(p => presente(p,A) && !presente(p,B) && filtra(p));
+  const julg = lista.filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B && ev.etapa==="julgado"));
+  const pautas = lista.filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B && /inclu[íi]do na pauta/i.test(ev.desc)));
+  $("periodo").textContent = `de ${brAno(A)} a ${brAno(B)} · ${diff(A,B)} dias`;
+  $("resumo").innerHTML = [
+    ["mov", mov.length, "processos com movimentação"],
+    ["", mud.length, "mudaram de etapa"],
+    ["", pautas.length, "incluídos em pauta"],
+    ["", julg.length, "com acórdão ou apreciação"],
+    ["", novos.length, "entraram no painel"],
+    ["", sairam.length, "saíram (encerrados)"],
+  ].map(([c,n,t])=>`<div class="rs ${c}"><b>${n}</b>${t}</div>`).join("");
+
+  // quadro
+  const porEtapa = Object.fromEntries(ETAPAS.map(e=>[e[0],[]]));
+  for (const p of lista){ const e = etapaEm(p,B); if (porEtapa[e]) porEtapa[e].push(p); }
+  const peso = p => {
+    const m = ultimaMudanca(p,B), mudou = presente(p,A) && etapaEm(p,A)!==etapaEm(p,B) && m && m.data > A;
+    const aberto = p.comunicacoes.some(c=>c.status==="aberto");
+    const rf = risco && risco.get(p.numero) ? risco.get(p.numero).faixa : 0;
+    return [-rf, mudou?0:1, aberto?0:1, -(+toD(ultimaMov(p,B)||"2000-01-01"))];
+  };
+  const cmp = (a,b)=>{ const x=peso(a), y=peso(b); for(let i=0;i<x.length;i++){ if(x[i]!==y[i]) return x[i]-y[i]; } return 0; };
+  const abertosAntes = new Set([...document.querySelectorAll("details.card[open]")].map(d=>d.dataset.num));
+  $("board").innerHTML = ETAPAS.map(([k,nome,sub])=>{
+    const cs = porEtapa[k].sort(cmp);
+    const vis = st.expand[k] ? cs : cs.slice(0, LIM_COL);
+    const resto = cs.length - vis.length;
+    return `<div class="col"><div class="col-h"><h3>${nome}<small>${sub}</small></h3><span class="n">${cs.length}</span></div>
+      <div class="cards">${vis.map(p=>card(p,A,B)).join("") || `<div class="vazio">Nenhum processo.</div>`}
+      ${resto>0?`<button class="btn col-mais" type="button" data-expand="${k}">Mostrar mais ${resto}</button>`:""}</div></div>`;
+  }).join("");
+  for (const num of abertosAntes){ const el=document.querySelector(`details.card[data-num="${num}"]`); if (el){ el.open=true; } }
+}
+
+function abrirTl(det, todos){
+  const p = D.processos.find(x=>x.numero===det.dataset.num);
+  det.querySelector("[data-tl]").innerHTML = timeline(p, st.A, st.B, todos);
+}
+
+function semanas(){
+  const out=[]; let d = D.hoje;
+  while (d >= D.inicio_historico){ out.push(d); d = addD(d,-7); }
+  if (out[out.length-1] !== D.inicio_historico) out.push(D.inicio_historico);
+  return out;
+}
+
+function montarControles(){
+  const ws = semanas();
+  $("selB").innerHTML = ws.map(w=>`<option value="${w}">${brAno(w)}${w===D.hoje?" (hoje)":""}</option>`).join("");
+  $("selA").innerHTML = ws.slice(1).map(w=>`<option value="${w}">${brAno(w)}</option>`).join("");
+  st.B = ws[0]; st.A = ws[1] || ws[0];
+  $("selA").value = st.A; $("selB").value = st.B;
+  $("selA").onchange = e => { st.A = e.target.value; if (st.A >= st.B){ st.B = ws.find(w=>w>st.A) || ws[0]; $("selB").value=st.B; } render(); };
+  $("selB").onchange = e => { st.B = e.target.value; if (st.A >= st.B){ st.A = addD(st.B,-7) < D.inicio_historico ? D.inicio_historico : addD(st.B,-7); if(![...$("selA").options].some(o=>o.value===st.A)) $("selA").add(new Option(brAno(st.A),st.A)); $("selA").value=st.A; } render(); };
+  $("selOrg").onchange = e => { st.org = e.target.value; render(); };
+  let t; $("q").oninput = e => { clearTimeout(t); t=setTimeout(()=>{ st.q=e.target.value.trim(); render(); },150); };
+  const tog = (id,k)=> $(id).onclick = ()=>{ st[k]=!st[k]; $(id).setAttribute("aria-pressed",st[k]); render(); };
+  tog("tgInt","inter"); tog("tgMov","soMov"); tog("tgMinha","soMinha");
+  $("fileRisco").onchange = e => {
+    const f = e.target.files && e.target.files[0]; if (!f) return;
+    const rd = new FileReader();
+    rd.onload = () => { try { usarRisco(String(rd.result), f.name, $("lembrar").checked); }
+      catch(err){ $("privTxt").innerHTML = `<b>Não foi possível ler ${esc(f.name)}:</b> ${esc(err.message)}. Confira o separador (; ou ,) e o cabeçalho.`; } };
+    rd.readAsText(f, "utf-8"); e.target.value = "";
+  };
+  $("lembrar").onchange = e => { try{ if (!e.target.checked) localStorage.removeItem(LS_R); else if (risco) localStorage.setItem(LS_R, JSON.stringify({nome:riscoArq, txt:riscoTxt})); }catch(err){} };
+  $("selRisco").onchange = e => { riscoMin = +e.target.value; render(); };
+  $("tirarRisco").onclick = () => { risco=null; riscoMin=0; $("selRisco").value="0"; try{ localStorage.removeItem(LS_R); }catch(e){} atualizarPriv(); render(); };
+  $("maisPrazos").onclick = ()=>{ st.todosPrazos=!st.todosPrazos; render(); };
+  $("editMinha").onclick = ()=>{ $("dlgTxt").value=[...minha].join("\n"); try{ $("dlg").showModal(); }catch(e){ $("dlg").setAttribute("open",""); } };
+  $("dlgForm").addEventListener("submit", e=>{
+    if (e.submitter && e.submitter.value === "ok"){
+      minha = new Set(($("dlgTxt").value.match(/\d{3}\.\d{3}\/\d{4}-\d/g)||[]));
+      gravarMinha(); render();
+    }
+  });
+
+  document.addEventListener("click", e=>{
+    const s = e.target.closest("[data-star]");
+    if (s){ e.preventDefault(); e.stopPropagation(); const n=s.dataset.star; minha.has(n)?minha.delete(n):minha.add(n); gravarMinha(); render(); return; }
+    const a = e.target.closest("[data-abrir]");
+    if (a){ const el = $("c-"+a.dataset.abrir.replace(/\D/g,""));
+      if (!el){ for (const k in NOME) st.expand[k]=true; render(); }
+      if (!$("c-"+a.dataset.abrir.replace(/\D/g,""))){ st.q = a.dataset.abrir; $("q").value = st.q; render(); }
+      const alvo = $("c-"+a.dataset.abrir.replace(/\D/g,"")); if (alvo){ alvo.open = true; alvo.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"center"}); }
+      return; }
+    const x = e.target.closest("[data-expand]");
+    if (x){ st.expand[x.dataset.expand]=true; render(); return; }
+    const m = e.target.closest("[data-tlall]");
+    if (m){ abrirTl(m.closest("details"), true); }
+  });
+  document.addEventListener("toggle", e=>{ const d=e.target; if (d.matches && d.matches("details.card") && d.open) abrirTl(d,false); }, true);
+}
+
+function iniciar(dados){
+  D = dados; lerMinha();
+  $("sub").textContent = `Dados públicos coletados em ${D.gerado_em_br || brAno(D.hoje)}. Histórico desde ${brAno(D.inicio_historico)}.`;
+  $("padrao").textContent = D.prazo_padrao_dias;
+  $("fonte").innerHTML = `Fonte: Pesquisa Integrada e BTCU do TCU, coletados pelo painel principal. Somente informação pública; nenhuma nota interna.`;
+  montarControles();
+  try{ const g = JSON.parse(localStorage.getItem(LS_R)||"null"); if (g && g.txt){ risco = parseCSV(g.txt); riscoArq = g.nome; riscoTxt = g.txt; $("lembrar").checked = true; } }catch(e){ risco = null; }
+  atualizarPriv(); render();
+}
+
+if (window.KANBAN_DADOS) iniciar(window.KANBAN_DADOS);
+else fetch("kanban.json?v="+Date.now()).then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }).then(iniciar)
+  .catch(err=>{ $("board").innerHTML = `<div class="status">Não foi possível carregar kanban.json (${esc(err.message)}). Recarregue a página; se persistir, verifique a última execução do workflow no GitHub.</div>`; $("sub").textContent=""; });
+})();
+</script>
+</body>
+</html>

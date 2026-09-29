@@ -20,9 +20,14 @@ on:
     # de novidades compara.
     - cron: "0 9 * * 1-5"
   workflow_dispatch:
+    inputs:
+      todos_acordaos:
+        description: "Baixar os acórdãos de TODOS os processos (não só os com movimento recente)"
+        type: boolean
+        default: false
   push:
     branches: [main]
-    paths: ["site/index.html", "coleta.py", "requirements.txt"]
+    paths: ["site/index.html", "site/kanban.html", "coleta.py", "gerar_kanban.py", "baixar_acordaos.py", "prazos.txt", "requirements.txt"]
 
 permissions:
   contents: write
@@ -45,6 +50,8 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # o quadro de etapas lê o histórico do dados.json
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -67,11 +74,27 @@ jobs:
           fi
           exit 0
 
+      - name: Quadro de etapas e prazos
+        run: |
+          python gerar_kanban.py || echo "::warning::gerar_kanban.py falhou; a página de etapas segue com os dados anteriores."
+
+      - name: Inteiro teor dos acórdãos (público)
+        timeout-minutes: 15
+        continue-on-error: true
+        # Às segundas, ou quando pedido no disparo manual, varre todos os processos;
+        # nos outros dias, só os novos ou com movimento nos últimos 10 dias.
+        run: |
+          if [ "$(date -u +%u)" = "1" ] || [ "${{ inputs.todos_acordaos }}" = "true" ]; then
+            python baixar_acordaos.py --todos || echo "::warning::baixar_acordaos.py falhou"
+          else
+            python baixar_acordaos.py || echo "::warning::baixar_acordaos.py falhou"
+          fi
+
       - name: Commitar
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/dados.json
+          git add site/dados.json site/kanban.json acordaos/
           if git diff --cached --quiet; then echo "sem mudanças"; exit 0; fi
           git commit -m "dados: $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push || { echo "::error::push recusado — marque 'Read and write permissions' em Settings > Actions > General."; exit 1; }

@@ -199,6 +199,13 @@ footer{margin-top:44px; border-top:1px solid var(--line); background:var(--surfa
   .cont{margin-left:0; width:100%}
 }
 </style>
+<style>
+.abas{background:var(--surface);border-bottom:1px solid var(--line)}
+.abas .wrap{display:flex;gap:4px;overflow-x:auto}
+.abas a{display:inline-block;padding:10px 14px 9px;font:600 13.5px "Public Sans",system-ui,sans-serif;color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+.abas a:hover{color:var(--ink)}
+.abas a[aria-current="page"]{color:var(--petrol);border-bottom-color:var(--petrol)}
+</style>
 </head>
 <body>
 
@@ -212,6 +219,10 @@ footer{margin-top:44px; border-top:1px solid var(--line); background:var(--surfa
     <p class="quando" id="quando">—</p>
   </div>
 </header>
+<nav class="abas" aria-label="Seções do painel"><div class="wrap">
+  <a href="index.html" aria-current="page">Processos do MPO</a>
+  <a href="kanban.html">Etapas e prazos</a>
+</div></nav>
 
 <main id="app" hidden>
   <div class="wrap"><div id="avisos"></div></div>
