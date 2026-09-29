@@ -139,7 +139,7 @@ section{padding-top:22px}
 .legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--muted);padding-block:16px 6px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:-1px;margin-right:5px}
 footer{padding-block:6px 28px;font-size:12px;color:var(--muted)}
-footer p{margin:4px 0;max-width:90ch}
+footer p{margin:4px 0;max-width:90ch;overflow-wrap:anywhere}
 
 dialog{border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:18px;width:min(520px,calc(100vw - 32px))}
 dialog::backdrop{background:rgba(10,20,18,.45)}
@@ -151,6 +151,36 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 .btn.pri{background:var(--petrol);border-color:var(--petrol);color:var(--surface)}
 
 .status{padding:40px 0;color:var(--muted)}
+/* Radar da auditoria: seis fases do rito do TCU; fases 3 e 4 são a janela de atuação */
+.radar{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.rf{padding:10px 11px 12px;border-right:1px solid var(--line-2);position:relative;min-width:0}
+.rf:last-child{border-right:0}
+.rf.jan{background:var(--amber-bg)}
+.rf .tag{position:absolute;top:9px;right:9px;font:600 9.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
+.rf-h{display:flex;align-items:baseline;gap:7px}
+.rf-h b{font:600 22px var(--f-mono)}
+.rf-h span{font-weight:600;font-size:12.5px}
+.rf-s{font-size:11px;color:var(--muted);margin:1px 0 7px}
+.rf-c{display:flex;flex-direction:column;gap:4px}
+.rchip{display:flex;justify-content:space-between;gap:6px;background:var(--surface-2);border:1px solid var(--line-2);border-radius:6px;padding:2px 7px;font:600 11.5px var(--f-mono);cursor:pointer;color:var(--ink);text-align:left}
+.rchip small{font-weight:400;color:var(--muted)}
+.rchip.novo{border-color:var(--move);background:var(--move-bg)}
+.rf-mais{font-size:11.5px;color:var(--petrol);background:none;border:0;padding:2px 4px;text-align:left;cursor:pointer;text-decoration:underline}
+.rleg{display:flex;flex-wrap:wrap;gap:6px 18px;margin:8px 2px 0;font-size:12px;color:var(--muted)}
+.rleg i{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:5px}
+.rmud{margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.rmud h3{margin:0 0 6px;font:600 13.5px var(--f-disp)}
+.rmud ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.rmud li{font-size:12.5px}
+.rmud .de{color:var(--muted)} .rmud .dt{font:11.5px var(--f-mono);color:var(--muted);margin-left:6px} .rmud .ras{color:var(--ink-2);margin-left:6px}
+.jan-pill{margin-left:8px;background:var(--amber-bg);color:var(--amber);border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600}
+.step{display:flex;gap:3px;margin-top:2px;cursor:help}
+.step i{flex:1;height:5px;border-radius:3px;background:var(--line)}
+.step i.on{background:var(--petrol)} .step i.cur{background:var(--amber)}
+.step-l{font-size:11px;color:var(--muted)}
+@media (max-width:1100px){ .radar{grid-template-columns:repeat(3,minmax(0,1fr))} .rf:nth-child(3){border-right:0} .rf:nth-child(-n+3){border-bottom:1px solid var(--line-2)} }
+@media (max-width:560px){ .radar{grid-template-columns:minmax(0,1fr)} .rf{border-right:0;border-bottom:1px solid var(--line-2)} }
+.rchip{flex-wrap:wrap;min-width:0}
 .priv{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:12px;padding:9px 12px;border:1px dashed var(--line);border-radius:var(--r);background:var(--surface);font-size:12.5px;color:var(--ink-2)}
 .priv.on{border-style:solid;border-color:var(--petrol);background:var(--petrol-soft)}
 .priv label.btn{display:inline-flex;align-items:center}
@@ -214,6 +244,13 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
   <button class="linkbtn" id="tirarRisco" type="button" hidden>remover camada</button>
  </div>
 
+ <section aria-labelledby="h-radar">
+  <div class="sh"><h2 id="h-radar">Radar da auditoria</h2><p>Em que fase do rito do TCU está cada processo. Fundo laranja: janela de atuação, com a proposta pronta ou quase, antes do voto.</p></div>
+  <div class="radar" id="radar"></div>
+  <div class="rleg"><span><i style="background:var(--amber-bg);border:1px solid var(--amber)"></i>fases 3 e 4: janela de atuação da SEAI</span><span><i style="background:var(--move-bg);border:1px solid var(--move)"></i>mudou de fase no período escolhido</span><span>data: movimentação que definiu a fase · clique no número para abrir o cartão</span></div>
+  <div class="rmud" id="rmud" hidden></div>
+ </section>
+
  <section aria-labelledby="h-prazos">
   <div class="sh"><h2 id="h-prazos">Prazos em aberto</h2><p id="prazoNota"></p></div>
   <div class="prazos" id="prazos"></div>
@@ -240,6 +277,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 <footer class="wrap">
  <p><b>Como a etapa é definida.</b> Pela última movimentação pública que indica onde o processo está: envio à unidade técnica ou portaria de fiscalização (instrução), envio ao ministro ou exclusão de pauta (relator), inclusão em pauta, pedido de vista ou envio à Seses (pauta e sessão), acórdão ou apreciação (julgado), peça de recurso (recurso). Processo sigiloso gera pouca movimentação visível e pode aparecer numa etapa desatualizada.</p>
  <p><b>Como o prazo é contado (teste).</b> Começa no dia útil em que um órgão do MPO registra a ciência da comunicação no TCU. Conta em dias corridos, sem o dia do início; se o fim cair em fim de semana ou feriado, passa para o próximo dia útil. Onde o arquivo <span class="mono">prazos.txt</span> não informa o número de dias, usa-se um prazo presumido de <span id="padrao">15</span> dias. O prazo sai da lista quando o TCU registra a resposta, quando a parte junta documento pelo Conecta ou quando o ciclo de comunicação é encerrado.</p>
+ <p><b>Radar da auditoria.</b> A fase vem da última movimentação pública que marca o rito: portaria de fiscalização (1), requisições, oitivas e respostas (2), relatório preliminar para comentários (3), pronunciamento da unidade concluído ou envio ao ministro (4), inclusão em pauta ou vista (5), acórdão (6). Dentro de um ciclo a fase só avança; um acórdão fecha o ciclo. A fase 3 raramente aparece nas movimentações públicas: o relatório preliminar chega ao MPO pelo Conecta.</p>
  <p><b>Minha lista</b> fica gravada só neste navegador. Não é enviada a lugar nenhum.</p>
  <p><b>Camada privada de risco.</b> Arquivo CSV mantido pela SEAI e pelas secretarias, com as colunas <span class="mono">tc;faixa;faixa_latente;fase;medida;fonte;responsavel;revisado_em</span>. A página só lê o arquivo no seu navegador; ele não é publicado com o site.</p>
  <p id="fonte"></p>
@@ -427,6 +465,7 @@ function card(p, A, B){
     ${selo(p.numero) ? `<div class="meta">${selo(p.numero)}</div>` : ""}
     <div class="meta"><span class="nat">${esc(p.natureza||"")}${p.relator?" · Min. "+esc(p.relator):""}</span></div>
     <div class="meta"><span class="pill">${esc(orgs)}</span>${ac}${nmov}${parado}</div>
+    ${(()=>{ const r=faseEm(p,B); return `<div class="step" title="Fase ${r.fase} de 6 · ${FASES[r.fase][0]}${r.data?" desde "+br(r.data):""}">${[1,2,3,4,5,6].map(n=>`<i class="${n<r.fase?"on":n===r.fase?"cur":""}"></i>`).join("")}</div><div class="step-l">Fase ${r.fase} de 6 · ${FASES[r.fase][0]}${r.data?" desde "+br(r.data):""}</div>`; })()}
     <div class="abre"><span>${um?"última mov. "+br(um):"sem movimentação registrada"}</span><span class="ic" aria-hidden="true">▾</span></div>
    </summary>
    ${risco && risco.get(p.numero) ? `<div class="tl-wrap"><div class="rk-med"><b>Risco:</b> ${esc(risco.get(p.numero).medida)}${risco.get(p.numero).fonte?" · fonte: "+esc(risco.get(p.numero).fonte):""}</div></div>` : ""}
@@ -450,9 +489,64 @@ function timeline(p, A, B, todos){
   marc.reverse();
   const lim = todos ? marc.length : 8;
   const link = p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">abrir no TCU ↗</a>` : "";
-  return `<div class="tl-top"><span>${evs.length} movimentações conhecidas · mais recente no topo</span>${link}</div>
+  const fh = faseEm(p, B).hist;
+  const fasesTxt = fh.length ? `<div class="step-l" style="margin-bottom:6px">Fases: ${fh.map(h=>`${br(h.data)} ${FASES[h.fase][0]}`).join(" → ")}</div>` : "";
+  return `${fasesTxt}<div class="tl-top"><span>${evs.length} movimentações conhecidas · mais recente no topo</span>${link}</div>
     ${marc.length ? `<ol class="tl">${marc.slice(0,lim).join("")}</ol>` : `<p class="nat">Nenhuma movimentação pública coletada.</p>`}
     ${marc.length > lim ? `<button class="linkbtn tl-more" type="button" data-tlall>Ver as ${marc.length} movimentações</button>` : ""}`;
+}
+
+const FASES = [null,
+  ["Início","portaria de fiscalização, autuação"],
+  ["Coleta","requisições, oitivas, respostas"],
+  ["Relatório preliminar","comentários dos gestores"],
+  ["Instrução concluída","proposta fechada, no relator"],
+  ["Pauta","sessão marcada, vista"],
+  ["Julgado","acórdão publicado"]];
+const REGRAS_FASE = [
+  [6, /^Ac[óo]rd[ãa]o \d|Apreciado na Sess/i],
+  [5, /inclu[íi]do na pauta|pedido de vista|enviado de MINS?-\S+ para Seses/i],
+  [4, /Pronunciamento d[ao] \S+ conclu|Enviado para pronunciamento do Ministro|enviado de \S+ para MINS?-/i],
+  [3, /coment[áa]rios dos gestores|Relat[óo]rio Preliminar|vers[ãa]o preliminar/i],
+  [2, /Of[íi]cio de Requisi|oitiva|dilig[êe]ncia|Registrada ci[êe]ncia|Elementos comprobat|via CONECTA/i],
+  [1, /Portaria de Fiscaliza|autuad/i]];
+function faseEm(p, dia){
+  // A fase só avança dentro de um ciclo; um acórdão fecha o ciclo e uma nova portaria ou instrução abre outro.
+  let f = null, dt = null; const hist = [];
+  for (const ev of p.eventos){
+    if (ev.data > dia) break;
+    for (const [n, rx] of REGRAS_FASE){
+      if (rx.test(ev.desc)){
+        if (n === 6 || f === null || f === 6 || n > f){ if (n !== f) hist.push({data:ev.data, fase:n}); f = n; dt = ev.data; }
+        break;
+      }
+    }
+  }
+  return {fase: f || 1, data: dt, hist};
+}
+function renderRadar(lista, A, B){
+  const por = {1:[],2:[],3:[],4:[],5:[],6:[]}, mud = [];
+  for (const p of lista){
+    const r = faseEm(p, B), r0 = presente(p, A) ? faseEm(p, A) : {fase:null};
+    por[r.fase].push({p, d:r.data});
+    if (r0.fase !== null && r0.fase !== r.fase && r.data && r.data > A) mud.push({p, de:r0.fase, para:r.fase, d:r.data});
+  }
+  const novos = new Set(mud.map(m=>m.p.numero));
+  const LIM = 5;
+  $("radar").innerHTML = [1,2,3,4,5,6].map(n=>{
+    const ps = por[n].sort((a,b)=>(b.d||"").localeCompare(a.d||""));
+    const vis = st.radarTodos && st.radarTodos[n] ? ps : ps.slice(0, LIM);
+    const jan = n===3 || n===4;
+    return `<div class="rf${jan?" jan":""}">${jan?'<span class="tag">janela</span>':""}
+      <div class="rf-h"><b>${ps.length}</b><span>${n}. ${FASES[n][0]}</span></div><div class="rf-s">${FASES[n][1]}</div>
+      <div class="rf-c">${vis.map(x=>`<button type="button" class="rchip${novos.has(x.p.numero)?" novo":""}" data-abrir="${esc(x.p.numero)}" title="${esc((x.p.assunto||"").slice(0,160))}">${esc(x.p.numero)}<small>${br(x.d)}</small></button>`).join("")}
+      ${ps.length>vis.length?`<button type="button" class="rf-mais" data-rtodos="${n}">+${ps.length-vis.length} processos</button>`:""}</div></div>`;
+  }).join("");
+  const box = $("rmud");
+  if (!mud.length){ box.hidden = true; return; }
+  mud.sort((a,b)=> b.para-a.para || b.d.localeCompare(a.d));
+  box.hidden = false;
+  box.innerHTML = `<h3>Mudaram de fase de ${brAno(A)} a ${brAno(B)} (${mud.length})</h3><ul>${mud.map(m=>`<li><button type="button" class="linkbtn" data-abrir="${esc(m.p.numero)}" style="font:600 12.5px var(--f-mono)">${esc(m.p.numero)}</button> <span class="de">${FASES[m.de][0]}</span> → <b>${FASES[m.para][0]}</b><span class="dt">${br(m.d)}</span><span class="ras">${esc((m.p.assunto||"").slice(0,90))}${(m.p.assunto||"").length>90?"…":""}</span>${m.para===3||m.para===4?'<span class="jan-pill">janela de atuação</span>':""}</li>`).join("")}</ul>`;
 }
 
 function render(){
@@ -463,6 +557,7 @@ function render(){
   let lista = base.filter(filtra);
   if (st.soMov) lista = lista.filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B));
 
+  renderRadar(lista.filter(p=>p.aberto), A, B);
   renderPrazos(lista.filter(p=>p.aberto));
 
   // resumo
@@ -556,6 +651,8 @@ function montarControles(){
       if (!$("c-"+a.dataset.abrir.replace(/\D/g,""))){ st.q = a.dataset.abrir; $("q").value = st.q; render(); }
       const alvo = $("c-"+a.dataset.abrir.replace(/\D/g,"")); if (alvo){ alvo.open = true; alvo.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"center"}); }
       return; }
+    const rt = e.target.closest("[data-rtodos]");
+    if (rt){ st.radarTodos = st.radarTodos || {}; st.radarTodos[rt.dataset.rtodos] = true; render(); return; }
     const x = e.target.closest("[data-expand]");
     if (x){ st.expand[x.dataset.expand]=true; render(); return; }
     const m = e.target.closest("[data-tlall]");

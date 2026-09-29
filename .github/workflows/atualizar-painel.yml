@@ -101,6 +101,9 @@ jobs:
           git add site/dados.json site/kanban.json site/deliberacoes.json acordaos/
           if git diff --cached --quiet; then echo "sem mudanças"; exit 0; fi
           git commit -m "dados: $(date -u +'%Y-%m-%d %H:%M UTC')"
+          # Se alguém enviou mudanças enquanto o robô rodava, junta antes de enviar
+          # (os arquivos gerados pelo robô não são editados à mão, então não há conflito).
+          git pull --rebase -X theirs origin main || git rebase --abort
           git push || { echo "::error::push recusado — marque 'Read and write permissions' em Settings > Actions > General."; exit 1; }
 
       - uses: actions/upload-pages-artifact@v3
