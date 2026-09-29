@@ -1,15 +1,15 @@
 {
  "versao": 2,
- "gerado_em": "2026-09-29T18:25:41.213740+00:00",
- "gerado_em_br": "29/09/2026 às 18:25",
+ "gerado_em": "2026-09-29T20:07:39.902813+00:00",
+ "gerado_em_br": "29/09/2026 às 20:07",
  "ancora_btcu": 23240,
  "tem_estado": true,
  "avisos": [],
  "totais": {
   "processos": 89,
-  "movimentacoes": 299,
+  "movimentacoes": 302,
   "abertos": 89,
-  "encerrados_ocultos": 852,
+  "encerrados_ocultos": 683,
   "so_interesse": 38
  },
  "garantidos": [
@@ -33,24 +33,51 @@
  "novos_processos": [],
  "andamentos_novos": [
   {
-   "processo": "018.993/2026-5",
+   "processo": "018.198/2026-0",
    "orgaos": [
+    "MPO",
     "SOF"
    ],
-   "assunto": "Representação referente ao ato de gestão com Uasg 201007 (Objeto: Causas do déficit primário acumulado do Governo Central em 2026, incluindo análise de projeções fiscais, variações de receitas e despesas, fundamentos, agentes decisores e impactos plurianuais.)",
+   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
    "data": "2026-09-29T00:00:00+00:00",
-   "descricao": "Processo enviado de Seproc para AudFiscal/AudFiscal-ASS. (Assessoria da AudFiscal)",
+   "descricao": "Registrada resposta de comunicação do Ofício 0065/2026-TCU/AudGestãoInovação.",
    "acordao": null,
    "novo_no_radar": false
   },
   {
-   "processo": "018.993/2026-5",
+   "processo": "018.198/2026-0",
    "orgaos": [
+    "MPO",
     "SOF"
    ],
-   "assunto": "Representação referente ao ato de gestão com Uasg 201007 (Objeto: Causas do déficit primário acumulado do Governo Central em 2026, incluindo análise de projeções fiscais, variações de receitas e despesas, fundamentos, agentes decisores e impactos plurianuais.)",
+   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
    "data": "2026-09-29T00:00:00+00:00",
-   "descricao": "Documento Termo (SPI) juntado ao processo por Seproc",
+   "descricao": "Registrada resposta de comunicação do Ofício 0056/2026-TCU/AudGestãoInovação.",
+   "acordao": null,
+   "novo_no_radar": false
+  },
+  {
+   "processo": "018.198/2026-0",
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
+   "data": "2026-09-29T00:00:00+00:00",
+   "descricao": "Registrada resposta de comunicação do Ofício 0055/2026-TCU/AudGestãoInovação.",
+   "acordao": null,
+   "novo_no_radar": false
+  },
+  {
+   "processo": "016.873/2025-4",
+   "orgaos": [
+    "MPO",
+    "SEPLAN",
+    "SOF"
+   ],
+   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
+   "data": "2026-09-29T00:00:00+00:00",
+   "descricao": "Confidencialidade do processo alterada de Sigiloso para Público  por Seproc",
    "acordao": null,
    "novo_no_radar": false
   }
@@ -88,9 +115,9 @@
   {
    "orgao": "SEPLAN",
    "nome": "Secretaria Nacional de Planejamento",
-   "total": 3,
+   "total": 4,
    "como_unidade": 0,
-   "como_interessado": 3
+   "como_interessado": 4
   },
   {
    "orgao": "SMA",
@@ -122,12 +149,12 @@
    "abertos": 6
   },
   {
-   "tipo": "Consulta",
+   "tipo": "Relatório de Levantamento",
    "total": 5,
    "abertos": 5
   },
   {
-   "tipo": "Relatório de Levantamento",
+   "tipo": "Consulta",
    "total": 5,
    "abertos": 5
   },
@@ -332,6 +359,17 @@
    "movimentacoes_mes": 4
   },
   {
+   "processo": "016.873/2025-4",
+   "orgaos": [
+    "MPO",
+    "SEPLAN",
+    "SOF"
+   ],
+   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
+   "relator": "Jhonatan de Jesus",
+   "movimentacoes_mes": 4
+  },
+  {
    "processo": "018.993/2026-5",
    "orgaos": [
     "SOF"
@@ -361,6 +399,16 @@
    "movimentacoes_mes": 3
   },
   {
+   "processo": "018.198/2026-0",
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
+   "relator": "Bruno Dantas",
+   "movimentacoes_mes": 3
+  },
+  {
    "processo": "020.712/2023-5",
    "orgaos": [
     "MPO",
@@ -378,24 +426,6 @@
     "SOF"
    ],
    "assunto": "4ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
-   "relator": "Antonio Anastasia",
-   "movimentacoes_mes": 3
-  },
-  {
-   "processo": "007.442/2025-4",
-   "orgaos": [
-    "MPO"
-   ],
-   "assunto": "11º Ciclo da Fiscalização Contínua de Folhas e Pagamento",
-   "relator": "Augusto Nardes",
-   "movimentacoes_mes": 3
-  },
-  {
-   "processo": "003.487/2025-3",
-   "orgaos": [
-    "MPO"
-   ],
-   "assunto": "Representação referente ao ato de gestão (Objeto: Para apuração preliminar das providências e estudos destinados à implementação do modelo único de avaliação biopsicossocial da deficiência conduzidos pelo governo brasileiro.)",
    "relator": "Antonio Anastasia",
    "movimentacoes_mes": 3
   }
@@ -519,6 +549,133 @@
    "fase_atual": "Apreciado na Sessão Ordinária da Segunda Câmara em 29/09/2026 por meio do Acórdã",
    "atualizado_em": "2026-09-29T00:00:00+00:00",
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1991120262",
+   "garantido": false
+  },
+  {
+   "numero": "018.198/2026-0",
+   "id": "01819820260",
+   "codigo": "80939520",
+   "estado": "Aberto",
+   "relator": "Bruno Dantas",
+   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
+   "natureza": "Relatório de Auditoria",
+   "unidade_tecnica": "AudGestãoInovação",
+   "representante_mp": "Rodrigo Lima",
+   "unidades": [
+    "SOF/MPO - Secretaria de Orçamento Federal",
+    "SRI/PR - Secretaria de Relações Institucionais da Presidência da República"
+   ],
+   "interessados": [
+    "Assessoria Especial de Controle Interno do Ministério da Gestão e da Inovação em Serviços Públicos",
+    "Secretaria-Executiva do Ministério da Gestão e da Inovação em Serviços Públicos",
+    "Assessoria Especial de Controle Interno do Ministério da Integração e do Desenvolvimento Regional",
+    "Secretaria-Executiva do Ministério da Integração e do Desenvolvimento Regional"
+   ],
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_unidade": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_interessado": [],
+   "vinculo": "unidade",
+   "acordao": null,
+   "movimentacoes": [
+    {
+     "data": "2026-09-29T00:00:00+00:00",
+     "descricao": "Registrada resposta de comunicação do Ofício 0065/2026-TCU/AudGestãoInovação.",
+     "fase": null,
+     "acordao": null
+    },
+    {
+     "data": "2026-09-29T00:00:00+00:00",
+     "descricao": "Registrada resposta de comunicação do Ofício 0056/2026-TCU/AudGestãoInovação.",
+     "fase": null,
+     "acordao": null
+    },
+    {
+     "data": "2026-09-29T00:00:00+00:00",
+     "descricao": "Registrada resposta de comunicação do Ofício 0055/2026-TCU/AudGestãoInovação.",
+     "fase": null,
+     "acordao": null
+    }
+   ],
+   "ultima_movimentacao": {
+    "data": "2026-09-29T00:00:00+00:00",
+    "descricao": "Registrada resposta de comunicação do Ofício 0065/2026-TCU/AudGestãoInovação.",
+    "fase": null,
+    "acordao": null
+   },
+   "fase_atual": "Registrada resposta de comunicação do Ofício 0065/2026-TCU/AudGestãoInovação.",
+   "atualizado_em": "2026-09-29T00:00:00+00:00",
+   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1819820260",
+   "garantido": false
+  },
+  {
+   "numero": "016.873/2025-4",
+   "id": "01687320254",
+   "codigo": "78717256",
+   "estado": "Aberto",
+   "relator": "Jhonatan de Jesus",
+   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
+   "natureza": "Relatório de Levantamento",
+   "unidade_tecnica": null,
+   "representante_mp": null,
+   "unidades": [
+    "SOF/MPO - Secretaria de Orçamento Federal"
+   ],
+   "interessados": [],
+   "orgaos": [
+    "MPO",
+    "SEPLAN",
+    "SOF"
+   ],
+   "orgaos_unidade": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_interessado": [
+    "SEPLAN"
+   ],
+   "vinculo": "unidade",
+   "acordao": "2616/2026",
+   "movimentacoes": [
+    {
+     "data": "2026-09-29T00:00:00+00:00",
+     "descricao": "Confidencialidade do processo alterada de Sigiloso para Público  por Seproc",
+     "fase": null,
+     "acordao": null
+    },
+    {
+     "data": "2026-09-24T00:00:00+00:00",
+     "descricao": "Processo enviado de MIN-JPJ para Seses/Disup. (Diretoria de Suporte aos Colegiados)",
+     "fase": null,
+     "acordao": null
+    },
+    {
+     "data": "2026-09-24T00:00:00+00:00",
+     "descricao": "Apreciado na Sessão Ordinária do Plenário em 23/09/2026 por meio do Acórdão 2616/2026-PL",
+     "fase": null,
+     "acordao": null
+    },
+    {
+     "data": "2026-09-24T00:00:00+00:00",
+     "descricao": "Acórdão 2616/2026 — Plenário",
+     "fase": "Julgado",
+     "acordao": "2616/2026"
+    }
+   ],
+   "ultima_movimentacao": {
+    "data": "2026-09-29T00:00:00+00:00",
+    "descricao": "Confidencialidade do processo alterada de Sigiloso para Público  por Seproc",
+    "fase": null,
+    "acordao": null
+   },
+   "fase_atual": "Confidencialidade do processo alterada de Sigiloso para Público  por Seproc",
+   "atualizado_em": "2026-09-29T00:00:00+00:00",
+   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1687320254",
    "garantido": false
   },
   {
@@ -753,56 +910,6 @@
    "fase_atual": "Registrada resposta de comunicação do Ofício 37254/2026-TCU/Seproc.",
    "atualizado_em": "2026-09-28T00:00:00+00:00",
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1891820263",
-   "garantido": false
-  },
-  {
-   "numero": "018.198/2026-0",
-   "id": "01819820260",
-   "codigo": "80939520",
-   "estado": "Aberto",
-   "relator": "Bruno Dantas",
-   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
-   "natureza": "Relatório de Auditoria",
-   "unidade_tecnica": "AudGestãoInovação",
-   "representante_mp": "Rodrigo Lima",
-   "unidades": [
-    "SOF/MPO - Secretaria de Orçamento Federal",
-    "SRI/PR - Secretaria de Relações Institucionais da Presidência da República"
-   ],
-   "interessados": [
-    "Assessoria Especial de Controle Interno do Ministério da Gestão e da Inovação em Serviços Públicos",
-    "Secretaria-Executiva do Ministério da Gestão e da Inovação em Serviços Públicos",
-    "Assessoria Especial de Controle Interno do Ministério da Integração e do Desenvolvimento Regional",
-    "Secretaria-Executiva do Ministério da Integração e do Desenvolvimento Regional"
-   ],
-   "orgaos": [
-    "MPO",
-    "SOF"
-   ],
-   "orgaos_unidade": [
-    "MPO",
-    "SOF"
-   ],
-   "orgaos_interessado": [],
-   "vinculo": "unidade",
-   "acordao": null,
-   "movimentacoes": [
-    {
-     "data": "2026-09-28T00:00:00+00:00",
-     "descricao": "Registrada resposta de comunicação do Ofício 0059/2026-TCU/AudGestãoInovação.",
-     "fase": null,
-     "acordao": null
-    }
-   ],
-   "ultima_movimentacao": {
-    "data": "2026-09-28T00:00:00+00:00",
-    "descricao": "Registrada resposta de comunicação do Ofício 0059/2026-TCU/AudGestãoInovação.",
-    "fase": null,
-    "acordao": null
-   },
-   "fase_atual": "Registrada resposta de comunicação do Ofício 0059/2026-TCU/AudGestãoInovação.",
-   "atualizado_em": "2026-09-28T00:00:00+00:00",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1819820260",
    "garantido": false
   },
   {
@@ -1480,62 +1587,6 @@
    "fase_atual": "Processo enviado de MIN-AAA para Seses/Disup. (Diretoria de Suporte aos Colegiad",
    "atualizado_em": "2026-09-24T00:00:00+00:00",
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=675020265",
-   "garantido": false
-  },
-  {
-   "numero": "016.873/2025-4",
-   "id": "01687320254",
-   "codigo": "78717256",
-   "estado": "Aberto",
-   "relator": "Jhonatan de Jesus",
-   "assunto": "016.873/2025-4 - Relatório de Levantamento",
-   "natureza": "Relatório de Levantamento",
-   "unidade_tecnica": null,
-   "representante_mp": null,
-   "unidades": [
-    "SOF/MPO - Secretaria de Orçamento Federal"
-   ],
-   "interessados": [],
-   "orgaos": [
-    "MPO",
-    "SOF"
-   ],
-   "orgaos_unidade": [
-    "MPO",
-    "SOF"
-   ],
-   "orgaos_interessado": [],
-   "vinculo": "unidade",
-   "acordao": null,
-   "movimentacoes": [
-    {
-     "data": "2026-09-24T00:00:00+00:00",
-     "descricao": "Processo enviado de MIN-JPJ para Seses/Disup. (Diretoria de Suporte aos Colegiados)",
-     "fase": null,
-     "acordao": null
-    },
-    {
-     "data": "2026-09-24T00:00:00+00:00",
-     "descricao": "Apreciado na Sessão Ordinária do Plenário em 23/09/2026 por meio do Acórdão 2616/2026-PL",
-     "fase": null,
-     "acordao": null
-    },
-    {
-     "data": "2026-09-18T00:00:00+00:00",
-     "descricao": "Processo incluído na pauta da sessão Ordinária de Plenário, prevista para 23/09/2026, às 14h30.",
-     "fase": null,
-     "acordao": null
-    }
-   ],
-   "ultima_movimentacao": {
-    "data": "2026-09-24T00:00:00+00:00",
-    "descricao": "Processo enviado de MIN-JPJ para Seses/Disup. (Diretoria de Suporte aos Colegiados)",
-    "fase": null,
-    "acordao": null
-   },
-   "fase_atual": "Processo enviado de MIN-JPJ para Seses/Disup. (Diretoria de Suporte aos Colegiad",
-   "atualizado_em": "2026-09-24T00:00:00+00:00",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1687320254",
    "garantido": false
   },
   {
@@ -5770,6 +5821,22 @@
   },
   {
    "data": "2026-09-24T00:00:00+00:00",
+   "descricao": "Acórdão 2616/2026 — Plenário",
+   "fase": "Julgado",
+   "acordao": "2616/2026",
+   "processo": "016.873/2025-4",
+   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
+   "natureza": "Relatório de Levantamento",
+   "orgaos": [
+    "MPO",
+    "SEPLAN",
+    "SOF"
+   ],
+   "estado": "Aberto",
+   "evento": "acordao"
+  },
+  {
+   "data": "2026-09-24T00:00:00+00:00",
    "descricao": "Acórdão 2571/2026 — Plenário",
    "fase": "Julgado",
    "acordao": "2571/2026",
@@ -5794,21 +5861,6 @@
     "AECI",
     "MPO",
     "SE",
-    "SOF"
-   ],
-   "estado": "Aberto",
-   "evento": "pauta"
-  },
-  {
-   "data": "2026-09-18T00:00:00+00:00",
-   "descricao": "Processo incluído na pauta da sessão Ordinária de Plenário, prevista para 23/09/2026, às 14h30.",
-   "fase": null,
-   "acordao": null,
-   "processo": "016.873/2025-4",
-   "assunto": "016.873/2025-4 - Relatório de Levantamento",
-   "natureza": "Relatório de Levantamento",
-   "orgaos": [
-    "MPO",
     "SOF"
    ],
    "estado": "Aberto",
@@ -5919,6 +5971,63 @@
   },
   {
    "data": "2026-09-29T00:00:00+00:00",
+   "descricao": "Registrada resposta de comunicação do Ofício 0065/2026-TCU/AudGestãoInovação.",
+   "fase": null,
+   "acordao": null,
+   "processo": "018.198/2026-0",
+   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
+   "natureza": "Relatório de Auditoria",
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "estado": "Aberto"
+  },
+  {
+   "data": "2026-09-29T00:00:00+00:00",
+   "descricao": "Registrada resposta de comunicação do Ofício 0056/2026-TCU/AudGestãoInovação.",
+   "fase": null,
+   "acordao": null,
+   "processo": "018.198/2026-0",
+   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
+   "natureza": "Relatório de Auditoria",
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "estado": "Aberto"
+  },
+  {
+   "data": "2026-09-29T00:00:00+00:00",
+   "descricao": "Registrada resposta de comunicação do Ofício 0055/2026-TCU/AudGestãoInovação.",
+   "fase": null,
+   "acordao": null,
+   "processo": "018.198/2026-0",
+   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
+   "natureza": "Relatório de Auditoria",
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "estado": "Aberto"
+  },
+  {
+   "data": "2026-09-29T00:00:00+00:00",
+   "descricao": "Confidencialidade do processo alterada de Sigiloso para Público  por Seproc",
+   "fase": null,
+   "acordao": null,
+   "processo": "016.873/2025-4",
+   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
+   "natureza": "Relatório de Levantamento",
+   "orgaos": [
+    "MPO",
+    "SEPLAN",
+    "SOF"
+   ],
+   "estado": "Aberto"
+  },
+  {
+   "data": "2026-09-29T00:00:00+00:00",
    "descricao": "Processo enviado de Seproc para AudSustentabilidade/AudSustentabilidade-ASS. (Assessoria da AudSustentabilidade)",
    "fase": null,
    "acordao": null,
@@ -6009,20 +6118,6 @@
    "natureza": "Relatório de Acompanhamento",
    "orgaos": [
     "AECI",
-    "MPO",
-    "SOF"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-09-28T00:00:00+00:00",
-   "descricao": "Registrada resposta de comunicação do Ofício 0059/2026-TCU/AudGestãoInovação.",
-   "fase": null,
-   "acordao": null,
-   "processo": "018.198/2026-0",
-   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
-   "natureza": "Relatório de Auditoria",
-   "orgaos": [
     "MPO",
     "SOF"
    ],
@@ -6305,6 +6400,51 @@
   },
   {
    "data": "2026-09-24T00:00:00+00:00",
+   "descricao": "Processo enviado de MIN-JPJ para Seses/Disup. (Diretoria de Suporte aos Colegiados)",
+   "fase": null,
+   "acordao": null,
+   "processo": "016.873/2025-4",
+   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
+   "natureza": "Relatório de Levantamento",
+   "orgaos": [
+    "MPO",
+    "SEPLAN",
+    "SOF"
+   ],
+   "estado": "Aberto"
+  },
+  {
+   "data": "2026-09-24T00:00:00+00:00",
+   "descricao": "Apreciado na Sessão Ordinária do Plenário em 23/09/2026 por meio do Acórdão 2616/2026-PL",
+   "fase": null,
+   "acordao": null,
+   "processo": "016.873/2025-4",
+   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
+   "natureza": "Relatório de Levantamento",
+   "orgaos": [
+    "MPO",
+    "SEPLAN",
+    "SOF"
+   ],
+   "estado": "Aberto"
+  },
+  {
+   "data": "2026-09-24T00:00:00+00:00",
+   "descricao": "Acórdão 2616/2026 — Plenário",
+   "fase": "Julgado",
+   "acordao": "2616/2026",
+   "processo": "016.873/2025-4",
+   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
+   "natureza": "Relatório de Levantamento",
+   "orgaos": [
+    "MPO",
+    "SEPLAN",
+    "SOF"
+   ],
+   "estado": "Aberto"
+  },
+  {
+   "data": "2026-09-24T00:00:00+00:00",
    "descricao": "Apreciado na Sessão Ordinária do Plenário em 23/09/2026 por meio do Acórdão 2571/2026-PL",
    "fase": null,
    "acordao": null,
@@ -6414,34 +6554,6 @@
     "AECI",
     "MPO",
     "SE",
-    "SOF"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-09-24T00:00:00+00:00",
-   "descricao": "Processo enviado de MIN-JPJ para Seses/Disup. (Diretoria de Suporte aos Colegiados)",
-   "fase": null,
-   "acordao": null,
-   "processo": "016.873/2025-4",
-   "assunto": "016.873/2025-4 - Relatório de Levantamento",
-   "natureza": "Relatório de Levantamento",
-   "orgaos": [
-    "MPO",
-    "SOF"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-09-24T00:00:00+00:00",
-   "descricao": "Apreciado na Sessão Ordinária do Plenário em 23/09/2026 por meio do Acórdão 2616/2026-PL",
-   "fase": null,
-   "acordao": null,
-   "processo": "016.873/2025-4",
-   "assunto": "016.873/2025-4 - Relatório de Levantamento",
-   "natureza": "Relatório de Levantamento",
-   "orgaos": [
-    "MPO",
     "SOF"
    ],
    "estado": "Aberto"
@@ -6696,20 +6808,6 @@
     "AECI",
     "MPO",
     "SE",
-    "SOF"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-09-18T00:00:00+00:00",
-   "descricao": "Processo incluído na pauta da sessão Ordinária de Plenário, prevista para 23/09/2026, às 14h30.",
-   "fase": null,
-   "acordao": null,
-   "processo": "016.873/2025-4",
-   "assunto": "016.873/2025-4 - Relatório de Levantamento",
-   "natureza": "Relatório de Levantamento",
-   "orgaos": [
-    "MPO",
     "SOF"
    ],
    "estado": "Aberto"
@@ -8572,46 +8670,6 @@
     "AECI",
     "MPO",
     "SE"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-07-23T00:00:00+00:00",
-   "descricao": "Registrada resposta de comunicação do Ofício 25943/2026-TCU/Seproc.",
-   "fase": null,
-   "acordao": null,
-   "processo": "018.918/2025-5",
-   "assunto": "Acompanhamento das Receitas Públicas - PF/BCN 2025",
-   "natureza": "Relatório de Acompanhamento",
-   "orgaos": [
-    "MPO",
-    "SOF"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-07-22T00:00:00+00:00",
-   "descricao": "Processo enviado de Seproc para AudPortoFerrovia/AudPortoFerrovia-ASS. (Assessoria da AudPortoFerrovia)",
-   "fase": null,
-   "acordao": null,
-   "processo": "015.939/2025-1",
-   "assunto": "Monitoramento das determinações feitas ao MT e à  ANTT por meio do Acórdão  522/2025-Plenário (006.626/2024-6) relacionadas com a RMS.\r\nContrato com prazo de vigência próximo ao fim.",
-   "natureza": "Monitoramento",
-   "orgaos": [
-    "MPO"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-07-22T00:00:00+00:00",
-   "descricao": "Despacho de encerramento de ciclo de comunicação. Por Seproc - Marcelo Gonçalves da Silva",
-   "fase": null,
-   "acordao": null,
-   "processo": "015.939/2025-1",
-   "assunto": "Monitoramento das determinações feitas ao MT e à  ANTT por meio do Acórdão  522/2025-Plenário (006.626/2024-6) relacionadas com a RMS.\r\nContrato com prazo de vigência próximo ao fim.",
-   "natureza": "Monitoramento",
-   "orgaos": [
-    "MPO"
    ],
    "estado": "Aberto"
   }
