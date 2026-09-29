@@ -1,7 +1,7 @@
 {
  "versao": 2,
- "gerado_em": "2026-09-29T20:07:39.902813+00:00",
- "gerado_em_br": "29/09/2026 às 20:07",
+ "gerado_em": "2026-09-29T20:33:46.497013+00:00",
+ "gerado_em_br": "29/09/2026 às 20:33",
  "ancora_btcu": 23240,
  "tem_estado": true,
  "avisos": [],
@@ -31,57 +31,7 @@
   "011.526/2022-0"
  ],
  "novos_processos": [],
- "andamentos_novos": [
-  {
-   "processo": "018.198/2026-0",
-   "orgaos": [
-    "MPO",
-    "SOF"
-   ],
-   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
-   "data": "2026-09-29T00:00:00+00:00",
-   "descricao": "Registrada resposta de comunicação do Ofício 0065/2026-TCU/AudGestãoInovação.",
-   "acordao": null,
-   "novo_no_radar": false
-  },
-  {
-   "processo": "018.198/2026-0",
-   "orgaos": [
-    "MPO",
-    "SOF"
-   ],
-   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
-   "data": "2026-09-29T00:00:00+00:00",
-   "descricao": "Registrada resposta de comunicação do Ofício 0056/2026-TCU/AudGestãoInovação.",
-   "acordao": null,
-   "novo_no_radar": false
-  },
-  {
-   "processo": "018.198/2026-0",
-   "orgaos": [
-    "MPO",
-    "SOF"
-   ],
-   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
-   "data": "2026-09-29T00:00:00+00:00",
-   "descricao": "Registrada resposta de comunicação do Ofício 0055/2026-TCU/AudGestãoInovação.",
-   "acordao": null,
-   "novo_no_radar": false
-  },
-  {
-   "processo": "016.873/2025-4",
-   "orgaos": [
-    "MPO",
-    "SEPLAN",
-    "SOF"
-   ],
-   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
-   "data": "2026-09-29T00:00:00+00:00",
-   "descricao": "Confidencialidade do processo alterada de Sigiloso para Público  por Seproc",
-   "acordao": null,
-   "novo_no_radar": false
-  }
- ],
+ "andamentos_novos": [],
  "tem_baseline": true,
  "por_orgao": [
   {
