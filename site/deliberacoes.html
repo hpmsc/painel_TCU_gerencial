@@ -249,15 +249,21 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 .escala button{border:0;cursor:pointer}
 .escala button[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
 .rjust{font-size:11.5px;color:var(--ink-2);margin-top:6px;border-left:3px solid var(--line);padding-left:8px}
-.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:18px}
-.kpt{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:var(--r);padding:10px 12px;box-shadow:var(--shadow);text-align:left;cursor:pointer;font:inherit;color:inherit}
+.kp{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin-top:18px}
+@media (max-width:900px){ .kp{grid-template-columns:repeat(2,minmax(0,1fr))} }
+.kpt{display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:var(--r);padding:10px 12px;box-shadow:var(--shadow);text-align:left;cursor:pointer;font:inherit;color:inherit}
 .kpt b{display:block;font:600 24px/1 var(--f-mono);letter-spacing:-.03em}
 .kpt span{display:block;font-size:12px;color:var(--ink-2);margin-top:5px}
 .kpt.det{border-top-color:var(--red)} .kpt.det b{color:var(--red)}
 .kpt.rec{border-top-color:var(--amber)} .kpt.rec b{color:var(--amber)}
 .kpt.ale{border-top-color:var(--move)} .kpt.ale b{color:var(--move)}
 .kpt.cie{border-top-color:var(--muted)}
-.kpt[aria-pressed="true"]{outline:2px solid var(--petrol);outline-offset:1px}
+.kpt[aria-pressed="true"]{outline:2px solid var(--petrol);outline-offset:1px;background:var(--petrol-soft)}
+.kpt:hover{border-color:var(--ink-2)}
+.kpt .kn{font-weight:600;font-size:13.5px;color:var(--ink);margin-top:4px}
+.kpt.todas{border-top-color:var(--petrol)} .kpt.todas b{color:var(--petrol)}
+.kpt .kx{display:inline-block;margin-top:7px;font-size:11.5px;font-weight:600;color:var(--red);background:var(--red-bg);border-radius:999px;padding:1px 8px}
+.kpt .kx[aria-pressed="true"]{outline:2px solid var(--red)}
 .lista{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
 .lh,.lr{display:grid;grid-template-columns:112px 108px minmax(0,1.1fr) minmax(0,2.2fr) 132px;gap:14px;padding:10px 14px;align-items:start}
 .lh{background:var(--surface-2);font:600 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
@@ -411,24 +417,26 @@ function montar(delib, kanban){
   $("fonte").textContent = `Acórdãos baixados até ${delib.gerado_em ? br(delib.gerado_em.slice(0,10)) : "—"}. Fonte: Pesquisa Integrada do TCU.`;
 }
 
-function alcance(i){ return st.alc==="all" || (st.alc==="dir" ? i.mpo : (i.mpo || i.mpo_mencao || !!riscoDe(i))); }
+function alcance(i){ return st.alc==="all" || (st.alc==="dir" ? i.mpo : (i.mpo || i.mpo_mencao || !!riscoDe(i) || (i.tipo==="alerta" && /Poder Executivo/i.test(i.texto)))); }
 
 function kpis(){
-  const alc = i => i.mpo || (i.mpo_mencao && i.tipo!=="ciencia");
+  // Cartões por tipo: clicar filtra a lista por aquele tipo; clicar de novo (ou em "Todas") volta a mostrar tudo.
   const h = hoje(), em90 = addDias(h, 90);
+  const base = ITENS.filter(i => alcance(i));
   const np = l => new Set(l.map(i=>i.processo)).size;
-  const det = ITENS.filter(i=>i.tipo==="determinacao" && alc(i));
-  const rec = ITENS.filter(i=>i.tipo==="recomendacao" && alc(i));
-  const ale = ITENS.filter(i=>i.tipo==="alerta");
-  const prox = det.filter(i=>i.vence && i.vence>=h && i.vence<=em90);
   const pl = (n,s,p) => n===1 ? s : p;
-  const tiles = [
-    ["det","determinacao",det.length,`determinações ao MPO ou com sua articulação, em ${np(det)} ${pl(np(det),"processo","processos")}`],
-    ["det","prox",prox.length,`${pl(prox.length,"determinação","determinações")} com prazo estimado nos próximos 90 dias, em ${np(prox)} ${pl(np(prox),"processo","processos")}`],
-    ["rec","recomendacao",rec.length,`recomendações ao MPO ou com sua articulação, em ${np(rec)} ${pl(np(rec),"processo","processos")}`],
-    ["ale","alerta",ale.length,`alertas nos acórdãos acompanhados, em ${np(ale)} ${pl(np(ale),"processo","processos")}`],
+  const de = t => base.filter(i=>i.tipo===t);
+  const det = de("determinacao"), prox = det.filter(i=>i.vence && i.vence>=h && i.vence<=em90);
+  const todas = base.filter(i=>i.tipo!=="decisao");
+  const cards = [
+    ["todas","", todas.length, "Todas", `em ${np(todas)} ${pl(np(todas),"processo","processos")}`],
+    ["det","determinacao", det.length, pl(det.length,"Determinação","Determinações"), `em ${np(det)} ${pl(np(det),"processo","processos")}`],
+    ["rec","recomendacao", de("recomendacao").length, pl(de("recomendacao").length,"Recomendação","Recomendações"), `em ${np(de("recomendacao"))} ${pl(np(de("recomendacao")),"processo","processos")}`],
+    ["ale","alerta", de("alerta").length, pl(de("alerta").length,"Alerta","Alertas"), `em ${np(de("alerta"))} ${pl(np(de("alerta")),"processo","processos")}`],
+    ["cie","ciencia", de("ciencia").length, pl(de("ciencia").length,"Ciência","Ciências"), `em ${np(de("ciencia"))} ${pl(np(de("ciencia")),"processo","processos")}`],
   ];
-  $("kp").innerHTML = tiles.map(([c,k,n,t])=>`<button type="button" class="kpt ${c}" data-kp="${k}" aria-pressed="${st.kp===k}"><b>${n}</b><span>${t}</span></button>`).join("");
+  const ativo = st.tipo || "";
+  $("kp").innerHTML = cards.map(([c,t,n,nome,sub])=>`<button type="button" class="kpt ${c}" data-tipo="${t}" aria-pressed="${ativo===t && !(t==="determinacao" && st.kp==="prox")}"><b>${n}</b><span class="kn">${nome}</span><span>${sub}</span>${t==="determinacao"&&prox.length?`<span class="kx" data-kp="prox" role="button" tabindex="0" aria-pressed="${st.kp==="prox"}">${prox.length} com prazo nos próximos 90 dias</span>`:""}</button>`).join("");
 }
 
 function linha(i){
@@ -457,12 +465,8 @@ function linha(i){
 function render(){
   kpis();
   const h = hoje(), em90 = addDias(h,90), q = st.q.toLowerCase();
-  let l;
-  const alc = i => i.mpo || (i.mpo_mencao && i.tipo!=="ciencia");
-  if (st.kp==="prox") l = ITENS.filter(i=>i.tipo==="determinacao" && alc(i) && i.vence && i.vence>=h && i.vence<=em90);
-  else if (st.kp==="alerta") l = ITENS.filter(i=>i.tipo==="alerta");
-  else if (st.kp) l = ITENS.filter(i=>i.tipo===st.kp && alc(i));
-  else l = ITENS.filter(i => alcance(i) && (!st.tipo || i.tipo===st.tipo));
+  let l = ITENS.filter(i => alcance(i) && (st.tipo ? i.tipo===st.tipo : (i.tipo!=="decisao" || st.alc==="all")));
+  if (st.kp==="prox") l = l.filter(i=>i.tipo==="determinacao" && i.vence && i.vence>=h && i.vence<=em90);
   if (RISCO && riscoMin) l = l.filter(i => (riscoDe(i)||{}).faixa >= riscoMin);
   if (q) l = l.filter(i => (i.processo+" "+(i.destinatario||"")+" "+i.texto+" "+((PROC[i.processo]||{}).assunto||"")).toLowerCase().includes(q));
   const faixa = i => !i.vence ? 2 : (i.vence >= h ? 0 : 1);
@@ -487,7 +491,15 @@ function ligar(){
   $("selTipo").onchange = e=>{ st.tipo=e.target.value; st.kp=""; render(); };
   $("selOrd").onchange = e=>{ st.ord=e.target.value; render(); };
   let t; $("q").oninput = e=>{ clearTimeout(t); t=setTimeout(()=>{ st.q=e.target.value.trim(); render(); },150); };
-  $("kp").addEventListener("click", e=>{ const b=e.target.closest("[data-kp]"); if(!b) return; st.kp = st.kp===b.dataset.kp ? "" : b.dataset.kp; st.tipo=""; $("selTipo").value=""; render(); });
+  $("kp").addEventListener("click", e=>{
+    const x = e.target.closest("[data-kp]");
+    if (x){ e.stopPropagation(); const on = st.kp!=="prox"; st.kp = on ? "prox" : ""; st.tipo = "determinacao"; $("selTipo").value = st.tipo; if (on){ st.ord="prazo"; $("selOrd").value="prazo"; } render(); return; }
+    const b = e.target.closest("[data-tipo]"); if (!b) return;
+    const t = b.dataset.tipo; st.kp = "";
+    st.tipo = (st.tipo === t) ? "" : t; $("selTipo").value = st.tipo;
+    render();
+    $("lista").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block: "start"});
+  });
 }
 
 function ligarRisco(){
