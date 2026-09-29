@@ -28,6 +28,39 @@
    "baixado_em": "2026-09-29"
   },
   {
+   "processo": "003.487/2025-3",
+   "acordao": "1216/2025",
+   "colegiado": "Plenário",
+   "data_sessao": "28/05/2025",
+   "relator": "ANTONIO ANASTASIA",
+   "titulo": "ACÓRDÃO DE RELAÇÃO 1216/2025 ATA 18/2025 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2713619",
+   "arquivo": "00348720253/2025-1216-PL.md",
+   "secoes": {
+    "ACORDAO": 5865
+   },
+   "sha1": "906a941844a2",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "005.011/2025-6",
+   "acordao": "1264/2025",
+   "colegiado": "Plenário",
+   "data_sessao": "04/06/2025",
+   "relator": "WALTON ALENCAR RODRIGUES",
+   "titulo": "ACÓRDÃO 1264/2025 ATA 19/2025 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2710827",
+   "arquivo": "00501120256/2025-1264-PL.md",
+   "secoes": {
+    "SUMARIO": 368,
+    "ACORDAO": 1823,
+    "VOTO": 2139,
+    "RELATORIO": 20795
+   },
+   "sha1": "db17e1ea8773",
+   "baixado_em": "2026-09-29"
+  },
+  {
    "processo": "005.678/2025-0",
    "acordao": "1120/2026",
    "colegiado": "Plenário",
@@ -79,6 +112,24 @@
    "baixado_em": "2026-09-29"
   },
   {
+   "processo": "006.412/2026-2",
+   "acordao": "2406/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "02/09/2026",
+   "relator": "ANTONIO ANASTASIA",
+   "titulo": "ACÓRDÃO 2406/2026 ATA 34/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2775951",
+   "arquivo": "00641220262/2026-2406-PL.md",
+   "secoes": {
+    "SUMARIO": 620,
+    "ACORDAO": 8414,
+    "VOTO": 47953,
+    "RELATORIO": 179888
+   },
+   "sha1": "43b7f4c18cdf",
+   "baixado_em": "2026-09-29"
+  },
+  {
    "processo": "006.750/2026-5",
    "acordao": "2607/2026",
    "colegiado": "Plenário",
@@ -91,18 +142,9 @@
     "SUMARIO": 439,
     "ACORDAO": 822,
     "VOTO": 12110,
-    "RELATORIO": 144040,
-    "ADVOGADO": 6,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
-    "REPRESENTANTEMP": 10,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 30,
-    "UNIDADETECNICA": 88,
-    "URLARQUIVO": 120,
-    "URLARQUIVOPDF": 117
+    "RELATORIO": 144040
    },
-   "sha1": "298738f4480a",
+   "sha1": "c8158b310f44",
    "baixado_em": "2026-09-29"
   },
   {
@@ -145,18 +187,27 @@
     "SUMARIO": 730,
     "ACORDAO": 4317,
     "VOTO": 24311,
-    "RELATORIO": 81982,
-    "ADVOGADO": 6,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
-    "REPRESENTANTEMP": 72,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 27,
-    "UNIDADETECNICA": 89,
-    "URLARQUIVO": 120,
-    "URLARQUIVOPDF": 117
+    "RELATORIO": 81982
    },
-   "sha1": "937e8cb66d99",
+   "sha1": "a2d010b7d1a3",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "008.798/2025-7",
+   "acordao": "858/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "08/04/2026",
+   "relator": "BENJAMIN ZYMLER",
+   "titulo": "ACÓRDÃO 858/2026 ATA 11/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2754222",
+   "arquivo": "00879820257/2026-0858-PL.md",
+   "secoes": {
+    "SUMARIO": 194,
+    "ACORDAO": 4369,
+    "VOTO": 57021,
+    "RELATORIO": 93798
+   },
+   "sha1": "f9cff91c48e5",
    "baixado_em": "2026-09-29"
   },
   {
@@ -187,6 +238,39 @@
    "baixado_em": "2026-09-29"
   },
   {
+   "processo": "011.319/2026-7",
+   "acordao": "5063/2026",
+   "colegiado": "Primeira Câmara",
+   "data_sessao": "15/09/2026",
+   "relator": "WALTON ALENCAR RODRIGUES",
+   "titulo": "ACÓRDÃO DE RELAÇÃO 5063/2026 ATA 31/2026 - PRIMEIRA CÂMARA",
+   "chave": "ACORDAO-COMPLETO-2780060",
+   "arquivo": "01131920267/2026-5063-1C.md",
+   "secoes": {
+    "ACORDAO": 888
+   },
+   "sha1": "dad7b4b63c06",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "011.601/2025-6",
+   "acordao": "2194/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "19/08/2026",
+   "relator": "JORGE OLIVEIRA",
+   "titulo": "ACÓRDÃO 2194/2026 ATA 31/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2771565",
+   "arquivo": "01160120256/2026-2194-PL.md",
+   "secoes": {
+    "SUMARIO": 312,
+    "ACORDAO": 1653,
+    "VOTO": 21519,
+    "RELATORIO": 47363
+   },
+   "sha1": "39ba32b3aebb",
+   "baixado_em": "2026-09-29"
+  },
+  {
    "processo": "011.685/2026-3",
    "acordao": "2293/2026",
    "colegiado": "Plenário",
@@ -213,6 +297,60 @@
     "URLARQUIVOPDF": 117
    },
    "sha1": "5f2554f81746",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "012.513/2026-1",
+   "acordao": "2334/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "26/08/2026",
+   "relator": "ANTONIO ANASTASIA",
+   "titulo": "ACÓRDÃO 2334/2026 ATA 33/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2773460",
+   "arquivo": "01251320261/2026-2334-PL.md",
+   "secoes": {
+    "SUMARIO": 536,
+    "ACORDAO": 2520,
+    "VOTO": 13882,
+    "RELATORIO": 55417
+   },
+   "sha1": "3f297f622581",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "013.076/2025-6",
+   "acordao": "1849/2025",
+   "colegiado": "Plenário",
+   "data_sessao": "13/08/2025",
+   "relator": "BRUNO DANTAS",
+   "titulo": "ACÓRDÃO 1849/2025 ATA 31/2025 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2722352",
+   "arquivo": "01307620256/2025-1849-PL.md",
+   "secoes": {
+    "SUMARIO": 459,
+    "ACORDAO": 1901,
+    "VOTO": 4693,
+    "RELATORIO": 12506
+   },
+   "sha1": "061d37d62789",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "014.062/2025-9",
+   "acordao": "1876/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "15/07/2026",
+   "relator": "JHONATAN DE JESUS",
+   "titulo": "ACÓRDÃO 1876/2026 ATA 27/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2772784",
+   "arquivo": "01406220259/2026-1876-PL.md",
+   "secoes": {
+    "SUMARIO": 1047,
+    "ACORDAO": 12043,
+    "VOTO": 94665,
+    "RELATORIO": 420122
+   },
+   "sha1": "53d4a2f39703",
    "baixado_em": "2026-09-29"
   },
   {
@@ -252,18 +390,9 @@
     "SUMARIO": 503,
     "ACORDAO": 1835,
     "VOTO": 15083,
-    "RELATORIO": 38538,
-    "ADVOGADO": 6,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
-    "REPRESENTANTEMP": 10,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 35,
-    "UNIDADETECNICA": 88,
-    "URLARQUIVO": 120,
-    "URLARQUIVOPDF": 117
+    "RELATORIO": 38538
    },
-   "sha1": "2078733c7930",
+   "sha1": "d0927dd0ed21",
    "baixado_em": "2026-09-29"
   },
   {
@@ -288,6 +417,24 @@
     "URLARQUIVOPDF": 79
    },
    "sha1": "b070a77afc87",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "015.321/2025-8",
+   "acordao": "2930/2025",
+   "colegiado": "Plenário",
+   "data_sessao": "08/12/2025",
+   "relator": "AUGUSTO NARDES",
+   "titulo": "ACÓRDÃO 2930/2025 ATA 50/2025 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2736293",
+   "arquivo": "01532120258/2025-2930-PL.md",
+   "secoes": {
+    "SUMARIO": 402,
+    "ACORDAO": 8940,
+    "VOTO": 8330,
+    "RELATORIO": 55321
+   },
+   "sha1": "20d80a46d1b8",
    "baixado_em": "2026-09-29"
   },
   {
@@ -327,18 +474,9 @@
     "SUMARIO": 587,
     "ACORDAO": 3437,
     "VOTO": 39752,
-    "RELATORIO": 198880,
-    "ADVOGADO": 7,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
-    "REPRESENTANTEMP": 10,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 30,
-    "UNIDADETECNICA": 110,
-    "URLARQUIVO": 120,
-    "URLARQUIVOPDF": 117
+    "RELATORIO": 198880
    },
-   "sha1": "fa22309a1691",
+   "sha1": "0b5a88749be8",
    "baixado_em": "2026-09-29"
   },
   {
@@ -351,18 +489,9 @@
    "chave": "ACORDAO-COMPLETO-2664358",
    "arquivo": "01699720220/2024-2640-PL.md",
    "secoes": {
-    "ACORDAO": 8918,
-    "ADVOGADO": 7,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
-    "REPRESENTANTEMP": 10,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 21,
-    "UNIDADETECNICA": 98,
-    "URLARQUIVO": 98,
-    "URLARQUIVOPDF": 79
+    "ACORDAO": 8918
    },
-   "sha1": "0cd343d4b2ed",
+   "sha1": "9ccb9f845a0f",
    "baixado_em": "2026-09-29"
   },
   {
@@ -378,19 +507,9 @@
     "SUMARIO": 566,
     "ACORDAO": 1562,
     "VOTO": 19737,
-    "RELATORIO": 27671,
-    "ADVOGADO": 248,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
-    "RELATORDELIBERACAORECORRIDA": 27,
-    "REPRESENTANTEMP": 10,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 27,
-    "UNIDADETECNICA": 148,
-    "URLARQUIVO": 120,
-    "URLARQUIVOPDF": 117
+    "RELATORIO": 27671
    },
-   "sha1": "7d8663afd567",
+   "sha1": "ffb2f6140141",
    "baixado_em": "2026-09-29"
   },
   {
@@ -403,18 +522,9 @@
    "chave": "ACORDAO-COMPLETO-2780620",
    "arquivo": "01899320265/2026-2571-PL.md",
    "secoes": {
-    "ACORDAO": 3360,
-    "ADVOGADO": 7,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
-    "REPRESENTANTEMP": 10,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 20,
-    "UNIDADETECNICA": 88,
-    "URLARQUIVO": 98,
-    "URLARQUIVOPDF": 79
+    "ACORDAO": 3360
    },
-   "sha1": "f719cd534f0f",
+   "sha1": "641acdc683fd",
    "baixado_em": "2026-09-29"
   },
   {
@@ -454,18 +564,9 @@
    "chave": "ACORDAO-COMPLETO-2781254",
    "arquivo": "01991120262/2026-4936-2C.md",
    "secoes": {
-    "ACORDAO": 4855,
-    "ADVOGADO": 7,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
-    "REPRESENTANTEMP": 10,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 20,
-    "UNIDADETECNICA": 88,
-    "URLARQUIVO": 98,
-    "URLARQUIVOPDF": 79
+    "ACORDAO": 4855
    },
-   "sha1": "406ff9f079d8",
+   "sha1": "7e8d71bc0ef4",
    "baixado_em": "2026-09-29"
   },
   {
@@ -483,20 +584,10 @@
     "VOTO": 23835,
     "DECLARACAOVOTO": 6854,
     "RELATORIO": 66137,
-    "ADVOGADO": 264,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
     "MINISTROREVISOR": 20,
-    "RELATORDELIBERACAORECORRIDA": 24,
-    "REPRESENTANTEMP": 10,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 20,
-    "UNIDADETECNICA": 179,
-    "URLARQUIVO": 120,
-    "URLARQUIVOPDF": 117,
     "VOTOMINISTROREVISOR": 28373
    },
-   "sha1": "81058bca4533",
+   "sha1": "58ee5e71b30d",
    "baixado_em": "2026-09-29"
   },
   {
@@ -512,18 +603,42 @@
     "SUMARIO": 695,
     "ACORDAO": 7122,
     "VOTO": 67873,
-    "RELATORIO": 280201,
-    "ADVOGADO": 6,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
-    "REPRESENTANTEMP": 10,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 33,
-    "UNIDADETECNICA": 117,
-    "URLARQUIVO": 120,
-    "URLARQUIVOPDF": 117
+    "RELATORIO": 280201
    },
-   "sha1": "e2bd68373512",
+   "sha1": "e213eb402747",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "021.399/2025-5",
+   "acordao": "1924/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "22/07/2026",
+   "relator": "JORGE OLIVEIRA",
+   "titulo": "ACÓRDÃO DE RELAÇÃO 1924/2026 ATA 28/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2774766",
+   "arquivo": "02139920255/2026-1924-PL.md",
+   "secoes": {
+    "ACORDAO": 3757
+   },
+   "sha1": "017d8519aa69",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "021.565/2025-2",
+   "acordao": "1198/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "13/05/2026",
+   "relator": "BENJAMIN ZYMLER",
+   "titulo": "ACÓRDÃO 1198/2026 ATA 16/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2763995",
+   "arquivo": "02156520252/2026-1198-PL.md",
+   "secoes": {
+    "SUMARIO": 286,
+    "ACORDAO": 4801,
+    "VOTO": 6656,
+    "RELATORIO": 99308
+   },
+   "sha1": "645de66b944a",
    "baixado_em": "2026-09-29"
   },
   {
@@ -551,6 +666,50 @@
     "URLARQUIVOPDF": 117
    },
    "sha1": "e7c9d3b63e12",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "022.280/2024-3",
+   "acordao": "280/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "04/02/2026",
+   "relator": "JORGE OLIVEIRA",
+   "titulo": "ACÓRDÃO 280/2026 ATA 3/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2724952",
+   "arquivo": "02228020243/2026-0280-PL.md",
+   "secoes": {
+    "SUMARIO": 644,
+    "ACORDAO": 10063,
+    "VOTO": 55630,
+    "DECLARACAOVOTO": 9432,
+    "VOTOCOMPLEMENTAR": 6951,
+    "RELATORIO": 235260,
+    "RECURSOS": 152,
+    "VOTOMINISTROREVISOR": 21202
+   },
+   "sha1": "44c00c0314c2",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "024.312/2024-0",
+   "acordao": "2261/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "25/08/2026",
+   "relator": "AUGUSTO NARDES",
+   "titulo": "ACÓRDÃO 2261/2026 ATA 32/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2736844",
+   "arquivo": "02431220240/2026-2261-PL.md",
+   "secoes": {
+    "SUMARIO": 954,
+    "ACORDAO": 840,
+    "VOTO": 42336,
+    "DECLARACAOVOTO": 4915,
+    "VOTOCOMPLEMENTAR": 1394,
+    "RELATORIO": 55576,
+    "MINISTROREVISOR": 21,
+    "VOTOMINISTROREVISOR": 4534
+   },
+   "sha1": "f9aba1f5feae",
    "baixado_em": "2026-09-29"
   },
   {
@@ -608,6 +767,43 @@
    "baixado_em": "2026-09-29"
   },
   {
+   "processo": "025.632/2024-8",
+   "acordao": "1372/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "27/05/2026",
+   "relator": "BRUNO DANTAS",
+   "titulo": "ACÓRDÃO 1372/2026 ATA 19/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2742411",
+   "arquivo": "02563220248/2026-1372-PL.md",
+   "secoes": {
+    "SUMARIO": 381,
+    "ACORDAO": 24592,
+    "VOTO": 120277,
+    "RELATORIO": 326144,
+    "RECURSOS": 154
+   },
+   "sha1": "c9898023d557",
+   "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "025.632/2024-8",
+   "acordao": "1887/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "15/07/2026",
+   "relator": "BRUNO DANTAS",
+   "titulo": "ACÓRDÃO 1887/2026 ATA 27/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2773434",
+   "arquivo": "02563220248/2026-1887-PL.md",
+   "secoes": {
+    "SUMARIO": 443,
+    "ACORDAO": 2722,
+    "VOTO": 10035,
+    "RELATORIO": 6102
+   },
+   "sha1": "795c13e5a919",
+   "baixado_em": "2026-09-29"
+  },
+  {
    "processo": "031.310/2020-6",
    "acordao": "1189/2026",
    "colegiado": "Plenário",
@@ -620,19 +816,9 @@
     "SUMARIO": 677,
     "ACORDAO": 975,
     "VOTO": 32134,
-    "RELATORIO": 67913,
-    "ADVOGADO": 282,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
-    "RELATORDELIBERACAORECORRIDA": 24,
-    "REPRESENTANTEMP": 37,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 31,
-    "UNIDADETECNICA": 135,
-    "URLARQUIVO": 120,
-    "URLARQUIVOPDF": 117
+    "RELATORIO": 67913
    },
-   "sha1": "2c7e2348d9f2",
+   "sha1": "8a7af076717a",
    "baixado_em": "2026-09-29"
   },
   {
@@ -648,18 +834,9 @@
     "SUMARIO": 301,
     "ACORDAO": 2566,
     "VOTO": 2428,
-    "RELATORIO": 11972,
-    "ADVOGADO": 7,
-    "DTATUALIZACAO": 8,
-    "EXTENSAOARQUIVO": 7,
-    "REPRESENTANTEMP": 10,
-    "SITUACAO": 12,
-    "TIPOPROCESSO": 39,
-    "UNIDADETECNICA": 80,
-    "URLARQUIVO": 120,
-    "URLARQUIVOPDF": 117
+    "RELATORIO": 11972
    },
-   "sha1": "23da05b82e0d",
+   "sha1": "b0024148574f",
    "baixado_em": "2026-09-29"
   },
   {
@@ -804,8 +981,9 @@
   "031.343/2022-8": "2026-09-29",
   "031.460/2022-4": "2026-09-29",
   "036.975/2020-6": "2026-09-29",
-  "041.252/2021-7": "2026-09-29"
+  "041.252/2021-7": "2026-09-29",
+  "011.319/2026-7": "2026-09-29"
  },
- "atualizado_em": "2026-09-29T17:37:53+00:00",
+ "atualizado_em": "2026-09-29T18:27:12+00:00",
  "erros_ultima_execucao": []
 }
