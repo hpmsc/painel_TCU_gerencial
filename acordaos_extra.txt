@@ -1,0 +1,15 @@
+# Acórdãos a baixar além dos que a busca automática encontra.
+# A busca por número de processo nem sempre devolve todos os acórdãos (por
+# exemplo, os de meses anteriores ao histórico do painel). Liste aqui:
+#
+#   NNN.NNN/AAAA-D  Nº/ANO  Nº/ANO ...
+#
+# Vale também para processo que não está no painel. Só números públicos.
+
+025.632/2024-8  1372/2026  1887/2026
+008.798/2025-7  858/2026
+022.280/2024-3  280/2026
+005.678/2025-0  1120/2026
+014.609/2026-6  2550/2026
+015.321/2025-8  2930/2025
+011.319/2026-7  5063/2026

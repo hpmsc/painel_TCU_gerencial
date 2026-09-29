@@ -27,7 +27,7 @@ on:
         default: false
   push:
     branches: [main]
-    paths: ["site/index.html", "site/kanban.html", "coleta.py", "gerar_kanban.py", "baixar_acordaos.py", "prazos.txt", "requirements.txt"]
+    paths: ["site/index.html", "site/kanban.html", "coleta.py", "gerar_kanban.py", "baixar_acordaos.py", "acordaos_extra.txt", "prazos.txt", "requirements.txt"]
 
 permissions:
   contents: write

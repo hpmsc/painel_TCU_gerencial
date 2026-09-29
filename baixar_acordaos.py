@@ -55,13 +55,23 @@ SECOES = [
     ("VOTOCOMPLEMENTAR", "Voto complementar"),
     ("RELATORIO", "Relatório"),
 ]
-ROTULOS = {"NUMACORDAO": "Número", "ANOACORDAO": "Ano", "COLEGIADO": "Colegiado",
+ROTULOS = {"MINISTROAUTORVOTOVENCEDOR": "Autor do voto vencedor",
+           "RELATORDELIBERACAORECORRIDA": "Relator da deliberação recorrida",
+           "TIPOPROCESSO": "Tipo de processo", "UNIDADETECNICA": "Unidade técnica",
+           "REPRESENTANTEMP": "Representante do MPTCU", "ADVOGADO": "Advogado", "SITUACAO": "Situação",
+           "URLARQUIVOPDF": "PDF", "NUMACORDAO": "Número", "ANOACORDAO": "Ano", "COLEGIADO": "Colegiado",
            "DATASESSAO": "Sessão", "NUMATA": "Ata", "RELATOR": "Relator", "ASSUNTO": "Assunto",
            "ENTIDADE": "Órgãos/entidades", "INTERESSADOS": "Interessados", "QUORUM": "Quórum",
            "KEY": "Chave na Pesquisa Integrada"}
 METADADOS = ["TITULO", "NUMACORDAO", "ANOACORDAO", "COLEGIADO", "DATASESSAO", "NUMATA",
-             "RELATOR", "ASSUNTO", "ENTIDADE", "INTERESSADOS", "QUORUM", "KEY"]
-IGNORAR = {"FRAGMENTOSINTEIROTEOR", "FAVORITO", "TIPO", "PROC"}
+             "RELATOR", "MINISTROAUTORVOTOVENCEDOR", "RELATORDELIBERACAORECORRIDA", "TIPOPROCESSO",
+             "ASSUNTO", "ENTIDADE", "INTERESSADOS", "UNIDADETECNICA", "REPRESENTANTEMP", "ADVOGADO",
+             "SITUACAO", "QUORUM", "URLARQUIVOPDF", "KEY"]
+IGNORAR = {"FRAGMENTOSINTEIROTEOR", "FAVORITO", "TIPO", "PROC", "DTATUALIZACAO",
+           "EXTENSAOARQUIVO", "URLARQUIVO"}
+EXTRA = os.path.join(AQUI, "acordaos_extra.txt")
+KANBAN = os.path.join(AQUI, "site", "kanban.json")
+RX_AC = re.compile(r"Ac[óo]rd[ãa]o\s+(?:n[ºo°.]*\s*)?(\d{1,5})/(\d{4})", re.I)
 
 NATUREZAS_FORA = re.compile(r"aposentadoria|pens[ãa]o|reforma|admiss[ãa]o", re.I)
 RX_NUM = re.compile(r"\d{3}\.\d{3}/\d{4}-\d")
@@ -116,6 +126,51 @@ def buscar(s: requests.Session, numero: str) -> list[dict]:
         if not docs or inicio >= total or inicio >= 200:
             return achados
         time.sleep(PAUSA)
+
+
+def buscar_numero(s: requests.Session, numero: str, num: str, ano: str) -> list[dict]:
+    """Busca direta por número do acórdão; guarda só o do processo em questão."""
+    r = s.get(URL, params={"termo": f"NUMACORDAO:{int(num)} ANOACORDAO:{ano}",
+                           "ordenacao": "DTRELEVANCIA desc", "quantidade": 10, "inicio": 0}, timeout=90)
+    r.raise_for_status()
+    return [d for d in (r.json().get("documentos") or [])
+            if numero in RX_NUM.findall(texto_limpo(d.get("PROC")))]
+
+
+def referencias(dados: dict) -> dict[str, set[tuple[str, str]]]:
+    """Acórdãos citados nas movimentações (atuais e do histórico) e em acordaos_extra.txt."""
+    refs: dict[str, set] = {}
+    def add(n, num, ano):
+        refs.setdefault(n, set()).add((str(int(num)), ano))
+    fontes = [dados.get("processos", [])]
+    if os.path.exists(KANBAN):
+        try:
+            fontes.append([{"numero": p["numero"], "acordao": p.get("acordao"),
+                            "movimentacoes": [{"descricao": e["desc"]} for e in p.get("eventos", [])]}
+                           for p in json.load(open(KANBAN, encoding="utf-8")).get("processos", [])])
+        except Exception:
+            pass
+    for lista in fontes:
+        for p in lista:
+            txts = [m.get("descricao") or "" for m in p.get("movimentacoes") or []]
+            if p.get("acordao"):
+                txts.append("Acórdão " + str(p["acordao"]))
+            for t in txts:
+                for num, ano in RX_AC.findall(t):
+                    add(p["numero"], num, ano)
+    if os.path.exists(EXTRA):
+        for linha in open(EXTRA, encoding="utf-8"):
+            linha = linha.split("#", 1)[0]
+            m = RX_NUM.search(linha)
+            if m:
+                for num, ano in re.findall(r"(\d{1,5})/(\d{4})", linha[m.end():]):
+                    add(m.group(0), num, ano)
+    # Só processos abertos do painel (menos aposentadorias e pensões) e os do arquivo extra.
+    validos = {p["numero"] for p in dados.get("processos", []) if not NATUREZAS_FORA.search(p.get("natureza") or "")}
+    extras = set()
+    if os.path.exists(EXTRA):
+        extras = {m.group(0) for l in open(EXTRA, encoding="utf-8") if (m := RX_NUM.search(l.split("#", 1)[0]))}
+    return {n: v for n, v in refs.items() if n in validos or n in extras}
 
 
 def salvar(numero: str, doc: dict) -> dict:
@@ -187,7 +242,11 @@ def main() -> int:
 
     dados = json.load(open(DADOS, encoding="utf-8"))
     indice = json.load(open(INDICE, encoding="utf-8")) if os.path.exists(INDICE) else {"acordaos": [], "consultados": {}}
-    alvo = escolher(dados.get("processos", []), indice, a.todos, a.processo)
+    refs = referencias(dados)
+    alvo = set(escolher(dados.get("processos", []), indice, a.todos, a.processo))
+    tem = {(x["processo"], x["acordao"]) for x in indice.get("acordaos", [])}
+    if not a.processo:  # processos com acórdão citado e ainda não baixado (inclui acordaos_extra.txt)
+        alvo |= {n for n, rs in refs.items() if any((n, f"{num}/{ano}") not in tem for num, ano in rs)}
     alvo = list(alvo)
     print(f"{len(alvo)} processo(s) a consultar")
 
@@ -202,6 +261,15 @@ def main() -> int:
             break
         try:
             docs = buscar(s, numero)
+            achados = {f"{int(d.get('NUMACORDAO') or 0)}/{d.get('ANOACORDAO')}" for d in docs}
+            for num, ano in sorted(refs.get(numero, ())):
+                ref = f"{num}/{ano}"
+                if ref in achados or (numero, ref) in tem:
+                    continue
+                time.sleep(PAUSA)
+                extra = buscar_numero(s, numero, num, ano)
+                docs += extra
+                achados |= {ref} if extra else set()
         except Exception as e:  # uma falha não derruba o resto
             erros.append(f"{numero}: {e}")
             print(f"  [{i}/{len(alvo)}] {numero}: ERRO {e}", file=sys.stderr)
