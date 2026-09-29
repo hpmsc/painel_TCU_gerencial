@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Deliberações TCU ao MPO</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: faixa de prazos no topo, depois quadro de etapas em 5 colunas; cada cartão abre a própria linha do tempo.
+   Mesma identidade do painel principal (petróleo, Bricolage + Public Sans + JetBrains Mono). */
+:root{
+  --paper:#eaeeec; --surface:#fff; --surface-2:#f4f7f6; --col:#dfe5e3;
+  --ink:#131f1c; --ink-2:#3e504b; --muted:#6c7a74;
+  --line:#ccd6d2; --line-2:#e3e9e7;
+  --petrol:#0e4a44; --petrol-soft:#dcebe8;
+  --move:#1d5fa6; --move-bg:#e4edf8;
+  --red:#a3291f; --red-bg:#fbe9e6; --amber:#8f5400; --amber-bg:#fbefd9; --green:#0e6b4f; --green-bg:#e2f2ec;
+  --r:10px; --shadow:0 1px 2px rgba(19,31,28,.05), 0 10px 26px -18px rgba(19,31,28,.3);
+  --f-disp:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0f1614; --surface:#18221f; --surface-2:#1f2b28; --col:#131c1a;
+  --ink:#e6eeeb; --ink-2:#b5c3be; --muted:#8a9994; --line:#2e3d39; --line-2:#26332f;
+  --petrol:#6cc2b6; --petrol-soft:#1d3531; --move:#7fb1ea; --move-bg:#1b2b40;
+  --red:#f0877c; --red-bg:#3a1d1a; --amber:#e9b25a; --amber-bg:#352812; --green:#6fd0a8; --green-bg:#15302a;
+  --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#0f1614; --surface:#18221f; --surface-2:#1f2b28; --col:#131c1a;
+  --ink:#e6eeeb; --ink-2:#b5c3be; --muted:#8a9994; --line:#2e3d39; --line-2:#26332f;
+  --petrol:#6cc2b6; --petrol-soft:#1d3531; --move:#7fb1ea; --move-bg:#1b2b40;
+  --red:#f0877c; --red-bg:#3a1d1a; --amber:#e9b25a; --amber-bg:#352812; --green:#6fd0a8; --green-bg:#15302a;
+  --shadow:0 1px 2px rgba(0,0,0,.3); color-scheme:dark }
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:var(--petrol)}
+button,select,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--petrol);outline-offset:2px}
+.wrap{max-width:1500px;margin:0 auto;padding-inline:20px}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+
+header{background:var(--surface);border-bottom:1px solid var(--line)}
+.hd{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;padding-block:16px}
+.hd h1{font:800 24px/1.15 var(--f-disp);letter-spacing:-.02em;margin:2px 0 0;text-wrap:balance}
+.hd p{margin:2px 0 0;color:var(--ink-2);font-size:13px}
+.hd nav a{font-size:13px;font-weight:600;text-decoration:none}
+.hd nav a:hover{text-decoration:underline}
+
+.ctl{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;padding-block:14px 0}
+.fld{display:flex;flex-direction:column;gap:3px}
+.fld label{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+select,input[type=search]{background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px;min-width:0}
+input[type=search]{width:170px}
+.tg{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:6px 10px;font-size:13px;cursor:pointer}
+.tg[aria-pressed="true"]{background:var(--petrol-soft);border-color:var(--petrol);color:var(--ink)}
+.tg .n{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
+.linkbtn{background:none;border:0;padding:0;color:var(--petrol);text-decoration:underline;cursor:pointer;font-size:12.5px}
+
+section{padding-top:22px}
+.sh{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:10px}
+.sh h2{font:600 18px/1.2 var(--f-disp);margin:0;letter-spacing:-.01em}
+.sh p{margin:0;color:var(--muted);font-size:12.5px}
+
+/* Prazos */
+.prazos{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.pz{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:var(--r);padding:10px 12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:4px;min-width:0}
+.pz.venc{border-left-color:var(--red)} .pz.logo{border-left-color:var(--amber)} .pz.ok{border-left-color:var(--green)}
+.pz-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
+.pz-tc{white-space:nowrap;font:600 12.5px var(--f-mono);background:none;border:0;padding:0;color:var(--petrol);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
+.pz-as{font-size:12.5px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.pz-doc{font:11.5px var(--f-mono);color:var(--muted)}
+.pz-dt{font-size:12px;color:var(--ink-2)}
+.vazio{background:var(--surface);border:1px dashed var(--line);border-radius:var(--r);padding:14px;color:var(--muted);font-size:13px}
+.mais{margin-top:8px}
+
+.pill{display:inline-flex;align-items:center;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600;white-space:nowrap;background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line-2)}
+.p-red{background:var(--red-bg);color:var(--red);border-color:transparent}
+.p-amb{background:var(--amber-bg);color:var(--amber);border-color:transparent}
+.p-grn{background:var(--green-bg);color:var(--green);border-color:transparent}
+.p-mov{background:var(--move-bg);color:var(--move);border-color:transparent}
+
+/* Resumo da semana */
+.resumo{display:flex;flex-wrap:wrap;gap:8px}
+.rs{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;display:flex;align-items:baseline;gap:7px;font-size:12.5px;color:var(--ink-2)}
+.rs b{font:600 18px var(--f-mono);color:var(--ink)}
+.rs.mov b{color:var(--move)}
+
+/* Quadro */
+.board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:start}
+.col{background:var(--col);border-radius:12px;padding:8px;min-width:0}
+.col-h{display:flex;justify-content:space-between;align-items:baseline;padding:4px 6px 8px;gap:8px}
+.col-h h3{margin:0;font:600 14px var(--f-disp)}
+.col-h small{display:block;color:var(--muted);font-size:11px;font-weight:400;font-family:var(--f-body)}
+.col-h .n{font:600 13px var(--f-mono);color:var(--muted)}
+.cards{display:flex;flex-direction:column;gap:7px}
+
+.card{background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);min-width:0}
+.card.mov{box-shadow:inset 3px 0 0 var(--move),var(--shadow)}
+.card.parado{opacity:.62}
+.card.parado[open]{opacity:1}
+.card>summary{list-style:none;cursor:pointer;padding:8px 10px;display:flex;flex-direction:column;gap:4px}
+.card>summary::-webkit-details-marker{display:none}
+.card[open]{border-color:var(--petrol)}
+.seta{font-size:11px;font-weight:600;color:var(--move)}
+.seta.volta{color:var(--amber)}
+.c1{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.c1 .dir{display:inline-flex;align-items:center;gap:2px;flex-shrink:0}
+.tc{font:600 12.5px var(--f-mono);white-space:nowrap}
+.star{background:none;border:0;padding:0 2px;cursor:pointer;color:var(--muted);font-size:14px;line-height:1}
+.star[aria-pressed="true"]{color:var(--amber)}
+.as{font-size:12.5px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.card[open] .as{-webkit-line-clamp:unset;display:block}
+.meta{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.nat{font-size:11px;color:var(--muted)}
+.abre{font-size:11px;color:var(--muted);display:flex;justify-content:space-between}
+.card[open] .abre .ic{transform:rotate(180deg)}
+.ic{display:inline-block;transition:transform .15s}
+
+.tl-wrap{border-top:1px dashed var(--line);padding:8px 10px 10px}
+.tl-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;font-size:11.5px;color:var(--muted)}
+.tl{list-style:none;margin:0 0 0 5px;padding:0 0 0 14px;border-left:2px solid var(--line)}
+.ev{position:relative;padding-bottom:8px;font-size:12px}
+.ev::before{content:"";position:absolute;left:-20px;top:4px;width:10px;height:10px;border-radius:50%;background:var(--surface);border:2px solid var(--line)}
+.ev.janela::before{border-color:var(--move)}
+.ev.etp::before{background:var(--petrol);border-color:var(--petrol)}
+.ev.com::before{border-color:var(--amber)}
+.ev .d{font:11px var(--f-mono);color:var(--muted)}
+.ev .tag{font-size:10.5px;font-weight:600;color:var(--petrol);margin-left:4px}
+.ev.com .tag{color:var(--amber)}
+.ev .tx{color:var(--ink);overflow-wrap:anywhere}
+.ev.fora .tx{color:var(--ink-2)}
+.tl-more{font-size:12px}
+.dd{border-top:1px dashed var(--line)}
+.dd>summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:8px;padding:8px 10px;font:600 12.5px var(--f-body);color:var(--ink)}
+.dd>summary::-webkit-details-marker{display:none}
+.dd>summary .ic{color:var(--muted)}
+.dd[open]>summary .ic{transform:rotate(180deg)}
+.dd .cnt{font:600 11px var(--f-mono);color:var(--muted)}
+.dd-body{padding:0 10px 10px}
+.card .dd-del .dd-body{max-height:460px;overflow:auto}
+.dl-res{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.tp{display:inline-flex;align-items:center;border-radius:4px;padding:0 6px;font:600 10.5px var(--f-mono);letter-spacing:.02em;white-space:nowrap;border:1px solid transparent}
+.tp-determinacao{background:var(--red-bg);color:var(--red)}
+.tp-recomendacao{background:var(--amber-bg);color:var(--amber)}
+.tp-alerta{background:var(--move-bg);color:var(--move)}
+.tp-ciencia{background:var(--surface-2);color:var(--ink-2);border-color:var(--line)}
+.tp-cautelar,.tp-responsabilizacao{background:var(--red);color:var(--surface)}
+.tp-decisao{background:transparent;color:var(--muted);border-color:var(--line-2)}
+.fchips{display:flex;flex-wrap:wrap;gap:4px;margin:2px 0 8px}
+.fchip{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:1px 8px;font-size:11px;cursor:pointer;color:var(--ink-2)}
+.fchip[aria-pressed="true"]{background:var(--petrol-soft);border-color:var(--petrol);color:var(--ink)}
+.ac-h{display:flex;justify-content:space-between;gap:8px;font:600 11.5px var(--f-mono);color:var(--ink-2);margin:8px 0 4px;padding-bottom:3px;border-bottom:1px solid var(--line-2)}
+.ac-h a{font-family:var(--f-body);font-weight:600}
+.dl{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.dl li{font-size:12px}
+.dl li.fora{display:none}
+.dl .l1{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin-bottom:2px}
+.dl .it{font:600 11px var(--f-mono);color:var(--muted)}
+.dl .mp{font:600 10px var(--f-mono);color:var(--petrol);border:1px solid var(--petrol);border-radius:3px;padding:0 4px}
+.dl .dest{font-size:11.5px;color:var(--ink-2)}
+.dl details>summary{cursor:pointer;list-style:none;color:var(--ink)}
+.dl details>summary::-webkit-details-marker{display:none}
+.dl details[open]>summary{color:var(--ink-2)}
+.dl .full{white-space:pre-wrap;font-size:11.5px;color:var(--ink-2);background:var(--surface-2);border-radius:6px;padding:6px 8px;margin-top:4px;max-height:260px;overflow:auto}
+
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--muted);padding-block:16px 6px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:-1px;margin-right:5px}
+footer{padding-block:6px 28px;font-size:12px;color:var(--muted)}
+footer p{margin:4px 0;max-width:90ch}
+
+dialog{border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:18px;width:min(520px,calc(100vw - 32px))}
+dialog.dlg-del{width:min(980px,calc(100vw - 32px));max-height:calc(100vh - 48px);overflow:auto}
+.dlg-del-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;position:sticky;top:-18px;background:var(--surface);padding-block:4px 8px}
+.dlg-del .dl li{font-size:13px}
+.dlg-del .dl .dest{font-size:12.5px}
+dialog::backdrop{background:rgba(10,20,18,.45)}
+dialog h3{margin:0 0 4px;font:600 17px var(--f-disp)}
+dialog p{margin:0 0 10px;font-size:13px;color:var(--ink-2)}
+dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-radius:8px;padding:8px;background:var(--surface-2);font:12.5px var(--f-mono)}
+.dl-act{display:flex;justify-content:flex-end;gap:8px;margin-top:10px}
+.btn{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:6px 12px;cursor:pointer;font-size:13px}
+.btn.pri{background:var(--petrol);border-color:var(--petrol);color:var(--surface)}
+
+.status{padding:40px 0;color:var(--muted)}
+.priv{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:12px;padding:9px 12px;border:1px dashed var(--line);border-radius:var(--r);background:var(--surface);font-size:12.5px;color:var(--ink-2)}
+.priv.on{border-style:solid;border-color:var(--petrol);background:var(--petrol-soft)}
+.priv label.btn{display:inline-flex;align-items:center}
+.priv input[type=file]{position:absolute;width:1px;height:1px;opacity:0}
+.priv .chk{display:inline-flex;gap:5px;align-items:center}
+.rk{display:inline-flex;align-items:center;gap:4px;border-radius:5px;padding:1px 6px;font:600 11px var(--f-mono);white-space:nowrap}
+.rk5{background:var(--red);color:var(--surface)} .rk4{background:var(--red-bg);color:var(--red)}
+.rk3{background:var(--amber-bg);color:var(--amber)} .rk2{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+.rk1{background:transparent;color:var(--muted);border:1px solid var(--line-2)}
+.rk-med{font-size:11.5px;color:var(--ink-2);border-left:2px solid var(--line);padding-left:7px}
+.col-mais{width:100%;background:var(--surface-2);color:var(--ink-2)}
+
+@media (max-width:1100px){ .board{grid-template-columns:repeat(3,minmax(0,1fr))} }
+@media (max-width:720px){ .board{grid-template-columns:minmax(0,1fr)} input[type=search]{width:100%} .fld{flex:1 1 140px} }
+@media (prefers-reduced-motion:reduce){ .ic{transition:none} }
+</style>
+<style>
+.abas{background:var(--surface);border-bottom:1px solid var(--line)}
+.abas .wrap{display:flex;gap:4px;overflow-x:auto}
+.abas a{display:inline-block;padding:10px 14px 9px;font:600 13.5px "Public Sans",system-ui,sans-serif;color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+.abas a:hover{color:var(--ink)}
+.abas a[aria-current="page"]{color:var(--petrol);border-bottom-color:var(--petrol)}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap">
+  <div class="hd">
+   <div>
+    <p class="eyebrow">Tribunal de Contas da União · processos do MPO</p>
+    <h1>Deliberações</h1>
+    <p>Determinações, recomendações, alertas e ciências dos acórdãos, item por item.</p>
+   </div>
+  </div>
+ </div>
+</header>
+<nav class="abas" aria-label="Seções do painel"><div class="wrap">
+  <a href="index.html">Processos do MPO</a>
+  <a href="kanban.html">Etapas e prazos</a>
+  <a href="deliberacoes.html" aria-current="page">Deliberações</a>
+</div></nav>
+<style>
+/* Página de deliberações: faixa de números, filtros e uma lista-tabela ordenada por prazo. */
+.kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:18px}
+.kpt{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:var(--r);padding:10px 12px;box-shadow:var(--shadow);text-align:left;cursor:pointer;font:inherit;color:inherit}
+.kpt b{display:block;font:600 24px/1 var(--f-mono);letter-spacing:-.03em}
+.kpt span{display:block;font-size:12px;color:var(--ink-2);margin-top:5px}
+.kpt.det{border-top-color:var(--red)} .kpt.det b{color:var(--red)}
+.kpt.rec{border-top-color:var(--amber)} .kpt.rec b{color:var(--amber)}
+.kpt.ale{border-top-color:var(--move)} .kpt.ale b{color:var(--move)}
+.kpt.cie{border-top-color:var(--muted)}
+.kpt[aria-pressed="true"]{outline:2px solid var(--petrol);outline-offset:1px}
+.lista{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+.lh,.lr{display:grid;grid-template-columns:118px minmax(0,1.1fr) minmax(0,2.2fr) 140px;gap:14px;padding:10px 14px;align-items:start}
+.lh{background:var(--surface-2);font:600 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
+.lr{border-bottom:1px solid var(--line-2)}
+.lr:last-child{border-bottom:0}
+.lr.grp{background:var(--surface-2);display:block;padding:7px 14px;font:600 11px var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
+.venc{font:600 12.5px var(--f-mono)}
+.venc small{display:block;font:400 11px var(--f-body);color:var(--muted);margin-top:2px}
+.venc.passou{color:var(--red)} .venc.logo{color:var(--amber)}
+.proc a{font:600 12.5px var(--f-mono);text-decoration:none}
+.proc a:hover{text-decoration:underline}
+.proc .as{font-size:12px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
+.proc .ac{font:11px var(--f-mono);color:var(--muted);margin-top:4px}
+.cmd .para{font-size:12px;color:var(--ink-2);margin-bottom:3px}
+.cmd details>summary{cursor:pointer;list-style:none;font-size:13px;line-height:1.45}
+.cmd details>summary::-webkit-details-marker{display:none}
+.cmd details>summary::after{content:" ver texto";color:var(--petrol);font-size:11.5px;font-weight:600}
+.cmd details[open]>summary::after{content:" fechar"}
+.cmd .full{white-space:pre-wrap;font-size:12px;color:var(--ink-2);background:var(--surface-2);border-radius:6px;padding:8px 10px;margin-top:6px;max-height:320px;overflow:auto}
+.tipo{display:flex;flex-direction:column;gap:4px;align-items:flex-start}
+.mp{font:600 10px var(--f-mono);color:var(--petrol);border:1px solid var(--petrol);border-radius:3px;padding:0 4px}
+.vazio2{padding:24px 14px;color:var(--muted)}
+.nota{font-size:12px;color:var(--muted);margin:8px 0 0}
+@media (max-width:860px){
+  .lh{display:none}
+  .lr{grid-template-columns:1fr;gap:6px}
+  .tipo{flex-direction:row;flex-wrap:wrap}
+}
+</style>
+
+<main class="wrap">
+ <div class="kp" id="kp"></div>
+
+ <div class="ctl" role="group" aria-label="Filtros">
+  <div class="fld"><label for="selAlc">Alcance</label>
+   <select id="selAlc"><option value="cit">Ao MPO ou em articulação com ele</option><option value="dir">Só dirigidas ao MPO</option><option value="all">Todas as deliberações</option></select></div>
+  <div class="fld"><label for="selTipo">Tipo</label>
+   <select id="selTipo"><option value="">Todos</option><option value="determinacao">Determinação</option><option value="recomendacao">Recomendação</option><option value="alerta">Alerta</option><option value="ciencia">Ciência</option><option value="cautelar">Cautelar</option><option value="decisao">Outra decisão</option></select></div>
+  <div class="fld"><label for="selOrd">Ordem</label>
+   <select id="selOrd"><option value="prazo">Prazo mais próximo</option><option value="data">Acórdão mais recente</option><option value="proc">Por processo</option></select></div>
+  <div class="fld"><label for="q">Buscar</label><input type="search" id="q" placeholder="TC, órgão ou palavra do comando"></div>
+ </div>
+
+ <div class="lista" id="lista" aria-live="polite"><div class="vazio2">Carregando…</div></div>
+ <p class="nota">Prazo estimado: data da sessão mais o prazo do item, em dias corridos. O prazo oficial conta da ciência da comunicação, que costuma vir algumas semanas depois; confira na aba Etapas e prazos. Itens com prazo "no PLOA" usam 31/08, data de envio do projeto ao Congresso.</p>
+</main>
+
+<footer class="wrap">
+ <p><b>Como é feito.</b> Cada item dos acórdãos públicos baixados do TCU é classificado pelo verbo que o abre: determinar, recomendar, alertar, dar ciência. "Dirigida ao MPO" quer dizer que o destinatário é o Ministério ou uma de suas secretarias; "cita o MPO" inclui itens em que o MPO aparece em articulação ou recebe cópia. A classificação é automática: confira sempre o texto do item.</p>
+ <p id="fonte"></p>
+</footer>
+
+<script>
+(function(){
+"use strict";
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const TIPO = {determinacao:"Determinação", recomendacao:"Recomendação", ciencia:"Ciência", alerta:"Alerta", cautelar:"Cautelar", responsabilizacao:"Responsabilização", decisao:"Outra decisão"};
+const NUM = {"cento e oitenta":180,"cento e vinte":120,"quarenta e cinco":45,"noventa":90,"sessenta":60,"trinta":30,"vinte":20,"quinze":15,"dez":10,"cinco":5};
+const st = {alc:"cit", tipo:"", ord:"prazo", q:"", kp:""};
+let ITENS = [], PROC = {};
+
+function isoDeBr(s){ const m=(s||"").match(/(\d{2})\/(\d{2})\/(\d{4})/); return m?`${m[3]}-${m[2]}-${m[1]}`:null; }
+function br(iso){ return iso ? iso.slice(8,10)+"/"+iso.slice(5,7)+"/"+iso.slice(0,4) : ""; }
+function addDias(iso,n){ const d=new Date(iso+"T12:00:00"); d.setDate(d.getDate()+n); return d.toISOString().slice(0,10); }
+function venc(i){
+  if (!i.prazo || !i.sessao) return null;
+  const p = i.prazo.toLowerCase();
+  let m = p.match(/(\d+)\s*(dias?|meses?|anos?)/), n = null, u = null;
+  if (m){ n=+m[1]; u=m[2]; } else { for (const k in NUM){ if (p.startsWith(k+" ")){ n=NUM[k]; u=p.slice(k.length+1); break; } } }
+  if (n){ const dias = /m[eê]s/.test(u) ? n*30 : /ano/.test(u) ? n*365 : n; return addDias(i.sessao, dias); }
+  m = p.match(/(\d{1,2})\/(\d{1,2})\/(\d{4})/); if (m) return `${m[3]}-${m[2].padStart(2,"0")}-${m[1].padStart(2,"0")}`;
+  m = p.match(/(\d{4})/); if (/ploa|or[çc]ament/.test(p) && m) return `${+m[1]-1}-08-31`;
+  if (/ploa/.test(p)) return `${i.sessao.slice(0,4)}-08-31`;
+  return null;
+}
+function hoje(){ return new Date().toISOString().slice(0,10); }
+function repoUrl(){
+  const h = location.hostname.match(/^([\w-]+)\.github\.io$/), seg = location.pathname.split("/").filter(Boolean)[0];
+  return h && seg ? `https://github.com/${h[1]}/${seg}` : "https://github.com/hpmsc/painel_TCU_gerencial";
+}
+
+function montar(delib, kanban){
+  for (const p of (kanban && kanban.processos) || []) PROC[p.numero] = p;
+  for (const [num, acs] of Object.entries(delib.processos || {})){
+    for (const a of acs) for (const i of a.itens){
+      const it = {...i, processo:num, acordao:a.acordao, colegiado:a.colegiado, sessao:isoDeBr(a.data_sessao), arquivo:a.arquivo};
+      it.vence = venc(it);
+      ITENS.push(it);
+    }
+  }
+  $("fonte").textContent = `Acórdãos baixados até ${delib.gerado_em ? br(delib.gerado_em.slice(0,10)) : "—"}. Fonte: Pesquisa Integrada do TCU.`;
+}
+
+function alcance(i){ return st.alc==="all" || (st.alc==="dir" ? i.mpo : (i.mpo || i.mpo_mencao)); }
+
+function kpis(){
+  const alc = i => i.mpo || (i.mpo_mencao && i.tipo!=="ciencia");
+  const h = hoje(), em90 = addDias(h, 90);
+  const np = l => new Set(l.map(i=>i.processo)).size;
+  const det = ITENS.filter(i=>i.tipo==="determinacao" && alc(i));
+  const rec = ITENS.filter(i=>i.tipo==="recomendacao" && alc(i));
+  const ale = ITENS.filter(i=>i.tipo==="alerta");
+  const prox = det.filter(i=>i.vence && i.vence>=h && i.vence<=em90);
+  const pl = (n,s,p) => n===1 ? s : p;
+  const tiles = [
+    ["det","determinacao",det.length,`determinações ao MPO ou com sua articulação, em ${np(det)} ${pl(np(det),"processo","processos")}`],
+    ["det","prox",prox.length,`${pl(prox.length,"determinação","determinações")} com prazo estimado nos próximos 90 dias, em ${np(prox)} ${pl(np(prox),"processo","processos")}`],
+    ["rec","recomendacao",rec.length,`recomendações ao MPO ou com sua articulação, em ${np(rec)} ${pl(np(rec),"processo","processos")}`],
+    ["ale","alerta",ale.length,`alertas nos acórdãos acompanhados, em ${np(ale)} ${pl(np(ale),"processo","processos")}`],
+  ];
+  $("kp").innerHTML = tiles.map(([c,k,n,t])=>`<button type="button" class="kpt ${c}" data-kp="${k}" aria-pressed="${st.kp===k}"><b>${n}</b><span>${t}</span></button>`).join("");
+}
+
+function linha(i){
+  const h = hoje();
+  let v = `<div class="venc">sem prazo</div>`;
+  if (i.vence){
+    const dd = Math.round((new Date(i.vence)-new Date(h))/864e5);
+    const cls = dd < 0 ? "passou" : dd <= 30 ? "logo" : "";
+    const rel = dd < 0 ? `passou há ${-dd} dias` : dd===0 ? "hoje" : `em ${dd} dias`;
+    v = `<div class="venc ${cls}">~${br(i.vence)}<small>${esc(i.prazo)} · ${rel}</small></div>`;
+  } else if (i.prazo){ v = `<div class="venc">${esc(i.prazo)}</div>`; }
+  const p = PROC[i.processo] || {};
+  const link = `${repoUrl()}/blob/main/acordaos/${i.arquivo}`;
+  return `<div class="lr">
+    <div class="tipo"><span class="tp tp-${i.tipo}">${TIPO[i.tipo]||i.tipo}</span>${i.mpo?`<span class="mp">ao MPO</span>`:(i.mpo_mencao?`<span class="mp" style="opacity:.7">cita MPO</span>`:"")}</div>
+    <div class="proc"><a href="kanban.html#c-${i.processo.replace(/\D/g,"")}">${esc(i.processo)}</a><div class="as">${esc(p.assunto||"")}</div>
+      <div class="ac">Ac. ${esc(i.acordao)} · item ${esc(i.item)} · ${br(i.sessao)} · <a href="${esc(link)}" target="_blank" rel="noopener">inteiro teor</a></div></div>
+    <div class="cmd">${i.destinatario?`<div class="para">Para: ${esc(i.destinatario)}</div>`:""}<details><summary>${esc(i.resumo)}</summary><div class="full">${esc(i.texto)}</div></details></div>
+    ${v}
+  </div>`;
+}
+
+function render(){
+  kpis();
+  const h = hoje(), em90 = addDias(h,90), q = st.q.toLowerCase();
+  let l;
+  const alc = i => i.mpo || (i.mpo_mencao && i.tipo!=="ciencia");
+  if (st.kp==="prox") l = ITENS.filter(i=>i.tipo==="determinacao" && alc(i) && i.vence && i.vence>=h && i.vence<=em90);
+  else if (st.kp==="alerta") l = ITENS.filter(i=>i.tipo==="alerta");
+  else if (st.kp) l = ITENS.filter(i=>i.tipo===st.kp && alc(i));
+  else l = ITENS.filter(i => alcance(i) && (!st.tipo || i.tipo===st.tipo));
+  if (q) l = l.filter(i => (i.processo+" "+(i.destinatario||"")+" "+i.texto+" "+((PROC[i.processo]||{}).assunto||"")).toLowerCase().includes(q));
+  const faixa = i => !i.vence ? 2 : (i.vence >= h ? 0 : 1);
+  if (st.ord==="prazo") l.sort((a,b)=> faixa(a)-faixa(b) || (faixa(a)===1 ? (b.vence||"").localeCompare(a.vence||"") : (a.vence||"").localeCompare(b.vence||"")) || (b.sessao||"").localeCompare(a.sessao||""));
+  else if (st.ord==="data") l.sort((a,b)=> (b.sessao||"").localeCompare(a.sessao||"") || a.item.localeCompare(b.item,undefined,{numeric:true}));
+  else l.sort((a,b)=> a.processo.localeCompare(b.processo) || (b.sessao||"").localeCompare(a.sessao||"") || a.item.localeCompare(b.item,undefined,{numeric:true}));
+  const cab = `<div class="lh"><span>Tipo</span><span>Processo</span><span>Comando</span><span>Prazo estimado</span></div>`;
+  let corpo = "";
+  if (st.ord==="proc"){ let atual=null; for (const i of l){ if (i.processo!==atual){ atual=i.processo; corpo += `<div class="lr grp">${esc(i.processo)} · ${esc(((PROC[i.processo]||{}).assunto||"").slice(0,110))}</div>`; } corpo += linha(i); } }
+  else if (st.ord==="prazo"){
+    const tit = ["Prazo estimado à frente","Prazo estimado já passou: conferir se foi cumprido","Sem prazo definido no item"]; let atual=-1;
+    for (const i of l){ const f=faixa(i); if (f!==atual){ atual=f; corpo += `<div class="lr grp">${tit[f]} · ${l.filter(x=>faixa(x)===f).length}</div>`; } corpo += linha(i); }
+  }
+  else corpo = l.map(linha).join("");
+  $("lista").innerHTML = l.length ? cab+corpo : `<div class="vazio2">Nenhuma deliberação para esses filtros.</div>`;
+}
+
+function ligar(){
+  $("selAlc").onchange = e=>{ st.alc=e.target.value; st.kp=""; render(); };
+  $("selTipo").onchange = e=>{ st.tipo=e.target.value; st.kp=""; render(); };
+  $("selOrd").onchange = e=>{ st.ord=e.target.value; render(); };
+  let t; $("q").oninput = e=>{ clearTimeout(t); t=setTimeout(()=>{ st.q=e.target.value.trim(); render(); },150); };
+  $("kp").addEventListener("click", e=>{ const b=e.target.closest("[data-kp]"); if(!b) return; st.kp = st.kp===b.dataset.kp ? "" : b.dataset.kp; st.tipo=""; $("selTipo").value=""; render(); });
+}
+
+function iniciar(delib, kanban){ montar(delib, kanban); ligar(); render(); }
+if (window.DELIB_DADOS) iniciar(window.DELIB_DADOS, window.KANBAN_DADOS);
+else Promise.all([
+  fetch("deliberacoes.json?v="+Date.now()).then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }),
+  fetch("kanban.json?v="+Date.now()).then(r=>r.ok?r.json():null).catch(()=>null)
+]).then(([d,k])=>iniciar(d,k)).catch(err=>{ $("lista").innerHTML = `<div class="vazio2">Não foi possível carregar deliberacoes.json (${esc(err.message)}). Recarregue a página; se persistir, confira a última execução do robô no GitHub.</div>`; });
+})();
+</script>
+
+</body>
+</html>

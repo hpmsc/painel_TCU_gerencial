@@ -27,7 +27,7 @@ on:
         default: false
   push:
     branches: [main]
-    paths: ["site/index.html", "site/kanban.html", "coleta.py", "gerar_kanban.py", "baixar_acordaos.py", "acordaos_extra.txt", "prazos.txt", "requirements.txt"]
+    paths: ["site/index.html", "site/kanban.html", "coleta.py", "gerar_kanban.py", "baixar_acordaos.py", "extrair_deliberacoes.py", "site/deliberacoes.html", "acordaos_extra.txt", "prazos.txt", "requirements.txt"]
 
 permissions:
   contents: write
@@ -90,11 +90,15 @@ jobs:
             python baixar_acordaos.py || echo "::warning::baixar_acordaos.py falhou"
           fi
 
+      - name: Deliberações dos acórdãos
+        run: |
+          python extrair_deliberacoes.py || echo "::warning::extrair_deliberacoes.py falhou; a aba Deliberações segue com os dados anteriores."
+
       - name: Commitar
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add site/dados.json site/kanban.json acordaos/
+          git add site/dados.json site/kanban.json site/deliberacoes.json acordaos/
           if git diff --cached --quiet; then echo "sem mudanças"; exit 0; fi
           git commit -m "dados: $(date -u +'%Y-%m-%d %H:%M UTC')"
           git push || { echo "::error::push recusado — marque 'Read and write permissions' em Settings > Actions > General."; exit 1; }

@@ -190,6 +190,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 <nav class="abas" aria-label="Seções do painel"><div class="wrap">
   <a href="index.html">Processos do MPO</a>
   <a href="kanban.html" aria-current="page">Etapas e prazos</a>
+  <a href="deliberacoes.html">Deliberações</a>
 </div></nav>
 
 <main class="wrap">
@@ -307,6 +308,10 @@ function usarRisco(txt, nome, guardar){
   risco = parseCSV(txt); riscoArq = nome; riscoTxt = txt;
   if (guardar){ try{ localStorage.setItem(LS_R, JSON.stringify({nome, txt})); }catch(e){} }
   atualizarPriv(); render();
+  const h = location.hash.match(/^#c-(\d{11})$/);
+  if (h){
+    if (!$("c-"+h[1])){ for (const x in NOME) st.expand[x]=true; st.inter=true; $("tgInt").setAttribute("aria-pressed","true"); render(); }
+    const el=$("c-"+h[1]); if (el){ el.open=true; el.scrollIntoView({block:"center"}); } }
 }
 function atualizarPriv(){
   const on = !!risco;
@@ -567,6 +572,10 @@ function iniciar(dados){
   montarControles();
   try{ const g = JSON.parse(localStorage.getItem(LS_R)||"null"); if (g && g.txt){ risco = parseCSV(g.txt); riscoArq = g.nome; riscoTxt = g.txt; $("lembrar").checked = true; } }catch(e){ risco = null; }
   atualizarPriv(); render();
+  const h = location.hash.match(/^#c-(\d{11})$/);
+  if (h){
+    if (!$("c-"+h[1])){ for (const x in NOME) st.expand[x]=true; st.inter=true; $("tgInt").setAttribute("aria-pressed","true"); render(); }
+    const el=$("c-"+h[1]); if (el){ el.open=true; el.scrollIntoView({block:"center"}); } }
 }
 
 if (window.KANBAN_DADOS) iniciar(window.KANBAN_DADOS);
