@@ -1,0 +1,5 @@
+
+# Notas de risco e ajustes: ficam só na máquina de quem pontua
+privado/
+*.risco.csv
+risco_*.csv

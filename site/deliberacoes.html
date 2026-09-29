@@ -230,6 +230,25 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 </div></nav>
 <style>
 /* Página de deliberações: faixa de números, filtros e uma lista-tabela ordenada por prazo. */
+/* Escala de risco 1-5, do verde ao vermelho (mesmos valores nos dois temas; texto escolhido por contraste). */
+:root{--r1:#2e7d32;--r1t:#fff;--r2:#8bc34a;--r2t:#17260a;--r3:#f4c20d;--r3t:#2b2100;--r4:#e8710a;--r4t:#1f1000;--r5:#c62828;--r5t:#fff}
+.rk{display:inline-flex;align-items:center;gap:6px;border-radius:6px;padding:2px 8px;font:600 11.5px var(--f-mono);white-space:nowrap}
+.rk1{background:var(--r1);color:var(--r1t)} .rk2{background:var(--r2);color:var(--r2t)} .rk3{background:var(--r3);color:var(--r3t)}
+.rk4{background:var(--r4);color:var(--r4t)} .rk5{background:var(--r5);color:var(--r5t)}
+.rbar{display:flex;gap:2px;margin-top:5px}
+.rbar i{width:14px;height:5px;border-radius:2px;background:var(--line)}
+.rbar i.on1{background:var(--r1)} .rbar i.on2{background:var(--r2)} .rbar i.on3{background:var(--r3)} .rbar i.on4{background:var(--r4)} .rbar i.on5{background:var(--r5)}
+.rlat{display:block;font:11px var(--f-body);color:var(--muted);margin-top:4px}
+.rnone{font:12px var(--f-mono);color:var(--muted)}
+.priv{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:14px;padding:9px 12px;border:1px dashed var(--line);border-radius:var(--r);background:var(--surface);font-size:12.5px;color:var(--ink-2)}
+.priv.on{border-style:solid;border-color:var(--petrol);background:var(--petrol-soft)}
+.priv input[type=file]{position:absolute;width:1px;height:1px;opacity:0}
+.priv label.btn{display:inline-flex;align-items:center}
+.priv .chk{display:inline-flex;gap:5px;align-items:center}
+.escala{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px;font-size:12px;color:var(--ink-2)}
+.escala button{border:0;cursor:pointer}
+.escala button[aria-pressed="true"]{outline:2px solid var(--ink);outline-offset:1px}
+.rjust{font-size:11.5px;color:var(--ink-2);margin-top:6px;border-left:3px solid var(--line);padding-left:8px}
 .kp{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-top:18px}
 .kpt{background:var(--surface);border:1px solid var(--line);border-top:3px solid var(--line);border-radius:var(--r);padding:10px 12px;box-shadow:var(--shadow);text-align:left;cursor:pointer;font:inherit;color:inherit}
 .kpt b{display:block;font:600 24px/1 var(--f-mono);letter-spacing:-.03em}
@@ -240,7 +259,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 .kpt.cie{border-top-color:var(--muted)}
 .kpt[aria-pressed="true"]{outline:2px solid var(--petrol);outline-offset:1px}
 .lista{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
-.lh,.lr{display:grid;grid-template-columns:118px minmax(0,1.1fr) minmax(0,2.2fr) 140px;gap:14px;padding:10px 14px;align-items:start}
+.lh,.lr{display:grid;grid-template-columns:112px 108px minmax(0,1.1fr) minmax(0,2.2fr) 132px;gap:14px;padding:10px 14px;align-items:start}
 .lh{background:var(--surface-2);font:600 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
 .lr{border-bottom:1px solid var(--line-2)}
 .lr:last-child{border-bottom:0}
@@ -263,6 +282,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 .vazio2{padding:24px 14px;color:var(--muted)}
 .nota{font-size:12px;color:var(--muted);margin:8px 0 0}
 @media (max-width:860px){
+  .rcol{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
   .lh{display:none}
   .lr{grid-template-columns:1fr;gap:6px}
   .tipo{flex-direction:row;flex-wrap:wrap}
@@ -272,13 +292,21 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 <main class="wrap">
  <div class="kp" id="kp"></div>
 
+ <div class="priv" id="priv">
+  <span id="privTxt"><b>Risco:</b> camada privada não carregada. O arquivo é lido só neste navegador e não é enviado a lugar nenhum.</span>
+  <label class="btn" for="fileRisco">Carregar arquivo de risco (.csv)</label><input type="file" id="fileRisco" accept=".csv,text/csv,text/plain">
+  <span class="chk"><input type="checkbox" id="lembrar"><label for="lembrar">lembrar neste navegador</label></span>
+  <button class="linkbtn" id="tirarRisco" type="button" hidden>remover camada</button>
+ </div>
+ <div class="escala" id="escala" hidden></div>
+
  <div class="ctl" role="group" aria-label="Filtros">
   <div class="fld"><label for="selAlc">Alcance</label>
    <select id="selAlc"><option value="cit">Ao MPO ou em articulação com ele</option><option value="dir">Só dirigidas ao MPO</option><option value="all">Todas as deliberações</option></select></div>
   <div class="fld"><label for="selTipo">Tipo</label>
    <select id="selTipo"><option value="">Todos</option><option value="determinacao">Determinação</option><option value="recomendacao">Recomendação</option><option value="alerta">Alerta</option><option value="ciencia">Ciência</option><option value="cautelar">Cautelar</option><option value="decisao">Outra decisão</option></select></div>
   <div class="fld"><label for="selOrd">Ordem</label>
-   <select id="selOrd"><option value="prazo">Prazo mais próximo</option><option value="data">Acórdão mais recente</option><option value="proc">Por processo</option></select></div>
+   <select id="selOrd"><option value="prazo">Prazo mais próximo</option><option value="risco">Maior risco</option><option value="data">Acórdão mais recente</option><option value="proc">Por processo</option></select></div>
   <div class="fld"><label for="q">Buscar</label><input type="search" id="q" placeholder="TC, órgão ou palavra do comando"></div>
  </div>
 
@@ -288,6 +316,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 
 <footer class="wrap">
  <p><b>Como é feito.</b> Cada item dos acórdãos públicos baixados do TCU é classificado pelo verbo que o abre: determinar, recomendar, alertar, dar ciência. "Dirigida ao MPO" quer dizer que o destinatário é o Ministério ou uma de suas secretarias; "cita o MPO" inclui itens em que o MPO aparece em articulação ou recebe cópia. A classificação é automática: confira sempre o texto do item.</p>
+ <p><b>Risco.</b> Nota de 1 (baixo, verde) a 5 (crítico, vermelho), pela metodologia da SEAI: força da medida × impacto para o MPO, ajustada pela fase (recurso com efeito suspensivo reduz um nível e a nota "latente" mostra o nível que volta a valer se o recurso for negado). As notas ficam num arquivo privado, carregado só no seu navegador; o site publicado não contém nenhuma nota.</p>
  <p id="fonte"></p>
 </footer>
 
@@ -300,6 +329,55 @@ const TIPO = {determinacao:"Determinação", recomendacao:"Recomendação", cien
 const NUM = {"cento e oitenta":180,"cento e vinte":120,"quarenta e cinco":45,"noventa":90,"sessenta":60,"trinta":30,"vinte":20,"quinze":15,"dez":10,"cinco":5};
 const st = {alc:"cit", tipo:"", ord:"prazo", q:"", kp:""};
 let ITENS = [], PROC = {};
+const NOME_R = {1:"Baixo",2:"Moderado",3:"Relevante",4:"Alto",5:"Crítico"};
+const LS_R = "delibTCU.risco";
+let RISCO = null, riscoArq = "", riscoTxt = "", riscoMin = 0;
+const chave = (tc, ac, it) => `${tc}|${ac}|${it}`;
+function parseCSV(txt){
+  txt = txt.replace(/^\uFEFF/, "");
+  const linhas = txt.split(/\r?\n/).filter(l=>l.trim());
+  const sep = (linhas[0].match(/;/g)||[]).length >= (linhas[0].match(/,/g)||[]).length ? ";" : ",";
+  const split = l => { const o=[]; let c="", q=false; for (const ch of l){ if(ch==='"'){ q=!q; continue; } if(ch===sep&&!q){ o.push(c); c=""; } else c+=ch; } o.push(c); return o.map(x=>x.trim()); };
+  const cab = split(linhas[0]).map(h=>h.toLowerCase()), ix = n => cab.indexOf(n);
+  for (const n of ["tc","acordao","item","faixa"]) if (ix(n)<0) throw new Error(`falta a coluna ${n}`);
+  const m = new Map();
+  for (const l of linhas.slice(1)){
+    const c = split(l), g = n => ix(n)>=0 ? (c[ix(n)]||"") : "";
+    const f = parseInt(g("faixa"),10); if (!(f>=1&&f<=5)) continue;
+    const lat = parseInt(g("faixa_latente"),10);
+    m.set(chave(g("tc"), g("acordao"), g("item")), {faixa:f, lat:(lat>=1&&lat<=5)?lat:null, F:g("f"), I:g("i"), dim:g("dimensao"), fase:g("fase"), origem:g("origem"), just:g("justificativa")});
+  }
+  if (!m.size) throw new Error("nenhuma linha válida");
+  return m;
+}
+function riscoDe(i){ return RISCO ? RISCO.get(chave(i.processo, i.acordao, i.item)) : null; }
+function usarRisco(txt, nome, guardar){
+  RISCO = parseCSV(txt); riscoArq = nome; riscoTxt = txt;
+  if (guardar){ try{ localStorage.setItem(LS_R, JSON.stringify({nome, txt})); }catch(e){} }
+  if (st.ord === "prazo") { st.ord = "risco"; $("selOrd").value = "risco"; }
+  privUI(); render();
+}
+function privUI(){
+  const on = !!RISCO;
+  $("priv").classList.toggle("on", on); $("tirarRisco").hidden = !on; $("escala").hidden = !on;
+  $("privTxt").innerHTML = on ? `<b>Risco:</b> ${esc(riscoArq)} · ${RISCO.size} deliberações pontuadas. Lido só neste navegador.`
+    : `<b>Risco:</b> camada privada não carregada. O arquivo é lido só neste navegador e não é enviado a lugar nenhum.`;
+}
+function escalaUI(lista){
+  if (!RISCO) return;
+  const c = {1:0,2:0,3:0,4:0,5:0}; for (const i of lista){ const r = riscoDe(i); if (r) c[r.faixa]++; }
+  $("escala").innerHTML = `<span>Escala de risco (clique para filtrar a partir do nível):</span>` +
+    [1,2,3,4,5].map(n=>`<button type="button" class="rk rk${n}" data-rmin="${n}" aria-pressed="${riscoMin===n}">${n} ${NOME_R[n]} · ${c[n]}</button>`).join("") +
+    (riscoMin ? ` <button type="button" class="linkbtn" data-rmin="0">mostrar todos</button>` : "");
+}
+function seloRisco(i){
+  const r = riscoDe(i);
+  if (!RISCO) return `<span class="rnone" title="Carregue o arquivo de risco para ver a nota">—</span>`;
+  if (!r) return `<span class="rnone" title="Sem nota: item não alcança o MPO ou não entrou na pontuação">sem nota</span>`;
+  const bar = [1,2,3,4,5].map(n=>`<i class="${n<=r.faixa?"on"+r.faixa:""}"></i>`).join("");
+  const lat = r.lat && r.lat!==r.faixa ? `<span class="rlat">latente: ${r.lat} ${NOME_R[r.lat]}</span>` : (r.fase && r.fase!=="vigente" ? `<span class="rlat">${esc(r.fase)}</span>` : "");
+  return `<span class="rk rk${r.faixa}" title="F${esc(r.F)} × I${esc(r.I)} (${esc(r.dim)}) · ${esc(r.fase)} · ${esc(r.origem)}">${r.faixa} ${NOME_R[r.faixa]}</span><div class="rbar" aria-hidden="true">${bar}</div>${lat}`;
+}
 
 function isoDeBr(s){ const m=(s||"").match(/(\d{2})\/(\d{2})\/(\d{4})/); return m?`${m[3]}-${m[2]}-${m[1]}`:null; }
 function br(iso){ return iso ? iso.slice(8,10)+"/"+iso.slice(5,7)+"/"+iso.slice(0,4) : ""; }
@@ -333,7 +411,7 @@ function montar(delib, kanban){
   $("fonte").textContent = `Acórdãos baixados até ${delib.gerado_em ? br(delib.gerado_em.slice(0,10)) : "—"}. Fonte: Pesquisa Integrada do TCU.`;
 }
 
-function alcance(i){ return st.alc==="all" || (st.alc==="dir" ? i.mpo : (i.mpo || i.mpo_mencao)); }
+function alcance(i){ return st.alc==="all" || (st.alc==="dir" ? i.mpo : (i.mpo || i.mpo_mencao || !!riscoDe(i))); }
 
 function kpis(){
   const alc = i => i.mpo || (i.mpo_mencao && i.tipo!=="ciencia");
@@ -364,11 +442,14 @@ function linha(i){
   } else if (i.prazo){ v = `<div class="venc">${esc(i.prazo)}</div>`; }
   const p = PROC[i.processo] || {};
   const link = `${repoUrl()}/blob/main/acordaos/${i.arquivo}`;
+  const rr = riscoDe(i);
+  const just = rr ? `<div class="rjust"><b>Risco ${rr.faixa} ${NOME_R[rr.faixa]}</b> · força ${esc(rr.F)} × impacto ${esc(rr.I)} (${esc(rr.dim)}) · ${esc(rr.fase)} · nota ${esc(rr.origem)}${rr.just?`<br>${esc(rr.just)}`:""}</div>` : "";
   return `<div class="lr">
+    <div class="rcol">${seloRisco(i)}</div>
     <div class="tipo"><span class="tp tp-${i.tipo}">${TIPO[i.tipo]||i.tipo}</span>${i.mpo?`<span class="mp">ao MPO</span>`:(i.mpo_mencao?`<span class="mp" style="opacity:.7">cita MPO</span>`:"")}</div>
     <div class="proc"><a href="kanban.html#c-${i.processo.replace(/\D/g,"")}">${esc(i.processo)}</a><div class="as">${esc(p.assunto||"")}</div>
       <div class="ac">Ac. ${esc(i.acordao)} · item ${esc(i.item)} · ${br(i.sessao)} · <a href="${esc(link)}" target="_blank" rel="noopener">inteiro teor</a></div></div>
-    <div class="cmd">${i.destinatario?`<div class="para">Para: ${esc(i.destinatario)}</div>`:""}<details><summary>${esc(i.resumo)}</summary><div class="full">${esc(i.texto)}</div></details></div>
+    <div class="cmd">${i.destinatario?`<div class="para">Para: ${esc(i.destinatario)}</div>`:""}<details><summary>${esc(i.resumo)}</summary>${just}<div class="full">${esc(i.texto)}</div></details></div>
     ${v}
   </div>`;
 }
@@ -382,12 +463,15 @@ function render(){
   else if (st.kp==="alerta") l = ITENS.filter(i=>i.tipo==="alerta");
   else if (st.kp) l = ITENS.filter(i=>i.tipo===st.kp && alc(i));
   else l = ITENS.filter(i => alcance(i) && (!st.tipo || i.tipo===st.tipo));
+  if (RISCO && riscoMin) l = l.filter(i => (riscoDe(i)||{}).faixa >= riscoMin);
   if (q) l = l.filter(i => (i.processo+" "+(i.destinatario||"")+" "+i.texto+" "+((PROC[i.processo]||{}).assunto||"")).toLowerCase().includes(q));
   const faixa = i => !i.vence ? 2 : (i.vence >= h ? 0 : 1);
   if (st.ord==="prazo") l.sort((a,b)=> faixa(a)-faixa(b) || (faixa(a)===1 ? (b.vence||"").localeCompare(a.vence||"") : (a.vence||"").localeCompare(b.vence||"")) || (b.sessao||"").localeCompare(a.sessao||""));
+  else if (st.ord==="risco") l.sort((a,b)=> ((riscoDe(b)||{}).faixa||0)-((riscoDe(a)||{}).faixa||0) || ((riscoDe(b)||{}).lat||0)-((riscoDe(a)||{}).lat||0) || (a.vence||"9").localeCompare(b.vence||"9"));
   else if (st.ord==="data") l.sort((a,b)=> (b.sessao||"").localeCompare(a.sessao||"") || a.item.localeCompare(b.item,undefined,{numeric:true}));
   else l.sort((a,b)=> a.processo.localeCompare(b.processo) || (b.sessao||"").localeCompare(a.sessao||"") || a.item.localeCompare(b.item,undefined,{numeric:true}));
-  const cab = `<div class="lh"><span>Tipo</span><span>Processo</span><span>Comando</span><span>Prazo estimado</span></div>`;
+  escalaUI(ITENS.filter(i => alcance(i)));
+  const cab = `<div class="lh"><span>Risco</span><span>Tipo</span><span>Processo</span><span>Comando</span><span>Prazo estimado</span></div>`;
   let corpo = "";
   if (st.ord==="proc"){ let atual=null; for (const i of l){ if (i.processo!==atual){ atual=i.processo; corpo += `<div class="lr grp">${esc(i.processo)} · ${esc(((PROC[i.processo]||{}).assunto||"").slice(0,110))}</div>`; } corpo += linha(i); } }
   else if (st.ord==="prazo"){
@@ -406,7 +490,21 @@ function ligar(){
   $("kp").addEventListener("click", e=>{ const b=e.target.closest("[data-kp]"); if(!b) return; st.kp = st.kp===b.dataset.kp ? "" : b.dataset.kp; st.tipo=""; $("selTipo").value=""; render(); });
 }
 
-function iniciar(delib, kanban){ montar(delib, kanban); ligar(); render(); }
+function ligarRisco(){
+  $("fileRisco").onchange = e => {
+    const f = e.target.files && e.target.files[0]; if (!f) return;
+    const rd = new FileReader();
+    rd.onload = () => { try { usarRisco(String(rd.result), f.name, $("lembrar").checked); }
+      catch(err){ $("privTxt").innerHTML = `<b>Não foi possível ler ${esc(f.name)}:</b> ${esc(err.message)}. Confira o separador (; ou ,) e o cabeçalho.`; } };
+    rd.readAsText(f, "utf-8"); e.target.value = "";
+  };
+  $("lembrar").onchange = e => { try{ if (!e.target.checked) localStorage.removeItem(LS_R); else if (RISCO) localStorage.setItem(LS_R, JSON.stringify({nome:riscoArq, txt:riscoTxt})); }catch(err){} };
+  $("tirarRisco").onclick = () => { RISCO=null; riscoMin=0; try{ localStorage.removeItem(LS_R); }catch(e){} if (st.ord==="risco"){ st.ord="prazo"; $("selOrd").value="prazo"; } privUI(); render(); };
+  $("escala").addEventListener("click", e => { const b = e.target.closest("[data-rmin]"); if (!b) return; const n = +b.dataset.rmin; riscoMin = riscoMin===n ? 0 : n; render(); });
+  try{ const g = JSON.parse(localStorage.getItem(LS_R)||"null"); if (g && g.txt){ RISCO = parseCSV(g.txt); riscoArq = g.nome; riscoTxt = g.txt; $("lembrar").checked = true; st.ord="risco"; $("selOrd").value="risco"; } }catch(e){ RISCO = null; }
+  privUI();
+}
+function iniciar(delib, kanban){ montar(delib, kanban); ligar(); ligarRisco(); render(); }
 if (window.DELIB_DADOS) iniciar(window.DELIB_DADOS, window.KANBAN_DADOS);
 else Promise.all([
   fetch("deliberacoes.json?v="+Date.now()).then(r=>{ if(!r.ok) throw new Error(r.status); return r.json(); }),
