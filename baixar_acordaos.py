@@ -173,6 +173,32 @@ def referencias(dados: dict) -> dict[str, set[tuple[str, str]]]:
     return {n: v for n, v in refs.items() if n in validos or n in extras}
 
 
+RX_REF = re.compile(r"(\d{1,5})/(\d{4})(?:-(PL|1C|2C))?", re.I)
+COL = {"PL": "Plenário", "1C": "Primeira Câmara", "2C": "Segunda Câmara"}
+
+
+def referencias_soltas() -> list[tuple[str, str, str]]:
+    """Linhas 'REF 929/2023 333/2022-PL ...' de acordaos_extra.txt: acórdãos só de consulta
+    (citados por outros), baixados sem entrar na aba Deliberações."""
+    out = []
+    if os.path.exists(EXTRA):
+        for linha in open(EXTRA, encoding="utf-8"):
+            linha = linha.split("#", 1)[0].strip()
+            if re.match(r"REF\b", linha, re.I):
+                out += [(str(int(n)), a, (c or "PL").upper()) for n, a, c in RX_REF.findall(linha[3:])]
+    return out
+
+
+def buscar_ref(s: requests.Session, num: str, ano: str, col: str) -> dict | None:
+    r = s.get(URL, params={"termo": f"NUMACORDAO:{int(num)} ANOACORDAO:{ano}",
+                           "ordenacao": "DTRELEVANCIA desc", "quantidade": 10, "inicio": 0}, timeout=90)
+    r.raise_for_status()
+    for d in r.json().get("documentos") or []:
+        if texto_limpo(d.get("COLEGIADO")) == COL[col] and str(d.get("NUMACORDAO")).strip() == num:
+            return d
+    return None
+
+
 def salvar(numero: str, doc: dict) -> dict:
     ano, num = str(doc.get("ANOACORDAO", "")).strip(), str(doc.get("NUMACORDAO", "")).strip()
     col = texto_limpo(doc.get("COLEGIADO"))
@@ -278,6 +304,8 @@ def main() -> int:
             reg = salvar(numero, doc)
             antes = por_chave.get(reg["chave"] or reg["arquivo"])
             reg["baixado_em"] = antes.get("baixado_em") if antes else date.today().isoformat()
+            if antes and antes.get("referencia"):
+                reg["referencia"] = True
             if not antes:
                 novos += 1
             por_chave[reg["chave"] or reg["arquivo"]] = reg
@@ -286,6 +314,34 @@ def main() -> int:
         if i % 10 == 0:
             gravar(indice, por_chave, erros)
         time.sleep(PAUSA)
+
+    # Acórdãos de referência (linhas REF): só os que ainda faltam.
+    tem_ref = {(x["acordao"], x.get("colegiado")) for x in por_chave.values()}
+    for num, ano, col in referencias_soltas():
+        if (f"{num}/{ano}", COL[col]) in tem_ref or a.processo:
+            continue
+        if time.monotonic() > fim:
+            print("tempo esgotado: referências ficam para a próxima execução")
+            break
+        try:
+            time.sleep(PAUSA)
+            doc = buscar_ref(s, num, ano, col)
+        except Exception as e:
+            erros.append(f"REF {num}/{ano}: {e}")
+            continue
+        if not doc:
+            erros.append(f"REF {num}/{ano}-{col}: não encontrado")
+            continue
+        m = RX_NUM.search(texto_limpo(doc.get("PROC")))
+        reg = salvar(m.group(0) if m else f"ref-{num}-{ano}", doc)
+        antes = por_chave.get(reg["chave"] or reg["arquivo"])
+        if antes and not antes.get("referencia"):
+            continue  # já é acórdão de um processo do painel: não rebaixa para referência
+        reg["referencia"] = True
+        reg["baixado_em"] = antes.get("baixado_em") if antes else date.today().isoformat()
+        novos += 0 if antes else 1
+        por_chave[reg["chave"] or reg["arquivo"]] = reg
+        print(f"  REF {num}/{ano}-{col}: {reg['arquivo']}")
 
     gravar(indice, por_chave, erros)
     print(f"índice: {len(indice['acordaos'])} acórdãos ({novos} novos), {len(erros)} erro(s)")

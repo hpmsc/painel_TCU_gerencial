@@ -13,3 +13,11 @@
 014.609/2026-6  2550/2026
 015.321/2025-8  2930/2025
 011.319/2026-7  5063/2026
+
+# Só referência: acórdãos citados por outros (pendências, precedentes), para a
+# leitura de risco. São baixados, mas NÃO entram na aba Deliberações.
+# Formato: REF  Nº/ANO[-PL|-1C|-2C] ...   (sem sufixo = Plenário)
+REF  333/2022  929/2023  2489/2024   # DOCCs: demonstrativo, repositório, compensação de pessoal
+REF  1112/2020  2101/2025            # governança dos benefícios fiscais (CMAP)
+REF  749/2017                        # determinação à SOF, Anatel (modelo do 9.3 do Ac. 280/2026)
+REF  1438/2026                       # trajetória da DBGG no PLDO (STN)

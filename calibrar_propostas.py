@@ -136,6 +136,8 @@ def main() -> int:
     linhas_saida, resumo, por_proc = [], Counter(), Counter()
     acrescidas = 0
     for a in idx["acordaos"]:
+        if a.get("referencia"):
+            continue
         caminho = os.path.join(PASTA, a["arquivo"])
         md = open(caminho, encoding="utf-8").read()
         props = [p for p in proposta(md) if p["tipo"] != "decisao"]

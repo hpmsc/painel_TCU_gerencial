@@ -153,6 +153,8 @@ def main() -> int:
     indice = json.load(open(INDICE, encoding="utf-8"))
     por_proc: dict[str, list] = {}
     for a in indice.get("acordaos", []):
+        if a.get("referencia"):  # acórdão só de consulta (linha REF em acordaos_extra.txt)
+            continue
         caminho = os.path.join(PASTA, a["arquivo"])
         if not os.path.exists(caminho):
             continue
