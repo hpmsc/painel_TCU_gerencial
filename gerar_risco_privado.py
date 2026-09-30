@@ -68,10 +68,17 @@ def main() -> int:
                     validos.add((tc, a["acordao"], it["item"]))
 
     linhas: dict[tuple, dict] = {}
-    # 3. regra automática (base)
+    # Processo lido com a skill: a leitura decide o que pontua (a regra automática não entra nele).
+    lidos = set()
+    for arq in glob.glob(os.path.join(LEITURAS, "resultado_*.json")):
+        try:
+            lidos.add(json.load(open(arq, encoding="utf-8"))["tc"])
+        except (ValueError, KeyError):
+            pass
+    # 3. regra automática (base, só para processos não lidos)
     subprocess.run([sys.executable, os.path.join(AQUI, "pontuar_risco.py")], check=False, capture_output=True)
     for r in ler_csv(SAIDA):
-        if r.get("origem") == "automática":
+        if r.get("origem") == "automática" and r["tc"] not in lidos:
             linhas[(r["tc"], r["acordao"], r["item"])] = {k: r.get(k, "") for k in CAMPOS}
     # 2. leitura com a skill
     lidas = 0
