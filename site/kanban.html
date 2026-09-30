@@ -7,8 +7,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
 <style>
-/* Layout: faixa de prazos no topo, depois quadro de etapas em 5 colunas; cada cartão abre a própria linha do tempo.
-   Mesma identidade do painel principal (petróleo, Bricolage + Public Sans + JetBrains Mono). */
+/* Uma trilha só, pensada para a ação do MPO: "o que pede atenção" no topo e o quadro de 5 colunas
+   embaixo; as colunas 2 e 3 são a janela de atuação. Mesma identidade do painel principal. */
 :root{
   --paper:#eaeeec; --surface:#fff; --surface-2:#f4f7f6; --col:#dfe5e3;
   --ink:#131f1c; --ink-2:#3e504b; --muted:#6c7a74;
@@ -45,83 +45,94 @@ button,select,input,textarea{font:inherit;color:inherit}
 .eyebrow{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
 
 header{background:var(--surface);border-bottom:1px solid var(--line)}
-.hd{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:flex-end;justify-content:space-between;padding-block:16px}
-.hd h1{font:800 24px/1.15 var(--f-disp);letter-spacing:-.02em;margin:2px 0 0;text-wrap:balance}
+.hd{padding-block:16px}
+.hd h1{font:800 24px/1.15 var(--f-disp);letter-spacing:-.02em;margin:2px 0 0}
 .hd p{margin:2px 0 0;color:var(--ink-2);font-size:13px}
-.hd nav a{font-size:13px;font-weight:600;text-decoration:none}
-.hd nav a:hover{text-decoration:underline}
+.abas{background:var(--surface);border-bottom:1px solid var(--line)}
+.abas .wrap{display:flex;gap:4px;overflow-x:auto}
+.abas a{display:inline-block;padding:10px 14px 9px;font:600 13.5px var(--f-body);color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+.abas a:hover{color:var(--ink)}
+.abas a[aria-current="page"]{color:var(--petrol);border-bottom-color:var(--petrol)}
 
-.ctl{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:flex-end;padding-block:14px 0}
+/* Filtros */
+.ctl{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:flex-end;padding-block:14px 0}
 .fld{display:flex;flex-direction:column;gap:3px}
 .fld label{font-family:var(--f-mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
 select,input[type=search]{background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:6px 9px;font-size:13px;min-width:0}
-input[type=search]{width:170px}
+input[type=search]{width:190px}
 .tg{display:inline-flex;align-items:center;gap:6px;background:var(--surface);border:1px solid var(--line);border-radius:7px;padding:6px 10px;font-size:13px;cursor:pointer}
-.tg[aria-pressed="true"]{background:var(--petrol-soft);border-color:var(--petrol);color:var(--ink)}
+.tg[aria-pressed="true"]{background:var(--petrol-soft);border-color:var(--petrol)}
 .tg .n{font-family:var(--f-mono);font-size:11.5px;color:var(--muted)}
 .linkbtn{background:none;border:0;padding:0;color:var(--petrol);text-decoration:underline;cursor:pointer;font-size:12.5px}
+.priv{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin-top:10px;font-size:12px;color:var(--muted)}
+.priv.on{color:var(--ink-2)}
+.priv input[type=file]{position:absolute;width:1px;height:1px;opacity:0}
+.priv label.linkbtn{font-size:12px}
+.priv .chk{display:inline-flex;gap:5px;align-items:center}
+.priv select{padding:3px 6px;font-size:12px}
 
 section{padding-top:22px}
-.sh{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin-bottom:10px}
+.sh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin-bottom:10px}
 .sh h2{font:600 18px/1.2 var(--f-disp);margin:0;letter-spacing:-.01em}
 .sh p{margin:0;color:var(--muted);font-size:12.5px}
 
-/* Prazos */
-.prazos{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
-.pz{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--line);border-radius:var(--r);padding:10px 12px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:4px;min-width:0}
-.pz.venc{border-left-color:var(--red)} .pz.logo{border-left-color:var(--amber)} .pz.ok{border-left-color:var(--green)}
-.pz-top{display:flex;justify-content:space-between;gap:8px;align-items:center}
-.pz-tc{white-space:nowrap;font:600 12.5px var(--f-mono);background:none;border:0;padding:0;color:var(--petrol);cursor:pointer;text-decoration:underline;text-underline-offset:2px}
-.pz-as{font-size:12.5px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
-.pz-doc{font:11.5px var(--f-mono);color:var(--muted)}
-.pz-dt{font-size:12px;color:var(--ink-2)}
-.vazio{background:var(--surface);border:1px dashed var(--line);border-radius:var(--r);padding:14px;color:var(--muted);font-size:13px}
-.mais{margin-top:8px}
+/* O que pede atenção */
+.aten{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--line-2)}
+.kpi{padding:12px 16px;border-right:1px solid var(--line-2);min-width:0}
+.kpi:last-child{border-right:0}
+.kpi b{display:block;font:600 26px/1.1 var(--f-mono)}
+.kpi span{font-size:12.5px;color:var(--ink-2)}
+.kpi.prz b{color:var(--red)} .kpi.jan b{color:var(--amber)} .kpi.mud b{color:var(--move)}
+.alist{list-style:none;margin:0;padding:6px 0}
+.alist li{display:grid;grid-template-columns:128px 150px minmax(0,1fr) auto;gap:4px 12px;align-items:baseline;padding:6px 16px;font-size:13px}
+.alist li+li{border-top:1px solid var(--line-2)}
+.alist .tcb{font:600 12.5px var(--f-mono);text-align:left}
+.alist .ras{color:var(--ink-2);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.alist .dt{font:11.5px var(--f-mono);color:var(--muted);white-space:nowrap}
+.alist .oq b{font-weight:600}
+.afoot{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;padding:8px 16px 10px;border-top:1px solid var(--line-2);font-size:12px;color:var(--muted)}
+.vazio{padding:14px 16px;color:var(--muted);font-size:13px}
 
-.pill{display:inline-flex;align-items:center;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600;white-space:nowrap;background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line-2)}
+.pill{display:inline-flex;align-items:center;border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600;white-space:nowrap;background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line-2);width:max-content}
 .p-red{background:var(--red-bg);color:var(--red);border-color:transparent}
 .p-amb{background:var(--amber-bg);color:var(--amber);border-color:transparent}
 .p-grn{background:var(--green-bg);color:var(--green);border-color:transparent}
 .p-mov{background:var(--move-bg);color:var(--move);border-color:transparent}
 
-/* Resumo da semana */
-.resumo{display:flex;flex-wrap:wrap;gap:8px}
-.rs{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:7px 12px;display:flex;align-items:baseline;gap:7px;font-size:12.5px;color:var(--ink-2)}
-.rs b{font:600 18px var(--f-mono);color:var(--ink)}
-.rs.mov b{color:var(--move)}
-
 /* Quadro */
 .board{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;align-items:start}
 .col{background:var(--col);border-radius:12px;padding:8px;min-width:0}
-.col-h{display:flex;justify-content:space-between;align-items:baseline;padding:4px 6px 8px;gap:8px}
-.col-h h3{margin:0;font:600 14px var(--f-disp)}
-.col-h small{display:block;color:var(--muted);font-size:11px;font-weight:400;font-family:var(--f-body)}
-.col-h .n{font:600 13px var(--f-mono);color:var(--muted)}
-.cards{display:flex;flex-direction:column;gap:7px}
+.col.jan{background:var(--amber-bg)}
+.col-h{padding:4px 6px 8px}
+.col-h .l1{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.col-h h3{margin:0;font:600 14.5px var(--f-disp)}
+.col-h .n{font:600 14px var(--f-mono);color:var(--ink-2)}
+.col-h small{display:block;color:var(--muted);font-size:11.5px}
+.col-h .jtag{display:inline-block;margin-bottom:3px;font:600 9.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--amber)}
+.col-h .dica{display:block;margin-top:3px;font-size:11.5px;color:var(--amber)}
+.cards{display:flex;flex-direction:column;gap:6px}
+.col-vazia{font-size:12px;color:var(--muted);padding:6px}
 
 .card{background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);min-width:0}
 .card.mov{box-shadow:inset 3px 0 0 var(--move),var(--shadow)}
-.card.parado{opacity:.62}
-.card.parado[open]{opacity:1}
-.card>summary{list-style:none;cursor:pointer;padding:8px 10px;display:flex;flex-direction:column;gap:4px}
+.card.parado:not([open]){opacity:.6}
+.card>summary{list-style:none;cursor:pointer;padding:7px 10px 8px;display:flex;flex-direction:column;gap:3px}
 .card>summary::-webkit-details-marker{display:none}
 .card[open]{border-color:var(--petrol)}
-.seta{font-size:11px;font-weight:600;color:var(--move)}
-.seta.volta{color:var(--amber)}
-.c1{display:flex;justify-content:space-between;align-items:center;gap:6px}
-.c1 .dir{display:inline-flex;align-items:center;gap:2px;flex-shrink:0}
+.c1{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:4px 6px}
+.c1 .dir{display:inline-flex;align-items:center;gap:4px;margin-left:auto}
 .tc{font:600 12.5px var(--f-mono);white-space:nowrap}
 .star{background:none;border:0;padding:0 2px;cursor:pointer;color:var(--muted);font-size:14px;line-height:1}
 .star[aria-pressed="true"]{color:var(--amber)}
-.as{font-size:12.5px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.as{font-size:12.5px;color:var(--ink);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 .card[open] .as{-webkit-line-clamp:unset;display:block}
-.meta{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
-.nat{font-size:11px;color:var(--muted)}
-.abre{font-size:11px;color:var(--muted);display:flex;justify-content:space-between}
-.card[open] .abre .ic{transform:rotate(180deg)}
-.ic{display:inline-block;transition:transform .15s}
+.c3{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:11px;color:var(--muted)}
+.c3 .mv{color:var(--move);font-weight:600}
+.col-mais{width:100%;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);border-radius:7px;padding:5px;cursor:pointer;font-size:12.5px}
 
-.tl-wrap{border-top:1px dashed var(--line);padding:8px 10px 10px}
+.det{border-top:1px dashed var(--line);padding:8px 10px 10px}
+.info{font-size:11.5px;color:var(--ink-2);margin-bottom:8px;display:flex;flex-wrap:wrap;gap:3px 10px}
 .tl-top{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:6px;font-size:11.5px;color:var(--muted)}
 .tl{list-style:none;margin:0 0 0 5px;padding:0 0 0 14px;border-left:2px solid var(--line)}
 .ev{position:relative;padding-bottom:8px;font-size:12px}
@@ -134,12 +145,20 @@ section{padding-top:22px}
 .ev.com .tag{color:var(--amber)}
 .ev .tx{color:var(--ink);overflow-wrap:anywhere}
 .ev.fora .tx{color:var(--ink-2)}
-.tl-more{font-size:12px}
 
-.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12px;color:var(--muted);padding-block:16px 6px}
-.legend i{display:inline-block;width:10px;height:10px;border-radius:50%;vertical-align:-1px;margin-right:5px}
-footer{padding-block:6px 28px;font-size:12px;color:var(--muted)}
-footer p{margin:4px 0;max-width:90ch;overflow-wrap:anywhere}
+.rk{display:inline-flex;align-items:center;gap:4px;border-radius:5px;padding:1px 6px;font:600 11px var(--f-mono);white-space:nowrap}
+.rk5{background:var(--red);color:var(--surface)} .rk4{background:var(--red-bg);color:var(--red)}
+.rk3{background:var(--amber-bg);color:var(--amber)} .rk2{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
+.rk1{background:transparent;color:var(--muted);border:1px solid var(--line-2)}
+.rk-med{font-size:11.5px;color:var(--ink-2);border-left:2px solid var(--line);padding-left:7px;margin-bottom:8px}
+
+.legend{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:12px;color:var(--muted);padding-top:10px}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:5px}
+footer{padding-block:18px 30px;font-size:12.5px;color:var(--ink-2)}
+footer details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+footer summary{cursor:pointer;font-weight:600;color:var(--ink)}
+footer p{margin:8px 0 0;max-width:95ch;overflow-wrap:anywhere}
+footer .fonte{margin-top:10px;color:var(--muted);font-size:12px}
 
 dialog{border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:18px;width:min(520px,calc(100vw - 32px))}
 dialog::backdrop{background:rgba(10,20,18,.45)}
@@ -149,73 +168,23 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 .dl-act{display:flex;justify-content:flex-end;gap:8px;margin-top:10px}
 .btn{border:1px solid var(--line);background:var(--surface);border-radius:7px;padding:6px 12px;cursor:pointer;font-size:13px}
 .btn.pri{background:var(--petrol);border-color:var(--petrol);color:var(--surface)}
-
 .status{padding:40px 0;color:var(--muted)}
-/* Radar da auditoria: seis fases do rito do TCU; fases 3 e 4 são a janela de atuação */
-.radar{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
-.rf{padding:10px 11px 12px;border-right:1px solid var(--line-2);position:relative;min-width:0}
-.rf:last-child{border-right:0}
-.rf.jan{background:var(--amber-bg)}
-.rf .tag{position:absolute;top:9px;right:9px;font:600 9.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--amber)}
-.rf-h{display:flex;align-items:baseline;gap:7px}
-.rf-h b{font:600 22px var(--f-mono)}
-.rf-h span{font-weight:600;font-size:12.5px}
-.rf-s{font-size:11px;color:var(--muted);margin:1px 0 7px}
-.rf-c{display:flex;flex-direction:column;gap:4px}
-.rchip{display:flex;justify-content:space-between;gap:6px;background:var(--surface-2);border:1px solid var(--line-2);border-radius:6px;padding:2px 7px;font:600 11.5px var(--f-mono);cursor:pointer;color:var(--ink);text-align:left}
-.rchip small{font-weight:400;color:var(--muted)}
-.rchip.novo{border-color:var(--move);background:var(--move-bg)}
-.rf-mais{font-size:11.5px;color:var(--petrol);background:none;border:0;padding:2px 4px;text-align:left;cursor:pointer;text-decoration:underline}
-.rleg{display:flex;flex-wrap:wrap;gap:6px 18px;margin:8px 2px 0;font-size:12px;color:var(--muted)}
-.rleg i{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:5px}
-.rmud{margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
-.rmud h3{margin:0 0 6px;font:600 13.5px var(--f-disp)}
-.rmud-oc{margin:8px 0 0;font-size:12.5px;color:var(--ink-2,#555)}
-.rmud ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
-.rmud li{font-size:12.5px}
-.rmud .de{color:var(--muted)} .rmud .dt{font:11.5px var(--f-mono);color:var(--muted);margin-left:6px} .rmud .ras{color:var(--ink-2);margin-left:6px}
-.jan-pill{margin-left:8px;background:var(--amber-bg);color:var(--amber);border-radius:999px;padding:1px 8px;font-size:11px;font-weight:600}
-.step{display:flex;gap:3px;margin-top:2px;cursor:help}
-.step i{flex:1;height:5px;border-radius:3px;background:var(--line)}
-.step i.on{background:var(--petrol)} .step i.cur{background:var(--amber)}
-.step-l{font-size:11px;color:var(--muted)}
-@media (max-width:1100px){ .radar{grid-template-columns:repeat(3,minmax(0,1fr))} .rf:nth-child(3){border-right:0} .rf:nth-child(-n+3){border-bottom:1px solid var(--line-2)} }
-@media (max-width:560px){ .radar{grid-template-columns:minmax(0,1fr)} .rf{border-right:0;border-bottom:1px solid var(--line-2)} }
-.rchip{flex-wrap:wrap;min-width:0}
-.priv{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px;margin-top:12px;padding:9px 12px;border:1px dashed var(--line);border-radius:var(--r);background:var(--surface);font-size:12.5px;color:var(--ink-2)}
-.priv.on{border-style:solid;border-color:var(--petrol);background:var(--petrol-soft)}
-.priv label.btn{display:inline-flex;align-items:center}
-.priv input[type=file]{position:absolute;width:1px;height:1px;opacity:0}
-.priv .chk{display:inline-flex;gap:5px;align-items:center}
-.rk{display:inline-flex;align-items:center;gap:4px;border-radius:5px;padding:1px 6px;font:600 11px var(--f-mono);white-space:nowrap}
-.rk5{background:var(--red);color:var(--surface)} .rk4{background:var(--red-bg);color:var(--red)}
-.rk3{background:var(--amber-bg);color:var(--amber)} .rk2{background:var(--surface-2);color:var(--ink-2);border:1px solid var(--line)}
-.rk1{background:transparent;color:var(--muted);border:1px solid var(--line-2)}
-.rk-med{font-size:11.5px;color:var(--ink-2);border-left:2px solid var(--line);padding-left:7px}
-.col-mais{width:100%;background:var(--surface-2);color:var(--ink-2)}
 
 @media (max-width:1100px){ .board{grid-template-columns:repeat(3,minmax(0,1fr))} }
-@media (max-width:720px){ .board{grid-template-columns:minmax(0,1fr)} input[type=search]{width:100%} .fld{flex:1 1 140px} }
-@media (prefers-reduced-motion:reduce){ .ic{transition:none} }
-</style>
-<style>
-.abas{background:var(--surface);border-bottom:1px solid var(--line)}
-.abas .wrap{display:flex;gap:4px;overflow-x:auto}
-.abas a{display:inline-block;padding:10px 14px 9px;font:600 13.5px "Public Sans",system-ui,sans-serif;color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
-.abas a:hover{color:var(--ink)}
-.abas a[aria-current="page"]{color:var(--petrol);border-bottom-color:var(--petrol)}
+@media (max-width:800px){
+  .alist li{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"tc dt" "oq oq" "ras ras"}
+  .alist .tcb{grid-area:tc} .alist .dt{grid-area:dt;justify-self:end} .alist .oq{grid-area:oq} .alist .ras{grid-area:ras;white-space:normal;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+}
+@media (max-width:720px){ .board{grid-template-columns:minmax(0,1fr)} input[type=search]{width:100%} .fld{flex:1 1 140px}
+  .kpi{padding:10px 12px} .kpi b{font-size:22px} .kpi span{font-size:11.5px} }
 </style>
 </head>
 <body>
 <header>
- <div class="wrap">
-  <div class="hd">
-   <div>
-    <p class="eyebrow">Tribunal de Contas da União · processos do MPO</p>
-    <h1>Etapas e prazos</h1>
-    <p id="sub">Carregando dados…</p>
-   </div>
-  </div>
+ <div class="wrap hd">
+  <p class="eyebrow">Tribunal de Contas da União · processos do MPO</p>
+  <h1>Etapas e prazos</h1>
+  <p id="sub">Carregando dados…</p>
  </div>
 </header>
 <nav class="abas" aria-label="Seções do painel"><div class="wrap">
@@ -226,62 +195,54 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 
 <main class="wrap">
  <div class="ctl" role="group" aria-label="Filtros">
-  <div class="fld"><label for="selA">Comparar desde</label><select id="selA"></select></div>
+  <div class="fld"><label for="selA">Desde</label><select id="selA"></select></div>
   <div class="fld"><label for="selB">Até</label><select id="selB"></select></div>
   <div class="fld"><label for="selOrg">Órgão</label>
    <select id="selOrg"><option value="">Todos</option><option>MPO</option><option>SE</option><option>SOF</option><option>SMA</option><option>SEPLAN</option><option>AECI</option><option>SEST</option></select></div>
-  <div class="fld"><label for="q">Buscar</label><input type="search" id="q" placeholder="nº do TC ou assunto"></div>
-  <button class="tg" id="tgInt" type="button" aria-pressed="false">Incluir onde o MPO é só interessado <span class="n" id="nInt"></span></button>
-  <button class="tg" id="tgMov" type="button" aria-pressed="false">Só o que andou no período</button>
+  <div class="fld"><label for="q">Buscar</label><input type="search" id="q" placeholder="nº do TC, assunto ou relator"></div>
+  <button class="tg" id="tgInt" type="button" aria-pressed="true">Interessados <span class="n" id="nInt"></span></button>
+  <button class="tg" id="tgMov" type="button" aria-pressed="false">Só o que andou</button>
   <button class="tg" id="tgMinha" type="button" aria-pressed="false">★ Minha lista <span class="n" id="nMinha">0</span></button>
-  <button class="linkbtn" id="editMinha" type="button">editar lista</button>
+  <button class="linkbtn" id="editMinha" type="button">editar</button>
  </div>
-
  <div class="priv" id="priv">
-  <span id="privTxt"><b>Camada privada de risco:</b> não carregada. O arquivo é lido só neste navegador e não é enviado a lugar nenhum.</span>
-  <label class="btn" for="fileRisco">Carregar arquivo de risco (.csv)</label><input type="file" id="fileRisco" accept=".csv,text/csv,text/plain">
+  <span id="privTxt">Camada privada de risco não carregada.</span>
+  <label class="linkbtn" for="fileRisco">carregar arquivo (.csv)</label><input type="file" id="fileRisco" accept=".csv,text/csv,text/plain">
   <span class="chk"><input type="checkbox" id="lembrar"><label for="lembrar">lembrar neste navegador</label></span>
-  <span class="fld" id="fldRisco" hidden><select id="selRisco" aria-label="Risco mínimo"><option value="0">Qualquer risco</option><option value="3">Risco 3 ou mais</option><option value="4">Risco 4 ou mais</option><option value="5">Só crítico</option></select></span>
-  <button class="linkbtn" id="tirarRisco" type="button" hidden>remover camada</button>
+  <select id="selRisco" aria-label="Risco mínimo" hidden><option value="0">Qualquer risco</option><option value="3">Risco 3 ou mais</option><option value="4">Risco 4 ou mais</option><option value="5">Só crítico</option></select>
+  <button class="linkbtn" id="tirarRisco" type="button" hidden>remover</button>
  </div>
 
- <section aria-labelledby="h-radar">
-  <div class="sh"><h2 id="h-radar">Radar da auditoria</h2><p>Em que fase do rito do TCU está cada processo. Fundo laranja: janela de atuação, com a proposta pronta ou quase, antes do voto.</p></div>
-  <div class="radar" id="radar"></div>
-  <div class="rleg"><span><i style="background:var(--amber-bg);border:1px solid var(--amber)"></i>fases 3 e 4: janela de atuação da SEAI</span><span><i style="background:var(--move-bg);border:1px solid var(--move)"></i>mudou de fase no período escolhido</span><span>data: movimentação que definiu a fase · clique no número para abrir o cartão</span></div>
-  <div class="rmud" id="rmud" hidden></div>
- </section>
-
- <section aria-labelledby="h-prazos">
-  <div class="sh"><h2 id="h-prazos">Prazos em aberto</h2><p id="prazoNota"></p></div>
-  <div class="prazos" id="prazos"></div>
-  <div class="mais"><button class="linkbtn" id="maisPrazos" type="button" hidden></button></div>
- </section>
-
- <section aria-labelledby="h-sem">
-  <div class="sh"><h2 id="h-sem">O que mudou no período</h2><p id="periodo"></p></div>
-  <div class="resumo" id="resumo"></div>
+ <section aria-labelledby="h-aten">
+  <div class="sh"><h2 id="h-aten">O que pede atenção</h2><p id="periodo"></p></div>
+  <div class="aten">
+   <div class="kpis" id="kpis"></div>
+   <ul class="alist" id="alist"></ul>
+   <div class="afoot"><span id="aOcultos"></span><button class="linkbtn" id="maisPrazos" type="button" hidden></button></div>
+  </div>
  </section>
 
  <section aria-labelledby="h-quadro">
-  <div class="sh"><h2 id="h-quadro">Etapa de cada processo</h2><p>Clique num cartão para abrir a linha do tempo.</p></div>
+  <div class="sh"><h2 id="h-quadro">Onde está cada processo</h2><p>Colunas em laranja: janela de atuação, antes do voto. Clique num cartão para ver a linha do tempo.</p></div>
   <div class="board" id="board"><div class="status">Carregando…</div></div>
   <div class="legend">
-   <span><i style="background:var(--move)"></i>barra azul: teve movimentação no período</span>
-   <span>→ avançou de etapa &nbsp; ← voltou de etapa</span>
+   <span><i style="background:var(--move)"></i>mudou de coluna no período</span>
    <span>esmaecido: sem movimentação há mais de 60 dias</span>
-   <span><i style="background:var(--petrol)"></i>mudança de etapa &nbsp;<i style="border:2px solid var(--amber);background:transparent"></i>comunicação</span>
+   <span>★ minha lista</span>
   </div>
  </section>
 </main>
 
 <footer class="wrap">
- <p><b>Como a etapa é definida.</b> Pela última movimentação pública que indica onde o processo está: envio à unidade técnica ou portaria de fiscalização (instrução), envio ao ministro ou exclusão de pauta (relator), inclusão em pauta, pedido de vista ou envio à Seses (pauta e sessão), acórdão ou apreciação (julgado), peça de recurso (recurso). Processo sigiloso gera pouca movimentação visível e pode aparecer numa etapa desatualizada.</p>
- <p><b>Como o prazo é contado (teste).</b> Começa no dia útil em que um órgão do MPO registra a ciência da comunicação no TCU. Conta em dias corridos, sem o dia do início; se o fim cair em fim de semana ou feriado, passa para o próximo dia útil. Onde o arquivo <span class="mono">prazos.txt</span> não informa o número de dias, usa-se um prazo presumido de <span id="padrao">15</span> dias. O prazo sai da lista quando o TCU registra a resposta, quando a parte junta documento pelo Conecta ou quando o ciclo de comunicação é encerrado.</p>
- <p><b>Radar da auditoria.</b> A fase vem da última movimentação pública que marca o rito: portaria de fiscalização (1), requisições, oitivas e respostas (2), relatório preliminar para comentários (3), pronunciamento da unidade concluído ou envio ao ministro (4), inclusão em pauta ou vista (5), acórdão (6). Dentro de um ciclo a fase só avança; um acórdão fecha o ciclo. A fase 3 raramente aparece nas movimentações públicas: o relatório preliminar chega ao MPO pelo Conecta.</p>
- <p><b>Minha lista</b> fica gravada só neste navegador. Não é enviada a lugar nenhum.</p>
- <p><b>Camada privada de risco.</b> Arquivo CSV mantido pela SEAI e pelas secretarias, com as colunas <span class="mono">tc;faixa;faixa_latente;fase;medida;fonte;responsavel;revisado_em</span>. A página só lê o arquivo no seu navegador; ele não é publicado com o site.</p>
- <p id="fonte"></p>
+ <details>
+  <summary>Como ler esta página</summary>
+  <p><b>As 5 colunas.</b> Vêm da movimentação pública do TCU. <b>Fiscalização em curso</b>: portaria, requisições, diligências e instrução na unidade técnica. <b>Relatório preliminar</b>: versão preliminar enviada para comentários do gestor. <b>Proposta no relator</b>: pronunciamento da unidade concluído, processo no gabinete do ministro. <b>Pauta</b>: incluído em pauta ou com pedido de vista. <b>Julgado e cumprimento</b>: acórdão publicado, cumprimento e recursos (recurso aparece como etiqueta no cartão). Depois do acórdão, ciência de ofício, envio à Seses e remessa à unidade técnica são rotina de cumprimento e não mudam a coluna; um novo ciclo só começa com portaria, relatório preliminar, envio ao relator ou pauta.</p>
+  <p><b>Janela de atuação.</b> Nas colunas 2 e 3 a proposta está pronta ou quase, e o voto ainda não saiu: é o momento da reunião com a unidade técnica do TCU e da nota técnica da secretaria. O relatório preliminar chega ao MPO pelo Conecta e quase nunca aparece na movimentação pública; por isso a coluna 2 costuma ficar vazia aqui.</p>
+  <p><b>Prazos (teste).</b> O prazo começa no dia útil em que um órgão do MPO registra a ciência da comunicação no TCU e conta em dias corridos, sem o dia do início; se o fim cair em fim de semana ou feriado, passa para o próximo dia útil. Onde o arquivo <span class="mono">prazos.txt</span> não informa o número de dias, usa-se um prazo presumido de <span id="padrao">15</span> dias. O prazo sai da lista quando o TCU registra a resposta, quando a parte junta documento pelo Conecta ou quando o ciclo de comunicação é encerrado. Prazo vencido pode já ter sido respondido por outro meio.</p>
+  <p><b>Minha lista</b> fica gravada só neste navegador.</p>
+  <p><b>Camada privada de risco.</b> Arquivo CSV mantido pela SEAI, com as colunas <span class="mono">tc;faixa;faixa_latente;fase;medida;fonte;responsavel;revisado_em</span>. A página só lê o arquivo no seu navegador; ele não é publicado com o site.</p>
+  <p class="fonte" id="fonte"></p>
+ </details>
 </footer>
 
 <dialog id="dlg">
@@ -289,23 +250,13 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
   <h3>Minha lista</h3>
   <p>Cole os números de TC que você acompanha, um por linha ou separados por vírgula. A lista fica só neste navegador.</p>
   <textarea id="dlgTxt" aria-label="Números de TC"></textarea>
-  <div class="dl-act"><button class="btn" value="cancel" type="submit">Cancelar</button><button class="btn pri" value="ok" type="submit" id="dlgOk">Salvar lista</button></div>
+  <div class="dl-act"><button class="btn" value="cancel" type="submit">Cancelar</button><button class="btn pri" value="ok" type="submit">Salvar lista</button></div>
  </form>
 </dialog>
 
 <script>
 (function(){
 "use strict";
-const ETAPAS = [
-  ["instrucao","Instrução","unidade técnica"],
-  ["relator","Relator","gabinete do ministro"],
-  ["pauta","Pauta e sessão","pautado, vista, Seses"],
-  ["julgado","Julgado","acórdão e cumprimento"],
-  ["recurso","Recurso","embargos, reexame, reconsideração"]
-];
-const ORDEM = {instrucao:0, relator:1, pauta:2, julgado:3, recurso:4, encerrado:5};
-const NOME = Object.fromEntries(ETAPAS.map(e=>[e[0],e[1]])); NOME.encerrado="Encerrado";
-const LS = "kanbanTCU.minhaLista";
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 const br = iso => iso ? iso.slice(8,10)+"/"+iso.slice(5,7) : "";
@@ -314,30 +265,31 @@ const toD = iso => new Date(iso+"T12:00:00");
 const isoD = d => d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
 const addD = (iso,n) => { const d=toD(iso); d.setDate(d.getDate()+n); return isoD(d); };
 const diff = (a,b) => Math.round((toD(b)-toD(a))/864e5);
+const curto = (s,n) => { s = s||""; return s.length>n ? s.slice(0,n).replace(/\s+\S*$/,"")+"…" : s; };
 
-let D, minha = new Set(), abertos = new Set();
-const st = {A:null, B:null, org:"", q:"", inter:false, soMov:false, soMinha:false, todosPrazos:false, expand:{}};
-const LIM_COL = 12;
-const LS_R = "kanbanTCU.risco";
+const DICA = {2:"reunião com a unidade técnica do TCU", 3:"nota técnica da secretaria"};
+const LS = "kanbanTCU.minhaLista", LS_R = "kanbanTCU.risco";
+const LIM_COL = 12, JANELA_PRAZO = 15;
 const NOME_R = {1:"Baixo",2:"Moderado",3:"Relevante",4:"Alto",5:"Crítico"};
-let risco = null; // Map tc -> {faixa, lat, fase, medida, fonte, resp, rev}
-let riscoMin = 0, riscoArq = "", riscoTxt = "";
+
+let D, TR, minha = new Set();
+const st = {A:null, B:null, org:"", q:"", inter:true, soMov:false, soMinha:false, todosPrazos:false, expand:{}};
+let risco = null, riscoMin = 0, riscoArq = "", riscoTxt = "";
+
+/* ---------- camada privada (lida só no navegador) ---------- */
 function parseCSV(txt){
-  txt = txt.replace(/^\uFEFF/, "");
+  txt = txt.replace(/^﻿/, "");
   const linhas = txt.split(/\r?\n/).filter(l=>l.trim());
   if (!linhas.length) throw new Error("arquivo vazio");
   const sep = (linhas[0].match(/;/g)||[]).length >= (linhas[0].match(/,/g)||[]).length ? ";" : ",";
   const split = l => { const out=[]; let cur="", q=false; for (const ch of l){ if(ch==='"'){ q=!q; continue; } if(ch===sep && !q){ out.push(cur); cur=""; } else cur+=ch; } out.push(cur); return out.map(x=>x.trim()); };
-  const cab = split(linhas[0]).map(h=>h.toLowerCase());
-  const ix = n => cab.indexOf(n);
+  const cab = split(linhas[0]).map(h=>h.toLowerCase()), ix = n => cab.indexOf(n);
   if (ix("tc")<0 || ix("faixa")<0) throw new Error("faltam as colunas tc e faixa na primeira linha");
   const m = new Map();
   for (const l of linhas.slice(1)){
-    const c = split(l), tc = (c[ix("tc")]||"").match(/\d{3}\.\d{3}\/\d{4}-\d/);
-    const f = parseInt(c[ix("faixa")],10);
+    const c = split(l), tc = (c[ix("tc")]||"").match(/\d{3}\.\d{3}\/\d{4}-\d/), f = parseInt(c[ix("faixa")],10);
     if (!tc || !(f>=1 && f<=5)) continue;
-    const g = n => ix(n)>=0 ? (c[ix(n)]||"") : "";
-    const lat = parseInt(g("faixa_latente"),10);
+    const g = n => ix(n)>=0 ? (c[ix(n)]||"") : "", lat = parseInt(g("faixa_latente"),10);
     m.set(tc[0], {faixa:f, lat:(lat>=1&&lat<=5)?lat:null, fase:g("fase"), medida:g("medida"), fonte:g("fonte"), resp:g("responsavel"), rev:g("revisado_em")});
   }
   if (!m.size) throw new Error("nenhuma linha válida (tc no formato NNN.NNN/AAAA-D e faixa de 1 a 5)");
@@ -347,47 +299,33 @@ function usarRisco(txt, nome, guardar){
   risco = parseCSV(txt); riscoArq = nome; riscoTxt = txt;
   if (guardar){ try{ localStorage.setItem(LS_R, JSON.stringify({nome, txt})); }catch(e){} }
   atualizarPriv(); render();
-  const h = location.hash.match(/^#c-(\d{11})$/);
-  if (h){
-    if (!$("c-"+h[1])){ for (const x in NOME) st.expand[x]=true; st.inter=true; $("tgInt").setAttribute("aria-pressed","true"); render(); }
-    const el=$("c-"+h[1]); if (el){ el.open=true; el.scrollIntoView({block:"center"}); } }
 }
 function atualizarPriv(){
   const on = !!risco;
-  $("priv").classList.toggle("on", on);
-  $("fldRisco").hidden = !on; $("tirarRisco").hidden = !on;
-  if (on){
-    const n = [...risco.values()], c = k => n.filter(r=>r.faixa===k).length;
-    $("privTxt").innerHTML = `<b>Camada privada de risco:</b> ${esc(riscoArq)} · ${n.length} processos · ${c(5)} crítico, ${c(4)} alto, ${c(3)} relevante. Lida só neste navegador.`;
-  } else {
-    $("privTxt").innerHTML = `<b>Camada privada de risco:</b> não carregada. O arquivo é lido só neste navegador e não é enviado a lugar nenhum.`;
-  }
+  $("priv").classList.toggle("on", on); $("selRisco").hidden = !on; $("tirarRisco").hidden = !on;
+  if (on){ const n=[...risco.values()], c=k=>n.filter(r=>r.faixa===k).length;
+    $("privTxt").innerHTML = `<b>Camada privada de risco:</b> ${esc(riscoArq)} · ${n.length} processos · ${c(5)} crítico, ${c(4)} alto, ${c(3)} relevante · lida só neste navegador.`; }
+  else $("privTxt").textContent = "Camada privada de risco não carregada.";
 }
 function selo(num){
   const r = risco && risco.get(num); if (!r) return "";
-  const lat = r.lat && r.lat !== r.faixa ? ` · lat. ${r.lat}` : "";
   const t = `Risco ${r.faixa} ${NOME_R[r.faixa]}${r.fase?" ("+r.fase+")":""}${r.lat?" · latente "+r.lat:""} — ${r.medida}${r.resp?" · "+r.resp:""}${r.rev?" · revisado "+r.rev:""}`;
-  const fz = /verificar|potencial|proposta/i.test(r.fase) ? ` · ${esc(r.fase)}` : "";
-  return `<span class="rk rk${r.faixa}" title="${esc(t)}">R${r.faixa} ${NOME_R[r.faixa]}${lat}${fz}</span>`;
+  return `<span class="rk rk${r.faixa}" title="${esc(t)}">R${r.faixa} ${NOME_R[r.faixa]}</span>`;
 }
 
 function lerMinha(){ try{ const v=JSON.parse(localStorage.getItem(LS)||"[]"); if(Array.isArray(v)) minha=new Set(v); }catch(e){} }
 function gravarMinha(){ try{ localStorage.setItem(LS, JSON.stringify([...minha])); }catch(e){} }
 
-function etapaEm(p, dia){
-  let e = p.etapa_base;
-  for (const ev of p.eventos){ if (ev.data > dia) break; if (ev.etapa) e = ev.etapa; }
-  return e;
-}
-function ultimaMudanca(p, dia){ // última troca efetiva de etapa até o dia
-  let e = p.etapa_base, r = null;
-  for (const ev of p.eventos){ if (ev.data > dia) break; if (ev.etapa && ev.etapa !== e){ r = {de:e, para:ev.etapa, data:ev.data}; e = ev.etapa; } }
-  return r;
-}
+/* ---------- trilha ---------- */
+function colEm(p, dia){ let c = p.col_base; for (const ev of p.eventos){ if (ev.data > dia) break; if (ev.col) c = ev.col; } return c; }
+function desdeEm(p, dia){ let d = null; for (const ev of p.eventos){ if (ev.data > dia) break; if (ev.col) d = ev.data; } return d; }
+function emRecurso(p, dia){ let e = p.etapa_base; for (const ev of p.eventos){ if (ev.data > dia) break; if (ev.etapa) e = ev.etapa; } return e === "recurso"; }
 function ultimaMov(p, dia){ let u=null; for (const ev of p.eventos){ if (ev.data>dia) break; u=ev.data; } return u; }
-function presente(p, dia){
-  if (!p.primeiro_visto || p.primeiro_visto > dia) return false;
-  return p.aberto || (p.ultimo_visto && p.ultimo_visto >= dia);
+function presente(p, dia){ if (!p.primeiro_visto || p.primeiro_visto > dia) return false; return p.aberto || (p.ultimo_visto && p.ultimo_visto >= dia); }
+function mudou(p, A, B){
+  if (!presente(p, A)) return null;
+  const de = colEm(p, A), para = colEm(p, B), d = desdeEm(p, B);
+  return de !== para && d && d > A ? {p, de, para, d} : null;
 }
 function filtra(p){
   if (!st.inter && p.vinculo === "interessado" && !(risco && risco.has(p.numero)) && !minha.has(p.numero)) return false;
@@ -398,89 +336,89 @@ function filtra(p){
   return true;
 }
 function hojeRef(){ const h=isoD(new Date()); return h > D.hoje ? h : D.hoje; }
-
 function prazoInfo(c){
-  const hoje = hojeRef(), n = diff(hoje, c.vencimento);
-  if (n < 0) return {cls:"venc", pill:"p-red", txt:`vencido há ${-n} dia${n===-1?"":"s"}`};
-  if (n === 0) return {cls:"venc", pill:"p-red", txt:"vence hoje"};
-  if (n <= 5) return {cls:"logo", pill:"p-amb", txt:`vence em ${n} dia${n===1?"":"s"}`};
-  return {cls:"ok", pill:"p-grn", txt:`vence em ${n} dias`};
+  const n = diff(hojeRef(), c.vencimento);
+  if (n < 0) return {pill:"p-red", txt:`vencido há ${-n} dia${n===-1?"":"s"}`, curto:`vencido ${-n}d`};
+  if (n === 0) return {pill:"p-red", txt:"vence hoje", curto:"vence hoje"};
+  if (n <= 5) return {pill:"p-amb", txt:`vence em ${n} dia${n===1?"":"s"}`, curto:`vence ${br(c.vencimento)}`};
+  return {pill:"p-grn", txt:`vence em ${n} dias`, curto:`vence ${br(c.vencimento)}`};
 }
 
-function renderPrazos(lista){
-  const itens = [];
-  for (const p of lista) for (const c of p.comunicacoes) if (c.status === "aberto") itens.push({p,c});
-  itens.sort((a,b)=> a.c.vencimento.localeCompare(b.c.vencimento));
-  const hoje = hojeRef();
-  const recentes = itens.filter(x => diff(x.c.vencimento, hoje) <= 30);
-  const antigos = itens.length - recentes.length;
-  const mostrar = st.todosPrazos ? itens : recentes;
-  $("prazoNota").textContent = itens.length
-    ? `${itens.length} comunicação(ões) com ciência do MPO e sem resposta registrada. Vencidas: confira se já foram respondidas por outro meio.`
-    : "";
-  $("prazos").innerHTML = mostrar.length ? mostrar.map(({p,c})=>{
-    const i = prazoInfo(c);
-    const fonte = c.fonte === "presumido" ? `prazo presumido de ${c.dias} dias` : `${c.dias} dias (prazos.txt)`;
-    return `<article class="pz ${i.cls}">
-      <div class="pz-top"><button class="pz-tc" type="button" data-abrir="${esc(p.numero)}">${esc(p.numero)}</button><span class="pill ${i.pill}">${i.txt}</span></div>
-      ${selo(p.numero)?`<div>${selo(p.numero)}</div>`:""}
-      <div class="pz-as">${esc(p.assunto)}</div>
-      <div class="pz-doc">${esc(c.doc)} · ${esc(c.dest)}</div>
-      <div class="pz-dt">Ciência ${brAno(c.ciencia)} → vence <b>${brAno(c.vencimento)}</b> · ${fonte}</div>
-    </article>`; }).join("")
-    : `<div class="vazio">Nenhum prazo em aberto para os filtros escolhidos.</div>`;
+/* ---------- O que pede atenção ---------- */
+function renderAtencao(lista, ocultos, A, B){
+  const hoje = hojeRef(), ate = addD(hoje, JANELA_PRAZO);
+  const prazos = [];
+  for (const p of lista) for (const c of p.comunicacoes) if (c.status === "aberto") prazos.push({p,c});
+  prazos.sort((a,b)=> a.c.vencimento.localeCompare(b.c.vencimento));
+  const perto = prazos.filter(x => x.c.vencimento <= ate && diff(x.c.vencimento, hoje) <= JANELA_PRAZO);
+  const outros = prazos.length - perto.length;
+  const grupos = [];
+  for (const x of (st.todosPrazos ? prazos : perto)){
+    const g = grupos.find(g => g.p === x.p && g.c.vencimento === x.c.vencimento);
+    if (g) g.docs.push(x.c.doc); else grupos.push({p:x.p, c:x.c, docs:[x.c.doc]});
+  }
+  const nPerto = new Set(perto.map(x=>x.p.numero+x.c.vencimento)).size;
+  const muds = lista.map(p=>mudou(p,A,B)).filter(Boolean)
+    .sort((a,b)=> (TR[b.para].janela - TR[a.para].janela) || b.para - a.para || b.d.localeCompare(a.d));
+  const naJanela = lista.filter(p => TR[colEm(p,B)].janela).length;
+
+  $("periodo").textContent = `mudanças de ${brAno(A)} a ${brAno(B)} · prazos de ${brAno(addD(hoje,-JANELA_PRAZO))} a ${brAno(ate)}`;
+  $("kpis").innerHTML = [
+    ["prz", nPerto, `prazo${nPerto===1?"":"s"} de resposta`],
+    ["jan", naJanela, "na janela de atuação"],
+    ["mud", muds.length, `mud${muds.length===1?"ou":"aram"} de coluna no período`],
+  ].map(([c,n,t])=>`<div class="kpi ${c}"><b>${n}</b><span>${t}</span></div>`).join("");
+
+  const linha = (p, pill, oq, dt) => `<li><button type="button" class="linkbtn tcb" data-abrir="${esc(p.numero)}">${esc(p.numero)}</button>${pill}<span class="ras"><span class="oq">${oq}</span> · ${esc(curto(p.assunto,110))}</span><span class="dt">${dt}</span></li>`;
+  const itens = [
+    ...grupos.map(({p,c,docs}) => { const i = prazoInfo(c), nd = docs.map(d=>d.replace(/-TCU\/.*/,""));
+      return linha(p, `<span class="pill ${i.pill}">${i.txt}</span>`, `Resposta ${nd.length>1?"aos":"ao"} <b>${esc(nd.join(" e "))}</b>`, `vence ${br(c.vencimento)}`); }),
+    ...muds.map(m => { const j = TR[m.para].janela, t = TR[m.para].nome;
+      const pill = j ? `<span class="pill p-amb">entrou na janela</span>` : m.para === 5 ? `<span class="pill">julgado</span>` : `<span class="pill p-mov">mudou de coluna</span>`;
+      return linha(m.p, pill, `${esc(TR[m.de].nome)} → <b>${esc(t)}</b>`, br(m.d)); })
+  ];
+  $("alist").innerHTML = itens.length ? itens.join("") : `<li class="vazio">Nada mudou de coluna no período e não há prazo de resposta até ${brAno(ate)}.</li>`;
+
+  const nOc = ocultos.filter(p => mudou(p,A,B)).length;
+  $("aOcultos").innerHTML = nOc ? `Mais ${nOc} processo${nOc>1?"s":""} mudou de coluna no período, mas está${nOc>1?"ão":""} fora da lista pelos filtros.` : "";
   const b = $("maisPrazos");
-  if (antigos && !st.todosPrazos){ b.hidden=false; b.textContent=`Mostrar também ${antigos} vencido(s) há mais de 30 dias`; }
-  else if (st.todosPrazos && antigos){ b.hidden=false; b.textContent="Esconder vencidos há mais de 30 dias"; }
+  if (outros && !st.todosPrazos){ b.hidden=false; b.textContent=`Ver todos os ${prazos.length} prazos em aberto`; }
+  else if (st.todosPrazos && outros){ b.hidden=false; b.textContent=`Só os prazos até ${br(ate)}`; }
   else b.hidden = true;
 }
 
+/* ---------- Quadro ---------- */
 function card(p, A, B){
-  const eB = etapaEm(p,B), eA = presente(p,A) ? etapaEm(p,A) : null;
-  const noPeriodo = p.eventos.filter(ev => ev.data > A && ev.data <= B);
-  const mud = ultimaMudanca(p,B);
-  const mudouNoPeriodo = eA && eA !== eB && mud && mud.data > A;
-  const um = ultimaMov(p,B), dias = um ? diff(um,B) : 999;
-  let seta = "";
-  if (!eA) seta = `<span class="seta">＋ entrou no painel em ${br(p.primeiro_visto)}</span>`;
-  else if (mudouNoPeriodo){
-    const volta = ORDEM[mud.para] < ORDEM[mud.de] && mud.para !== "recurso";
-    seta = `<span class="seta ${volta?"volta":""}">${volta?"←":"→"} veio de ${NOME[mud.de]} em ${br(mud.data)}</span>`;
-  }
+  const m = mudou(p, A, B), novo = !presente(p, A);
+  const desde = desdeEm(p, B), um = ultimaMov(p, B), parado = um ? diff(um, B) > 60 : true;
   const abertas = p.comunicacoes.filter(c=>c.status==="aberto").sort((a,b)=>a.vencimento.localeCompare(b.vencimento));
-  let pz = "";
-  const hoje = hojeRef();
-  const atuais = abertas.filter(c => diff(c.vencimento, hoje) <= 30);
-  if (atuais.length){ const i=prazoInfo(atuais[0]); pz=`<span class="pill ${i.pill}">${i.txt}</span>`; }
-  else if (abertas.length){ pz=`<span class="pill" title="Ciência antiga sem resposta registrada">prazo antigo</span>`; }
-  const orgs = (p.orgaos||[]).filter(o=>o!=="MPO").join(" · ") || "MPO";
-  const ac = p.acordao ? `<span class="pill">Ac. ${esc(p.acordao)}</span>` : "";
-  const nmov = noPeriodo.length ? `<span class="pill p-mov">${noPeriodo.length} mov.</span>` : "";
-  const parado = dias > 60 ? `<span class="pill">parado há ${Math.floor(dias/7)} sem.</span>` : "";
-  const cls = ["card", noPeriodo.length?"mov":"", dias>60?"parado":""].join(" ");
+  const atual = abertas.find(c => diff(c.vencimento, hojeRef()) <= JANELA_PRAZO);
+  const pz = atual ? (i => `<span class="pill ${i.pill}" title="Resposta ao ${esc(atual.doc)} · vence ${brAno(atual.vencimento)}">${i.curto}</span>`)(prazoInfo(atual))
+    : abertas.length ? `<span class="pill" title="Ciência antiga sem resposta registrada; pode ter sido respondida por outro meio">prazo antigo</span>` : "";
+  const tempo = m ? `<span class="mv">veio de ${esc(TR[m.de].nome)} em ${br(m.d)}</span>`
+    : novo ? `<span class="mv">entrou no painel em ${br(p.primeiro_visto)}</span>`
+    : desde ? `há ${diff(desde,B)} dias nesta coluna` : (um ? `última mov. ${br(um)}` : "sem movimentação pública");
+  const tags = [emRecurso(p,B) ? `<span class="pill">em recurso</span>` : "", p.vinculo==="interessado" ? `<span class="pill">interessado</span>` : "", selo(p.numero)].join("");
+  const cls = ["card", m||novo ? "mov":"", parado ? "parado":""].join(" ");
   return `<details class="${cls}" id="c-${p.numero.replace(/\D/g,"")}" data-num="${esc(p.numero)}">
    <summary>
-    ${seta}
-    <div class="c1"><span class="tc">${esc(p.numero)}</span><span class="dir">${pz}<button class="star" type="button" data-star="${esc(p.numero)}" aria-pressed="${minha.has(p.numero)}" aria-label="Marcar na minha lista" title="Minha lista">${minha.has(p.numero)?"★":"☆"}</button></span></div>
+    <div class="c1"><span class="tc">${esc(p.numero)}</span><span class="dir"><button class="star" type="button" data-star="${esc(p.numero)}" aria-pressed="${minha.has(p.numero)}" aria-label="Minha lista" title="Minha lista">${minha.has(p.numero)?"★":"☆"}</button></span></div>
     <div class="as">${esc(p.assunto)}</div>
-    ${selo(p.numero) ? `<div class="meta">${selo(p.numero)}</div>` : ""}
-    <div class="meta"><span class="nat">${esc(p.natureza||"")}${p.relator?" · Min. "+esc(p.relator):""}</span></div>
-    <div class="meta"><span class="pill">${esc(orgs)}</span>${ac}${nmov}${parado}</div>
-    ${(()=>{ const r=faseEm(p,B); return `<div class="step" title="Fase ${r.fase} de 6 · ${FASES[r.fase][0]}${r.data?" desde "+br(r.data):""}">${[1,2,3,4,5,6].map(n=>`<i class="${n<r.fase?"on":n===r.fase?"cur":""}"></i>`).join("")}</div><div class="step-l">Fase ${r.fase} de 6 · ${FASES[r.fase][0]}${r.data?" desde "+br(r.data):""}</div>`; })()}
-    <div class="abre"><span>${um?"última mov. "+br(um):"sem movimentação registrada"}</span><span class="ic" aria-hidden="true">▾</span></div>
+    <div class="c3">${pz}${tempo}${tags}</div>
    </summary>
-   ${risco && risco.get(p.numero) ? `<div class="tl-wrap"><div class="rk-med"><b>Risco:</b> ${esc(risco.get(p.numero).medida)}${risco.get(p.numero).fonte?" · fonte: "+esc(risco.get(p.numero).fonte):""}</div></div>` : ""}
-   <div class="tl-wrap" data-tl></div>
+   <div class="det" data-tl></div>
   </details>`;
 }
-
-function timeline(p, A, B, todos){
+function detalhe(p, A, B, todos){
+  const r = risco && risco.get(p.numero);
+  const orgs = (p.orgaos||[]).join(" · ");
+  const info = [p.natureza, p.relator ? "Min. "+p.relator : "", orgs, p.acordao ? "Ac. "+p.acordao : ""].filter(Boolean).map(esc).map(x=>`<span>${x}</span>`).join("");
   const evs = p.eventos.filter(ev => ev.data <= B);
-  let e = p.etapa_base; const marc = [];
+  let c = p.col_base; const marc = [];
   for (const ev of evs){
     let tag = "", cls = [];
-    if (ev.etapa && ev.etapa !== e){ tag = `${NOME[e]} → ${NOME[ev.etapa]}`; e = ev.etapa; cls.push("etp"); }
-    if (ev.com === "ciencia"){ const c=p.comunicacoes.find(c=>c.doc===ev.doc && c.ciencia===ev.data); tag = tag || (c ? `ciência do MPO · vence ${br(c.vencimento)}` : "ciência"); cls.push("com"); }
+    if (ev.col && ev.col !== c){ tag = `→ ${TR[ev.col].nome}`; c = ev.col; cls.push("etp"); }
+    if (ev.com === "ciencia"){ const cc=p.comunicacoes.find(x=>x.doc===ev.doc && x.ciencia===ev.data); tag = tag || (cc ? `ciência do MPO · vence ${br(cc.vencimento)}` : "ciência"); cls.push("com"); }
     else if (ev.com === "resposta"){ tag = tag || "resposta registrada"; cls.push("com"); }
     else if (ev.com === "encerra"){ tag = tag || "ciclo de comunicação encerrado"; cls.push("com"); }
     else if (ev.com === "juntada"){ tag = tag || "documento da parte"; cls.push("com"); }
@@ -490,72 +428,30 @@ function timeline(p, A, B, todos){
   marc.reverse();
   const lim = todos ? marc.length : 8;
   const link = p.url ? `<a href="${esc(p.url)}" target="_blank" rel="noopener">abrir no TCU ↗</a>` : "";
-  const fh = faseEm(p, B).hist;
-  const fasesTxt = fh.length ? `<div class="step-l" style="margin-bottom:6px">Fases: ${fh.map(h=>`${br(h.data)} ${FASES[h.fase][0]}`).join(" → ")}</div>` : "";
-  return `${fasesTxt}<div class="tl-top"><span>${evs.length} movimentações conhecidas · mais recente no topo</span>${link}</div>
-    ${marc.length ? `<ol class="tl">${marc.slice(0,lim).join("")}</ol>` : `<p class="nat">Nenhuma movimentação pública coletada.</p>`}
-    ${marc.length > lim ? `<button class="linkbtn tl-more" type="button" data-tlall>Ver as ${marc.length} movimentações</button>` : ""}`;
+  return `${info?`<div class="info">${info}</div>`:""}
+    ${r ? `<div class="rk-med"><b>Risco:</b> ${esc(r.medida)}${r.resp?" · "+esc(r.resp):""}</div>` : ""}
+    <div class="tl-top"><span>${evs.length} movimentações · mais recente no topo</span>${link}</div>
+    ${marc.length ? `<ol class="tl">${marc.slice(0,lim).join("")}</ol>` : `<p class="col-vazia">Nenhuma movimentação pública coletada.</p>`}
+    ${marc.length > lim ? `<button class="linkbtn" type="button" data-tlall>Ver as ${marc.length} movimentações</button>` : ""}`;
 }
-
-const FASES = [null,
-  ["Início","portaria de fiscalização, autuação"],
-  ["Coleta","requisições, oitivas, respostas"],
-  ["Relatório preliminar","comentários dos gestores"],
-  ["Instrução concluída","proposta fechada, no relator"],
-  ["Pauta","sessão marcada, vista"],
-  ["Julgado","acórdão publicado"]];
-const REGRAS_FASE = [
-  [6, /^Ac[óo]rd[ãa]o \d|Apreciado na Sess/i],
-  [5, /inclu[íi]do na pauta|pedido de vista|enviado de MINS?-\S+ para Seses/i],
-  [4, /Pronunciamento d[ao] \S+ conclu|Enviado para pronunciamento do Ministro|enviado de \S+ para MINS?-/i],
-  [3, /coment[áa]rios dos gestores|Relat[óo]rio Preliminar|vers[ãa]o preliminar/i],
-  [2, /Of[íi]cio de Requisi|oitiva|dilig[êe]ncia|Registrada ci[êe]ncia|Elementos comprobat|via CONECTA/i],
-  [1, /Portaria de Fiscaliza|autuad/i]];
-function faseEm(p, dia){
-  // A fase só avança dentro de um ciclo; um acórdão fecha o ciclo e uma nova portaria ou instrução abre outro.
-  let f = null, dt = null; const hist = [];
-  for (const ev of p.eventos){
-    if (ev.data > dia) break;
-    for (const [n, rx] of REGRAS_FASE){
-      if (rx.test(ev.desc)){
-        // Depois do acórdão, ciência, ofício e envio à Seses são rotina de cumprimento: não reabrem o ciclo.
-        const reabre = f !== 6 || n === 1 || n === 3 || n === 4 || (n === 5 && !/Seses/i.test(ev.desc));
-        if (reabre && (n === 6 || f === null || f === 6 || n > f)){ if (n !== f) hist.push({data:ev.data, fase:n}); f = n; dt = ev.data; }
-        break;
-      }
-    }
-  }
-  return {fase: f || 1, data: dt, hist};
-}
-function mudouFase(p, A, B){
-  const r = faseEm(p, B), r0 = presente(p, A) ? faseEm(p, A) : {fase:null};
-  return (r0.fase !== null && r0.fase !== r.fase && r.data && r.data > A) ? {p, de:r0.fase, para:r.fase, d:r.data} : null;
-}
-function renderRadar(lista, A, B, ocultos){
-  const por = {1:[],2:[],3:[],4:[],5:[],6:[]}, mud = [];
-  for (const p of lista){
-    const r = faseEm(p, B);
-    por[r.fase].push({p, d:r.data});
-    const m = mudouFase(p, A, B); if (m) mud.push(m);
-  }
-  const nOc = (ocultos||[]).filter(p => mudouFase(p, A, B)).length;
-  const aviso = nOc ? `<p class="rmud-oc">Mais ${nOc} processo${nOc>1?"s":""} mudou de fase no período, mas está${nOc>1?"ão":""} fora da lista pelos filtros (por exemplo, o botão <b>interessados</b> desligado).</p>` : "";
-  const novos = new Set(mud.map(m=>m.p.numero));
-  const LIM = 5;
-  $("radar").innerHTML = [1,2,3,4,5,6].map(n=>{
-    const ps = por[n].sort((a,b)=>(b.d||"").localeCompare(a.d||""));
-    const vis = st.radarTodos && st.radarTodos[n] ? ps : ps.slice(0, LIM);
-    const jan = n===3 || n===4;
-    return `<div class="rf${jan?" jan":""}">${jan?'<span class="tag">janela</span>':""}
-      <div class="rf-h"><b>${ps.length}</b><span>${n}. ${FASES[n][0]}</span></div><div class="rf-s">${FASES[n][1]}</div>
-      <div class="rf-c">${vis.map(x=>`<button type="button" class="rchip${novos.has(x.p.numero)?" novo":""}" data-abrir="${esc(x.p.numero)}" title="${esc((x.p.assunto||"").slice(0,160))}">${esc(x.p.numero)}<small>${br(x.d)}</small></button>`).join("")}
-      ${ps.length>vis.length?`<button type="button" class="rf-mais" data-rtodos="${n}">+${ps.length-vis.length} processos</button>`:""}</div></div>`;
+function renderQuadro(lista, A, B){
+  const por = {1:[],2:[],3:[],4:[],5:[]};
+  for (const p of lista) por[colEm(p,B)].push(p);
+  const peso = p => [-(risco && risco.get(p.numero) ? risco.get(p.numero).faixa : 0), mudou(p,A,B)?0:1,
+    p.comunicacoes.some(c=>c.status==="aberto")?0:1, -(+toD(ultimaMov(p,B)||"2000-01-01"))];
+  const cmp = (a,b)=>{ const x=peso(a), y=peso(b); for(let i=0;i<x.length;i++) if(x[i]!==y[i]) return x[i]-y[i]; return 0; };
+  const abertos = new Set([...document.querySelectorAll("details.card[open]")].map(d=>d.dataset.num));
+  $("board").innerHTML = D.trilha.map(t=>{
+    const cs = por[t.n].sort(cmp), vis = st.expand[t.n] ? cs : cs.slice(0, LIM_COL), resto = cs.length - vis.length;
+    const vazio = t.n === 2 ? "O relatório preliminar chega ao MPO pelo Conecta e quase nunca aparece na movimentação pública."
+      : "Nenhum processo.";
+    return `<div class="col${t.janela?" jan":""}"><div class="col-h">${t.janela?'<span class="jtag">janela de atuação</span>':""}
+      <div class="l1"><h3>${esc(t.nome)}</h3><span class="n">${cs.length}</span></div><small>${esc(t.sub)}</small>
+      ${DICA[t.n]?`<span class="dica">→ ${DICA[t.n]}</span>`:""}</div>
+      <div class="cards">${vis.map(p=>card(p,A,B)).join("") || `<div class="col-vazia">${vazio}</div>`}
+      ${resto>0?`<button class="col-mais" type="button" data-expand="${t.n}">Mostrar mais ${resto}</button>`:""}</div></div>`;
   }).join("");
-  const box = $("rmud");
-  if (!mud.length && !nOc){ box.hidden = true; return; }
-  mud.sort((a,b)=> b.para-a.para || b.d.localeCompare(a.d));
-  box.hidden = false;
-  box.innerHTML = `<h3>Mudaram de fase de ${brAno(A)} a ${brAno(B)} (${mud.length})</h3><ul>${mud.map(m=>`<li><button type="button" class="linkbtn" data-abrir="${esc(m.p.numero)}" style="font:600 12.5px var(--f-mono)">${esc(m.p.numero)}</button> <span class="de">${FASES[m.de][0]}</span> → <b>${FASES[m.para][0]}</b><span class="dt">${br(m.d)}</span><span class="ras">${esc((m.p.assunto||"").slice(0,90))}${(m.p.assunto||"").length>90?"…":""}</span>${m.para===3||m.para===4?'<span class="jan-pill">janela de atuação</span>':""}</li>`).join("")}</ul>${aviso}`;
+  for (const n of abertos){ const el=document.querySelector(`details.card[data-num="${n}"]`); if (el) el.open = true; }
 }
 
 function render(){
@@ -565,53 +461,18 @@ function render(){
   $("nMinha").textContent = minha.size;
   let lista = base.filter(filtra);
   if (st.soMov) lista = lista.filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B));
-
-  const abertosLista = lista.filter(p=>p.aberto), naLista = new Set(abertosLista);
-  renderRadar(abertosLista, A, B, base.filter(p => p.aberto && !naLista.has(p)));
-  renderPrazos(lista.filter(p=>p.aberto));
-
-  // resumo
-  const mov = lista.filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B));
-  const mud = lista.filter(p => presente(p,A) && etapaEm(p,A) !== etapaEm(p,B));
-  const novos = lista.filter(p => !presente(p,A));
-  const sairam = D.processos.filter(p => presente(p,A) && !presente(p,B) && filtra(p));
-  const julg = lista.filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B && ev.etapa==="julgado"));
-  const pautas = lista.filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B && /inclu[íi]do na pauta/i.test(ev.desc)));
-  $("periodo").textContent = `de ${brAno(A)} a ${brAno(B)} · ${diff(A,B)} dias`;
-  $("resumo").innerHTML = [
-    ["mov", mov.length, "processos com movimentação"],
-    ["", mud.length, "mudaram de etapa"],
-    ["", pautas.length, "incluídos em pauta"],
-    ["", julg.length, "com acórdão ou apreciação"],
-    ["", novos.length, "entraram no painel"],
-    ["", sairam.length, "saíram (encerrados)"],
-  ].map(([c,n,t])=>`<div class="rs ${c}"><b>${n}</b>${t}</div>`).join("");
-
-  // quadro
-  const porEtapa = Object.fromEntries(ETAPAS.map(e=>[e[0],[]]));
-  for (const p of lista){ const e = etapaEm(p,B); if (porEtapa[e]) porEtapa[e].push(p); }
-  const peso = p => {
-    const m = ultimaMudanca(p,B), mudou = presente(p,A) && etapaEm(p,A)!==etapaEm(p,B) && m && m.data > A;
-    const aberto = p.comunicacoes.some(c=>c.status==="aberto");
-    const rf = risco && risco.get(p.numero) ? risco.get(p.numero).faixa : 0;
-    return [-rf, mudou?0:1, aberto?0:1, -(+toD(ultimaMov(p,B)||"2000-01-01"))];
-  };
-  const cmp = (a,b)=>{ const x=peso(a), y=peso(b); for(let i=0;i<x.length;i++){ if(x[i]!==y[i]) return x[i]-y[i]; } return 0; };
-  const abertosAntes = new Set([...document.querySelectorAll("details.card[open]")].map(d=>d.dataset.num));
-  $("board").innerHTML = ETAPAS.map(([k,nome,sub])=>{
-    const cs = porEtapa[k].sort(cmp);
-    const vis = st.expand[k] ? cs : cs.slice(0, LIM_COL);
-    const resto = cs.length - vis.length;
-    return `<div class="col"><div class="col-h"><h3>${nome}<small>${sub}</small></h3><span class="n">${cs.length}</span></div>
-      <div class="cards">${vis.map(p=>card(p,A,B)).join("") || `<div class="vazio">Nenhum processo.</div>`}
-      ${resto>0?`<button class="btn col-mais" type="button" data-expand="${k}">Mostrar mais ${resto}</button>`:""}</div></div>`;
-  }).join("");
-  for (const num of abertosAntes){ const el=document.querySelector(`details.card[data-num="${num}"]`); if (el){ el.open=true; } }
+  const na = new Set(lista);
+  renderAtencao(lista, base.filter(p=>!na.has(p)), A, B);
+  renderQuadro(lista, A, B);
 }
 
-function abrirTl(det, todos){
-  const p = D.processos.find(x=>x.numero===det.dataset.num);
-  det.querySelector("[data-tl]").innerHTML = timeline(p, st.A, st.B, todos);
+function abrirTl(det, todos){ const p = D.processos.find(x=>x.numero===det.dataset.num); det.querySelector("[data-tl]").innerHTML = detalhe(p, st.A, st.B, todos); }
+function abrir(num){
+  const id = "c-"+num.replace(/\D/g,"");
+  if (!$(id)){ for (const t of D.trilha) st.expand[t.n]=true; render(); }
+  if (!$(id)){ st.inter = true; st.soMinha = false; st.soMov = false; st.q = num; $("q").value = num;
+    ["tgInt","tgMinha","tgMov"].forEach((b,i)=>$(b).setAttribute("aria-pressed", i===0)); render(); }
+  const el = $(id); if (el){ el.open = true; el.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"center"}); }
 }
 
 function semanas(){
@@ -620,7 +481,6 @@ function semanas(){
   if (out[out.length-1] !== D.inicio_historico) out.push(D.inicio_historico);
   return out;
 }
-
 function montarControles(){
   const ws = semanas();
   $("selB").innerHTML = ws.map(w=>`<option value="${w}">${brAno(w)}${w===D.hoje?" (hoje)":""}</option>`).join("");
@@ -637,7 +497,7 @@ function montarControles(){
     const f = e.target.files && e.target.files[0]; if (!f) return;
     const rd = new FileReader();
     rd.onload = () => { try { usarRisco(String(rd.result), f.name, $("lembrar").checked); }
-      catch(err){ $("privTxt").innerHTML = `<b>Não foi possível ler ${esc(f.name)}:</b> ${esc(err.message)}. Confira o separador (; ou ,) e o cabeçalho.`; } };
+      catch(err){ $("privTxt").innerHTML = `<b>Não foi possível ler ${esc(f.name)}:</b> ${esc(err.message)}.`; } };
     rd.readAsText(f, "utf-8"); e.target.value = "";
   };
   $("lembrar").onchange = e => { try{ if (!e.target.checked) localStorage.removeItem(LS_R); else if (risco) localStorage.setItem(LS_R, JSON.stringify({nome:riscoArq, txt:riscoTxt})); }catch(err){} };
@@ -646,43 +506,28 @@ function montarControles(){
   $("maisPrazos").onclick = ()=>{ st.todosPrazos=!st.todosPrazos; render(); };
   $("editMinha").onclick = ()=>{ $("dlgTxt").value=[...minha].join("\n"); try{ $("dlg").showModal(); }catch(e){ $("dlg").setAttribute("open",""); } };
   $("dlgForm").addEventListener("submit", e=>{
-    if (e.submitter && e.submitter.value === "ok"){
-      minha = new Set(($("dlgTxt").value.match(/\d{3}\.\d{3}\/\d{4}-\d/g)||[]));
-      gravarMinha(); render();
-    }
+    if (e.submitter && e.submitter.value === "ok"){ minha = new Set(($("dlgTxt").value.match(/\d{3}\.\d{3}\/\d{4}-\d/g)||[])); gravarMinha(); render(); }
   });
-
   document.addEventListener("click", e=>{
     const s = e.target.closest("[data-star]");
     if (s){ e.preventDefault(); e.stopPropagation(); const n=s.dataset.star; minha.has(n)?minha.delete(n):minha.add(n); gravarMinha(); render(); return; }
-    const a = e.target.closest("[data-abrir]");
-    if (a){ const el = $("c-"+a.dataset.abrir.replace(/\D/g,""));
-      if (!el){ for (const k in NOME) st.expand[k]=true; render(); }
-      if (!$("c-"+a.dataset.abrir.replace(/\D/g,""))){ st.q = a.dataset.abrir; $("q").value = st.q; render(); }
-      const alvo = $("c-"+a.dataset.abrir.replace(/\D/g,"")); if (alvo){ alvo.open = true; alvo.scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth", block:"center"}); }
-      return; }
-    const rt = e.target.closest("[data-rtodos]");
-    if (rt){ st.radarTodos = st.radarTodos || {}; st.radarTodos[rt.dataset.rtodos] = true; render(); return; }
-    const x = e.target.closest("[data-expand]");
-    if (x){ st.expand[x.dataset.expand]=true; render(); return; }
-    const m = e.target.closest("[data-tlall]");
-    if (m){ abrirTl(m.closest("details"), true); }
+    const a = e.target.closest("[data-abrir]"); if (a){ abrir(a.dataset.abrir); return; }
+    const x = e.target.closest("[data-expand]"); if (x){ st.expand[x.dataset.expand]=true; render(); return; }
+    const m = e.target.closest("[data-tlall]"); if (m) abrirTl(m.closest("details"), true);
   });
   document.addEventListener("toggle", e=>{ const d=e.target; if (d.matches && d.matches("details.card") && d.open) abrirTl(d,false); }, true);
 }
 
 function iniciar(dados){
-  D = dados; lerMinha();
+  D = dados; TR = Object.fromEntries(D.trilha.map(t=>[t.n,t])); lerMinha();
   $("sub").textContent = `Dados públicos coletados em ${D.gerado_em_br || brAno(D.hoje)}. Histórico desde ${brAno(D.inicio_historico)}.`;
   $("padrao").textContent = D.prazo_padrao_dias;
-  $("fonte").innerHTML = `Fonte: Pesquisa Integrada e BTCU do TCU, coletados pelo painel principal. Somente informação pública; nenhuma nota interna.`;
+  $("fonte").textContent = "Fonte: Pesquisa Integrada e BTCU do TCU, coletados pelo painel principal. Somente informação pública; nenhuma nota interna.";
   montarControles();
   try{ const g = JSON.parse(localStorage.getItem(LS_R)||"null"); if (g && g.txt){ risco = parseCSV(g.txt); riscoArq = g.nome; riscoTxt = g.txt; $("lembrar").checked = true; } }catch(e){ risco = null; }
   atualizarPriv(); render();
   const h = location.hash.match(/^#c-(\d{11})$/);
-  if (h){
-    if (!$("c-"+h[1])){ for (const x in NOME) st.expand[x]=true; st.inter=true; $("tgInt").setAttribute("aria-pressed","true"); render(); }
-    const el=$("c-"+h[1]); if (el){ el.open=true; el.scrollIntoView({block:"center"}); } }
+  if (h){ const p = D.processos.find(x=>x.numero.replace(/\D/g,"")===h[1]); if (p) abrir(p.numero); }
 }
 
 if (window.KANBAN_DADOS) iniciar(window.KANBAN_DADOS);

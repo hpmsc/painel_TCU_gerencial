@@ -79,6 +79,61 @@ REGRAS_ETAPA: list[tuple[str, re.Pattern]] = [
                              r"Portaria de Fiscaliza[çc][ãa]o", re.I)),
 ]
 
+# --------------------------------------------------------------------------- #
+# Trilha de atuação: uma só leitura do andamento, em 5 colunas, pensada para a
+# ação do MPO. Junta a etapa (onde o processo está) e o marco do rito da
+# auditoria (relatório preliminar, proposta concluída), que antes eram dois
+# quadros separados.
+TRILHA = [
+    (1, "Fiscalização em curso", "portaria, requisições, diligências, instrução"),
+    (2, "Relatório preliminar", "comentários do gestor"),
+    (3, "Proposta no relator", "instrução concluída, gabinete do ministro"),
+    (4, "Pauta", "sessão marcada, vista"),
+    (5, "Julgado e cumprimento", "acórdão, cumprimento, recurso"),
+]
+JANELA = {2, 3}  # onde ainda dá para influenciar o conteúdo da decisão
+
+REGRAS_MARCO: list[tuple[int, re.Pattern]] = [
+    (6, re.compile(r"^Ac[óo]rd[ãa]o \d|Apreciado na Sess", re.I)),
+    (5, re.compile(r"inclu[íi]do na pauta|pedido de vista|enviado de MINS?-\S+ para Seses", re.I)),
+    (4, re.compile(r"Pronunciamento d[ao] \S+ conclu|Enviado para pronunciamento do Ministro|enviado de \S+ para MINS?-", re.I)),
+    (3, re.compile(r"coment[áa]rios dos gestores|Relat[óo]rio Preliminar|vers[ãa]o preliminar", re.I)),
+    (2, re.compile(r"Of[íi]cio de Requisi|oitiva|dilig[êe]ncia|Registrada ci[êe]ncia|Elementos comprobat|via CONECTA", re.I)),
+    (1, re.compile(r"Portaria de Fiscaliza|autuad", re.I)),
+]
+
+
+def coluna(etapa: str, marco: int | None) -> int:
+    if etapa in ("julgado", "recurso", "encerrado"):
+        return 5
+    if etapa == "pauta":
+        return 4
+    if etapa == "relator":
+        return 3
+    return 2 if marco == 3 else 1
+
+
+def marcar_trilha(eventos: list[dict], base: str) -> int:
+    """Grava ev["col"] nos eventos em que o processo muda de coluna; devolve a coluna de partida."""
+    etapa, marco = base, None
+    atual = inicio = coluna(base, None)
+    for ev in eventos:
+        if ev.get("etapa"):
+            etapa = ev["etapa"]
+        for n, rx in REGRAS_MARCO:
+            if rx.search(ev["desc"]):
+                # Depois do acórdão, ciência, ofício e envio à Seses são rotina de
+                # cumprimento: só portaria, relatório preliminar, proposta ou pauta reabrem.
+                reabre = marco != 6 or n in (1, 3, 4) or (n == 5 and "seses" not in ev["desc"].lower())
+                if reabre and (n == 6 or marco is None or marco == 6 or n > marco):
+                    marco = n
+                break
+        c = coluna(etapa, marco)
+        if c != atual:
+            ev["col"] = atual = c
+    return inicio
+
+
 RX_DOC = r"((?:Of[íi]cio|Aviso|Edital|Notifica[çc][ãa]o)\s+[\d./]+(?:-TCU/[^\s.]+)?)"
 RX_CIENCIA = re.compile(r"Registrada ci[êe]ncia de comunica[çc][ãa]o d[oa] " + RX_DOC, re.I)
 RX_RESPOSTA = re.compile(r"Registrada resposta de comunica[çc][ãa]o d[oa] " + RX_DOC, re.I)
@@ -236,6 +291,7 @@ def montar(versoes: list[dict]) -> dict:
 
         # Etapa de partida quando nenhuma movimentação define a etapa.
         base = "julgado" if p.get("acordao") else "instrucao"
+        col_base = marcar_trilha(eventos, base)
 
         # Comunicações e prazos
         coms: dict[str, dict] = {}
@@ -304,6 +360,7 @@ def montar(versoes: list[dict]) -> dict:
             "primeiro_visto": reg["visto"][0] if reg["visto"] else None,
             "ultimo_visto": reg["visto"][-1] if reg["visto"] else None,
             "etapa_base": base,
+            "col_base": col_base,
             "eventos": eventos,
             "comunicacoes": comunicacoes,
         })
@@ -318,6 +375,7 @@ def montar(versoes: list[dict]) -> dict:
         "prazo_padrao_dias": PRAZO_PADRAO_DIAS,
         "feriados": sorted(FERIADOS),
         "etapas": ETAPAS,
+        "trilha": [{"n": n, "nome": nome, "sub": sub, "janela": n in JANELA} for n, nome, sub in TRILHA],
         "processos": saida,
     }
 
