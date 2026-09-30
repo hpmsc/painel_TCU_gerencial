@@ -1,13 +1,13 @@
 {
  "versao": 2,
- "gerado_em": "2026-09-30T20:49:17.036727+00:00",
- "gerado_em_br": "30/09/2026 às 20:49",
+ "gerado_em": "2026-09-30T21:17:24.638998+00:00",
+ "gerado_em_br": "30/09/2026 às 21:17",
  "ancora_btcu": 23240,
  "tem_estado": true,
  "avisos": [],
  "totais": {
   "processos": 86,
-  "movimentacoes": 290,
+  "movimentacoes": 291,
   "abertos": 86,
   "encerrados_ocultos": 686,
   "so_interesse": 37
@@ -32,6 +32,19 @@
  ],
  "novos_processos": [],
  "andamentos_novos": [
+  {
+   "processo": "016.873/2025-4",
+   "orgaos": [
+    "MPO",
+    "SEPLAN",
+    "SOF"
+   ],
+   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
+   "data": "2026-09-30T00:00:00+00:00",
+   "descricao": "Registrada ciência de comunicação do Ofício 39708/2026-TCU/Seproc via CONECTA TCU por IGOR EDUARDO DE SA em nome de Câmara dos Deputados",
+   "acordao": null,
+   "novo_no_radar": false
+  },
   {
    "processo": "016.873/2025-4",
    "orgaos": [
@@ -348,6 +361,17 @@
  ],
  "ranking_mes": [
   {
+   "processo": "016.873/2025-4",
+   "orgaos": [
+    "MPO",
+    "SEPLAN",
+    "SOF"
+   ],
+   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
+   "relator": "Jhonatan de Jesus",
+   "movimentacoes_mes": 4
+  },
+  {
    "processo": "019.911/2026-2",
    "orgaos": [
     "MPO",
@@ -528,6 +552,12 @@
    "movimentacoes": [
     {
      "data": "2026-09-30T00:00:00+00:00",
+     "descricao": "Registrada ciência de comunicação do Ofício 39708/2026-TCU/Seproc via CONECTA TCU por IGOR EDUARDO DE SA em nome de Câmara dos Deputados",
+     "fase": null,
+     "acordao": null
+    },
+    {
+     "data": "2026-09-30T00:00:00+00:00",
      "descricao": "Registrada ciência de comunicação do Ofício 39703/2026-TCU/Seproc.",
      "fase": null,
      "acordao": null
@@ -547,11 +577,11 @@
    ],
    "ultima_movimentacao": {
     "data": "2026-09-30T00:00:00+00:00",
-    "descricao": "Registrada ciência de comunicação do Ofício 39703/2026-TCU/Seproc.",
+    "descricao": "Registrada ciência de comunicação do Ofício 39708/2026-TCU/Seproc via CONECTA TCU por IGOR EDUARDO DE SA em nome de Câmara dos Deputados",
     "fase": null,
     "acordao": null
    },
-   "fase_atual": "Registrada ciência de comunicação do Ofício 39703/2026-TCU/Seproc.",
+   "fase_atual": "Registrada ciência de comunicação do Ofício 39708/2026-TCU/Seproc via CONECTA TC",
    "atualizado_em": "2026-09-30T00:00:00+00:00",
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1687320254",
    "garantido": false
@@ -1654,7 +1684,13 @@
     "CC/PR - Casa Civil da Presidência da República",
     "RFB - Secretaria Especial da Receita Federal do Brasil"
    ],
-   "interessados": [],
+   "interessados": [
+    "Secretaria-Executiva da Casa Civil da Presidência da República",
+    "Assessoria Especial de Controle Interno do Ministério da Fazenda",
+    "Secretaria-Executiva do Ministério da Fazenda",
+    "Assessoria Especial de Controle Interno do Ministério do Planejamento e Orçamento",
+    "Secretaria-Executiva do Ministério do Planejamento e Orçamento"
+   ],
    "orgaos": [
     "AECI",
     "MPO",
@@ -1670,7 +1706,7 @@
     "SE"
    ],
    "vinculo": "unidade",
-   "acordao": null,
+   "acordao": "2607/2026",
    "movimentacoes": [
     {
      "data": "2026-09-24T00:00:00+00:00",
@@ -5719,6 +5755,21 @@
   },
   {
    "data": "2026-09-30T00:00:00+00:00",
+   "descricao": "Registrada ciência de comunicação do Ofício 39708/2026-TCU/Seproc via CONECTA TCU por IGOR EDUARDO DE SA em nome de Câmara dos Deputados",
+   "fase": null,
+   "acordao": null,
+   "processo": "016.873/2025-4",
+   "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
+   "natureza": "Relatório de Levantamento",
+   "orgaos": [
+    "MPO",
+    "SEPLAN",
+    "SOF"
+   ],
+   "estado": "Aberto"
+  },
+  {
+   "data": "2026-09-30T00:00:00+00:00",
    "descricao": "Registrada ciência de comunicação do Ofício 39703/2026-TCU/Seproc.",
    "fase": null,
    "acordao": null,
@@ -8452,20 +8503,6 @@
    "processo": "015.321/2025-8",
    "assunto": "Of. nº 20/2025/CTFC, de 16/7/2025, encaminha o Requerimento nº 40/2025-CTFC, de autoria do Senador Marcos Rogério, por meio do qual solicita ao TCU a realização de \"auditoria contábil, financeira, orçamentária e operacional nos atos da União, das seguintes  agências reguladoras federais: Agência Nacional de Mineração (ANM), Agência Nacional de Telecomunicações (Anatel), Agência Nacional de Energia Elétrica (Aneel), Agência Nacional de Aviação Civil (ANAC), Agência Nacional do Petróleo, Gás Natural\r\ne Biocombustíveis (ANP), Agência Nacional de Transportes Terrestres (ANTT) e Agência Nacional de Transportes Aquaviários (ANTAQ), bem como dos ministérios aos quais essas entidades estão vinculadas\".",
    "natureza": "Solicitação do Congresso Nacional",
-   "orgaos": [
-    "MPO",
-    "SOF"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-07-16T00:00:00+00:00",
-   "descricao": "Peça nº 4 do tipo Portaria de Fiscalização (doc 80.695.384-5) publicada no BTCU Controle Externo n° 119, de 16/07/2026.",
-   "fase": null,
-   "acordao": null,
-   "processo": "009.482/2026-1",
-   "assunto": "Acompanhamento da Regularidade da Execução Orçamentária e Financeira  1º Semestre de 2026",
-   "natureza": "Relatório de Acompanhamento",
    "orgaos": [
     "MPO",
     "SOF"
