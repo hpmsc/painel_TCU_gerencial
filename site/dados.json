@@ -1,7 +1,7 @@
 {
  "versao": 2,
- "gerado_em": "2026-09-29T20:59:16.629886+00:00",
- "gerado_em_br": "29/09/2026 às 20:59",
+ "gerado_em": "2026-09-30T15:48:45.294421+00:00",
+ "gerado_em_br": "30/09/2026 às 15:48",
  "ancora_btcu": 23240,
  "tem_estado": true,
  "avisos": [],
@@ -13,12 +13,12 @@
   "so_interesse": 38
  },
  "garantidos": [
+  "017.106/2025-7",
   "005.405/2026-2",
   "024.312/2024-0",
   "024.216/2025-9",
   "025.632/2024-8",
   "011.685/2026-3",
-  "017.106/2025-7",
   "017.191/2026-2",
   "008.723/2023-0",
   "017.183/2026-0",
@@ -31,7 +31,47 @@
   "011.526/2022-0"
  ],
  "novos_processos": [],
- "andamentos_novos": [],
+ "andamentos_novos": [
+  {
+   "processo": "014.609/2026-6",
+   "orgaos": [
+    "AECI",
+    "MPO",
+    "SE",
+    "SOF"
+   ],
+   "assunto": "3ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
+   "data": "2026-09-30T00:00:00+00:00",
+   "descricao": "Registrada ciência de comunicação do Ofício 38542/2026-TCU/Seproc via CONECTA TCU por MARCELE BOTELHO em nome de Secretaria-Executiva da Casa Civil da Presidência da República",
+   "acordao": null,
+   "novo_no_radar": false
+  },
+  {
+   "processo": "014.609/2026-6",
+   "orgaos": [
+    "AECI",
+    "MPO",
+    "SE",
+    "SOF"
+   ],
+   "assunto": "3ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
+   "data": "2026-09-29T00:00:00+00:00",
+   "descricao": "Registrada ciência de comunicação do Ofício 38540/2026-TCU/Seproc via CONECTA TCU por RAISSA MORAIS CRUZEIRO em nome de Secretaria-Executiva do Ministério do Planejamento e Orçamento",
+   "acordao": null,
+   "novo_no_radar": false
+  },
+  {
+   "processo": "017.106/2025-7",
+   "orgaos": [
+    "MPO"
+   ],
+   "assunto": "Auditoria operacional, integrada com conformidade, para avaliar a capacidade das Forças Armadas de cumprir com os Objetivos Nacionais de Defesa.",
+   "data": "2026-09-29T00:00:00+00:00",
+   "descricao": "Processo 017.305/2026-8 foi apensado a este processo por AudDefesa.",
+   "acordao": null,
+   "novo_no_radar": false
+  }
+ ],
  "tem_baseline": true,
  "por_orgao": [
   {
@@ -84,12 +124,12 @@
    "abertos": 24
   },
   {
-   "tipo": "Relatório de Auditoria",
+   "tipo": "Relatório de Acompanhamento",
    "total": 16,
    "abertos": 16
   },
   {
-   "tipo": "Relatório de Acompanhamento",
+   "tipo": "Relatório de Auditoria",
    "total": 16,
    "abertos": 16
   },
@@ -219,6 +259,10 @@
    "total": 2
   },
   {
+   "unidade": "AudSustentabilidade",
+   "total": 2
+  },
+  {
    "unidade": "AudEducação",
    "total": 2
   },
@@ -236,10 +280,6 @@
   },
   {
    "unidade": "AudTI",
-   "total": 1
-  },
-  {
-   "unidade": "AudSustentabilidade",
    "total": 1
   },
   {
@@ -273,11 +313,11 @@
    "total": 5
   },
   {
-   "representante": "Sergio Caribé",
-   "total": 4
+   "representante": "Marinus Marsico",
+   "total": 5
   },
   {
-   "representante": "Marinus Marsico",
+   "representante": "Sergio Caribé",
    "total": 4
   },
   {
@@ -339,6 +379,18 @@
    "movimentacoes_mes": 4
   },
   {
+   "processo": "014.609/2026-6",
+   "orgaos": [
+    "AECI",
+    "MPO",
+    "SE",
+    "SOF"
+   ],
+   "assunto": "3ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
+   "relator": "Antonio Anastasia",
+   "movimentacoes_mes": 3
+  },
+  {
    "processo": "020.205/2026-0",
    "orgaos": [
     "MPO",
@@ -367,20 +419,73 @@
    "assunto": "RMON do Acórdão 1976/2017, 3155/2019 c/c 169/2023.",
    "relator": "Augusto Sherman",
    "movimentacoes_mes": 3
-  },
-  {
-   "processo": "018.918/2026-3",
-   "orgaos": [
-    "AECI",
-    "MPO",
-    "SOF"
-   ],
-   "assunto": "4ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
-   "relator": "Antonio Anastasia",
-   "movimentacoes_mes": 3
   }
  ],
  "processos": [
+  {
+   "numero": "014.609/2026-6",
+   "id": "01460920266",
+   "codigo": "80607514",
+   "estado": "Aberto",
+   "relator": "Antonio Anastasia",
+   "assunto": "3ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
+   "natureza": "Relatório de Acompanhamento",
+   "unidade_tecnica": null,
+   "representante_mp": null,
+   "unidades": [
+    "SOF/MPO - Secretaria de Orçamento Federal",
+    "BCB - Banco Central do Brasil",
+    "INSS - Instituto Nacional do Seguro Social"
+   ],
+   "interessados": [],
+   "orgaos": [
+    "AECI",
+    "MPO",
+    "SE",
+    "SOF"
+   ],
+   "orgaos_unidade": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_interessado": [
+    "AECI",
+    "MPO",
+    "SE"
+   ],
+   "vinculo": "unidade",
+   "acordao": null,
+   "movimentacoes": [
+    {
+     "data": "2026-09-30T00:00:00+00:00",
+     "descricao": "Registrada ciência de comunicação do Ofício 38542/2026-TCU/Seproc via CONECTA TCU por MARCELE BOTELHO em nome de Secretaria-Executiva da Casa Civil da Presidência da República",
+     "fase": null,
+     "acordao": null
+    },
+    {
+     "data": "2026-09-29T00:00:00+00:00",
+     "descricao": "Registrada ciência de comunicação do Ofício 38540/2026-TCU/Seproc via CONECTA TCU por RAISSA MORAIS CRUZEIRO em nome de Secretaria-Executiva do Ministério do Planejamento e Orçamento",
+     "fase": null,
+     "acordao": null
+    },
+    {
+     "data": "2026-09-23T00:00:00+00:00",
+     "descricao": "Enviado para pronunciamento do Ministro Antonio Anastasia por AudFiscal",
+     "fase": null,
+     "acordao": null
+    }
+   ],
+   "ultima_movimentacao": {
+    "data": "2026-09-30T00:00:00+00:00",
+    "descricao": "Registrada ciência de comunicação do Ofício 38542/2026-TCU/Seproc via CONECTA TCU por MARCELE BOTELHO em nome de Secretaria-Executiva da Casa Civil da Presidência da República",
+    "fase": null,
+    "acordao": null
+   },
+   "fase_atual": "Registrada ciência de comunicação do Ofício 38542/2026-TCU/Seproc via CONECTA TC",
+   "atualizado_em": "2026-09-30T00:00:00+00:00",
+   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1460920266",
+   "garantido": false
+  },
   {
    "numero": "020.205/2026-0",
    "id": "02020520260",
@@ -627,6 +732,62 @@
    "atualizado_em": "2026-09-29T00:00:00+00:00",
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1687320254",
    "garantido": false
+  },
+  {
+   "numero": "017.106/2025-7",
+   "id": "01710620257",
+   "codigo": "78744157",
+   "estado": "Aberto",
+   "relator": "Bruno Dantas",
+   "assunto": "Auditoria operacional, integrada com conformidade, para avaliar a capacidade das Forças Armadas de cumprir com os Objetivos Nacionais de Defesa.",
+   "natureza": "Relatório de Auditoria",
+   "unidade_tecnica": null,
+   "representante_mp": null,
+   "unidades": [
+    "COMAER - Comando da Aeronáutica",
+    "C Ex - Comando do Exército",
+    "MB - Comando da Marinha"
+   ],
+   "interessados": [],
+   "orgaos": [
+    "MPO"
+   ],
+   "orgaos_unidade": [],
+   "orgaos_interessado": [
+    "MPO"
+   ],
+   "vinculo": "interessado",
+   "acordao": null,
+   "movimentacoes": [
+    {
+     "data": "2026-09-29T00:00:00+00:00",
+     "descricao": "Processo 017.305/2026-8 foi apensado a este processo por AudDefesa.",
+     "fase": null,
+     "acordao": null
+    },
+    {
+     "data": "2026-09-10T00:00:00+00:00",
+     "descricao": "Documento Termo juntado ao processo via CONECTA TCU por luiz fillipy pontin fontes",
+     "fase": null,
+     "acordao": null
+    },
+    {
+     "data": "2026-08-19T00:00:00+00:00",
+     "descricao": "Documento Termo juntado ao processo via CONECTA TCU por LEONARDO BARBOZA PINHEIRO",
+     "fase": null,
+     "acordao": null
+    }
+   ],
+   "ultima_movimentacao": {
+    "data": "2026-09-29T00:00:00+00:00",
+    "descricao": "Processo 017.305/2026-8 foi apensado a este processo por AudDefesa.",
+    "fase": null,
+    "acordao": null
+   },
+   "fase_atual": "Processo 017.305/2026-8 foi apensado a este processo por AudDefesa.",
+   "atualizado_em": "2026-09-29T00:00:00+00:00",
+   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1710620257",
+   "garantido": true
   },
   {
    "numero": "020.712/2023-5",
@@ -1373,12 +1534,14 @@
    "relator": "Jorge Oliveira",
    "assunto": "Solicitação de Solução Consensual da Anatel, para a resolução de contendas relacionada à concessionária do Serviço Telefônico Fixo Comutado (STFC) - Oi S.A - em Recuperação Judicial.",
    "natureza": "Solicitação de Solução Consensual",
-   "unidade_tecnica": null,
-   "representante_mp": null,
+   "unidade_tecnica": "AudSustentabilidade",
+   "representante_mp": "Marinus Marsico",
    "unidades": [
     "ANATEL - Agência Nacional de Telecomunicações"
    ],
-   "interessados": [],
+   "interessados": [
+    "Spel Engenharia Ltda"
+   ],
    "orgaos": [
     "MPO"
    ],
@@ -1537,70 +1700,6 @@
    "fase_atual": "Processo enviado de MIN-AAA para Seses/Disup. (Diretoria de Suporte aos Colegiad",
    "atualizado_em": "2026-09-24T00:00:00+00:00",
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=675020265",
-   "garantido": false
-  },
-  {
-   "numero": "014.609/2026-6",
-   "id": "01460920266",
-   "codigo": "80607514",
-   "estado": "Aberto",
-   "relator": "Antonio Anastasia",
-   "assunto": "3ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
-   "natureza": "Relatório de Acompanhamento",
-   "unidade_tecnica": null,
-   "representante_mp": null,
-   "unidades": [
-    "SOF/MPO - Secretaria de Orçamento Federal",
-    "BCB - Banco Central do Brasil",
-    "INSS - Instituto Nacional do Seguro Social"
-   ],
-   "interessados": [],
-   "orgaos": [
-    "AECI",
-    "MPO",
-    "SE",
-    "SOF"
-   ],
-   "orgaos_unidade": [
-    "MPO",
-    "SOF"
-   ],
-   "orgaos_interessado": [
-    "AECI",
-    "MPO",
-    "SE"
-   ],
-   "vinculo": "unidade",
-   "acordao": null,
-   "movimentacoes": [
-    {
-     "data": "2026-09-23T00:00:00+00:00",
-     "descricao": "Enviado para pronunciamento do Ministro Antonio Anastasia por AudFiscal",
-     "fase": null,
-     "acordao": null
-    },
-    {
-     "data": "2026-09-23T00:00:00+00:00",
-     "descricao": "Pronunciamento da AudFiscal concluído",
-     "fase": null,
-     "acordao": null
-    },
-    {
-     "data": "2026-09-23T00:00:00+00:00",
-     "descricao": "Documento Elementos comprobatórios/Evidências (BCB ) juntado ao processo por AudFiscal",
-     "fase": null,
-     "acordao": null
-    }
-   ],
-   "ultima_movimentacao": {
-    "data": "2026-09-23T00:00:00+00:00",
-    "descricao": "Enviado para pronunciamento do Ministro Antonio Anastasia por AudFiscal",
-    "fase": null,
-    "acordao": null
-   },
-   "fase_atual": "Enviado para pronunciamento do Ministro Antonio Anastasia por AudFiscal",
-   "atualizado_em": "2026-09-23T00:00:00+00:00",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1460920266",
    "garantido": false
   },
   {
@@ -2713,62 +2812,6 @@
    "atualizado_em": "2026-09-10T00:00:00+00:00",
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3697520206",
    "garantido": false
-  },
-  {
-   "numero": "017.106/2025-7",
-   "id": "01710620257",
-   "codigo": "78744157",
-   "estado": "Aberto",
-   "relator": "Bruno Dantas",
-   "assunto": "Auditoria operacional, integrada com conformidade, para avaliar a capacidade das Forças Armadas de cumprir com os Objetivos Nacionais de Defesa.",
-   "natureza": "Relatório de Auditoria",
-   "unidade_tecnica": null,
-   "representante_mp": null,
-   "unidades": [
-    "COMAER - Comando da Aeronáutica",
-    "C Ex - Comando do Exército",
-    "MB - Comando da Marinha"
-   ],
-   "interessados": [],
-   "orgaos": [
-    "MPO"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "MPO"
-   ],
-   "vinculo": "interessado",
-   "acordao": null,
-   "movimentacoes": [
-    {
-     "data": "2026-09-10T00:00:00+00:00",
-     "descricao": "Documento Termo juntado ao processo via CONECTA TCU por luiz fillipy pontin fontes",
-     "fase": null,
-     "acordao": null
-    },
-    {
-     "data": "2026-08-19T00:00:00+00:00",
-     "descricao": "Documento Termo juntado ao processo via CONECTA TCU por LEONARDO BARBOZA PINHEIRO",
-     "fase": null,
-     "acordao": null
-    },
-    {
-     "data": "2026-08-12T00:00:00+00:00",
-     "descricao": "Documento Termo juntado ao processo via CONECTA TCU por MARCIA GOMES DE FREITAS",
-     "fase": null,
-     "acordao": null
-    }
-   ],
-   "ultima_movimentacao": {
-    "data": "2026-09-10T00:00:00+00:00",
-    "descricao": "Documento Termo juntado ao processo via CONECTA TCU por luiz fillipy pontin fontes",
-    "fase": null,
-    "acordao": null
-   },
-   "fase_atual": "Documento Termo juntado ao processo via CONECTA TCU por luiz fillipy pontin font",
-   "atualizado_em": "2026-09-10T00:00:00+00:00",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1710620257",
-   "garantido": true
   },
   {
    "numero": "007.190/2024-7",
@@ -5850,6 +5893,38 @@
  ],
  "movimentacoes": [
   {
+   "data": "2026-09-30T00:00:00+00:00",
+   "descricao": "Registrada ciência de comunicação do Ofício 38542/2026-TCU/Seproc via CONECTA TCU por MARCELE BOTELHO em nome de Secretaria-Executiva da Casa Civil da Presidência da República",
+   "fase": null,
+   "acordao": null,
+   "processo": "014.609/2026-6",
+   "assunto": "3ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
+   "natureza": "Relatório de Acompanhamento",
+   "orgaos": [
+    "AECI",
+    "MPO",
+    "SE",
+    "SOF"
+   ],
+   "estado": "Aberto"
+  },
+  {
+   "data": "2026-09-29T00:00:00+00:00",
+   "descricao": "Registrada ciência de comunicação do Ofício 38540/2026-TCU/Seproc via CONECTA TCU por RAISSA MORAIS CRUZEIRO em nome de Secretaria-Executiva do Ministério do Planejamento e Orçamento",
+   "fase": null,
+   "acordao": null,
+   "processo": "014.609/2026-6",
+   "assunto": "3ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
+   "natureza": "Relatório de Acompanhamento",
+   "orgaos": [
+    "AECI",
+    "MPO",
+    "SE",
+    "SOF"
+   ],
+   "estado": "Aberto"
+  },
+  {
    "data": "2026-09-29T00:00:00+00:00",
    "descricao": "Registrada ciência de comunicação do Ofício 39398/2026-TCU/Seproc via CONECTA TCU por ANA CAROLINA MARTINS DE SANTANA em nome de Secretaria-Executiva do Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
    "fase": null,
@@ -5973,6 +6048,19 @@
     "MPO",
     "SEPLAN",
     "SOF"
+   ],
+   "estado": "Aberto"
+  },
+  {
+   "data": "2026-09-29T00:00:00+00:00",
+   "descricao": "Processo 017.305/2026-8 foi apensado a este processo por AudDefesa.",
+   "fase": null,
+   "acordao": null,
+   "processo": "017.106/2025-7",
+   "assunto": "Auditoria operacional, integrada com conformidade, para avaliar a capacidade das Forças Armadas de cumprir com os Objetivos Nacionais de Defesa.",
+   "natureza": "Relatório de Auditoria",
+   "orgaos": [
+    "MPO"
    ],
    "estado": "Aberto"
   },
@@ -6510,21 +6598,6 @@
   },
   {
    "data": "2026-09-23T00:00:00+00:00",
-   "descricao": "Registrada ciência de comunicação do Ofício 37263/2026-TCU/Seproc via CONECTA TCU por ISABELA BRAGA DE LIMA em nome de Secretaria Especial da Receita Federal do Brasil",
-   "fase": null,
-   "acordao": null,
-   "processo": "018.918/2026-3",
-   "assunto": "4ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
-   "natureza": "Relatório de Acompanhamento",
-   "orgaos": [
-    "AECI",
-    "MPO",
-    "SOF"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-09-23T00:00:00+00:00",
    "descricao": "Enviado para pronunciamento do Ministro Antonio Anastasia por AudFiscal",
    "fase": null,
    "acordao": null,
@@ -6541,32 +6614,15 @@
   },
   {
    "data": "2026-09-23T00:00:00+00:00",
-   "descricao": "Pronunciamento da AudFiscal concluído",
+   "descricao": "Registrada ciência de comunicação do Ofício 37263/2026-TCU/Seproc via CONECTA TCU por ISABELA BRAGA DE LIMA em nome de Secretaria Especial da Receita Federal do Brasil",
    "fase": null,
    "acordao": null,
-   "processo": "014.609/2026-6",
-   "assunto": "3ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
+   "processo": "018.918/2026-3",
+   "assunto": "4ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
    "natureza": "Relatório de Acompanhamento",
    "orgaos": [
     "AECI",
     "MPO",
-    "SE",
-    "SOF"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-09-23T00:00:00+00:00",
-   "descricao": "Documento Elementos comprobatórios/Evidências (BCB ) juntado ao processo por AudFiscal",
-   "fase": null,
-   "acordao": null,
-   "processo": "014.609/2026-6",
-   "assunto": "3ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
-   "natureza": "Relatório de Acompanhamento",
-   "orgaos": [
-    "AECI",
-    "MPO",
-    "SE",
     "SOF"
    ],
    "estado": "Aberto"
@@ -6950,6 +7006,19 @@
   },
   {
    "data": "2026-09-10T00:00:00+00:00",
+   "descricao": "Documento Termo juntado ao processo via CONECTA TCU por luiz fillipy pontin fontes",
+   "fase": null,
+   "acordao": null,
+   "processo": "017.106/2025-7",
+   "assunto": "Auditoria operacional, integrada com conformidade, para avaliar a capacidade das Forças Armadas de cumprir com os Objetivos Nacionais de Defesa.",
+   "natureza": "Relatório de Auditoria",
+   "orgaos": [
+    "MPO"
+   ],
+   "estado": "Aberto"
+  },
+  {
+   "data": "2026-09-10T00:00:00+00:00",
    "descricao": "Registrada ciência de comunicação do Ofício 31729/2026-TCU/Seproc.",
    "fase": null,
    "acordao": null,
@@ -7071,19 +7140,6 @@
    "orgaos": [
     "MPO",
     "SOF"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-09-10T00:00:00+00:00",
-   "descricao": "Documento Termo juntado ao processo via CONECTA TCU por luiz fillipy pontin fontes",
-   "fase": null,
-   "acordao": null,
-   "processo": "017.106/2025-7",
-   "assunto": "Auditoria operacional, integrada com conformidade, para avaliar a capacidade das Forças Armadas de cumprir com os Objetivos Nacionais de Defesa.",
-   "natureza": "Relatório de Auditoria",
-   "orgaos": [
-    "MPO"
    ],
    "estado": "Aberto"
   },
@@ -7908,19 +7964,6 @@
     "MPO",
     "SE",
     "SOF"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-08-12T00:00:00+00:00",
-   "descricao": "Documento Termo juntado ao processo via CONECTA TCU por MARCIA GOMES DE FREITAS",
-   "fase": null,
-   "acordao": null,
-   "processo": "017.106/2025-7",
-   "assunto": "Auditoria operacional, integrada com conformidade, para avaliar a capacidade das Forças Armadas de cumprir com os Objetivos Nacionais de Defesa.",
-   "natureza": "Relatório de Auditoria",
-   "orgaos": [
-    "MPO"
    ],
    "estado": "Aberto"
   },
