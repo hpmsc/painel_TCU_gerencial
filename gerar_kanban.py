@@ -68,8 +68,9 @@ ETAPAS = ["instrucao", "relator", "pauta", "julgado", "recurso", "encerrado"]
 # Ordem importa: a primeira regra que casar define a etapa do evento.
 REGRAS_ETAPA: list[tuple[str, re.Pattern]] = [
     ("encerrado", re.compile(r"^Processo encerrado", re.I)),
-    ("recurso",   re.compile(r"/R\d{3}\b|AudRecursos|Serur|por meio de recurso", re.I)),
+    # Acórdão que julga recurso também é "julgado": o recurso foi decidido.
     ("julgado",   re.compile(r"^Ac[óo]rd[ãa]o \d+|^Apreciado na Sess[ãa]o", re.I)),
+    ("recurso",   re.compile(r"/R\d{3}\b|AudRecursos|Serur|por meio de recurso", re.I)),
     ("relator",   re.compile(r"exclu[íi]do da pauta", re.I)),
     ("pauta",     re.compile(r"inclu[íi]do na pauta|pedido de vista|enviado de MINS?-\S+ para Seses", re.I)),
     ("relator",   re.compile(r"Enviado para pronunciamento do Ministro|enviado de \S+ para MINS?-|"
@@ -87,6 +88,8 @@ RX_EXPEDIDO = re.compile(r"Juntada comunica[çc][ãa]o " + RX_DOC + r".*expedi",
 # TCU não registre formalmente "resposta de comunicação".
 RX_JUNTADA_PARTE = re.compile(r"juntado ao processo via CONECTA|^Documento Resposta|\(Resposta\b", re.I)
 RX_EM_NOME = re.compile(r"em nome de (.+)$", re.I)
+# Trâmites de rotina depois do acórdão (formalização na Seses, remessa da Seproc).
+RX_POS_ACORDAO = re.compile(r"para Seses|enviado de Seproc para", re.I)
 
 
 # --------------------------------------------------------------------------- #
@@ -215,6 +218,21 @@ def montar(versoes: list[dict]) -> dict:
             if not ev.get("etapa") and (m.get("acordao") or m.get("fase") == "Julgado"):
                 ev["etapa"] = "julgado"
             eventos.append(ev)
+        # O TCU registra no mesmo dia o envio à Seses e o acórdão; a ordem alfabética
+        # punha o envio à Seses depois do acórdão e o processo "voltava" para a pauta.
+        # No mesmo dia, a etapa mais adiantada fica por último.
+        eventos.sort(key=lambda ev: (ev["data"], ETAPAS.index(ev["etapa"]) if ev.get("etapa") else -1))
+        # Depois do acórdão, a remessa da Seproc à unidade técnica é cumprimento, não
+        # nova instrução: o processo continua "julgado" até um sinal de novo ciclo
+        # (portaria de fiscalização, envio ao relator, pauta ou recurso).
+        atual_et = None
+        for ev in eventos:
+            et = ev.get("etapa")
+            if atual_et == "julgado" and et in ("pauta", "instrucao") and RX_POS_ACORDAO.search(ev["desc"]):
+                ev.pop("etapa")
+                continue
+            if et:
+                atual_et = et
 
         # Etapa de partida quando nenhuma movimentação define a etapa.
         base = "julgado" if p.get("acordao") else "instrucao"

@@ -170,6 +170,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 .rleg i{display:inline-block;width:11px;height:11px;border-radius:3px;vertical-align:-1px;margin-right:5px}
 .rmud{margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
 .rmud h3{margin:0 0 6px;font:600 13.5px var(--f-disp)}
+.rmud-oc{margin:8px 0 0;font-size:12.5px;color:var(--ink-2,#555)}
 .rmud ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
 .rmud li{font-size:12.5px}
 .rmud .de{color:var(--muted)} .rmud .dt{font:11.5px var(--f-mono);color:var(--muted);margin-left:6px} .rmud .ras{color:var(--ink-2);margin-left:6px}
@@ -517,20 +518,28 @@ function faseEm(p, dia){
     if (ev.data > dia) break;
     for (const [n, rx] of REGRAS_FASE){
       if (rx.test(ev.desc)){
-        if (n === 6 || f === null || f === 6 || n > f){ if (n !== f) hist.push({data:ev.data, fase:n}); f = n; dt = ev.data; }
+        // Depois do acórdão, ciência, ofício e envio à Seses são rotina de cumprimento: não reabrem o ciclo.
+        const reabre = f !== 6 || n === 1 || n === 3 || n === 4 || (n === 5 && !/Seses/i.test(ev.desc));
+        if (reabre && (n === 6 || f === null || f === 6 || n > f)){ if (n !== f) hist.push({data:ev.data, fase:n}); f = n; dt = ev.data; }
         break;
       }
     }
   }
   return {fase: f || 1, data: dt, hist};
 }
-function renderRadar(lista, A, B){
+function mudouFase(p, A, B){
+  const r = faseEm(p, B), r0 = presente(p, A) ? faseEm(p, A) : {fase:null};
+  return (r0.fase !== null && r0.fase !== r.fase && r.data && r.data > A) ? {p, de:r0.fase, para:r.fase, d:r.data} : null;
+}
+function renderRadar(lista, A, B, ocultos){
   const por = {1:[],2:[],3:[],4:[],5:[],6:[]}, mud = [];
   for (const p of lista){
-    const r = faseEm(p, B), r0 = presente(p, A) ? faseEm(p, A) : {fase:null};
+    const r = faseEm(p, B);
     por[r.fase].push({p, d:r.data});
-    if (r0.fase !== null && r0.fase !== r.fase && r.data && r.data > A) mud.push({p, de:r0.fase, para:r.fase, d:r.data});
+    const m = mudouFase(p, A, B); if (m) mud.push(m);
   }
+  const nOc = (ocultos||[]).filter(p => mudouFase(p, A, B)).length;
+  const aviso = nOc ? `<p class="rmud-oc">Mais ${nOc} processo${nOc>1?"s":""} mudou de fase no período, mas está${nOc>1?"ão":""} fora da lista pelos filtros (por exemplo, o botão <b>interessados</b> desligado).</p>` : "";
   const novos = new Set(mud.map(m=>m.p.numero));
   const LIM = 5;
   $("radar").innerHTML = [1,2,3,4,5,6].map(n=>{
@@ -543,10 +552,10 @@ function renderRadar(lista, A, B){
       ${ps.length>vis.length?`<button type="button" class="rf-mais" data-rtodos="${n}">+${ps.length-vis.length} processos</button>`:""}</div></div>`;
   }).join("");
   const box = $("rmud");
-  if (!mud.length){ box.hidden = true; return; }
+  if (!mud.length && !nOc){ box.hidden = true; return; }
   mud.sort((a,b)=> b.para-a.para || b.d.localeCompare(a.d));
   box.hidden = false;
-  box.innerHTML = `<h3>Mudaram de fase de ${brAno(A)} a ${brAno(B)} (${mud.length})</h3><ul>${mud.map(m=>`<li><button type="button" class="linkbtn" data-abrir="${esc(m.p.numero)}" style="font:600 12.5px var(--f-mono)">${esc(m.p.numero)}</button> <span class="de">${FASES[m.de][0]}</span> → <b>${FASES[m.para][0]}</b><span class="dt">${br(m.d)}</span><span class="ras">${esc((m.p.assunto||"").slice(0,90))}${(m.p.assunto||"").length>90?"…":""}</span>${m.para===3||m.para===4?'<span class="jan-pill">janela de atuação</span>':""}</li>`).join("")}</ul>`;
+  box.innerHTML = `<h3>Mudaram de fase de ${brAno(A)} a ${brAno(B)} (${mud.length})</h3><ul>${mud.map(m=>`<li><button type="button" class="linkbtn" data-abrir="${esc(m.p.numero)}" style="font:600 12.5px var(--f-mono)">${esc(m.p.numero)}</button> <span class="de">${FASES[m.de][0]}</span> → <b>${FASES[m.para][0]}</b><span class="dt">${br(m.d)}</span><span class="ras">${esc((m.p.assunto||"").slice(0,90))}${(m.p.assunto||"").length>90?"…":""}</span>${m.para===3||m.para===4?'<span class="jan-pill">janela de atuação</span>':""}</li>`).join("")}</ul>${aviso}`;
 }
 
 function render(){
@@ -557,7 +566,8 @@ function render(){
   let lista = base.filter(filtra);
   if (st.soMov) lista = lista.filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B));
 
-  renderRadar(lista.filter(p=>p.aberto), A, B);
+  const abertosLista = lista.filter(p=>p.aberto), naLista = new Set(abertosLista);
+  renderRadar(abertosLista, A, B, base.filter(p => p.aberto && !naLista.has(p)));
   renderPrazos(lista.filter(p=>p.aberto));
 
   // resumo
