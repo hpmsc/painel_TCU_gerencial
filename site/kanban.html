@@ -78,11 +78,14 @@ section{padding-top:22px}
 
 /* O que pede atenção */
 .aten{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
-.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-bottom:1px solid var(--line-2)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-bottom:1px solid var(--line-2)}
 .kpi{padding:12px 16px;border-right:1px solid var(--line-2);min-width:0}
 .kpi:last-child{border-right:0}
 .kpi b{display:block;font:600 26px/1.1 var(--f-mono)}
 .kpi span{font-size:12.5px;color:var(--ink-2)}
+.kpi.and b{color:var(--petrol)} button.kpi{background:none;border:0;border-right:1px solid var(--line-2);text-align:left;cursor:pointer;font:inherit;color:inherit}
+button.kpi:hover span,button.kpi[aria-pressed="true"] span{text-decoration:underline}
+button.kpi[aria-pressed="true"]{background:var(--petrol-soft)}
 .kpi.prz b{color:var(--red)} .kpi.jan b{color:var(--amber)} .kpi.mud b{color:var(--move)}
 .alist{list-style:none;margin:0;padding:6px 0}
 .alist li{display:grid;grid-template-columns:128px 150px minmax(0,1fr) auto;gap:4px 12px;align-items:baseline;padding:6px 16px;font-size:13px}
@@ -175,7 +178,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
   .alist li{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"tc dt" "oq oq" "ras ras"}
   .alist .tcb{grid-area:tc} .alist .dt{grid-area:dt;justify-self:end} .alist .oq{grid-area:oq} .alist .ras{grid-area:ras;white-space:normal;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
 }
-@media (max-width:720px){ .board{grid-template-columns:minmax(0,1fr)} input[type=search]{width:100%} .fld{flex:1 1 140px}
+@media (max-width:720px){ .kpis{grid-template-columns:repeat(2,minmax(0,1fr))} .kpi:nth-child(2){border-right:0} .kpi:nth-child(-n+2){border-bottom:1px solid var(--line-2)} .board{grid-template-columns:minmax(0,1fr)} input[type=search]{width:100%} .fld{flex:1 1 140px}
   .kpi{padding:10px 12px} .kpi b{font-size:22px} .kpi span{font-size:11.5px} }
 </style>
 </head>
@@ -227,6 +230,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
   <div class="board" id="board"><div class="status">Carregando…</div></div>
   <div class="legend">
    <span><i style="background:var(--move)"></i>mudou de coluna no período</span>
+   <span><b style="color:var(--move)">andou em</b>: última movimentação no TCU (azul se foi no período)</span>
    <span>esmaecido: sem movimentação há mais de 60 dias</span>
    <span>★ minha lista</span>
   </div>
@@ -345,7 +349,7 @@ function prazoInfo(c){
 }
 
 /* ---------- O que pede atenção ---------- */
-function renderAtencao(lista, ocultos, A, B){
+function renderAtencao(lista, ocultos, A, B, nAndou){
   const hoje = hojeRef(), ate = addD(hoje, JANELA_PRAZO);
   const prazos = [];
   for (const p of lista) for (const c of p.comunicacoes) if (c.status === "aberto") prazos.push({p,c});
@@ -367,7 +371,8 @@ function renderAtencao(lista, ocultos, A, B){
     ["prz", nPerto, `prazo${nPerto===1?"":"s"} de resposta`],
     ["jan", naJanela, "na janela de atuação"],
     ["mud", muds.length, `mud${muds.length===1?"ou":"aram"} de coluna no período`],
-  ].map(([c,n,t])=>`<div class="kpi ${c}"><b>${n}</b><span>${t}</span></div>`).join("");
+  ].map(([c,n,t])=>`<div class="kpi ${c}"><b>${n}</b><span>${t}</span></div>`).join("")
+  + `<button type="button" class="kpi and" id="kAndou" aria-pressed="${st.soMov}" title="Clique para ver só os processos que tiveram movimentação no período"><b>${nAndou}</b><span>andaram no período${st.soMov?" (filtrando)":""}</span></button>`;
 
   const linha = (p, pill, oq, dt) => `<li><button type="button" class="linkbtn tcb" data-abrir="${esc(p.numero)}">${esc(p.numero)}</button>${pill}<span class="ras"><span class="oq">${oq}</span> · ${esc(curto(p.assunto,110))}</span><span class="dt">${dt}</span></li>`;
   const itens = [
@@ -395,9 +400,11 @@ function card(p, A, B){
   const atual = abertas.find(c => diff(c.vencimento, hojeRef()) <= JANELA_PRAZO);
   const pz = atual ? (i => `<span class="pill ${i.pill}" title="Resposta ao ${esc(atual.doc)} · vence ${brAno(atual.vencimento)}">${i.curto}</span>`)(prazoInfo(atual))
     : abertas.length ? `<span class="pill" title="Ciência antiga sem resposta registrada; pode ter sido respondida por outro meio">prazo antigo</span>` : "";
-  const tempo = m ? `<span class="mv">veio de ${esc(TR[m.de].nome)} em ${br(m.d)}</span>`
+  const andou = um ? (um > A ? `<span class="mv">andou em ${br(um)}</span>` : `andou em ${br(um)}`) : "sem movimentação pública";
+  const col = m ? `<span class="mv">veio de ${esc(TR[m.de].nome)} em ${br(m.d)}</span>`
     : novo ? `<span class="mv">entrou no painel em ${br(p.primeiro_visto)}</span>`
-    : desde ? `há ${diff(desde,B)} dias nesta coluna` : (um ? `última mov. ${br(um)}` : "sem movimentação pública");
+    : desde ? `${diff(desde,B)} dias nesta coluna` : "";
+  const tempo = [andou, col].filter(Boolean).join("");
   const tags = [emRecurso(p,B) ? `<span class="pill">em recurso</span>` : "", p.vinculo==="interessado" ? `<span class="pill">interessado</span>` : "", selo(p.numero)].join("");
   const cls = ["card", m||novo ? "mov":"", parado ? "parado":""].join(" ");
   return `<details class="${cls}" id="c-${p.numero.replace(/\D/g,"")}" data-num="${esc(p.numero)}">
@@ -462,7 +469,8 @@ function render(){
   let lista = base.filter(filtra);
   if (st.soMov) lista = lista.filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B));
   const na = new Set(lista);
-  renderAtencao(lista, base.filter(p=>!na.has(p)), A, B);
+  const nAndou = base.filter(filtra).filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B)).length;
+  renderAtencao(lista, base.filter(p=>!na.has(p)), A, B, nAndou);
   renderQuadro(lista, A, B);
 }
 
@@ -512,6 +520,7 @@ function montarControles(){
     const s = e.target.closest("[data-star]");
     if (s){ e.preventDefault(); e.stopPropagation(); const n=s.dataset.star; minha.has(n)?minha.delete(n):minha.add(n); gravarMinha(); render(); return; }
     const a = e.target.closest("[data-abrir]"); if (a){ abrir(a.dataset.abrir); return; }
+    if (e.target.closest("#kAndou")){ st.soMov = !st.soMov; $("tgMov").setAttribute("aria-pressed", st.soMov); render(); return; }
     const x = e.target.closest("[data-expand]"); if (x){ st.expand[x.dataset.expand]=true; render(); return; }
     const m = e.target.closest("[data-tlall]"); if (m) abrirTl(m.closest("details"), true);
   });
