@@ -132,6 +132,7 @@ button.kpi[aria-pressed="true"]{background:var(--petrol-soft)}
 .card[open] .as{-webkit-line-clamp:unset;display:block}
 .c3{display:flex;flex-wrap:wrap;gap:4px 8px;align-items:center;font-size:11px;color:var(--muted)}
 .c3 .mv{color:var(--move);font-weight:600}
+.c3 .dcol{color:var(--ink-2);font-weight:600}
 .col-mais{width:100%;border:1px solid var(--line);background:var(--surface-2);color:var(--ink-2);border-radius:7px;padding:5px;cursor:pointer;font-size:12.5px}
 
 .det{border-top:1px dashed var(--line);padding:8px 10px 10px}
@@ -230,7 +231,8 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
   <div class="board" id="board"><div class="status">Carregando…</div></div>
   <div class="legend">
    <span><i style="background:var(--move)"></i>mudou de coluna no período</span>
-   <span><b style="color:var(--move)">andou em</b>: última movimentação no TCU (azul se foi no período)</span>
+   <span><b>nesta coluna desde</b>: dia em que o processo mudou para a coluna (azul se foi no período)</span>
+   <span><b>última mov.</b>: última movimentação pública no TCU</span>
    <span>esmaecido: sem movimentação há mais de 60 dias</span>
    <span>★ minha lista</span>
   </div>
@@ -400,11 +402,13 @@ function card(p, A, B){
   const atual = abertas.find(c => diff(c.vencimento, hojeRef()) <= JANELA_PRAZO);
   const pz = atual ? (i => `<span class="pill ${i.pill}" title="Resposta ao ${esc(atual.doc)} · vence ${brAno(atual.vencimento)}">${i.curto}</span>`)(prazoInfo(atual))
     : abertas.length ? `<span class="pill" title="Ciência antiga sem resposta registrada; pode ter sido respondida por outro meio">prazo antigo</span>` : "";
-  const andou = um ? (um > A ? `<span class="mv">andou em ${br(um)}</span>` : `andou em ${br(um)}`) : "sem movimentação pública";
-  const col = m ? `<span class="mv">veio de ${esc(TR[m.de].nome)} em ${br(m.d)}</span>`
-    : novo ? `<span class="mv">entrou no painel em ${br(p.primeiro_visto)}</span>`
-    : desde ? `${diff(desde,B)} dias nesta coluna` : "";
-  const tempo = [andou, col].filter(Boolean).join("");
+  // Dia em que o processo entrou na coluna atual (mudança de coluna no quadro) e dia da última movimentação.
+  const entrou = desde || (p.eventos[0] && p.eventos[0].data) || null;
+  const naCol = m ? `<span class="mv" title="Dia em que o processo passou para esta coluna">→ veio de ${esc(TR[m.de].nome)} em ${br(m.d)}</span>`
+    : entrou ? `<span class="dcol" title="Dia em que o processo passou para esta coluna">nesta coluna desde ${br(entrou)}${desde?` (${diff(entrou,B)} d)`:""}</span>` : "";
+  const deOnde = "";
+  const andou = um ? `<span class="${um > A ? "mv" : ""}" title="Última movimentação pública no TCU">última mov. ${br(um)}</span>` : "sem movimentação pública";
+  const tempo = novo ? `<span class="mv">entrou no painel em ${br(p.primeiro_visto)}</span>${andou}` : [naCol, deOnde, andou].filter(Boolean).join("");
   const tags = [emRecurso(p,B) ? `<span class="pill">em recurso</span>` : "", p.vinculo==="interessado" ? `<span class="pill">interessado</span>` : "", selo(p.numero)].join("");
   const cls = ["card", m||novo ? "mov":"", parado ? "parado":""].join(" ");
   return `<details class="${cls}" id="c-${p.numero.replace(/\D/g,"")}" data-num="${esc(p.numero)}">
