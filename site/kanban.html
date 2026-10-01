@@ -88,11 +88,13 @@ button.kpi:hover span,button.kpi[aria-pressed="true"] span{text-decoration:under
 button.kpi[aria-pressed="true"]{background:var(--petrol-soft)}
 .kpi.prz b{color:var(--red)} .kpi.jan b{color:var(--amber)} .kpi.mud b{color:var(--move)}
 .alist{list-style:none;margin:0;padding:6px 0}
-.alist li{display:grid;grid-template-columns:128px 150px minmax(0,1fr) auto;gap:4px 12px;align-items:baseline;padding:6px 16px;font-size:13px}
+.alist li{display:grid;grid-template-columns:128px 104px 140px minmax(0,1fr);gap:4px 12px;align-items:baseline;padding:6px 16px;font-size:13px}
 .alist li+li{border-top:1px solid var(--line-2)}
 .alist .tcb{font:600 12.5px var(--f-mono);text-align:left}
 .alist .ras{color:var(--ink-2);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.alist .dt{font:11.5px var(--f-mono);color:var(--muted);white-space:nowrap}
+.alist .dt{font:12px var(--f-mono);color:var(--ink);white-space:nowrap}
+.alist .dt small{font:10.5px var(--f-body);color:var(--muted);margin-right:4px}
+.alist li.sep{display:block;padding:8px 16px 4px;font:600 10.5px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line-2)}
 .alist .oq b{font-weight:600}
 .afoot{display:flex;flex-wrap:wrap;gap:6px 16px;justify-content:space-between;padding:8px 16px 10px;border-top:1px solid var(--line-2);font-size:12px;color:var(--muted)}
 .vazio{padding:14px 16px;color:var(--muted);font-size:13px}
@@ -176,8 +178,8 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 
 @media (max-width:1100px){ .board{grid-template-columns:repeat(3,minmax(0,1fr))} }
 @media (max-width:800px){
-  .alist li{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"tc dt" "oq oq" "ras ras"}
-  .alist .tcb{grid-area:tc} .alist .dt{grid-area:dt;justify-self:end} .alist .oq{grid-area:oq} .alist .ras{grid-area:ras;white-space:normal;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
+  .alist li{grid-template-columns:auto minmax(0,1fr);grid-template-areas:"tc pl" "dt dt" "ras ras"}
+  .alist .tcb{grid-area:tc} .alist .dt{grid-area:dt} .alist .pill{grid-area:pl;justify-self:end} .alist .ras{grid-area:ras;white-space:normal;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical}
 }
 @media (max-width:720px){ .kpis{grid-template-columns:repeat(2,minmax(0,1fr))} .kpi:nth-child(2){border-right:0} .kpi:nth-child(-n+2){border-bottom:1px solid var(--line-2)} .board{grid-template-columns:minmax(0,1fr)} input[type=search]{width:100%} .fld{flex:1 1 140px}
   .kpi{padding:10px 12px} .kpi b{font-size:22px} .kpi span{font-size:11.5px} }
@@ -374,16 +376,27 @@ function renderAtencao(lista, ocultos, A, B, nAndou){
     ["jan", naJanela, "na janela de atuação"],
     ["mud", muds.length, `mud${muds.length===1?"ou":"aram"} de coluna no período`],
   ].map(([c,n,t])=>`<div class="kpi ${c}"><b>${n}</b><span>${t}</span></div>`).join("")
-  + `<button type="button" class="kpi and" id="kAndou" aria-pressed="${st.soMov}" title="Clique para ver só os processos que tiveram movimentação no período"><b>${nAndou}</b><span>andaram no período${st.soMov?" (filtrando)":""}</span></button>`;
+  + `<button type="button" class="kpi and" id="kAndou" aria-pressed="${!!st.verAndou}" title="Clique para listar abaixo o dia e a última movimentação de cada processo"><b>${nAndou}</b><span>andaram no período · ${st.verAndou?"esconder lista":"ver dias"}</span></button>`;
 
-  const linha = (p, pill, oq, dt) => `<li><button type="button" class="linkbtn tcb" data-abrir="${esc(p.numero)}">${esc(p.numero)}</button>${pill}<span class="ras"><span class="oq">${oq}</span> · ${esc(curto(p.assunto,110))}</span><span class="dt">${dt}</span></li>`;
+  const linha = (p, pill, oq, dt, rot) => `<li><button type="button" class="linkbtn tcb" data-abrir="${esc(p.numero)}">${esc(p.numero)}</button><span class="dt"><small>${rot}</small>${dt}</span>${pill}<span class="ras"><span class="oq">${oq}</span>${oq?" · ":""}${esc(curto(p.assunto,110))}</span></li>`;
+  const sep = t => `<li class="sep">${t}</li>`;
   const itens = [
     ...grupos.map(({p,c,docs}) => { const i = prazoInfo(c), nd = docs.map(d=>d.replace(/-TCU\/.*/,""));
-      return linha(p, `<span class="pill ${i.pill}">${i.txt}</span>`, `Resposta ${nd.length>1?"aos":"ao"} <b>${esc(nd.join(" e "))}</b>`, `vence ${br(c.vencimento)}`); }),
+      return linha(p, `<span class="pill ${i.pill}">${i.txt}</span>`, `Resposta ${nd.length>1?"aos":"ao"} <b>${esc(nd.join(" e "))}</b>`, br(c.vencimento), "vence"); }),
     ...muds.map(m => { const j = TR[m.para].janela, t = TR[m.para].nome;
       const pill = j ? `<span class="pill p-amb">entrou na janela</span>` : m.para === 5 ? `<span class="pill">julgado</span>` : `<span class="pill p-mov">mudou de coluna</span>`;
-      return linha(m.p, pill, `${esc(TR[m.de].nome)} → <b>${esc(t)}</b>`, br(m.d)); })
+      return linha(m.p, pill, `${esc(TR[m.de].nome)} → <b>${esc(t)}</b>`, br(m.d), "mudou"); })
   ];
+  if (grupos.length && muds.length) itens.splice(grupos.length, 0, sep(`Mudaram de coluna de ${br(A)} a ${br(B)}`));
+  if (grupos.length) itens.unshift(sep("Prazos de resposta"));
+  else if (muds.length) itens.unshift(sep(`Mudaram de coluna de ${br(A)} a ${br(B)}`));
+  // O que andou: toda movimentação pública no período, com o dia, mais recente primeiro.
+  const andaram = lista.map(p => { const evs = p.eventos.filter(ev => ev.data > A && ev.data <= B); return evs.length ? {p, ev: evs[evs.length-1], n: evs.length} : null; })
+    .filter(Boolean).sort((a,b)=> b.ev.data.localeCompare(a.ev.data) || a.p.numero.localeCompare(b.p.numero));
+  if (st.verAndou && andaram.length){
+    itens.push(sep(`Andaram de ${br(A)} a ${br(B)} · última movimentação de cada processo`));
+    for (const x of andaram) itens.push(linha(x.p, `<span class="pill p-mov">${x.n} mov.</span>`, esc(curto(x.ev.desc, 120)), br(x.ev.data), "andou"));
+  }
   $("alist").innerHTML = itens.length ? itens.join("") : `<li class="vazio">Nada mudou de coluna no período e não há prazo de resposta até ${brAno(ate)}.</li>`;
 
   const nOc = ocultos.filter(p => mudou(p,A,B)).length;
@@ -524,7 +537,7 @@ function montarControles(){
     const s = e.target.closest("[data-star]");
     if (s){ e.preventDefault(); e.stopPropagation(); const n=s.dataset.star; minha.has(n)?minha.delete(n):minha.add(n); gravarMinha(); render(); return; }
     const a = e.target.closest("[data-abrir]"); if (a){ abrir(a.dataset.abrir); return; }
-    if (e.target.closest("#kAndou")){ st.soMov = !st.soMov; $("tgMov").setAttribute("aria-pressed", st.soMov); render(); return; }
+    if (e.target.closest("#kAndou")){ st.verAndou = !st.verAndou; render(); return; }
     const x = e.target.closest("[data-expand]"); if (x){ st.expand[x.dataset.expand]=true; render(); return; }
     const m = e.target.closest("[data-tlall]"); if (m) abrirTl(m.closest("details"), true);
   });
