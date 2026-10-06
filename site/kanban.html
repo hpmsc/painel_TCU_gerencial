@@ -121,7 +121,7 @@ button.kpi[aria-pressed="true"]{background:var(--petrol-soft)}
 
 .card{background:var(--surface);border:1px solid var(--line);border-radius:8px;box-shadow:var(--shadow);min-width:0}
 .card.mov{box-shadow:inset 3px 0 0 var(--move),var(--shadow)}
-.card.parado:not([open]){opacity:.6}
+.pill.p-par{background:var(--surface-2);color:var(--ink-2);border:1px dashed var(--line)}
 .card>summary{list-style:none;cursor:pointer;padding:7px 10px 8px;display:flex;flex-direction:column;gap:3px}
 .card>summary::-webkit-details-marker{display:none}
 .card[open]{border-color:var(--petrol)}
@@ -235,7 +235,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
    <span><i style="background:var(--move)"></i>mudou de coluna no período</span>
    <span><b>nesta coluna desde</b>: dia em que o processo mudou para a coluna (azul se foi no período)</span>
    <span><b>última mov.</b>: última movimentação pública no TCU</span>
-   <span>esmaecido: sem movimentação há mais de 60 dias</span>
+   <span><b>parado há…</b>: sem movimentação pública há mais de 60 dias; o processo continua aberto</span>
    <span>★ minha lista</span>
   </div>
  </section>
@@ -410,7 +410,12 @@ function renderAtencao(lista, ocultos, A, B, nAndou){
 /* ---------- Quadro ---------- */
 function card(p, A, B){
   const m = mudou(p, A, B), novo = !presente(p, A);
-  const desde = desdeEm(p, B), um = ultimaMov(p, B), parado = um ? diff(um, B) > 60 : true;
+  const desde = desdeEm(p, B), um = ultimaMov(p, B), diasPar = um ? diff(um, B) : null, parado = diasPar === null || diasPar > 60;
+  // Datas de outro ano levam o ano, para um processo parado desde 2025 não parecer recente.
+  const dt = iso => iso.slice(0,4) === B.slice(0,4) ? br(iso) : brAno(iso);
+  const haQuanto = d => { const me = Math.round(d/30.4); if (me < 12) return `${me} ${me===1?"mês":"meses"}`; const an = Math.floor(me/12), r = me%12; return `${an} ano${an>1?"s":""}${r?` e ${r} ${r===1?"mês":"meses"}`:""}`; };
+  const tagPar = !parado ? "" : diasPar === null ? `<span class="pill p-par">sem movimentação pública</span>`
+    : `<span class="pill p-par" title="Sem movimentação pública no TCU desde ${brAno(um)}. O processo continua aberto.">parado há ${haQuanto(diasPar)}</span>`;
   const abertas = p.comunicacoes.filter(c=>c.status==="aberto").sort((a,b)=>a.vencimento.localeCompare(b.vencimento));
   const atual = abertas.find(c => diff(c.vencimento, hojeRef()) <= JANELA_PRAZO);
   const pz = atual ? (i => `<span class="pill ${i.pill}" title="Resposta ao ${esc(atual.doc)} · vence ${brAno(atual.vencimento)}">${i.curto}</span>`)(prazoInfo(atual))
@@ -418,12 +423,12 @@ function card(p, A, B){
   // Dia em que o processo entrou na coluna atual (mudança de coluna no quadro) e dia da última movimentação.
   const entrou = desde || (p.eventos[0] && p.eventos[0].data) || null;
   const naCol = m ? `<span class="mv" title="Dia em que o processo passou para esta coluna">→ veio de ${esc(TR[m.de].nome)} em ${br(m.d)}</span>`
-    : entrou ? `<span class="dcol" title="Dia em que o processo passou para esta coluna">nesta coluna desde ${br(entrou)}${desde?` (${diff(entrou,B)} d)`:""}</span>` : "";
+    : entrou ? `<span class="dcol" title="Dia em que o processo passou para esta coluna">nesta coluna desde ${dt(entrou)}${desde?` (${diff(entrou,B)} d)`:""}</span>` : "";
   const deOnde = "";
-  const andou = um ? `<span class="${um > A ? "mv" : ""}" title="Última movimentação pública no TCU">última mov. ${br(um)}</span>` : "sem movimentação pública";
+  const andou = um ? `<span class="${um > A ? "mv" : ""}" title="Última movimentação pública no TCU">última mov. ${dt(um)}</span>` : "";
   const tempo = novo ? `<span class="mv">entrou no painel em ${br(p.primeiro_visto)}</span>${andou}` : [naCol, deOnde, andou].filter(Boolean).join("");
-  const tags = [emRecurso(p,B) ? `<span class="pill">em recurso</span>` : "", p.vinculo==="interessado" ? `<span class="pill">interessado</span>` : "", selo(p.numero)].join("");
-  const cls = ["card", m||novo ? "mov":"", parado ? "parado":""].join(" ");
+  const tags = [emRecurso(p,B) ? `<span class="pill">em recurso</span>` : "", p.vinculo==="interessado" ? `<span class="pill">interessado</span>` : "", tagPar, selo(p.numero)].join("");
+  const cls = ["card", m||novo ? "mov":""].join(" ");
   return `<details class="${cls}" id="c-${p.numero.replace(/\D/g,"")}" data-num="${esc(p.numero)}">
    <summary>
     <div class="c1"><span class="tc">${esc(p.numero)}</span><span class="dir"><button class="star" type="button" data-star="${esc(p.numero)}" aria-pressed="${minha.has(p.numero)}" aria-label="Minha lista" title="Minha lista">${minha.has(p.numero)?"★":"☆"}</button></span></div>
