@@ -1136,6 +1136,51 @@ def _dia(iso_str: str | None) -> str | None:
     return d.date().isoformat() if d else None
 
 
+_FUSO_BR = timezone(timedelta(hours=-3))
+
+
+def _dia_br(iso: str | None):
+    """Dia, no horário de Brasília, de um carimbo ISO (None se ilegível)."""
+    try:
+        d = datetime.fromisoformat(iso)
+    except (TypeError, ValueError):
+        return None
+    if d.tzinfo is None:
+        d = d.replace(tzinfo=timezone.utc)
+    return d.astimezone(_FUSO_BR).date()
+
+
+def _baseline_dia_anterior(caminho: str, anterior: dict | None) -> dict | None:
+    """Devolve a coleta que serve de base para "novidades".
+
+    Normalmente é o próprio arquivo anterior. Se ele já é de hoje, busca no
+    histórico do git a última versão gravada num dia anterior; se não houver
+    git ou histórico, fica com o arquivo anterior mesmo.
+    """
+    import subprocess
+    hoje_br = datetime.now(timezone.utc).astimezone(_FUSO_BR).date()
+    if not anterior or _dia_br(anterior.get("gerado_em")) != hoje_br:
+        return anterior
+    try:
+        linhas = subprocess.run(
+            ["git", "log", "-n", "40", "--format=%H %cI", "--", caminho],
+            capture_output=True, text=True, timeout=30, check=True).stdout.split("\n")
+        for linha in linhas:
+            sha, _, quando = linha.strip().partition(" ")
+            dia = _dia_br(quando)
+            if not sha or dia is None or dia >= hoje_br:
+                continue
+            bruto = subprocess.run(["git", "show", f"{sha}:{caminho}"], capture_output=True,
+                                   text=True, timeout=60, check=True).stdout
+            antigo = json.loads(bruto)
+            if isinstance(antigo.get("processos"), list):
+                log.info("Novidades: base de comparação = coleta de %s (commit %s)", dia, sha[:7])
+                return antigo
+    except Exception as e:  # sem git, sem histórico ou arquivo ilegível
+        log.warning("Novidades: não foi possível ler a coleta de um dia anterior (%s)", e)
+    return anterior
+
+
 def montar(processos: list[dict], ancora: int, avisos: list[str],
            anterior: dict | None = None) -> dict:
     agora = datetime.now(timezone.utc)
@@ -1400,6 +1445,10 @@ def main(argv: list[str] | None = None) -> int:
             anterior = json.load(f)
     except (OSError, ValueError, TypeError):
         anterior = None
+    # Se o painel já coletou hoje (cada mudança publicada dispara uma coleta), a
+    # comparação com a coleta de minutos atrás esvaziaria a caixa de novidades.
+    # Nesse caso a base de comparação é a última coleta de um dia anterior.
+    anterior = _baseline_dia_anterior(args.saida, anterior)
 
     salvar(montar(processos, ancora, avisos, anterior), args.saida)
     log.info("%s gravado: %d processos, %d movimentações.",
