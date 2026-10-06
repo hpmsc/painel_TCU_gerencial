@@ -1,7 +1,7 @@
 {
  "versao": 2,
- "gerado_em": "2026-10-06T15:29:59.895657+00:00",
- "gerado_em_br": "06/10/2026 às 15:29",
+ "gerado_em": "2026-10-06T15:44:03.306679+00:00",
+ "gerado_em_br": "06/10/2026 às 15:44",
  "ancora_btcu": 23240,
  "tem_estado": true,
  "avisos": [],
@@ -10,7 +10,7 @@
   "movimentacoes": 296,
   "abertos": 86,
   "encerrados_ocultos": 857,
-  "so_interesse": 36
+  "so_interesse": 37
  },
  "garantidos": [
   "025.632/2024-8",
@@ -38,8 +38,8 @@
    "orgao": "MPO",
    "nome": "Ministério do Planejamento e Orçamento",
    "total": 78,
-   "como_unidade": 45,
-   "como_interessado": 33
+   "como_unidade": 44,
+   "como_interessado": 34
   },
   {
    "orgao": "AECI",
@@ -72,9 +72,9 @@
   {
    "orgao": "SMA",
    "nome": "Secretaria de Monitoramento e Avaliação",
-   "total": 1,
-   "como_unidade": 1,
-   "como_interessado": 0
+   "total": 5,
+   "como_unidade": 0,
+   "como_interessado": 5
   }
  ],
  "por_tipo": [
@@ -308,6 +308,7 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
@@ -989,6 +990,7 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [
@@ -996,7 +998,8 @@
     "SOF"
    ],
    "orgaos_interessado": [
-    "SEPLAN"
+    "SEPLAN",
+    "SMA"
    ],
    "vinculo": "unidade",
    "acordao": "2616/2026",
@@ -1057,6 +1060,7 @@
     "AECI",
     "MPO",
     "SE",
+    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
@@ -1064,6 +1068,7 @@
     "AECI",
     "MPO",
     "SE",
+    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
@@ -2483,11 +2488,13 @@
    "unidades": [],
    "interessados": [],
    "orgaos": [
-    "MPO"
+    "MPO",
+    "SMA"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO"
+    "MPO",
+    "SMA"
    ],
    "vinculo": "interessado",
    "acordao": null,
@@ -3172,15 +3179,13 @@
     "SE",
     "SMA"
    ],
-   "orgaos_unidade": [
-    "MPO",
-    "SMA"
-   ],
+   "orgaos_unidade": [],
    "orgaos_interessado": [
     "MPO",
-    "SE"
+    "SE",
+    "SMA"
    ],
-   "vinculo": "unidade",
+   "vinculo": "interessado",
    "acordao": null,
    "movimentacoes": [
     {
@@ -4325,6 +4330,7 @@
     "MPO",
     "SE",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
@@ -4333,6 +4339,7 @@
     "MPO",
     "SE",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
@@ -5647,6 +5654,7 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "estado": "Aberto",
@@ -5963,6 +5971,7 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -5978,6 +5987,7 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -5993,6 +6003,7 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -6009,6 +6020,7 @@
     "AECI",
     "MPO",
     "SE",
+    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -6067,6 +6079,7 @@
     "AECI",
     "MPO",
     "SE",
+    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -6714,6 +6727,7 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -6817,7 +6831,8 @@
    "assunto": "Auditoria na cobertura de benefícios assistenciais das três esferas de governo (Rede Integrar - Ação 1)",
    "natureza": "Relatório de Auditoria",
    "orgaos": [
-    "MPO"
+    "MPO",
+    "SMA"
    ],
    "estado": "Aberto"
   },
@@ -8067,6 +8082,7 @@
     "MPO",
     "SE",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "estado": "Encerrado"
