@@ -229,7 +229,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
  </section>
 
  <section aria-labelledby="h-quadro">
-  <div class="sh"><h2 id="h-quadro">Onde está cada processo</h2><p>Colunas em laranja: janela de atuação, antes do voto. Clique num cartão para ver a linha do tempo.</p></div>
+  <div class="sh"><h2 id="h-quadro">Onde está cada processo</h2><p>Em cada coluna, quem andou por último fica em cima. Colunas em laranja: janela de atuação, antes do voto. Clique num cartão para ver a linha do tempo.</p></div>
   <div class="board" id="board"><div class="status">Carregando…</div></div>
   <div class="legend">
    <span><i style="background:var(--move)"></i>mudou de coluna no período</span>
@@ -461,9 +461,9 @@ function detalhe(p, A, B, todos){
 function renderQuadro(lista, A, B){
   const por = {1:[],2:[],3:[],4:[],5:[]};
   for (const p of lista) por[colEm(p,B)].push(p);
-  const peso = p => [-(risco && risco.get(p.numero) ? risco.get(p.numero).faixa : 0), mudou(p,A,B)?0:1,
-    p.comunicacoes.some(c=>c.status==="aberto")?0:1, -(+toD(ultimaMov(p,B)||"2000-01-01"))];
-  const cmp = (a,b)=>{ const x=peso(a), y=peso(b); for(let i=0;i<x.length;i++) if(x[i]!==y[i]) return x[i]-y[i]; return 0; };
+  // Ordem dentro da coluna: quem andou por último fica em cima; no empate, quem entrou na coluna por último.
+  const chave = p => (ultimaMov(p,B) || "0000") + "|" + (desdeEm(p,B) || "0000");
+  const cmp = (a,b) => chave(b).localeCompare(chave(a)) || a.numero.localeCompare(b.numero);
   const abertos = new Set([...document.querySelectorAll("details.card[open]")].map(d=>d.dataset.num));
   $("board").innerHTML = D.trilha.map(t=>{
     const cs = por[t.n].sort(cmp), vis = st.expand[t.n] ? cs : cs.slice(0, LIM_COL), resto = cs.length - vis.length;
