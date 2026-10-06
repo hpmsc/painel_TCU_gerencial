@@ -1,7 +1,7 @@
 {
  "versao": 2,
- "gerado_em": "2026-10-06T15:08:24.299032+00:00",
- "gerado_em_br": "06/10/2026 às 15:08",
+ "gerado_em": "2026-10-06T15:29:59.895657+00:00",
+ "gerado_em_br": "06/10/2026 às 15:29",
  "ancora_btcu": 23240,
  "tem_estado": true,
  "avisos": [],
@@ -9,7 +9,7 @@
   "processos": 86,
   "movimentacoes": 296,
   "abertos": 86,
-  "encerrados_ocultos": 687,
+  "encerrados_ocultos": 857,
   "so_interesse": 36
  },
  "garantidos": [
@@ -31,20 +31,7 @@
   "011.526/2022-0"
  ],
  "novos_processos": [],
- "andamentos_novos": [
-  {
-   "processo": "018.198/2026-0",
-   "orgaos": [
-    "MPO",
-    "SOF"
-   ],
-   "assunto": "Auditoria na Gestão Estruturante das Emendas Parlamentares",
-   "data": "2026-10-05T00:00:00+00:00",
-   "descricao": "Peça nº 33 do tipo Portaria de Fiscalização (doc 81.185.532-5) publicada no BTCU Controle Externo n° 173, de 05/10/2026.",
-   "acordao": null,
-   "novo_no_radar": false
-  }
- ],
+ "andamentos_novos": [],
  "tem_baseline": true,
  "por_orgao": [
   {
