@@ -103,6 +103,66 @@ REGRAS_MARCO: list[tuple[int, re.Pattern]] = [
 ]
 
 
+# Peso de cada movimentação para o MPO (cor no Diário e na faixa de 4 semanas):
+# decisao > fase > comunicacao > documento > rotina. "rot" é um rótulo curto.
+_RX_OF = re.compile(r"Of[íi]cio (\d+/\d{4})")
+
+
+def classificar_peso(ev: dict) -> tuple[str, str]:
+    x = ev["desc"]
+    if m := re.search(r"^Ac[óo]rd[ãa]o (\d+/\d{4})", x):
+        return "decisao", f"Acórdão {m.group(1)}"
+    if m := re.search(r"Apreciado na Sess.*Ac[óo]rd[ãa]o (\d+/\d{4})", x):
+        return "decisao", f"Acórdão {m.group(1)}"
+    if re.search(r"Pronunciamento d[ao] \S+ conclu", x, re.I):
+        return "fase", "Proposta concluída pela unidade"
+    if re.search(r"Enviado para pronunciamento do Ministro|enviado de \S+ para MINS?-", x, re.I):
+        return "fase", "Enviado ao relator"
+    if re.search(r"inclu[íi]do na pauta", x, re.I):
+        return "fase", "Incluído em pauta"
+    if re.search(r"pedido de vista", x, re.I):
+        return "fase", "Pedido de vista"
+    if re.search(r"exclu[íi]do da pauta", x, re.I):
+        return "fase", "Retirado de pauta"
+    if re.search(r"Portaria de Fiscaliza", x, re.I):
+        return "fase", "Portaria de fiscalização"
+    if re.search(r"Exame de m[ée]rito", x, re.I):
+        return "fase", "Mérito do recurso concluído"
+    if re.search(r"coment[áa]rios dos gestores|Relat[óo]rio Preliminar|vers[ãa]o preliminar", x, re.I):
+        return "fase", "Relatório preliminar"
+    of = _RX_OF.search(x)
+    of = f" {of.group(1)}" if of else ""
+    if ev.get("com") == "ciencia" or re.search(r"ci[êe]ncia de comunica", x, re.I):
+        return "comunicacao", "Ciência do ofício" + of
+    if ev.get("com") == "resposta" or re.search(r"resposta de comunica", x, re.I):
+        return "comunicacao", "Resposta registrada" + of
+    if ev.get("com") == "encerra":
+        return "comunicacao", "Ciclo de comunicação encerrado"
+    if re.search(r"Juntada comunica|Aviso expedido", x, re.I):
+        return "comunicacao", "Ofício expedido" + of
+    if re.search(r"Resposta de determina", x, re.I):
+        return "documento", "Resposta à determinação juntada"
+    if re.search(r"Elementos comprobat|via CONECTA|Peti[çc][ãa]o", x, re.I):
+        return "documento", "Documento da parte juntado"
+    if re.search(r"Vista e/ou C[óo]pia", x, re.I):
+        return "documento", "Pedido de vista dos autos"
+    if re.search(r"distribui|sorteio", x, re.I):
+        return "rotina", "Distribuição"
+    if re.search(r"Relatoria|Designado o Ministro", x, re.I):
+        return "rotina", "Relatoria alterada"
+    if re.search(r"apensad", x, re.I):
+        return "rotina", "Processo apensado"
+    if re.search(r"Unidade respons", x, re.I):
+        return "rotina", "Unidade técnica alterada"
+    if re.search(r"Extrato de publica|publicad", x, re.I):
+        return "rotina", "Publicação"
+    if re.search(r"Confidencialidade", x, re.I):
+        return "rotina", "Sigilo alterado"
+    if re.search(r"enviado de", x, re.I):
+        return "rotina", "Trâmite interno"
+    return "rotina", "Despacho de expediente"
+
+
 def coluna(etapa: str, marco: int | None) -> int:
     if etapa in ("julgado", "recurso", "encerrado"):
         return 5
@@ -292,6 +352,11 @@ def montar(versoes: list[dict]) -> dict:
         # Etapa de partida quando nenhuma movimentação define a etapa.
         base = "julgado" if p.get("acordao") else "instrucao"
         col_base = marcar_trilha(eventos, base)
+        for ev in eventos:
+            ev["peso"], ev["rot"] = classificar_peso(ev)
+            if ev.get("col") and ev["peso"] == "rotina":
+                # mudou de coluna conta como mudança de etapa, com o nome da coluna nova
+                ev["peso"], ev["rot"] = "fase", "Passou para " + TRILHA[ev["col"] - 1][1]
 
         # Comunicações e prazos
         coms: dict[str, dict] = {}

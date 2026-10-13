@@ -158,6 +158,33 @@ button.kpi[aria-pressed="true"]{background:var(--petrol-soft)}
 .rk1{background:transparent;color:var(--muted);border:1px solid var(--line-2)}
 .rk-med{font-size:11.5px;color:var(--ink-2);border-left:2px solid var(--line);padding-left:7px;margin-bottom:8px}
 
+/* Peso das movimentações: mesma escala no Diário e na faixa de 4 semanas */
+:root{--w-dec:#a3291f;--w-fase:#0e4a44;--w-com:#c98a1a;--w-doc:#4f86c6;--w-rot:#b9c3bf;--w-vazio:#e9eeec}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){--w-dec:#f0877c;--w-fase:#6cc2b6;--w-com:#e9b25a;--w-doc:#7fb1ea;--w-rot:#56645f;--w-vazio:#24302d}}
+:root[data-theme="dark"]{--w-dec:#f0877c;--w-fase:#6cc2b6;--w-com:#e9b25a;--w-doc:#7fb1ea;--w-rot:#56645f;--w-vazio:#24302d}
+.wd{display:inline-block;width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.wd.decisao{background:var(--w-dec);border-radius:2px;transform:rotate(45deg)} .wd.fase{background:var(--w-fase)} .wd.comunicacao{background:var(--w-com)} .wd.documento{background:var(--w-doc)} .wd.rotina{background:var(--w-rot);width:7px;height:7px}
+.legp{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--ink-2);align-items:center}
+.legp span{display:inline-flex;align-items:center;gap:6px}
+.dia{margin-top:12px}
+.dia h3{margin:0 0 6px;display:flex;align-items:baseline;gap:10px;font:600 17px var(--f-disp)}
+.dia h3 small{font:12px var(--f-mono);color:var(--muted)}
+.dbox{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.drow{display:grid;grid-template-columns:128px minmax(0,1fr) minmax(0,auto);gap:4px 14px;align-items:center;padding:8px 14px}
+.drow+.drow{border-top:1px solid var(--line-2)}
+.drow .tcb{font:600 12.5px var(--f-mono);text-align:left}
+.drow .dt2{min-width:0;display:flex;flex-direction:column;gap:2px}
+.drow .dt2 span:first-child{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.drow .dcolt{font-size:11.5px;color:var(--muted)} .drow .dcolt.jan{align-self:flex-start;font-weight:600;color:var(--amber);background:var(--amber-bg);border-radius:999px;padding:0 8px}
+.chips{display:flex;flex-wrap:wrap;gap:5px;justify-content:flex-end}
+.chip{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:3px 10px;font-size:12px;white-space:nowrap;background:var(--surface-2);color:var(--ink-2)}
+.chip.decisao{background:var(--red-bg);color:var(--red);font-weight:600} .chip.fase{background:var(--petrol-soft);color:var(--ink);font-weight:600}
+.chip.comunicacao{background:var(--amber-bg);color:var(--amber)} .chip.documento{background:var(--move-bg);color:var(--move)}
+.faixa{display:grid;grid-template-columns:repeat(28,minmax(0,1fr));gap:1px;margin-top:3px}
+.faixa i{display:block;height:7px;border-radius:1px;background:var(--w-vazio)}
+.faixa i.decisao{background:var(--w-dec)} .faixa i.fase{background:var(--w-fase)} .faixa i.comunicacao{background:var(--w-com)} .faixa i.documento{background:var(--w-doc)} .faixa i.rotina{background:var(--w-rot)}
+.faixa i.hj{outline:1px solid var(--ink-2);outline-offset:0}
+@media (max-width:800px){ .drow{grid-template-columns:auto minmax(0,1fr)} .drow .chips{grid-column:1 / -1;justify-content:flex-start} }
 .legend{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:12px;color:var(--muted);padding-top:10px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:5px}
 footer{padding-block:18px 30px;font-size:12.5px;color:var(--ink-2)}
@@ -228,6 +255,16 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
   </div>
  </section>
 
+ <section aria-labelledby="h-diario" id="diario">
+  <div class="sh"><h2 id="h-diario">O que andou, dia a dia</h2><p id="diaP"></p></div>
+  <div class="ctl" style="padding-top:0;align-items:center">
+   <button class="tg" id="tgRot" type="button" aria-pressed="false">Mostrar rotina (distribuição, despachos)</button>
+   <div class="legp" id="legPeso"></div>
+  </div>
+  <div id="diarioLista"></div>
+  <div class="mais" style="margin-top:8px"><button class="linkbtn" id="maisDias" type="button" hidden></button></div>
+ </section>
+
  <section aria-labelledby="h-quadro">
   <div class="sh"><h2 id="h-quadro">Onde está cada processo</h2><p>Em cada coluna, quem andou por último fica em cima. Colunas em laranja: janela de atuação, antes do voto. Clique num cartão para ver a linha do tempo.</p></div>
   <div class="board" id="board"><div class="status">Carregando…</div></div>
@@ -235,6 +272,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
    <span><i style="background:var(--move)"></i>mudou de coluna no período</span>
    <span><b>nesta coluna desde</b>: dia em que o processo mudou para a coluna (azul se foi no período)</span>
    <span><b>última mov.</b>: última movimentação pública no TCU</span>
+   <span><b>faixa</b>: últimas 4 semanas, um quadrado por dia (contorno = hoje), na cor do fato mais importante do dia</span>
    <span><b>parado há…</b>: sem movimentação pública há mais de 60 dias; o processo continua aberto</span>
    <span>★ minha lista</span>
   </div>
@@ -247,6 +285,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
   <p><b>As 5 colunas.</b> Vêm da movimentação pública do TCU. <b>Fiscalização em curso</b>: portaria, requisições, diligências e instrução na unidade técnica. <b>Relatório preliminar</b>: versão preliminar enviada para comentários do gestor. <b>Proposta no relator</b>: pronunciamento da unidade concluído, processo no gabinete do ministro. <b>Pauta</b>: incluído em pauta ou com pedido de vista. <b>Julgado e cumprimento</b>: acórdão publicado, cumprimento e recursos (recurso aparece como etiqueta no cartão). Depois do acórdão, ciência de ofício, envio à Seses e remessa à unidade técnica são rotina de cumprimento e não mudam a coluna; um novo ciclo só começa com portaria, relatório preliminar, envio ao relator ou pauta.</p>
   <p><b>Janela de atuação.</b> Nas colunas 2 e 3 a proposta está pronta ou quase, e o voto ainda não saiu: é o momento da reunião com a unidade técnica do TCU e da nota técnica da secretaria. O relatório preliminar chega ao MPO pelo Conecta e quase nunca aparece na movimentação pública; por isso a coluna 2 costuma ficar vazia aqui.</p>
   <p><b>Prazos (teste).</b> O prazo começa no dia útil em que um órgão do MPO registra a ciência da comunicação no TCU e conta em dias corridos, sem o dia do início; se o fim cair em fim de semana ou feriado, passa para o próximo dia útil. Onde o arquivo <span class="mono">prazos.txt</span> não informa o número de dias, usa-se um prazo presumido de <span id="padrao">15</span> dias. O prazo sai da lista quando o TCU registra a resposta, quando a parte junta documento pelo Conecta ou quando o ciclo de comunicação é encerrado. Prazo vencido pode já ter sido respondido por outro meio.</p>
+  <p><b>O que andou, dia a dia.</b> Cada dia do período lista os processos com movimentação pública, com o fato mais importante primeiro. As cores dizem o peso para o MPO: decisão (acórdão), mudança de etapa (proposta concluída, envio ao relator, pauta, portaria), ofício e prazo (ciência, resposta, ofício expedido), documento juntado e rotina (distribuição, despacho, relatoria alterada), que fica escondida até você pedir. A mesma cor pinta a faixa de 4 semanas de cada cartão.</p>
   <p><b>Minha lista</b> fica gravada só neste navegador.</p>
   <p><b>Camada privada de risco.</b> Arquivo CSV mantido pela SEAI, com as colunas <span class="mono">tc;faixa;faixa_latente;fase;medida;fonte;responsavel;revisado_em</span>. A página só lê o arquivo no seu navegador; ele não é publicado com o site.</p>
   <p class="fonte" id="fonte"></p>
@@ -376,7 +415,7 @@ function renderAtencao(lista, ocultos, A, B, nAndou){
     ["jan", naJanela, "na janela de atuação"],
     ["mud", muds.length, `mud${muds.length===1?"ou":"aram"} de coluna no período`],
   ].map(([c,n,t])=>`<div class="kpi ${c}"><b>${n}</b><span>${t}</span></div>`).join("")
-  + `<button type="button" class="kpi and" id="kAndou" aria-pressed="${!!st.verAndou}" title="Clique para listar abaixo o dia e a última movimentação de cada processo"><b>${nAndou}</b><span>andaram no período · ${st.verAndou?"esconder lista":"ver dias"}</span></button>`;
+  + `<button type="button" class="kpi and" id="kAndou" title="Ver o diário: o que andou em cada dia"><b>${nAndou}</b><span>andaram no período · ver dia a dia ↓</span></button>`;
 
   const linha = (p, pill, oq, dt, rot) => `<li><button type="button" class="linkbtn tcb" data-abrir="${esc(p.numero)}">${esc(p.numero)}</button><span class="dt"><small>${rot}</small>${dt}</span>${pill}<span class="ras"><span class="oq">${oq}</span>${oq?" · ":""}${esc(curto(p.assunto,110))}</span></li>`;
   const sep = t => `<li class="sep">${t}</li>`;
@@ -390,13 +429,6 @@ function renderAtencao(lista, ocultos, A, B, nAndou){
   if (grupos.length && muds.length) itens.splice(grupos.length, 0, sep(`Mudaram de coluna de ${br(A)} a ${br(B)}`));
   if (grupos.length) itens.unshift(sep("Prazos de resposta"));
   else if (muds.length) itens.unshift(sep(`Mudaram de coluna de ${br(A)} a ${br(B)}`));
-  // O que andou: toda movimentação pública no período, com o dia, mais recente primeiro.
-  const andaram = lista.map(p => { const evs = p.eventos.filter(ev => ev.data > A && ev.data <= B); return evs.length ? {p, ev: evs[evs.length-1], n: evs.length} : null; })
-    .filter(Boolean).sort((a,b)=> b.ev.data.localeCompare(a.ev.data) || a.p.numero.localeCompare(b.p.numero));
-  if (st.verAndou && andaram.length){
-    itens.push(sep(`Andaram de ${br(A)} a ${br(B)} · última movimentação de cada processo`));
-    for (const x of andaram) itens.push(linha(x.p, `<span class="pill p-mov">${x.n} mov.</span>`, esc(curto(x.ev.desc, 120)), br(x.ev.data), "andou"));
-  }
   $("alist").innerHTML = itens.length ? itens.join("") : `<li class="vazio">Nada mudou de coluna no período e não há prazo de resposta até ${brAno(ate)}.</li>`;
 
   const nOc = ocultos.filter(p => mudou(p,A,B)).length;
@@ -405,6 +437,69 @@ function renderAtencao(lista, ocultos, A, B, nAndou){
   if (outros && !st.todosPrazos){ b.hidden=false; b.textContent=`Ver todos os ${prazos.length} prazos em aberto`; }
   else if (st.todosPrazos && outros){ b.hidden=false; b.textContent=`Só os prazos até ${br(ate)}`; }
   else b.hidden = true;
+}
+
+/* ---------- Diário (o que andou, dia a dia) ---------- */
+const PESO = {decisao:5, fase:4, comunicacao:3, documento:2, rotina:1};
+const NOME_PESO = {decisao:"Decisão (acórdão)", fase:"Mudou de etapa", comunicacao:"Ofício e prazo", documento:"Documento juntado", rotina:"Rotina"};
+const DIAS_SEM = ["Dom","Seg","Ter","Qua","Qui","Sex","Sáb"];
+const semNumero = s => (s||"").replace(/^\d{3}\.\d{3}\/\d{4}-\d\s*-\s*/,"").replace(/\s+/g," ");
+function chipsDoDia(evs){
+  const env = evs.some(e=>e.rot==="Enviado ao relator"), prop = evs.some(e=>e.rot==="Proposta concluída pela unidade");
+  const out = [], visto = new Set(), cont = {};
+  for (const e of evs){
+    let l = e.rot || "Movimentação";
+    if (env && prop && (l==="Enviado ao relator" || l==="Proposta concluída pela unidade")) l = "Proposta concluída e enviada ao relator";
+    const g = /^(Ciência do ofício|Resposta registrada|Ofício expedido)/.exec(l);
+    if (g){ (cont[g[1]] = cont[g[1]] || []).push(l); continue; }
+    if (!visto.has(l)){ visto.add(l); out.push({p:e.peso, l}); }
+  }
+  // Mudança de coluna só vira etiqueta se nenhum outro fato do dia já explica a mudança.
+  const ultCol = evs.filter(e=>e.col).map(e=>e.col).pop();
+  if (ultCol && !out.some(c=>c.p==="fase" || c.p==="decisao")) out.push({p:"fase", l:"→ " + TR[ultCol].nome});
+  const plural = {"Ciência do ofício": n=>`Ciência de ${n} ofícios`, "Resposta registrada": n=>`${n} respostas registradas`, "Ofício expedido": n=>`${n} ofícios expedidos`};
+  for (const k in cont) out.push({p:"comunicacao", l: cont[k].length===1 ? cont[k][0] : plural[k](cont[k].length)});
+  return out.sort((a,b)=> PESO[b.p]-PESO[a.p]);
+}
+function renderDiario(lista, A, B){
+  $("legPeso").innerHTML = Object.keys(NOME_PESO).map(k=>`<span><i class="wd ${k}" aria-hidden="true"></i>${NOME_PESO[k]}</span>`).join("");
+  const porDia = {};
+  for (const p of lista){
+    const doDia = {};
+    for (const ev of p.eventos){ if (ev.data > A && ev.data <= B) (doDia[ev.data] = doDia[ev.data] || []).push(ev); }
+    for (const d in doDia){
+      let evs = doDia[d];
+      const soRotina = evs.every(e=>e.peso==="rotina" && !e.col);
+      if (!st.rot){ if (soRotina) continue; evs = evs.filter(e=>e.peso!=="rotina" || e.col); }
+      const chips = chipsDoDia(evs);
+      (porDia[d] = porDia[d] || []).push({p, chips, top: Math.max(...chips.map(c=>PESO[c.p]))});
+    }
+  }
+  const dias = Object.keys(porDia).sort().reverse();
+  const nDias = st.diasTodos ? dias.length : Math.min(dias.length, 7);
+  const nProc = new Set(dias.flatMap(d=>porDia[d].map(x=>x.p.numero))).size;
+  $("diaP").textContent = dias.length ? `${nProc} processo${nProc===1?"":"s"} andaram de ${br(addD(A,1))} a ${br(B)}${st.rot?"":" · rotina escondida"}. Clique no número para abrir o cartão.` : "";
+  $("diarioLista").innerHTML = dias.length ? dias.slice(0, nDias).map(d=>{
+    const rows = porDia[d].sort((a,b)=> b.top-a.top || a.p.numero.localeCompare(b.p.numero));
+    const c = colEm(rows[0].p, B);
+    return `<div class="dia"><h3>${DIAS_SEM[toD(d).getDay()]} ${br(d)}<small>${rows.length} processo${rows.length===1?"":"s"}</small></h3><div class="dbox">${rows.map(x=>{
+      const col = colEm(x.p, B), jan = TR[col].janela;
+      return `<div class="drow"><button type="button" class="linkbtn tcb" data-abrir="${esc(x.p.numero)}">${esc(x.p.numero)}</button>
+        <div class="dt2"><span title="${esc(x.p.assunto)}">${esc(curto(semNumero(x.p.assunto), 120))}</span><span class="dcolt${jan?" jan":""}">${esc(TR[col].nome)}${jan?" · janela":""}</span></div>
+        <div class="chips">${x.chips.slice(0,4).map(ch=>`<span class="chip ${ch.p}"><i class="wd ${ch.p}" aria-hidden="true"></i>${esc(ch.l)}</span>`).join("")}</div></div>`;
+    }).join("")}</div></div>`;
+  }).join("") : `<div class="vazio">Nenhuma movimentação ${st.rot?"":"relevante "}de ${brAno(addD(A,1))} a ${brAno(B)}.</div>`;
+  const b = $("maisDias");
+  if (dias.length > 7){ b.hidden = false; b.textContent = st.diasTodos ? "Mostrar só os 7 dias mais recentes" : `Ver os ${dias.length} dias do período`; }
+  else b.hidden = true;
+}
+// Faixa das últimas 4 semanas no cartão: um quadrado por dia, cor do fato mais pesado do dia.
+function faixa(p, B){
+  const ini = addD(B, -27), maior = {};
+  for (const ev of p.eventos){ if (ev.data >= ini && ev.data <= B){ const k = ev.col && ev.peso==="rotina" ? "fase" : (ev.peso||"rotina"); if (!maior[ev.data] || PESO[k] > PESO[maior[ev.data]]) maior[ev.data] = k; } }
+  let h = "";
+  for (let i = 0; i < 28; i++){ const d = addD(ini, i), k = maior[d]; h += `<i class="${k||""}${i===27?" hj":""}" title="${br(d)}${k?" · "+NOME_PESO[k]:""}"></i>`; }
+  return `<div class="faixa" aria-label="Movimentação nas últimas 4 semanas">${h}</div>`;
 }
 
 /* ---------- Quadro ---------- */
@@ -433,6 +528,7 @@ function card(p, A, B){
    <summary>
     <div class="c1"><span class="tc">${esc(p.numero)}</span><span class="dir"><button class="star" type="button" data-star="${esc(p.numero)}" aria-pressed="${minha.has(p.numero)}" aria-label="Minha lista" title="Minha lista">${minha.has(p.numero)?"★":"☆"}</button></span></div>
     <div class="as">${esc(p.assunto)}</div>
+    ${faixa(p, B)}
     <div class="c3">${pz}${tempo}${tags}</div>
    </summary>
    <div class="det" data-tl></div>
@@ -493,6 +589,7 @@ function render(){
   const na = new Set(lista);
   const nAndou = base.filter(filtra).filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B)).length;
   renderAtencao(lista, base.filter(p=>!na.has(p)), A, B, nAndou);
+  renderDiario(lista, A, B);
   renderQuadro(lista, A, B);
 }
 
@@ -534,6 +631,8 @@ function montarControles(){
   $("selRisco").onchange = e => { riscoMin = +e.target.value; render(); };
   $("tirarRisco").onclick = () => { risco=null; riscoMin=0; $("selRisco").value="0"; try{ localStorage.removeItem(LS_R); }catch(e){} atualizarPriv(); render(); };
   $("maisPrazos").onclick = ()=>{ st.todosPrazos=!st.todosPrazos; render(); };
+  $("tgRot").onclick = ()=>{ st.rot=!st.rot; $("tgRot").setAttribute("aria-pressed", st.rot); $("tgRot").textContent = st.rot ? "Esconder rotina" : "Mostrar rotina (distribuição, despachos)"; render(); };
+  $("maisDias").onclick = ()=>{ st.diasTodos=!st.diasTodos; render(); };
   $("editMinha").onclick = ()=>{ $("dlgTxt").value=[...minha].join("\n"); try{ $("dlg").showModal(); }catch(e){ $("dlg").setAttribute("open",""); } };
   $("dlgForm").addEventListener("submit", e=>{
     if (e.submitter && e.submitter.value === "ok"){ minha = new Set(($("dlgTxt").value.match(/\d{3}\.\d{3}\/\d{4}-\d/g)||[])); gravarMinha(); render(); }
@@ -542,7 +641,7 @@ function montarControles(){
     const s = e.target.closest("[data-star]");
     if (s){ e.preventDefault(); e.stopPropagation(); const n=s.dataset.star; minha.has(n)?minha.delete(n):minha.add(n); gravarMinha(); render(); return; }
     const a = e.target.closest("[data-abrir]"); if (a){ abrir(a.dataset.abrir); return; }
-    if (e.target.closest("#kAndou")){ st.verAndou = !st.verAndou; render(); return; }
+    if (e.target.closest("#kAndou")){ $("diario").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"}); return; }
     const x = e.target.closest("[data-expand]"); if (x){ st.expand[x.dataset.expand]=true; render(); return; }
     const m = e.target.closest("[data-tlall]"); if (m) abrirTl(m.closest("details"), true);
   });
