@@ -1,7 +1,7 @@
 {
  "versao": 2,
- "gerado_em": "2026-10-13T13:50:46.333041+00:00",
- "gerado_em_br": "13/10/2026 às 13:50",
+ "gerado_em": "2026-10-13T14:39:19.154837+00:00",
+ "gerado_em_br": "13/10/2026 às 14:39",
  "ancora_btcu": 23240,
  "tem_estado": true,
  "avisos": [],
@@ -10,7 +10,7 @@
   "movimentacoes": 300,
   "abertos": 86,
   "encerrados_ocultos": 688,
-  "so_interesse": 38
+  "so_interesse": 37
  },
  "garantidos": [
   "011.685/2026-3",
@@ -40,6 +40,18 @@
    ],
    "assunto": "Coordenação e consolidação do Relatório de Fiscalização em Políticas Públicas e Programas de Governo (RePP 2027) e Macroavaliação de Políticas Públicas Autoavaliadas",
    "data": "2026-10-13T00:00:00+00:00",
+   "descricao": "Registrada ciência de comunicação do Ofício 0013/2026-TCU/AudDigital via CONECTA TCU por CÁTIA REGINA MOREIRA SALLES em nome de Secretaria-Executiva do Ministério da Educação",
+   "acordao": null,
+   "novo_no_radar": false
+  },
+  {
+   "processo": "021.575/2026-6",
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "assunto": "Coordenação e consolidação do Relatório de Fiscalização em Políticas Públicas e Programas de Governo (RePP 2027) e Macroavaliação de Políticas Públicas Autoavaliadas",
+   "data": "2026-10-13T00:00:00+00:00",
    "descricao": "Registrada ciência de comunicação do Ofício 0015/2026-TCU/AudDigital via CONECTA TCU por MARCOS OLIVEIRA ZACARIAS em nome de Secretaria-Executiva do Ministério de Minas e Energia",
    "acordao": null,
    "novo_no_radar": false
@@ -49,7 +61,6 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
@@ -65,8 +76,8 @@
    "orgao": "MPO",
    "nome": "Ministério do Planejamento e Orçamento",
    "total": 77,
-   "como_unidade": 43,
-   "como_interessado": 34
+   "como_unidade": 44,
+   "como_interessado": 33
   },
   {
    "orgao": "AECI",
@@ -99,9 +110,9 @@
   {
    "orgao": "SMA",
    "nome": "Secretaria de Monitoramento e Avaliação",
-   "total": 5,
-   "como_unidade": 0,
-   "como_interessado": 5
+   "total": 1,
+   "como_unidade": 1,
+   "como_interessado": 0
   }
  ],
  "por_tipo": [
@@ -329,7 +340,6 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "assunto": "Estruturação Metodológica e Execução Centralizada do Relatório de Fiscalizações em Políticas e Programas de Governo (RePP 2026)",
@@ -440,6 +450,12 @@
    "movimentacoes": [
     {
      "data": "2026-10-13T00:00:00+00:00",
+     "descricao": "Registrada ciência de comunicação do Ofício 0013/2026-TCU/AudDigital via CONECTA TCU por CÁTIA REGINA MOREIRA SALLES em nome de Secretaria-Executiva do Ministério da Educação",
+     "fase": null,
+     "acordao": null
+    },
+    {
+     "data": "2026-10-13T00:00:00+00:00",
      "descricao": "Registrada ciência de comunicação do Ofício 0015/2026-TCU/AudDigital via CONECTA TCU por MARCOS OLIVEIRA ZACARIAS em nome de Secretaria-Executiva do Ministério de Minas e Energia",
      "fase": null,
      "acordao": null
@@ -449,21 +465,15 @@
      "descricao": "Registrada ciência de comunicação do Ofício 0012/2026-TCU/AudDigital via CONECTA TCU por MARIA EDUARDA DE PAULA FERREIRA em nome de Secretaria-Executiva do Ministério do Desenvolvimento Agrário e Agricultura Familiar",
      "fase": null,
      "acordao": null
-    },
-    {
-     "data": "2026-10-09T00:00:00+00:00",
-     "descricao": "Registrada ciência de comunicação do Ofício 0014/2026-TCU/AudDigital via CONECTA TCU por KELVIN LENON EVANGELISTA CHAVES em nome de Secretaria-Executiva do Ministério dos Transportes",
-     "fase": null,
-     "acordao": null
     }
    ],
    "ultima_movimentacao": {
     "data": "2026-10-13T00:00:00+00:00",
-    "descricao": "Registrada ciência de comunicação do Ofício 0015/2026-TCU/AudDigital via CONECTA TCU por MARCOS OLIVEIRA ZACARIAS em nome de Secretaria-Executiva do Ministério de Minas e Energia",
+    "descricao": "Registrada ciência de comunicação do Ofício 0013/2026-TCU/AudDigital via CONECTA TCU por CÁTIA REGINA MOREIRA SALLES em nome de Secretaria-Executiva do Ministério da Educação",
     "fase": null,
     "acordao": null
    },
-   "fase_atual": "Registrada ciência de comunicação do Ofício 0015/2026-TCU/AudDigital via CONECTA",
+   "fase_atual": "Registrada ciência de comunicação do Ofício 0013/2026-TCU/AudDigital via CONECTA",
    "atualizado_em": "2026-10-13T00:00:00+00:00",
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2157520266",
    "garantido": false
@@ -485,7 +495,6 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [
@@ -493,8 +502,7 @@
     "SOF"
    ],
    "orgaos_interessado": [
-    "SEPLAN",
-    "SMA"
+    "SEPLAN"
    ],
    "vinculo": "unidade",
    "acordao": "2616/2026",
@@ -1572,7 +1580,6 @@
     "AECI",
     "MPO",
     "SE",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
@@ -1580,7 +1587,6 @@
     "AECI",
     "MPO",
     "SE",
-    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
@@ -2752,13 +2758,11 @@
    "unidades": [],
    "interessados": [],
    "orgaos": [
-    "MPO",
-    "SMA"
+    "MPO"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO",
-    "SMA"
+    "MPO"
    ],
    "vinculo": "interessado",
    "acordao": null,
@@ -3340,13 +3344,15 @@
     "SE",
     "SMA"
    ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
+   "orgaos_unidade": [
     "MPO",
-    "SE",
     "SMA"
    ],
-   "vinculo": "interessado",
+   "orgaos_interessado": [
+    "MPO",
+    "SE"
+   ],
+   "vinculo": "unidade",
    "acordao": null,
    "movimentacoes": [
     {
@@ -4380,7 +4386,6 @@
     "MPO",
     "SE",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
@@ -4389,7 +4394,6 @@
     "MPO",
     "SE",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
@@ -5704,7 +5708,6 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "estado": "Aberto",
@@ -5712,6 +5715,20 @@
   }
  ],
  "movimentacoes": [
+  {
+   "data": "2026-10-13T00:00:00+00:00",
+   "descricao": "Registrada ciência de comunicação do Ofício 0013/2026-TCU/AudDigital via CONECTA TCU por CÁTIA REGINA MOREIRA SALLES em nome de Secretaria-Executiva do Ministério da Educação",
+   "fase": null,
+   "acordao": null,
+   "processo": "021.575/2026-6",
+   "assunto": "Coordenação e consolidação do Relatório de Fiscalização em Políticas Públicas e Programas de Governo (RePP 2027) e Macroavaliação de Políticas Públicas Autoavaliadas",
+   "natureza": "Relatório de Acompanhamento",
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "estado": "Aberto"
+  },
   {
    "data": "2026-10-13T00:00:00+00:00",
    "descricao": "Registrada ciência de comunicação do Ofício 0015/2026-TCU/AudDigital via CONECTA TCU por MARCOS OLIVEIRA ZACARIAS em nome de Secretaria-Executiva do Ministério de Minas e Energia",
@@ -5737,7 +5754,6 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -5745,20 +5761,6 @@
   {
    "data": "2026-10-09T00:00:00+00:00",
    "descricao": "Registrada ciência de comunicação do Ofício 0012/2026-TCU/AudDigital via CONECTA TCU por MARIA EDUARDA DE PAULA FERREIRA em nome de Secretaria-Executiva do Ministério do Desenvolvimento Agrário e Agricultura Familiar",
-   "fase": null,
-   "acordao": null,
-   "processo": "021.575/2026-6",
-   "assunto": "Coordenação e consolidação do Relatório de Fiscalização em Políticas Públicas e Programas de Governo (RePP 2027) e Macroavaliação de Políticas Públicas Autoavaliadas",
-   "natureza": "Relatório de Acompanhamento",
-   "orgaos": [
-    "MPO",
-    "SOF"
-   ],
-   "estado": "Aberto"
-  },
-  {
-   "data": "2026-10-09T00:00:00+00:00",
-   "descricao": "Registrada ciência de comunicação do Ofício 0014/2026-TCU/AudDigital via CONECTA TCU por KELVIN LENON EVANGELISTA CHAVES em nome de Secretaria-Executiva do Ministério dos Transportes",
    "fase": null,
    "acordao": null,
    "processo": "021.575/2026-6",
@@ -6316,7 +6318,6 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -6332,7 +6333,6 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -6405,7 +6405,6 @@
     "AECI",
     "MPO",
     "SE",
-    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -6422,7 +6421,6 @@
     "AECI",
     "MPO",
     "SE",
-    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -6937,7 +6935,6 @@
    "orgaos": [
     "MPO",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "estado": "Aberto"
@@ -7024,8 +7021,7 @@
    "assunto": "Auditoria na cobertura de benefícios assistenciais das três esferas de governo (Rede Integrar - Ação 1)",
    "natureza": "Relatório de Auditoria",
    "orgaos": [
-    "MPO",
-    "SMA"
+    "MPO"
    ],
    "estado": "Aberto"
   },
@@ -8163,7 +8159,6 @@
     "MPO",
     "SE",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "estado": "Encerrado"
