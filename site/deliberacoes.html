@@ -265,7 +265,13 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 .kpt .kx{display:inline-block;margin-top:7px;font-size:11.5px;font-weight:600;color:var(--red);background:var(--red-bg);border-radius:999px;padding:1px 8px}
 .kpt .kx[aria-pressed="true"]{outline:2px solid var(--red)}
 .lista{margin-top:14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
-.lh,.lr{display:grid;grid-template-columns:112px 108px minmax(0,1.1fr) minmax(0,2.2fr) 132px;gap:14px;padding:10px 14px;align-items:start}
+.lh,.lr{display:grid;grid-template-columns:124px 104px 112px minmax(0,1fr) minmax(0,2.2fr) 132px;gap:14px;padding:10px 14px;align-items:start}
+.lista.semrisco .lh,.lista.semrisco .lr{grid-template-columns:124px 112px minmax(0,1fr) minmax(0,2.2fr) 132px}
+.lista.semrisco .rcol{display:none}
+/* Número do item: é por ele que a SEAI controla o cumprimento */
+.itn b{display:block;font:700 22px/1 var(--f-mono);letter-spacing:-.02em;color:var(--ink)}
+.itn small{display:block;font:11px var(--f-mono);color:var(--muted);margin-top:4px;line-height:1.35;white-space:nowrap}
+.itn a{font-size:11px}
 .lh{background:var(--surface-2);font:600 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line)}
 .lr{border-bottom:1px solid var(--line-2)}
 .lr:last-child{border-bottom:0}
@@ -275,7 +281,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 .venc.passou{color:var(--red)} .venc.logo{color:var(--amber)}
 .proc a{font:600 12.5px var(--f-mono);text-decoration:none}
 .proc a:hover{text-decoration:underline}
-.proc .as{font-size:12px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
+.proc .as{font-size:12px;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-top:2px}
 .proc .ac{font:11px var(--f-mono);color:var(--muted);margin-top:4px}
 .cmd .para{font-size:12px;color:var(--ink-2);margin-bottom:3px}
 .cmd details>summary{cursor:pointer;list-style:none;font-size:13px;line-height:1.45}
@@ -289,6 +295,8 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
 .nota{font-size:12px;color:var(--muted);margin:8px 0 0}
 @media (max-width:860px){
   .rcol{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .lista.semrisco .lr,.lr{grid-template-columns:1fr}
+  .itn{display:flex;align-items:baseline;gap:10px} .itn small{margin-top:0}
   .lh{display:none}
   .lr{grid-template-columns:1fr;gap:6px}
   .tipo{flex-direction:row;flex-wrap:wrap}
@@ -313,7 +321,7 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
    <select id="selTipo"><option value="">Todos</option><option value="determinacao">Determinação</option><option value="recomendacao">Recomendação</option><option value="alerta">Alerta</option><option value="ciencia">Ciência</option><option value="cautelar">Cautelar</option><option value="decisao">Outra decisão</option></select></div>
   <div class="fld"><label for="selOrd">Ordem</label>
    <select id="selOrd"><option value="prazo">Prazo mais próximo</option><option value="risco">Maior risco</option><option value="data">Acórdão mais recente</option><option value="proc">Por processo</option></select></div>
-  <div class="fld"><label for="q">Buscar</label><input type="search" id="q" placeholder="TC, órgão ou palavra do comando"></div>
+  <div class="fld"><label for="q">Buscar</label><input type="search" id="q" placeholder="TC, item (9.3), acórdão ou palavra"></div>
  </div>
 
  <div class="lista" id="lista" aria-live="polite"><div class="vazio2">Carregando…</div></div>
@@ -452,11 +460,13 @@ function linha(i){
   const link = `${repoUrl()}/blob/main/acordaos/${i.arquivo}`;
   const rr = riscoDe(i);
   const just = rr ? `<div class="rjust"><b>Risco ${rr.faixa} ${NOME_R[rr.faixa]}</b> · força ${esc(rr.F)} × impacto ${esc(rr.I)} (${esc(rr.dim)}) · ${esc(rr.fase)} · nota ${esc(rr.origem)}${rr.just?`<br>${esc(rr.just)}`:""}</div>` : "";
+  const col = (i.colegiado||"").startsWith("Plen") ? "PL" : (i.colegiado||"").startsWith("Primeira") ? "1C" : (i.colegiado||"").startsWith("Segunda") ? "2C" : "";
   return `<div class="lr">
+    <div class="itn" title="Item ${esc(i.item)} do Acórdão ${esc(i.acordao)}${col?"-"+col:""}"><b>${esc(i.item)}</b><small>Ac. ${esc(i.acordao)}${col?"-"+col:""}<br>${br(i.sessao)}</small></div>
     <div class="rcol">${seloRisco(i)}</div>
     <div class="tipo"><span class="tp tp-${i.tipo}">${TIPO[i.tipo]||i.tipo}</span>${i.mpo?`<span class="mp">ao MPO</span>`:(i.mpo_mencao?`<span class="mp" style="opacity:.7">cita MPO</span>`:"")}</div>
     <div class="proc"><a href="kanban.html#c-${i.processo.replace(/\D/g,"")}">${esc(i.processo)}</a><div class="as">${esc(p.assunto||"")}</div>
-      <div class="ac">Ac. ${esc(i.acordao)} · item ${esc(i.item)} · ${br(i.sessao)} · <a href="${esc(link)}" target="_blank" rel="noopener">inteiro teor</a></div></div>
+      <div class="ac"><a href="${esc(link)}" target="_blank" rel="noopener">inteiro teor do acórdão</a></div></div>
     <div class="cmd">${i.destinatario?`<div class="para">Para: ${esc(i.destinatario)}</div>`:""}<details><summary>${esc(i.resumo)}</summary>${just}<div class="full">${esc(i.texto)}</div></details></div>
     ${v}
   </div>`;
@@ -468,14 +478,15 @@ function render(){
   let l = ITENS.filter(i => alcance(i) && (st.tipo ? i.tipo===st.tipo : (i.tipo!=="decisao" || st.alc==="all")));
   if (st.kp==="prox") l = l.filter(i=>i.tipo==="determinacao" && i.vence && i.vence>=h && i.vence<=em90);
   if (RISCO && riscoMin) l = l.filter(i => (riscoDe(i)||{}).faixa >= riscoMin);
-  if (q) l = l.filter(i => (i.processo+" "+(i.destinatario||"")+" "+i.texto+" "+((PROC[i.processo]||{}).assunto||"")).toLowerCase().includes(q));
+  if (q) l = l.filter(i => (/^\d+(\.\d+)*$/.test(q) ? (i.item === q || i.item.startsWith(q+".")) : false) || (i.processo+" "+i.acordao+" "+(i.destinatario||"")+" "+i.texto+" "+((PROC[i.processo]||{}).assunto||"")).toLowerCase().includes(q));
   const faixa = i => !i.vence ? 2 : (i.vence >= h ? 0 : 1);
   if (st.ord==="prazo") l.sort((a,b)=> faixa(a)-faixa(b) || (faixa(a)===1 ? (b.vence||"").localeCompare(a.vence||"") : (a.vence||"").localeCompare(b.vence||"")) || (b.sessao||"").localeCompare(a.sessao||""));
   else if (st.ord==="risco") l.sort((a,b)=> ((riscoDe(b)||{}).faixa||0)-((riscoDe(a)||{}).faixa||0) || ((riscoDe(b)||{}).lat||0)-((riscoDe(a)||{}).lat||0) || (a.vence||"9").localeCompare(b.vence||"9"));
   else if (st.ord==="data") l.sort((a,b)=> (b.sessao||"").localeCompare(a.sessao||"") || a.item.localeCompare(b.item,undefined,{numeric:true}));
   else l.sort((a,b)=> a.processo.localeCompare(b.processo) || (b.sessao||"").localeCompare(a.sessao||"") || a.item.localeCompare(b.item,undefined,{numeric:true}));
   escalaUI(ITENS.filter(i => alcance(i)));
-  const cab = `<div class="lh"><span>Risco</span><span>Tipo</span><span>Processo</span><span>Comando</span><span>Prazo estimado</span></div>`;
+  $("lista").classList.toggle("semrisco", !RISCO);
+  const cab = `<div class="lh"><span>Item</span><span class="rcol">Risco</span><span>Tipo</span><span>Processo</span><span>Comando</span><span>Prazo estimado</span></div>`;
   let corpo = "";
   if (st.ord==="proc"){ let atual=null; for (const i of l){ if (i.processo!==atual){ atual=i.processo; corpo += `<div class="lr grp">${esc(i.processo)} · ${esc(((PROC[i.processo]||{}).assunto||"").slice(0,110))}</div>`; } corpo += linha(i); } }
   else if (st.ord==="prazo"){
