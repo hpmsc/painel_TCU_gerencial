@@ -623,7 +623,8 @@ function lista(){
     if(fr && p.relator !== fr) return false;
     if(fu && p.unidade_tecnica !== fu) return false;
     if(frep && p.representante_mp !== frep) return false;
-    if(q && ![p.numero, p.assunto, p.relator, p.natureza].join(" ").toLowerCase().includes(q)) return false;
+    const qd = q.replace(/[\s.\/-]/g,"");
+    if(q && !(/^\d{4,}$/.test(qd) && p.numero.replace(/\D/g,"").includes(qd)) && ![p.numero, p.assunto, p.relator, p.natureza].join(" ").toLowerCase().includes(q)) return false;
     return true;
   });
 

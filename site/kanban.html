@@ -379,7 +379,7 @@ function filtra(p){
   if (st.org && !(p.orgaos||[]).includes(st.org)) return false;
   if (st.soMinha && !minha.has(p.numero)) return false;
   if (risco && riscoMin && !((risco.get(p.numero)||{}).faixa >= riscoMin)) return false;
-  if (st.q){ const q=st.q.toLowerCase(); if (!(p.numero.includes(q) || (p.assunto||"").toLowerCase().includes(q) || (p.relator||"").toLowerCase().includes(q))) return false; }
+  if (st.q){ const q=st.q.toLowerCase(), qd=q.replace(/[\s.\/-]/g,""); if (!(p.numero.includes(q) || (/^\d{4,}$/.test(qd) && p.numero.replace(/\D/g,"").includes(qd)) || (p.assunto||"").toLowerCase().includes(q) || (p.relator||"").toLowerCase().includes(q))) return false; }
   return true;
 }
 function hojeRef(){ const h=isoD(new Date()); return h > D.hoje ? h : D.hoje; }
@@ -567,7 +567,7 @@ function renderQuadro(lista, A, B){
   const cmp = (a,b) => chave(b).localeCompare(chave(a)) || a.numero.localeCompare(b.numero);
   const abertos = new Set([...document.querySelectorAll("details.card[open]")].map(d=>d.dataset.num));
   $("board").innerHTML = D.trilha.map(t=>{
-    const cs = por[t.n].sort(cmp), vis = st.expand[t.n] ? cs : cs.slice(0, LIM_COL), resto = cs.length - vis.length;
+    const cs = por[t.n].sort(cmp), vis = (st.expand[t.n] || st.q) ? cs : cs.slice(0, LIM_COL), resto = cs.length - vis.length;
     const vazio = t.n === 2 ? "O relatório preliminar chega ao MPO pelo Conecta e quase nunca aparece na movimentação pública."
       : "Nenhum processo.";
     return `<div class="col${t.janela?" jan":""}"><div class="col-h">${t.janela?'<span class="jtag">janela de atuação</span>':""}

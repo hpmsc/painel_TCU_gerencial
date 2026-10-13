@@ -478,7 +478,8 @@ function render(){
   let l = ITENS.filter(i => alcance(i) && (st.tipo ? i.tipo===st.tipo : (i.tipo!=="decisao" || st.alc==="all")));
   if (st.kp==="prox") l = l.filter(i=>i.tipo==="determinacao" && i.vence && i.vence>=h && i.vence<=em90);
   if (RISCO && riscoMin) l = l.filter(i => (riscoDe(i)||{}).faixa >= riscoMin);
-  if (q) l = l.filter(i => (/^\d+(\.\d+)*$/.test(q) ? (i.item === q || i.item.startsWith(q+".")) : false) || (i.processo+" "+i.acordao+" "+(i.destinatario||"")+" "+i.texto+" "+((PROC[i.processo]||{}).assunto||"")).toLowerCase().includes(q));
+  const qd = q.replace(/[\s.\/-]/g,"");
+  if (q) l = l.filter(i => (/^\d+(\.\d+)*$/.test(q) ? (i.item === q || i.item.startsWith(q+".")) : false) || (/^\d{4,}$/.test(qd) && (i.processo.replace(/\D/g,"").includes(qd) || i.acordao.replace(/\D/g,"").includes(qd))) || (i.processo+" "+i.acordao+" "+(i.destinatario||"")+" "+i.texto+" "+((PROC[i.processo]||{}).assunto||"")).toLowerCase().includes(q));
   const faixa = i => !i.vence ? 2 : (i.vence >= h ? 0 : 1);
   if (st.ord==="prazo") l.sort((a,b)=> faixa(a)-faixa(b) || (faixa(a)===1 ? (b.vence||"").localeCompare(a.vence||"") : (a.vence||"").localeCompare(b.vence||"")) || (b.sessao||"").localeCompare(a.sessao||""));
   else if (st.ord==="risco") l.sort((a,b)=> ((riscoDe(b)||{}).faixa||0)-((riscoDe(a)||{}).faixa||0) || ((riscoDe(b)||{}).lat||0)-((riscoDe(a)||{}).lat||0) || (a.vence||"9").localeCompare(b.vence||"9"));
