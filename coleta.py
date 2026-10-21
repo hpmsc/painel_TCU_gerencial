@@ -1181,6 +1181,50 @@ def _baseline_dia_anterior(caminho: str, anterior: dict | None) -> dict | None:
     return anterior
 
 
+def fica_no_painel(p: dict) -> bool:
+    """Aberto, ou acompanhado por escolha (garantido). O resto sai do painel."""
+    return normalizar(p.get("estado")) == "aberto" or bool(p.get("garantido"))
+
+
+_RX_ENCERRADO = re.compile(r"^\s*Processo encerrado", re.I)
+_RX_MOTIVO = re.compile(r"Motivo:\s*(.+?)\s*\.?\s*$", re.I | re.S)
+
+
+def resumir_encerrado(p: dict) -> dict:
+    """Registro enxuto de um processo encerrado (sem a lista de movimentações),
+    para análise retrospectiva. Não entra no painel."""
+    movs = p.get("movimentacoes") or []
+    datas = sorted(d for d in (_dia(m.get("data")) for m in movs) if d)
+    enc = [m for m in movs if _RX_ENCERRADO.match(m.get("descricao") or "") and _dia(m.get("data"))]
+    ult = max(enc, key=lambda m: _dia(m.get("data"))) if enc else None
+    motivo = ""
+    if ult:
+        mm = _RX_MOTIVO.search(ult.get("descricao") or "")
+        motivo = mm.group(1).strip() if mm else ""
+    return {
+        "numero": p.get("numero"), "id": p.get("id"),
+        "assunto": p.get("assunto"), "natureza": p.get("natureza"),
+        "relator": p.get("relator"), "unidade_tecnica": p.get("unidade_tecnica"),
+        "orgaos": p.get("orgaos") or [], "orgaos_unidade": p.get("orgaos_unidade") or [],
+        "orgaos_interessado": p.get("orgaos_interessado") or [],
+        "vinculo": p.get("vinculo"), "estado": p.get("estado"),
+        "acordao": p.get("acordao"), "url_push": p.get("url_push"),
+        "data_primeiro_andamento": datas[0] if datas else None,
+        "data_ultimo_andamento": datas[-1] if datas else None,
+        "data_encerramento": _dia(ult.get("data")) if ult else "",
+        "motivo_encerramento": motivo,
+        "n_movimentacoes": len(movs),
+    }
+
+
+def montar_encerrados(processos: list[dict], gerado_em: str) -> dict:
+    lista = [resumir_encerrado(p) for p in processos if not fica_no_painel(p)]
+    # Mais recente primeiro; sem data de encerramento vão para o fim.
+    lista.sort(key=lambda r: r["numero"] or "")
+    lista.sort(key=lambda r: r["data_encerramento"] or "", reverse=True)
+    return {"gerado_em": gerado_em, "total": len(lista), "processos": lista}
+
+
 def montar(processos: list[dict], ancora: int, avisos: list[str],
            anterior: dict | None = None) -> dict:
     agora = datetime.now(timezone.utc)
@@ -1191,10 +1235,8 @@ def montar(processos: list[dict], ancora: int, avisos: list[str],
     # vê-los, abertos ou não; alguns processos de interesse ficam "encerrados"
     # na base mesmo com tramitação recente.
     total_bruto = len(processos)
-    def _fica(p):
-        return normalizar(p.get("estado")) == "aberto" or p.get("garantido")
-    encerrados = sum(1 for p in processos if not _fica(p))
-    processos = [p for p in processos if _fica(p)]
+    encerrados = sum(1 for p in processos if not fica_no_painel(p))
+    processos = [p for p in processos if fica_no_painel(p)]
 
     # --- Novidades desde a coleta anterior --------------------------------
     # "Novo" = processo que não existia no dados.json anterior.
@@ -1450,9 +1492,19 @@ def main(argv: list[str] | None = None) -> int:
     # Nesse caso a base de comparação é a última coleta de um dia anterior.
     anterior = _baseline_dia_anterior(args.saida, anterior)
 
-    salvar(montar(processos, ancora, avisos, anterior), args.saida)
+    payload = montar(processos, ancora, avisos, anterior)
+    salvar(payload, args.saida)
     log.info("%s gravado: %d processos, %d movimentações.",
              args.saida, len(processos), sum(len(p["movimentacoes"]) for p in processos))
+    # Encerrados que a coleta recebeu e o painel não mostra: guardados à parte
+    # (site/encerrados.json, não linkado) para análise retrospectiva do ano.
+    # Só é gravado quando a Pesquisa respondeu; o retorno antecipado acima
+    # preserva o arquivo anterior.
+    caminho_enc = os.path.join(os.path.dirname(args.saida) or ".", "encerrados.json")
+    enc = montar_encerrados(processos, payload["gerado_em"])
+    salvar(enc, caminho_enc)
+    log.info("%s gravado: %d encerrados (totais.encerrados_ocultos = %d).",
+             caminho_enc, enc["total"], payload["totais"]["encerrados_ocultos"])
     return 0
 
 
