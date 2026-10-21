@@ -13,6 +13,11 @@
 014.609/2026-6  2550/2026
 015.321/2025-8  2930/2025
 011.319/2026-7  5063/2026
+017.463/2025-4  2923/2025  2011/2026   # resultados fiscais do 4º bim. 2025 (2011 = embargos ao 9.3)
+004.887/2026-3  2274/2026              # avaliação das regras fiscais de 2026 (série do 012.513 e 014.609)
+021.469/2025-3  1799/2026              # auditoria do Pnatrans (9.7 recomenda ao MPO)
+020.665/2023-7  1708/2025  1846/2026   # contas econômicas ambientais
+032.255/2023-3  2201/2024              # governança federal da crise climática (monitorado no 026.569/2024-8)
 
 # Só referência: acórdãos citados por outros (pendências, precedentes), para a
 # leitura de risco. São baixados, mas NÃO entram na aba Deliberações.
