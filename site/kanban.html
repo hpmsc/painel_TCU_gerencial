@@ -184,6 +184,25 @@ button.kpi[aria-pressed="true"]{background:var(--petrol-soft)}
 .faixa i{display:block;height:7px;border-radius:1px;background:var(--w-vazio)}
 .faixa i.decisao{background:var(--w-dec)} .faixa i.fase{background:var(--w-fase)} .faixa i.comunicacao{background:var(--w-com)} .faixa i.documento{background:var(--w-doc)} .faixa i.rotina{background:var(--w-rot)}
 .faixa i.hj{outline:1px solid var(--ink-2);outline-offset:0}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface);align-self:center}
+.seg button{border:0;background:none;padding:5px 12px;font:600 12.5px var(--f-body);color:var(--muted);cursor:pointer}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--petrol-soft);color:var(--ink)}
+.tbm{background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.tbm-h,.tbm-r{display:grid;grid-template-columns:128px minmax(0,1.2fr) 150px minmax(0,1.3fr) 252px 44px;gap:4px 14px;align-items:center;padding:8px 14px}
+.tbm-h{font:600 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);border-bottom:1px solid var(--line)}
+.tbm-h .ax{display:flex;justify-content:space-between;text-transform:none;letter-spacing:0;font-weight:500}
+.tbm-r+.tbm-r{border-top:1px solid var(--line-2)}
+.tbm-r .tcb{font:600 12.5px var(--f-mono);text-align:left}
+.tbm-r .as{font-size:13px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tbm-r .ond{font-size:12px;color:var(--ink-2)} .tbm-r .ond.jan{font-weight:600;color:var(--amber)}
+.tbm-r .ult{display:flex;align-items:center;gap:8px;min-width:0} .tbm-r .ult .d{font:600 12px var(--f-mono);color:var(--ink-2);white-space:nowrap}
+.tbm-r .ult .chip{min-width:0;max-width:100%} .tbm-r .ult .cl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0}
+.tbm-r .faixa{margin:0} .tbm-r .faixa i{height:14px;border-radius:2px}
+.tbm-r .n{font:600 12.5px var(--f-mono);text-align:right;color:var(--ink-2)}
+.tbm-nota{font-size:12.5px;color:var(--muted);padding:9px 14px;border-top:1px solid var(--line-2);background:var(--surface-2)}
+@media (max-width:980px){ .tbm-h{display:none} .tbm-r{grid-template-columns:auto minmax(0,1fr) auto;grid-template-areas:"tc tc n" "as as as" "ond ond ond" "ult ult ult" "fx fx fx"}
+  .tbm-r .tcb{grid-area:tc} .tbm-r .as{grid-area:as} .tbm-r .n{grid-area:n} .tbm-r .ond{grid-area:ond} .tbm-r .ult{grid-area:ult} .tbm-r .faixa{grid-area:fx} .tbm-r .n::after{content:" mov."} }
 @media (max-width:800px){ .drow{grid-template-columns:auto minmax(0,1fr)} .drow .chips{grid-column:1 / -1;justify-content:flex-start} }
 .legend{display:flex;flex-wrap:wrap;gap:4px 18px;font-size:12px;color:var(--muted);padding-top:10px}
 .legend i{display:inline-block;width:10px;height:10px;border-radius:2px;vertical-align:-1px;margin-right:5px}
@@ -256,13 +275,17 @@ dialog textarea{width:100%;min-height:150px;border:1px solid var(--line);border-
  </section>
 
  <section aria-labelledby="h-diario" id="diario">
-  <div class="sh"><h2 id="h-diario">O que andou, dia a dia</h2><p id="diaP"></p></div>
+  <div class="sh"><h2 id="h-diario">O que andou</h2>
+   <div class="seg" role="group" aria-label="Como ver o que andou"><button type="button" id="vwDia" aria-pressed="true">Dia a dia</button><button type="button" id="vwProc" aria-pressed="false">Por processo</button></div>
+   <p id="diaP"></p></div>
   <div class="ctl" style="padding-top:0;align-items:center">
    <button class="tg" id="tgRot" type="button" aria-pressed="false">Mostrar rotina (distribuição, despachos)</button>
+   <div class="fld" id="ordWrap" hidden><select id="selOrd" aria-label="Ordenar a tabela"><option value="ult">Último fato relevante primeiro</option><option value="mov">Mais movimentado primeiro</option><option value="jan">Só janela de atuação</option></select></div>
    <div class="legp" id="legPeso"></div>
   </div>
   <div id="diarioLista"></div>
-  <div class="mais" style="margin-top:8px"><button class="linkbtn" id="maisDias" type="button" hidden></button></div>
+  <div id="procLista" hidden></div>
+  <div class="mais" style="margin-top:8px"><button class="linkbtn" id="maisDias" type="button" hidden></button><button class="linkbtn" id="maisProc" type="button" hidden></button></div>
  </section>
 
  <section aria-labelledby="h-quadro">
@@ -320,7 +343,7 @@ const LIM_COL = 12, JANELA_PRAZO = 15;
 const NOME_R = {1:"Baixo",2:"Moderado",3:"Relevante",4:"Alto",5:"Crítico"};
 
 let D, TR, minha = new Set();
-const st = {A:null, B:null, org:"", q:"", inter:true, soMov:false, soMinha:false, todosPrazos:false, expand:{}};
+const st = {A:null, B:null, org:"", q:"", inter:true, soMov:false, soMinha:false, todosPrazos:false, expand:{}, vw:"dia", ord:"ult", procTodos:false};
 let risco = null, riscoMin = 0, riscoArq = "", riscoTxt = "";
 
 /* ---------- camada privada (lida só no navegador) ---------- */
@@ -493,6 +516,42 @@ function renderDiario(lista, A, B){
   if (dias.length > 7){ b.hidden = false; b.textContent = st.diasTodos ? "Mostrar só os 7 dias mais recentes" : `Ver os ${dias.length} dias do período`; }
   else b.hidden = true;
 }
+/* ---------- Por processo (tabela de movimento): um processo por linha, 4 semanas ---------- */
+const LIM_PROC = 25;
+function renderProc(lista, B){
+  const ini = addD(B, -27), rel = ev => ev.peso !== "rotina" || ev.col;
+  const linhas = [];
+  let parados = 0;
+  for (const p of lista){
+    const evs = p.eventos.filter(ev => ev.data >= ini && ev.data <= B && (st.rot || rel(ev)));
+    if (!evs.length){ parados++; continue; }
+    const ud = evs[evs.length-1].data, chips = chipsDoDia(evs.filter(ev => ev.data === ud));
+    const col = colEm(p, B);
+    linhas.push({p, ud, top: chips[0] || {p:"rotina", l:"Movimentação"}, n: new Set(evs.map(e=>e.data)).size, col, jan: TR[col].janela});
+  }
+  let L = st.ord === "jan" ? linhas.filter(x => x.jan) : linhas;
+  L.sort(st.ord === "mov" ? (a,b)=> b.n-a.n || b.ud.localeCompare(a.ud) : (a,b)=> b.ud.localeCompare(a.ud) || PESO[b.top.p]-PESO[a.top.p] || a.p.numero.localeCompare(b.p.numero));
+  const vis = st.procTodos ? L : L.slice(0, LIM_PROC);
+  $("diaP").textContent = `${linhas.length} processo${linhas.length===1?"":"s"} com movimento${st.rot?"":" relevante"} de ${br(ini)} a ${br(B)}. Quem andou por último fica em cima. Clique no número para abrir o cartão.`;
+  const head = `<div class="tbm-h"><span>Processo</span><span>Assunto</span><span>Onde está</span><span>Último fato${st.rot?"":" relevante"}</span><span class="ax"><span>${br(ini)}</span><span>4 semanas</span><span>${br(B)}</span></span><span style="text-align:right">Dias</span></div>`;
+  const rows = vis.map(x => `<div class="tbm-r"><button type="button" class="linkbtn tcb" data-abrir="${esc(x.p.numero)}">${esc(x.p.numero)}</button>
+    <span class="as" title="${esc(x.p.assunto)}">${esc(curto(semNumero(x.p.assunto), 110))}</span>
+    <span class="ond${x.jan?" jan":""}">${esc(TR[x.col].nome)}${x.jan?" · janela":""}</span>
+    <span class="ult"><span class="d">${br(x.ud)}</span><span class="chip ${x.top.p}" title="${esc(x.top.l)}"><i class="wd ${x.top.p}" aria-hidden="true"></i><span class="cl">${esc(x.top.l)}</span></span></span>
+    ${faixa(x.p, B)}<span class="n" title="Dias com movimento nas 4 semanas">${x.n}</span></div>`).join("");
+  const nota = `${L.length > vis.length ? `Mais ${L.length - vis.length} processo${L.length-vis.length===1?"":"s"} com movimento no período. ` : ""}${parados} sem movimento${st.rot?"":" relevante"} nas 4 semanas (no quadro, com a etiqueta “parado há…”).`;
+  $("procLista").innerHTML = L.length ? `<div class="tbm" role="table" aria-label="Movimento por processo nas últimas 4 semanas">${head}${rows}<div class="tbm-nota">${nota}</div></div>`
+    : `<div class="vazio">Nenhum processo ${st.ord==="jan"?"na janela de atuação ":""}com movimento${st.rot?"":" relevante"} de ${brAno(ini)} a ${brAno(B)}.</div>`;
+  const b = $("maisProc");
+  if (L.length > LIM_PROC){ b.hidden = false; b.textContent = st.procTodos ? `Mostrar só os ${LIM_PROC} primeiros` : `Ver os ${L.length} processos`; }
+  else b.hidden = true;
+}
+function aplicarVisao(){
+  const proc = st.vw === "proc";
+  $("vwDia").setAttribute("aria-pressed", String(!proc)); $("vwProc").setAttribute("aria-pressed", String(proc));
+  $("diarioLista").hidden = proc; $("procLista").hidden = !proc; $("ordWrap").hidden = !proc;
+  if (proc) $("maisDias").hidden = true; else $("maisProc").hidden = true;
+}
 // Faixa das últimas 4 semanas no cartão: um quadrado por dia, cor do fato mais pesado do dia.
 function faixa(p, B){
   const ini = addD(B, -27), maior = {};
@@ -590,6 +649,8 @@ function render(){
   const nAndou = base.filter(filtra).filter(p => p.eventos.some(ev => ev.data > A && ev.data <= B)).length;
   renderAtencao(lista, base.filter(p=>!na.has(p)), A, B, nAndou);
   renderDiario(lista, A, B);
+  if (st.vw === "proc") renderProc(lista, B);
+  aplicarVisao();
   renderQuadro(lista, A, B);
 }
 
@@ -633,6 +694,11 @@ function montarControles(){
   $("maisPrazos").onclick = ()=>{ st.todosPrazos=!st.todosPrazos; render(); };
   $("tgRot").onclick = ()=>{ st.rot=!st.rot; $("tgRot").setAttribute("aria-pressed", st.rot); $("tgRot").textContent = st.rot ? "Esconder rotina" : "Mostrar rotina (distribuição, despachos)"; render(); };
   $("maisDias").onclick = ()=>{ st.diasTodos=!st.diasTodos; render(); };
+  $("maisProc").onclick = ()=>{ st.procTodos=!st.procTodos; render(); };
+  $("selOrd").onchange = e => { st.ord = e.target.value; render(); };
+  const vis = v => { st.vw = v; try{ localStorage.setItem("painelTCU.visaoAndou", v); }catch(e){} render(); };
+  $("vwDia").onclick = () => vis("dia"); $("vwProc").onclick = () => vis("proc");
+  try{ const v = localStorage.getItem("painelTCU.visaoAndou"); if (v === "proc" || v === "dia") st.vw = v; }catch(e){}
   $("editMinha").onclick = ()=>{ $("dlgTxt").value=[...minha].join("\n"); try{ $("dlg").showModal(); }catch(e){ $("dlg").setAttribute("open",""); } };
   $("dlgForm").addEventListener("submit", e=>{
     if (e.submitter && e.submitter.value === "ok"){ minha = new Set(($("dlgTxt").value.match(/\d{3}\.\d{3}\/\d{4}-\d/g)||[])); gravarMinha(); render(); }
