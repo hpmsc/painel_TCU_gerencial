@@ -34,6 +34,24 @@
    "baixado_em": "2026-09-29"
   },
   {
+   "processo": "004.887/2026-3",
+   "acordao": "2274/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "25/08/2026",
+   "relator": "ANTONIO ANASTASIA",
+   "titulo": "ACÓRDÃO 2274/2026 ATA 32/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2769805",
+   "arquivo": "00488720263/2026-2274-PL.md",
+   "secoes": {
+    "SUMARIO": 736,
+    "ACORDAO": 5660,
+    "VOTO": 26109,
+    "RELATORIO": 173501
+   },
+   "sha1": "233011cf844c",
+   "baixado_em": "2026-10-21"
+  },
+  {
    "processo": "005.011/2025-6",
    "acordao": "1264/2025",
    "colegiado": "Plenário",
@@ -540,6 +558,43 @@
    "baixado_em": "2026-09-29"
   },
   {
+   "processo": "017.463/2025-4",
+   "acordao": "2011/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "29/07/2026",
+   "relator": "BENJAMIN ZYMLER",
+   "titulo": "ACÓRDÃO 2011/2026 ATA 29/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2765107",
+   "arquivo": "01746320254/2026-2011-PL.md",
+   "secoes": {
+    "SUMARIO": 705,
+    "ACORDAO": 2265,
+    "VOTO": 16591,
+    "RELATORIO": 21614
+   },
+   "sha1": "7557abc6561f",
+   "baixado_em": "2026-10-21"
+  },
+  {
+   "processo": "017.463/2025-4",
+   "acordao": "2923/2025",
+   "colegiado": "Plenário",
+   "data_sessao": "08/12/2025",
+   "relator": "BENJAMIN ZYMLER",
+   "titulo": "ACÓRDÃO 2923/2025 ATA 50/2025 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2736652",
+   "arquivo": "01746320254/2025-2923-PL.md",
+   "secoes": {
+    "SUMARIO": 349,
+    "ACORDAO": 2777,
+    "VOTO": 14183,
+    "RELATORIO": 49408,
+    "RECURSOS": 154
+   },
+   "sha1": "d548ae03b456",
+   "baixado_em": "2026-10-21"
+  },
+  {
    "processo": "018.320/2026-0",
    "acordao": "5654/2026",
    "colegiado": "Primeira Câmara",
@@ -642,6 +697,39 @@
    "baixado_em": "2026-09-29"
   },
   {
+   "processo": "020.665/2023-7",
+   "acordao": "1708/2025",
+   "colegiado": "Plenário",
+   "data_sessao": "30/07/2025",
+   "relator": "AUGUSTO NARDES",
+   "titulo": "ACÓRDÃO 1708/2025 ATA 29/2025 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2673612",
+   "arquivo": "02066520237/2025-1708-PL.md",
+   "secoes": {
+    "SUMARIO": 301,
+    "ACORDAO": 2486,
+    "VOTO": 11495,
+    "RELATORIO": 102217
+   },
+   "sha1": "b3e2a267a8a9",
+   "baixado_em": "2026-10-21"
+  },
+  {
+   "processo": "020.665/2023-7",
+   "acordao": "1846/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "15/07/2026",
+   "relator": "AUGUSTO NARDES",
+   "titulo": "ACÓRDÃO DE RELAÇÃO 1846/2026 ATA 27/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2773495",
+   "arquivo": "02066520237/2026-1846-PL.md",
+   "secoes": {
+    "ACORDAO": 1936
+   },
+   "sha1": "98ecb54dde22",
+   "baixado_em": "2026-10-21"
+  },
+  {
    "processo": "020.712/2023-5",
    "acordao": "2438/2026",
    "colegiado": "Plenário",
@@ -673,6 +761,24 @@
    },
    "sha1": "017d8519aa69",
    "baixado_em": "2026-09-29"
+  },
+  {
+   "processo": "021.469/2025-3",
+   "acordao": "1799/2026",
+   "colegiado": "Plenário",
+   "data_sessao": "08/07/2026",
+   "relator": "ANTONIO ANASTASIA",
+   "titulo": "ACÓRDÃO 1799/2026 ATA 26/2026 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2770403",
+   "arquivo": "02146920253/2026-1799-PL.md",
+   "secoes": {
+    "SUMARIO": 494,
+    "ACORDAO": 9217,
+    "VOTO": 42199,
+    "RELATORIO": 215095
+   },
+   "sha1": "34a4a5438f29",
+   "baixado_em": "2026-10-21"
   },
   {
    "processo": "021.565/2025-2",
@@ -901,6 +1007,25 @@
    "baixado_em": "2026-09-29"
   },
   {
+   "processo": "032.255/2023-3",
+   "acordao": "2201/2024",
+   "colegiado": "Plenário",
+   "data_sessao": "16/10/2024",
+   "relator": "VITAL DO RÊGO",
+   "titulo": "ACÓRDÃO 2201/2024 ATA 42/2024 - PLENÁRIO",
+   "chave": "ACORDAO-COMPLETO-2678266",
+   "arquivo": "03225520233/2024-2201-PL.md",
+   "secoes": {
+    "SUMARIO": 472,
+    "ACORDAO": 4471,
+    "VOTO": 32331,
+    "DECLARACAOVOTO": 4329,
+    "RELATORIO": 168186
+   },
+   "sha1": "6a270845e763",
+   "baixado_em": "2026-10-21"
+  },
+  {
    "processo": "033.793/2015-8",
    "acordao": "749/2017",
    "colegiado": "Plenário",
@@ -1108,8 +1233,13 @@
   "015.635/2025-2": "2026-10-05",
   "021.183/2026-0": "2026-10-21",
   "021.575/2026-6": "2026-10-21",
-  "012.707/2022-8": "2026-10-21"
+  "012.707/2022-8": "2026-10-21",
+  "004.887/2026-3": "2026-10-21",
+  "017.463/2025-4": "2026-10-21",
+  "021.469/2025-3": "2026-10-21",
+  "032.255/2023-3": "2026-10-21",
+  "020.665/2023-7": "2026-10-21"
  },
- "atualizado_em": "2026-10-21T14:36:12+00:00",
+ "atualizado_em": "2026-10-21T18:34:27+00:00",
  "erros_ultima_execucao": []
 }
