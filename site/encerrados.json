@@ -1,7 +1,33 @@
 {
- "gerado_em": "2026-10-21T19:27:56.614798+00:00",
- "total": 695,
+ "gerado_em": "2026-10-22T14:34:14.603945+00:00",
+ "total": 696,
  "processos": [
+  {
+   "numero": "010.183/2026-4",
+   "id": "01018320264",
+   "assunto": "Consulta formulada pela Deputado Coronel Meira -\r\nComissão de Segurança Pública e Combate ao Crime \r\nOrganizado - CD, por meio Ofício  Pres. nº 78/2026 - CSPCCO",
+   "natureza": "Consulta",
+   "relator": "Jorge Oliveira",
+   "unidade_tecnica": null,
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_unidade": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_interessado": [],
+   "vinculo": "unidade",
+   "estado": "Encerrado",
+   "acordao": null,
+   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1018320264",
+   "data_primeiro_andamento": "2026-10-13",
+   "data_ultimo_andamento": "2026-10-21",
+   "data_encerramento": "2026-10-21",
+   "motivo_encerramento": "Cumprimento de objetivo",
+   "n_movimentacoes": 3
+  },
   {
    "numero": "021.565/2025-2",
    "id": "02156520252",
