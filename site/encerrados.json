@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-23T14:15:32.523302+00:00",
+ "gerado_em": "2026-10-26T15:49:28.918934+00:00",
  "total": 696,
  "processos": [
   {
@@ -62,11 +62,13 @@
    "relator": "Jorge Oliveira",
    "unidade_tecnica": null,
    "orgaos": [
-    "MPO"
+    "MPO",
+    "SMA"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO"
+    "MPO",
+    "SMA"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -415,32 +417,6 @@
    "data_encerramento": "2026-08-19",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 4
-  },
-  {
-   "numero": "015.680/2025-8",
-   "id": "01568020258",
-   "assunto": "Avaliação do modelo de operação de TI nas IFEs.",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Benjamin Zymler",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "MPO",
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "MPO",
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1568020258",
-   "data_primeiro_andamento": "2026-08-07",
-   "data_ultimo_andamento": "2026-08-18",
-   "data_encerramento": "2026-08-18",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
   },
   {
    "numero": "011.103/2025-6",
@@ -4807,6 +4783,7 @@
    "orgaos": [
     "MPO",
     "SE",
+    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [
@@ -4814,7 +4791,8 @@
     "SOF"
    ],
    "orgaos_interessado": [
-    "SE"
+    "SE",
+    "SMA"
    ],
    "vinculo": "unidade",
    "estado": "Encerrado",
@@ -4859,11 +4837,13 @@
    "unidade_tecnica": null,
    "orgaos": [
     "MPO",
+    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
     "MPO",
+    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
@@ -13354,6 +13334,32 @@
    "n_movimentacoes": 3
   },
   {
+   "numero": "015.680/2025-8",
+   "id": "01568020258",
+   "assunto": "Avaliação do modelo de operação de TI nas IFEs.",
+   "natureza": "Relatório de Auditoria",
+   "relator": "Benjamin Zymler",
+   "unidade_tecnica": null,
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_unidade": [],
+   "orgaos_interessado": [
+    "MPO",
+    "SOF"
+   ],
+   "vinculo": "interessado",
+   "estado": "Encerrado",
+   "acordao": null,
+   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1568020258",
+   "data_primeiro_andamento": "2026-10-23",
+   "data_ultimo_andamento": "2026-10-23",
+   "data_encerramento": "",
+   "motivo_encerramento": "",
+   "n_movimentacoes": 1
+  },
+  {
    "numero": "015.759/2008-8",
    "id": "01575920088",
    "assunto": "ARRECADAÇÃO E EXECUÇÃO ORÇAMENTÁRIA E FINANCEIRA DA UNIÃO NO PRIMEIRO SEMESTRE DE 2008.",
@@ -14529,6 +14535,7 @@
     "MPO",
     "SE",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
@@ -14537,6 +14544,7 @@
     "MPO",
     "SE",
     "SEPLAN",
+    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
