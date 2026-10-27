@@ -227,7 +227,7 @@ def main(argv=None) -> int:
             sg = siglas(alvo)
             if sg and set(sg) <= {"IBGE", "IPEA"} and RX_PESSOAL.search(c.get("natureza", "") + " " + c["assunto"]):
                 sg = []
-            no_painel, acompanhado = e["tc"] in dados, e["tc"] in acomp
+            no_painel, acompanhado = (e["tc"] in dados or e["tc"] in kanban), e["tc"] in acomp
             if not (sg or no_painel or acompanhado):
                 continue
             motivos = ([f"na pauta: {', '.join(sg)}"] if sg else []) + \
