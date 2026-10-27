@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Pauta TCU MPO</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Public+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+/* Pauta da semana: os processos do MPO nas sessões do TCU e o resultado da semana passada.
+   Mesma identidade das outras abas. */
+:root{
+  --paper:#eaeeec; --surface:#fff; --surface-2:#f4f7f6;
+  --ink:#131f1c; --ink-2:#3e504b; --muted:#6c7a74;
+  --line:#ccd6d2; --line-2:#e3e9e7;
+  --petrol:#0e4a44; --petrol-soft:#dcebe8;
+  --move:#1d5fa6; --move-bg:#e4edf8;
+  --red:#a3291f; --red-bg:#fbe9e6; --amber:#8f5400; --amber-bg:#fbefd9; --green:#0e6b4f; --green-bg:#e2f2ec;
+  --f-disp:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-body:"Public Sans", "Segoe UI", system-ui, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#0f1614; --surface:#18221f; --surface-2:#1f2b28;
+  --ink:#e6eeeb; --ink-2:#b5c3be; --muted:#8a9994; --line:#2e3d39; --line-2:#26332f;
+  --petrol:#6cc2b6; --petrol-soft:#1d3531; --move:#7fb1ea; --move-bg:#1b2b40;
+  --red:#f0877c; --red-bg:#3a1d1a; --amber:#e9b25a; --amber-bg:#352812; --green:#6fd0a8; --green-bg:#15302a; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --paper:#0f1614; --surface:#18221f; --surface-2:#1f2b28;
+  --ink:#e6eeeb; --ink-2:#b5c3be; --muted:#8a9994; --line:#2e3d39; --line-2:#26332f;
+  --petrol:#6cc2b6; --petrol-soft:#1d3531; --move:#7fb1ea; --move-bg:#1b2b40;
+  --red:#f0877c; --red-bg:#3a1d1a; --amber:#e9b25a; --amber-bg:#352812; --green:#6fd0a8; --green-bg:#15302a; color-scheme:dark }
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:var(--petrol)}
+:focus-visible{outline:2px solid var(--petrol);outline-offset:2px}
+.wrap{max-width:1100px;margin:0 auto;padding-inline:20px}
+.eyebrow{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0}
+header{background:var(--surface);border-bottom:1px solid var(--line)}
+.hd{padding-block:16px}
+.hd h1{font:800 24px/1.15 var(--f-disp);letter-spacing:-.02em;margin:2px 0 0}
+.hd p{margin:2px 0 0;color:var(--ink-2);font-size:13px}
+.abas{background:var(--surface);border-bottom:1px solid var(--line)}
+.abas .wrap{display:flex;gap:4px;overflow-x:auto}
+.abas a{display:inline-block;padding:10px 14px 9px;font:600 13.5px var(--f-body);color:var(--muted);text-decoration:none;border-bottom:3px solid transparent;white-space:nowrap}
+.abas a:hover{color:var(--ink)}
+.abas a[aria-current="page"]{color:var(--petrol);border-bottom-color:var(--petrol)}
+
+section{margin-top:26px}
+.sh{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 14px;margin-bottom:10px}
+.sh h2{font:600 18px/1.2 var(--f-disp);margin:0;letter-spacing:-.01em}
+.sh p{margin:0;color:var(--muted);font-size:12.5px}
+.kpis{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.kpi{flex:1 1 200px;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;border-top:4px solid var(--petrol)}
+.kpi b{display:block;font:700 24px var(--f-mono)} .kpi span{font-size:12.5px;color:var(--ink-2)}
+.kpi.pas{border-top-color:var(--line)}
+
+.sess{margin-top:14px}
+.sess-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px;padding:0 2px 6px}
+.sess-h h3{margin:0;font:600 15px var(--f-body)}
+.sess-h .q{font:600 12.5px var(--f-mono);color:var(--ink-2)}
+.sess-h a{font-size:12.5px}
+.cards{display:flex;flex-direction:column;gap:10px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:6px 16px}
+.card dt{font:600 10.5px var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:2px}
+.card dd{margin:0;min-width:0}
+.card .tc{font:600 15px var(--f-mono)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{display:inline-flex;align-items:center;border-radius:999px;padding:2px 10px;font-size:12px;font-weight:600;background:var(--petrol-soft);color:var(--ink)}
+.chip.pn{background:var(--move-bg);color:var(--move)}
+.chip.ac{background:var(--amber-bg);color:var(--amber)}
+.res{grid-column:1 / -1;margin-top:4px;border-radius:8px;padding:10px 12px;background:var(--surface-2);border-left:4px solid var(--line)}
+.res.acordao{border-left-color:var(--petrol)} .res.vista,.res.retirado{border-left-color:var(--amber)}
+.res b{font-family:var(--f-mono)}
+.res p{margin:4px 0 0;color:var(--ink-2);font-size:13px}
+.res details summary{cursor:pointer;color:var(--petrol);font-size:12.5px;margin-top:4px}
+.sem{background:var(--surface);border:1px dashed var(--line);border-radius:10px;padding:10px 14px;color:var(--ink-2);font-size:13px}
+.vazio{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:14px 16px;color:var(--muted)}
+footer{padding-block:24px 34px;font-size:12.5px;color:var(--ink-2)}
+footer details{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+footer summary{cursor:pointer;font-weight:600;color:var(--ink)}
+footer p{margin:8px 0 0;max-width:95ch}
+@media (max-width:700px){ .card{grid-template-columns:1fr;gap:2px} .card dd{margin-bottom:8px} }
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap hd">
+  <p class="eyebrow">Tribunal de Contas da União · processos do MPO</p>
+  <h1>Pauta da semana</h1>
+  <p id="sub">Carregando a pauta…</p>
+ </div>
+</header>
+<nav class="abas" aria-label="Seções do painel"><div class="wrap">
+  <a href="index.html">Processos do MPO</a>
+  <a href="kanban.html">Etapas e prazos</a>
+  <a href="deliberacoes.html">Deliberações</a>
+  <a href="pauta.html" aria-current="page">Pauta da semana</a>
+</div></nav>
+
+<main class="wrap">
+ <div class="kpis" id="kpis"></div>
+ <section aria-labelledby="h-prox">
+  <div class="sh"><h2 id="h-prox">Sessões desta semana</h2><p id="pProx"></p></div>
+  <div id="prox"></div>
+ </section>
+ <section aria-labelledby="h-pas">
+  <div class="sh"><h2 id="h-pas">Pauta da semana passada: o que o TCU decidiu</h2><p id="pPas"></p></div>
+  <div id="pas"></div>
+ </section>
+</main>
+
+<footer class="wrap">
+ <details>
+  <summary>Como ler esta página</summary>
+  <p><b>Fonte.</b> A lista de sessões e o PDF da pauta de cada uma vêm do portal de sessões do TCU; o resultado da semana passada vem dos acórdãos publicados na Pesquisa Integrada. A página é refeita a cada coleta do painel.</p>
+  <p><b>Quais processos entram.</b> Os que trazem na pauta o MPO ou uma de suas unidades (SOF, SEST, Secretaria Nacional de Planejamento, SMA, SEAID, IBGE, Ipea) como unidade jurisdicionada, interessado ou consulente; os que estão no painel do MPO; e os da lista de acompanhados da SEAI. Atos de pessoal do IBGE e do Ipea (admissão, aposentadoria, pensão) ficam de fora.</p>
+  <p><b>O que não está aqui.</b> A proposta de encaminhamento da unidade técnica e o número do processo SEI não são públicos. Um processo de interesse que não cite o MPO na pauta entra se for incluído em <span style="font-family:var(--f-mono)">Processos acompanhados.txt</span>.</p>
+ </details>
+</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const DS = ["dom","seg","ter","qua","qui","sex","sáb"];
+const dia = iso => { const d = new Date(iso); return `${DS[d.getDay()]} ${String(d.getDate()).padStart(2,"0")}/${String(d.getMonth()+1).padStart(2,"0")}`; };
+const hora = iso => iso.slice(11,16).replace(":","h");
+const brAno = iso => `${iso.slice(8,10)}/${iso.slice(5,7)}/${iso.slice(0,4)}`;
+
+function colDe(kp, trilha){
+  if (!kp) return null;
+  let c = kp.col_base; for (const ev of kp.eventos || []) if (ev.col) c = ev.col;
+  const t = (trilha || []).find(x => x.n === c); return t ? t.nome : null;
+}
+function card(i, K, trilha){
+  const fase = colDe(K[i.tc], trilha);
+  const ch = i.motivos.map(m => `<span class="chip${m.startsWith("no painel")?" pn":m.startsWith("acompanhado")?" ac":""}">${esc(m)}</span>`).join("");
+  let res = "";
+  if (i.resultado){
+    const r = i.resultado;
+    if (r.tipo === "acordao"){
+      const disp = r.dispositivo || "";
+      res = `<div class="res acordao"><b>Acórdão ${esc(r.acordao)}${r.colegiado?" – "+esc(r.colegiado):""}</b>${disp ? (disp.length > 320
+        ? `<p>${esc(disp.slice(0,320))}…</p><details><summary>Ler o dispositivo inteiro</summary><p>${esc(disp)}</p></details>` : `<p>${esc(disp)}</p>`) : ""}</div>`;
+    } else res = `<div class="res ${esc(r.tipo)}"><p style="margin:0">${esc(r.texto)}</p></div>`;
+  }
+  return `<article class="card"><dl style="display:contents">
+    <dt>Processo (TC)</dt><dd><a class="tc" href="${esc(i.url)}" target="_blank" rel="noopener">${esc(i.tc)}</a></dd>
+    <dt>Assunto</dt><dd>${esc(i.assunto || i.assunto_painel || "—")}</dd>
+    <dt>Ministro relator</dt><dd>${esc(i.relator || "—")}</dd>
+    <dt>Por que está aqui</dt><dd class="chips">${ch}</dd>
+    ${fase ? `<dt>Etapa no painel</dt><dd>${esc(fase)} · <a href="kanban.html">Etapas e prazos</a></dd>` : ""}
+    ${i.unidades ? `<dt>Unidades na pauta</dt><dd style="color:var(--ink-2);font-size:13px">${esc(i.unidades)}</dd>` : ""}
+  </dl>${res}</article>`;
+}
+function blocos(P, K, trilha, quando){
+  const ses = P.sessoes.filter(s => s.quando === quando);
+  if (!ses.length) return `<div class="vazio">Nenhuma sessão ${quando === "proxima" ? "prevista nos próximos dias" : "na semana passada"}.</div>`;
+  const comItens = [], semItens = [];
+  for (const s of ses){
+    const its = P.itens.filter(i => i.sessao === s.id);
+    (its.length ? comItens : semItens).push([s, its]);
+  }
+  const titulo = s => `${esc(s.colegiado)} · ${esc(s.natureza || "")}`;
+  let h = comItens.map(([s, its]) => `<div class="sess"><div class="sess-h"><h3>${titulo(s)}</h3><span class="q">${dia(s.data)} às ${hora(s.data)}</span>
+      ${s.pdf ? `<a href="${esc(s.pdf)}" target="_blank" rel="noopener">pauta completa (PDF) ↗</a>` : ""}<span style="color:var(--muted);font-size:12.5px">${its.length} do MPO${s.processos_na_pauta?` entre ${s.processos_na_pauta} processos`:""}</span></div>
+      <div class="cards">${its.map(i => card(i, K, trilha)).join("")}</div></div>`).join("");
+  if (semItens.length) h += `<div class="sess"><div class="sem">${semItens.map(([s]) => `<b>${titulo(s)}</b> de ${dia(s.data)}: ${s.reservada ? "sessão reservada, sem pauta pública" : s.processos_na_pauta == null ? "pauta ainda não disponível" : `nenhum processo do MPO entre ${s.processos_na_pauta}`}`).join(" · ")}.</div></div>`;
+  return h;
+}
+function iniciar([P, Kd]){
+  const K = {}; for (const p of (Kd.processos || [])) K[p.numero] = p;
+  const trilha = Kd.trilha || [];
+  const prox = P.itens.filter(i => i.quando === "proxima"), pas = P.itens.filter(i => i.quando === "passada");
+  const sp = P.sessoes.filter(s => s.quando === "proxima");
+  const datas = [...new Set(sp.map(s => s.data.slice(0,10)))].sort();
+  $("sub").textContent = `${datas.length ? "Sessões de " + datas.map(d => brAno(d).slice(0,5)).join(", ") + " · " : ""}atualizado em ${brAno(P.gerado_em.slice(0,10))} às ${P.gerado_em.slice(11,16)}`;
+  const julg = pas.filter(i => i.resultado && i.resultado.tipo === "acordao").length;
+  $("kpis").innerHTML = [
+    ["", prox.length, `processo${prox.length===1?"":"s"} do MPO na pauta desta semana`],
+    ["", sp.length, `sess${sp.length===1?"ão":"ões"} prevista${sp.length===1?"":"s"}`],
+    ["pas", `${julg}/${pas.length}`, "da semana passada já com acórdão publicado"],
+  ].map(([c,b,t]) => `<div class="kpi ${c}"><b>${b}</b><span>${t}</span></div>`).join("");
+  $("pProx").textContent = "Do Plenário e das Câmaras. Clique no número para abrir o processo no TCU.";
+  $("prox").innerHTML = blocos(P, K, trilha, "proxima");
+  $("pPas").textContent = "Resultado pelo acórdão publicado; sem acórdão, a situação que o painel conhece.";
+  $("pas").innerHTML = blocos(P, K, trilha, "passada");
+}
+Promise.all([
+  fetch("pauta.json?v=" + Date.now()).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }),
+  fetch("kanban.json?v=" + Date.now()).then(r => r.ok ? r.json() : {}).catch(() => ({}))
+]).then(iniciar).catch(e => { $("sub").textContent = "A pauta ainda não foi coletada (" + e.message + "). Ela aparece depois da próxima atualização do painel."; });
+</script>
+</body>
+</html>

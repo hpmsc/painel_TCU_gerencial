@@ -27,7 +27,7 @@ on:
         default: false
   push:
     branches: [main]
-    paths: ["site/index.html", "site/kanban.html", "coleta.py", "gerar_kanban.py", "baixar_acordaos.py", "extrair_deliberacoes.py", "site/deliberacoes.html", "acordaos_extra.txt", "prazos.txt", "requirements.txt", "Processos acompanhados.txt"]
+    paths: ["site/index.html", "site/kanban.html", "coleta.py", "gerar_kanban.py", "baixar_acordaos.py", "extrair_deliberacoes.py", "site/deliberacoes.html", "site/pauta.html", "coletar_pauta.py", "acordaos_extra.txt", "prazos.txt", "requirements.txt", "Processos acompanhados.txt"]
 
 permissions:
   contents: write
@@ -78,6 +78,12 @@ jobs:
         run: |
           python gerar_kanban.py || echo "::warning::gerar_kanban.py falhou; a página de etapas segue com os dados anteriores."
 
+      - name: Pauta da semana
+        timeout-minutes: 10
+        continue-on-error: true
+        run: |
+          python coletar_pauta.py || echo "::warning::coletar_pauta.py falhou; a aba Pauta segue com os dados anteriores."
+
       - name: Inteiro teor dos acórdãos (público)
         timeout-minutes: 15
         continue-on-error: true
@@ -101,6 +107,7 @@ jobs:
           git add site/dados.json site/kanban.json site/deliberacoes.json acordaos/
           # encerrados.json só existe depois da primeira coleta que responder
           if [ -f site/encerrados.json ]; then git add site/encerrados.json; fi
+          if [ -f site/pauta.json ]; then git add site/pauta.json; fi
           if git diff --cached --quiet; then echo "sem mudanças"; exit 0; fi
           git commit -m "dados: $(date -u +'%Y-%m-%d %H:%M UTC')"
           # Se alguém enviou mudanças enquanto o robô rodava, junta antes de enviar
