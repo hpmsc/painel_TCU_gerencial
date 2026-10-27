@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-27T12:14:16-03:00",
+ "gerado_em": "2026-10-27T12:35:53-03:00",
  "hoje": "2026-10-27",
  "sessoes": [
   {
@@ -41,7 +41,7 @@
    "data": "2026-10-27T10:30:00",
    "colegiado": "Segunda Câmara",
    "natureza": "Ordinária",
-   "situacao": "Em andamento",
+   "situacao": "Encerrada",
    "reservada": false,
    "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23263-pauta.pdf",
    "processos_na_pauta": 113
@@ -206,8 +206,8 @@
    "resultado": {
     "tipo": "acordao",
     "acordao": "2908/2026",
-    "colegiado": "",
-    "dispositivo": ""
+    "colegiado": "Plenário",
+    "dispositivo": "ACORDAM os Ministros do Tribunal de Contas da União, reunidos em sessão do Plenário, por unanimidade, diante das razões expostas pelo relator, em: 9.1. determinar, com fundamento nos arts. 250, inciso II, do Regimento Interno do TCU e 4º, inciso I, da Resolução TCU 315/2020: 9.1.1. ao Ministério de Minas e Energia (MME) que, em articulação com o Banco Nacional de Desenvolvimento Econômico e Social (BNDES), a Agência Nacional de Energia Elétrica (Aneel), a Eletronuclear S.A., a Empresa de Pesquisa Energética (EPE), a Empresa Brasileira de Participações em Energia Nuclear e Binacional S.A. (ENBPar), a Comissão Nacional de Energia Nuclear (CNEN) e a Autoridade Nacional de Segurança Nuclear (ANSN), no prazo de até 120 dias, atualize, se for preciso, e disponibilize toda a documentação necessária e suficiente para que o Conselho Nacional de Política Energética (CNPE) cumpra o previsto no art.…"
    }
   },
   {
