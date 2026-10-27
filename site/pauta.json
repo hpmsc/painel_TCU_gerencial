@@ -1,0 +1,255 @@
+{
+ "gerado_em": "2026-10-27T11:35:21-03:00",
+ "hoje": "2026-10-27",
+ "sessoes": [
+  {
+   "id": 23262,
+   "quando": "passada",
+   "data": "2026-10-20T10:30:00",
+   "colegiado": "Segunda Câmara",
+   "natureza": "Ordinária",
+   "situacao": "Encerrada",
+   "reservada": false,
+   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81279044",
+   "processos_na_pauta": 76
+  },
+  {
+   "id": 23216,
+   "quando": "passada",
+   "data": "2026-10-20T15:00:00",
+   "colegiado": "Primeira Câmara",
+   "natureza": "Ordinária",
+   "situacao": "Encerrada",
+   "reservada": false,
+   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81281358",
+   "processos_na_pauta": 116
+  },
+  {
+   "id": 23170,
+   "quando": "passada",
+   "data": "2026-10-21T14:30:00",
+   "colegiado": "Plenário",
+   "natureza": "Ordinária",
+   "situacao": "Encerrada",
+   "reservada": false,
+   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81290246",
+   "processos_na_pauta": 107
+  },
+  {
+   "id": 23263,
+   "quando": "proxima",
+   "data": "2026-10-27T10:30:00",
+   "colegiado": "Segunda Câmara",
+   "natureza": "Ordinária",
+   "situacao": "Em andamento",
+   "reservada": false,
+   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23263-pauta.pdf",
+   "processos_na_pauta": 113
+  },
+  {
+   "id": 23217,
+   "quando": "proxima",
+   "data": "2026-10-27T15:00:00",
+   "colegiado": "Primeira Câmara",
+   "natureza": "Ordinária",
+   "situacao": "Prevista",
+   "reservada": false,
+   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23217-pauta.pdf",
+   "processos_na_pauta": 106
+  },
+  {
+   "id": 23587,
+   "quando": "proxima",
+   "data": "2026-10-28T10:30:00",
+   "colegiado": "Plenário",
+   "natureza": "Extraordinária",
+   "situacao": "Prevista",
+   "reservada": false,
+   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23587-pauta.pdf",
+   "processos_na_pauta": 1
+  },
+  {
+   "id": 23731,
+   "quando": "proxima",
+   "data": "2026-10-28T14:30:00",
+   "colegiado": "Plenário",
+   "natureza": "Ordinária",
+   "situacao": "Prevista",
+   "reservada": false,
+   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23731-pauta.pdf",
+   "processos_na_pauta": 84
+  }
+ ],
+ "itens": [
+  {
+   "tc": "002.935/2026-0",
+   "sessao": 23170,
+   "quando": "passada",
+   "data": "2026-10-21T14:30:00",
+   "colegiado": "Plenário",
+   "relator": "Odair Cunha",
+   "assunto": "",
+   "natureza": "MONITORAMENTO",
+   "unidades": "Conselho Nacional de Justiça; Defensoria Pública da União; Fundação Instituto Brasileiro de Geografia e Estatística; Ministério da Fazenda; Ministério da Gestão e da Inovação Em Serviços Públicos; Ministério da Justiça e Segurança Pública; Ministério da Saúde; Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome; Ministério dos Direitos Humanos e da Cidadania; Operador Nacional do Registro Civil de Pessoas Naturais - On do Registro Civil do Brasil",
+   "siglas": [
+    "IBGE"
+   ],
+   "motivos": [
+    "na pauta: IBGE"
+   ],
+   "no_painel": false,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=293520260",
+   "assunto_painel": null,
+   "resultado": {
+    "tipo": "acordao",
+    "acordao": "2879/2026",
+    "colegiado": "Plenário",
+    "dispositivo": "ACORDAM, por unanimidade, em autorizar a prorrogação de prazo requerida pelo Ministério da Saúde (peça 74), por mais 15 (quinze) dias, para atendimento à determinação constante do subitem 9.6.3 do Acórdão 2758/2025-TCU-Plenário. 1. Processo TC-002.935/2026-0 (MONITORAMENTO) 1.1. Órgãos: Conselho Nacional de Justiça; Defensoria Pública da União; Fundação Instituto Brasileiro de Geografia e Estatística; Ministério da Fazenda; Ministério da Gestão e da Inovação Em Serviços Públicos; Ministério da Justiça e Segurança Pública; Ministério da Saúde; Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome; Ministério dos Direitos Humanos e da Cidadania; Operador Nacional do Registro Civil de Pessoas Naturais - On do Registro Civil do Brasil. 1.2. Relator: Ministro Odair Cunha. 1.3. Representante do Ministério Público: não atuou. 1.4. Unidade Técnica: Unidade de Auditoria Esp…"
+   }
+  },
+  {
+   "tc": "004.306/2025-2",
+   "sessao": 23170,
+   "quando": "passada",
+   "data": "2026-10-21T14:30:00",
+   "colegiado": "Plenário",
+   "relator": "Benjamin Zymler",
+   "assunto": "Monitoramento de recomendação proferida em auditoria realizada para avaliar a Política Nacional de Cibersegurança",
+   "natureza": "",
+   "unidades": "Gabinete de Segurança Institucional da Presidência da República",
+   "siglas": [],
+   "motivos": [
+    "no painel do MPO"
+   ],
+   "no_painel": true,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=430620252",
+   "assunto_painel": "Monitoramento da recomendação feita ao Gabinete de Segurança Institucional da Presidência da República, por meio dos Acórdãos 2430/2024-P e  276/2025-P, no âmbito do processo 010.387/2024-2 (Avaliação PNCiber - LAR 2023-2024)",
+   "resultado": {
+    "tipo": "acordao",
+    "acordao": "2909/2026",
+    "colegiado": "Plenário",
+    "dispositivo": "ACORDAM os Ministros do Tribunal de Contas da União, reunidos em sessão do Plenário, por unanimidade, ante as razões expostas pelo relator, em: 9.1. considerar cumprida a recomendação constante do subitem 9.1 do Acórdão 2430/2024-TCU-Plenário, com nova redação dada pelo Acórdão 276/2025-TCU-Plenário; 9.2. informar a Casa Civil da Presidência da República sobre o risco de a Política Nacional de Cibersegurança carecer de alcance nacional e de uma estrutura com autoridade e prerrogativas suficientes para coordenar a sua execução, a fim de que o órgão avalie a matéria, no momento em que entender adequado, no âmbito de sua atuação como integradora das ações governamentais; e 9.3. encaminhar cópia deste acórdão, acompanhado do relatório e do voto que o fundamentam, ao Comitê Nacional de Cibersegurança (CNCiber) e ao Gabinete de Segurança Institucional da Presidência da República (GSI/PR)."
+   }
+  },
+  {
+   "tc": "021.183/2026-0",
+   "sessao": 23170,
+   "quando": "passada",
+   "data": "2026-10-21T14:30:00",
+   "colegiado": "Plenário",
+   "relator": "Benjamin Zymler",
+   "assunto": "Representação referente ao ato de gestão (Objeto: Proibição de exploração, oferta, intermediação e publicidade de apostas de quota fixa no Brasil, incluindo jogos online e cassinos virtuais, conforme cronograma estabelecido em medida provisória.)",
+   "natureza": "REPRESENTAÇÃO",
+   "unidades": "Ministério da Fazenda; Ministerio do Planejamento e Orcamento; Secretaria de Orçamento Federal; Secretaria do Tesouro Nacional",
+   "siglas": [
+    "MPO",
+    "SOF"
+   ],
+   "motivos": [
+    "na pauta: MPO, SOF",
+    "no painel do MPO"
+   ],
+   "no_painel": true,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2118320260",
+   "assunto_painel": "Representação referente ao ato de gestão (Objeto: Proibição de exploração, oferta, intermediação e publicidade de apostas de quota fixa no Brasil, incluindo jogos online e cassinos virtuais, conforme cronograma estabelecido em medida provisória.)",
+   "resultado": {
+    "tipo": "acordao",
+    "acordao": "2865/2026",
+    "colegiado": "Plenário",
+    "dispositivo": "ACORDAM os Ministros do Tribunal de Contas da União, reunidos em sessão do Plenário, por unanimidade, no que se refere aos autos abaixo relacionados, com fundamento nos arts. 143, inciso III, 169, 235, parágrafo único, e 237, parágrafo único, do Regimento Interno do TCU, c/c art. 103, § 1º, da Resolução-TCU 259/2014, em não conhecer da representação, por versar sobre matéria alheia à competência deste Tribunal e por não estar acompanhada de indícios suficientes de irregularidade, considerando, assim, prejudicado o requerimento de medida cautelar formulado, juntar cópia desta deliberação, acompanhada da instrução à peça 11, aos TC Processo 018.918/2026-3 e TC Processo 016.141/2026-1, bem como encaminhá-la ao representante, e arquivar o presente processo, nos termos dos pareceres uniformes juntados aos autos: 1. Processo TC-021.183/2026-0 (REPRESENTAÇÃO) 1.1. Órgão/Entidade: Ministério da …"
+   }
+  },
+  {
+   "tc": "023.368/2025-0",
+   "sessao": 23170,
+   "quando": "passada",
+   "data": "2026-10-21T14:30:00",
+   "colegiado": "Plenário",
+   "relator": "Benjamin Zymler",
+   "assunto": "Acompanhamento de aspectos macrofiscais, orçamentários e de gestão da Empresa Brasileira de Participações em Energia Nuclear e Binacional S.A. e de sua subsidiária Eletronuclear S.A",
+   "natureza": "",
+   "unidades": "Eletronuclear S.A.; Empresa Brasileira de Participações em Energia Nuclear e Binacional S.A. - ENBPar; Indústrias Nucleares do Brasil S.A.; Ministério da Gestão e da Inovação em Serviços Públicos; Ministério de Minas e Energia; Secretaria de Coordenação e Governança das Empresas Estatais",
+   "siglas": [
+    "SEST"
+   ],
+   "motivos": [
+    "na pauta: SEST",
+    "no painel do MPO"
+   ],
+   "no_painel": true,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2336820250",
+   "assunto_painel": "Acompanhamento de Aspectos Macrofiscais, Orçamentários e de Gestão da ENBPar e da Eletronuclear",
+   "resultado": {
+    "tipo": "acordao",
+    "acordao": "2908/2026",
+    "colegiado": "",
+    "dispositivo": ""
+   }
+  },
+  {
+   "tc": "014.609/2026-6",
+   "sessao": 23731,
+   "quando": "proxima",
+   "data": "2026-10-28T14:30:00",
+   "colegiado": "Plenário",
+   "relator": "Antonio Anastasia",
+   "assunto": "Acompanhamento com o objetivo de avaliar o cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União referentes ao 3º bimestre de 2026",
+   "natureza": "",
+   "unidades": "Banco Central do Brasil; Instituto Nacional do Seguro Social; Ministério da Fazenda; Ministério da Previdência Social; Ministério da Previdência Social; Ministério do Desenvolvimento e Assistência Social, Família e Combate À Fome; Ministério do Planejamento e Orçamento; Secretaria de Coordenação e Governança das Empresas Estatais; Secretaria de Orçamento Federal; Secretaria de Política Econômica; Secretaria do Tesouro Nacional; Secretaria Especial da Receita Federal do Brasil",
+   "siglas": [
+    "MPO",
+    "SOF",
+    "SEST"
+   ],
+   "motivos": [
+    "na pauta: MPO, SOF, SEST",
+    "no painel do MPO"
+   ],
+   "no_painel": true,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1460920266",
+   "assunto_painel": "3ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026"
+  },
+  {
+   "tc": "015.520/2025-0",
+   "sessao": 23731,
+   "quando": "proxima",
+   "data": "2026-10-28T14:30:00",
+   "colegiado": "Plenário",
+   "relator": "Benjamin Zymler",
+   "assunto": "Acompanhamento realizado com o objetivo de identificar obras públicas financiadas com recursos do Orçamento Geral da União que apresentem indícios de paralisação, examinar os fatores que possam comprometer sua continuidade e induzir a adoção tempestiva de providências destinadas à superação dos entraves identificados",
+   "natureza": "",
+   "unidades": "Caixa Econômica Federal; Gabinete da Secretaria de Relações Institucionais da Presidência da República; Ministério da Agricultura e Pecuária; Ministério da Gestão e da Inovação Em Serviços Públicos; Ministério da Integração e do Desenvolvimento Regional; Ministério das Cidades; Ministério do Planejamento e Orçamento; Secretaria de Relações Institucionais da Presidência da República",
+   "siglas": [
+    "MPO"
+   ],
+   "motivos": [
+    "na pauta: MPO"
+   ],
+   "no_painel": false,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1552020250",
+   "assunto_painel": null
+  },
+  {
+   "tc": "017.351/2026-0",
+   "sessao": 23731,
+   "quando": "proxima",
+   "data": "2026-10-28T14:30:00",
+   "colegiado": "Plenário",
+   "relator": "Rodrigo Pacheco",
+   "assunto": "Consulta acerca da classificação, no Programa de Dispêndios Globais (PDG), dos ingressos decorrentes das novações de créditos perante o Fundo de Compensação de Variações Salariais (FCVS), celebradas com a União ao amparo da Lei 10.150/2000",
+   "natureza": "",
+   "unidades": "Empresa Gestora de Ativos S.A.; Ministério da Fazenda; Secretaria de Coordenação e Governança das Empresas Estatais; Secretaria de Orçamento Federal; Secretaria do Tesouro Nacional",
+   "siglas": [
+    "SOF",
+    "SEST"
+   ],
+   "motivos": [
+    "na pauta: SOF, SEST",
+    "no painel do MPO"
+   ],
+   "no_painel": true,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1735120260",
+   "assunto_painel": "Consulta sobre se os recebimentos decorrentes das novações dos créditos FCVS da Emgea constituem receitas que devem ser consideradas na geração de recursos próprios da empresa e compor o indicador NEFIL do PDG, ou são meras operações financeiras de troca de ativos que não devem influenciar o resultado fiscal."
+  }
+ ]
+}
