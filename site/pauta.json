@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-10-27T11:35:21-03:00",
+ "gerado_em": "2026-10-27T12:14:16-03:00",
  "hoje": "2026-10-27",
  "sessoes": [
   {
@@ -81,6 +81,30 @@
   }
  ],
  "itens": [
+  {
+   "tc": "018.320/2026-0",
+   "sessao": 23216,
+   "quando": "passada",
+   "data": "2026-10-20T15:00:00",
+   "colegiado": "Primeira Câmara",
+   "relator": "Rodrigo Pacheco",
+   "assunto": "",
+   "natureza": "REPRESENTAÇÃO",
+   "unidades": "",
+   "siglas": [],
+   "motivos": [
+    "no painel do MPO"
+   ],
+   "no_painel": true,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1832020260",
+   "assunto_painel": "Representação referente ao ato de gestão (Objeto: Evolução das despesas obrigatórias da União e sua compatibilidade com o Regime Fiscal Sustentável e metas fiscais.)",
+   "resultado": {
+    "tipo": "acordao",
+    "acordao": "5654/2026",
+    "colegiado": "Primeira Câmara",
+    "dispositivo": "ACORDAM, por unanimidade, com fundamento no art. 43, inciso I, da Lei 8.443/1992 e nos arts. 143, inciso V, alínea \"a\", 169, inciso VI, 235 e 237 do Regimento Interno do TCU, em não conhecer da representação, por não preencher requisito de admissibilidade; dar ciência desta deliberação e da instrução (peça 4) ao representante; e arquivar o processo. 1. Processo TC-018.320/2026-0 (REPRESENTAÇÃO) 1.1. Unidades Jurisdicionadas: Ministério da Fazenda; Ministério do Planejamento e Orçamento; Secretaria de Orçamento Federal; Secretaria do Tesouro Nacional. 1.2. Relator: Ministro Rodrigo Pacheco. 1.3. Representante do Ministério Público: não atuou. 1.4. Unidade Técnica: Unidade de Auditoria Especializada em Orçamento, Tributação e Gestão Fiscal (AudFiscal). 1.5. Representação legal: não há. 1.6. Determinações/Recomendações/Orientações: não há."
+   }
+  },
   {
    "tc": "002.935/2026-0",
    "sessao": 23170,
