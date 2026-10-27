@@ -1,7 +1,33 @@
 {
- "gerado_em": "2026-10-26T15:49:28.918934+00:00",
- "total": 696,
+ "gerado_em": "2026-10-27T14:04:46.887339+00:00",
+ "total": 697,
  "processos": [
+  {
+   "numero": "018.320/2026-0",
+   "id": "01832020260",
+   "assunto": "Representação referente ao ato de gestão (Objeto: Evolução das despesas obrigatórias da União e sua compatibilidade com o Regime Fiscal Sustentável e metas fiscais.)",
+   "natureza": "Representação",
+   "relator": "Rodrigo Pacheco",
+   "unidade_tecnica": null,
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_unidade": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_interessado": [],
+   "vinculo": "unidade",
+   "estado": "Encerrado",
+   "acordao": "5654/2026",
+   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1832020260",
+   "data_primeiro_andamento": "2026-10-20",
+   "data_ultimo_andamento": "2026-10-26",
+   "data_encerramento": "2026-10-26",
+   "motivo_encerramento": "Cumprimento de objetivo",
+   "n_movimentacoes": 4
+  },
   {
    "numero": "010.183/2026-4",
    "id": "01018320264",
@@ -62,13 +88,11 @@
    "relator": "Jorge Oliveira",
    "unidade_tecnica": null,
    "orgaos": [
-    "MPO",
-    "SMA"
+    "MPO"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO",
-    "SMA"
+    "MPO"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -4783,7 +4807,6 @@
    "orgaos": [
     "MPO",
     "SE",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [
@@ -4791,8 +4814,7 @@
     "SOF"
    ],
    "orgaos_interessado": [
-    "SE",
-    "SMA"
+    "SE"
    ],
    "vinculo": "unidade",
    "estado": "Encerrado",
@@ -4837,13 +4859,11 @@
    "unidade_tecnica": null,
    "orgaos": [
     "MPO",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
     "MPO",
-    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
@@ -14413,11 +14433,11 @@
    "estado": "Encerrado",
    "acordao": null,
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2071220235",
-   "data_primeiro_andamento": "2026-09-29",
-   "data_ultimo_andamento": "2026-09-30",
+   "data_primeiro_andamento": "2026-09-30",
+   "data_ultimo_andamento": "2026-10-27",
    "data_encerramento": "",
    "motivo_encerramento": "",
-   "n_movimentacoes": 3
+   "n_movimentacoes": 2
   },
   {
    "numero": "020.715/2015-3",
@@ -14535,7 +14555,6 @@
     "MPO",
     "SE",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
@@ -14544,7 +14563,6 @@
     "MPO",
     "SE",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
