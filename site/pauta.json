@@ -1,29 +1,7 @@
 {
- "gerado_em": "2026-10-27T12:35:53-03:00",
- "hoje": "2026-10-27",
+ "gerado_em": "2026-10-28T12:51:07-03:00",
+ "hoje": "2026-10-28",
  "sessoes": [
-  {
-   "id": 23262,
-   "quando": "passada",
-   "data": "2026-10-20T10:30:00",
-   "colegiado": "Segunda Câmara",
-   "natureza": "Ordinária",
-   "situacao": "Encerrada",
-   "reservada": false,
-   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81279044",
-   "processos_na_pauta": 76
-  },
-  {
-   "id": 23216,
-   "quando": "passada",
-   "data": "2026-10-20T15:00:00",
-   "colegiado": "Primeira Câmara",
-   "natureza": "Ordinária",
-   "situacao": "Encerrada",
-   "reservada": false,
-   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81281358",
-   "processos_na_pauta": 116
-  },
   {
    "id": 23170,
    "quando": "passada",
@@ -37,22 +15,22 @@
   },
   {
    "id": 23263,
-   "quando": "proxima",
+   "quando": "passada",
    "data": "2026-10-27T10:30:00",
    "colegiado": "Segunda Câmara",
    "natureza": "Ordinária",
    "situacao": "Encerrada",
    "reservada": false,
-   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23263-pauta.pdf",
+   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81316468",
    "processos_na_pauta": 113
   },
   {
    "id": 23217,
-   "quando": "proxima",
+   "quando": "passada",
    "data": "2026-10-27T15:00:00",
    "colegiado": "Primeira Câmara",
    "natureza": "Ordinária",
-   "situacao": "Prevista",
+   "situacao": "Encerrada",
    "reservada": false,
    "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23217-pauta.pdf",
    "processos_na_pauta": 106
@@ -63,7 +41,7 @@
    "data": "2026-10-28T10:30:00",
    "colegiado": "Plenário",
    "natureza": "Extraordinária",
-   "situacao": "Prevista",
+   "situacao": "Encerrada",
    "reservada": false,
    "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23587-pauta.pdf",
    "processos_na_pauta": 1
@@ -77,34 +55,32 @@
    "situacao": "Prevista",
    "reservada": false,
    "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23731-pauta.pdf",
-   "processos_na_pauta": 84
+   "processos_na_pauta": 85
+  },
+  {
+   "id": 23264,
+   "quando": "proxima",
+   "data": "2026-11-03T10:30:00",
+   "colegiado": "Segunda Câmara",
+   "natureza": "Ordinária",
+   "situacao": "Prevista",
+   "reservada": false,
+   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23264-pauta.pdf",
+   "processos_na_pauta": 82
+  },
+  {
+   "id": 23218,
+   "quando": "proxima",
+   "data": "2026-11-03T15:00:00",
+   "colegiado": "Primeira Câmara",
+   "natureza": "Ordinária",
+   "situacao": "Prevista",
+   "reservada": false,
+   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23218-pauta.pdf",
+   "processos_na_pauta": 114
   }
  ],
  "itens": [
-  {
-   "tc": "018.320/2026-0",
-   "sessao": 23216,
-   "quando": "passada",
-   "data": "2026-10-20T15:00:00",
-   "colegiado": "Primeira Câmara",
-   "relator": "Rodrigo Pacheco",
-   "assunto": "",
-   "natureza": "REPRESENTAÇÃO",
-   "unidades": "",
-   "siglas": [],
-   "motivos": [
-    "no painel do MPO"
-   ],
-   "no_painel": true,
-   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1832020260",
-   "assunto_painel": "Representação referente ao ato de gestão (Objeto: Evolução das despesas obrigatórias da União e sua compatibilidade com o Regime Fiscal Sustentável e metas fiscais.)",
-   "resultado": {
-    "tipo": "acordao",
-    "acordao": "5654/2026",
-    "colegiado": "Primeira Câmara",
-    "dispositivo": "ACORDAM, por unanimidade, com fundamento no art. 43, inciso I, da Lei 8.443/1992 e nos arts. 143, inciso V, alínea \"a\", 169, inciso VI, 235 e 237 do Regimento Interno do TCU, em não conhecer da representação, por não preencher requisito de admissibilidade; dar ciência desta deliberação e da instrução (peça 4) ao representante; e arquivar o processo. 1. Processo TC-018.320/2026-0 (REPRESENTAÇÃO) 1.1. Unidades Jurisdicionadas: Ministério da Fazenda; Ministério do Planejamento e Orçamento; Secretaria de Orçamento Federal; Secretaria do Tesouro Nacional. 1.2. Relator: Ministro Rodrigo Pacheco. 1.3. Representante do Ministério Público: não atuou. 1.4. Unidade Técnica: Unidade de Auditoria Especializada em Orçamento, Tributação e Gestão Fiscal (AudFiscal). 1.5. Representação legal: não há. 1.6. Determinações/Recomendações/Orientações: não há."
-   }
-  },
   {
    "tc": "002.935/2026-0",
    "sessao": 23170,
@@ -240,7 +216,7 @@
    "data": "2026-10-28T14:30:00",
    "colegiado": "Plenário",
    "relator": "Benjamin Zymler",
-   "assunto": "Acompanhamento realizado com o objetivo de identificar obras públicas financiadas com recursos do Orçamento Geral da União que apresentem indícios de paralisação, examinar os fatores que possam comprometer sua continuidade e induzir a adoção tempestiva de providências destinadas à superação dos entraves identificados",
+   "assunto": "EXCLUÍDO DE PAUTA Acompanhamento realizado com o objetivo de identificar obras públicas financiadas com recursos do Orçamento Geral da União que apresentem indícios de paralisação, examinar os fatores que possam comprometer sua continuidade e induzir a adoção tempestiva de providências destinadas à superação dos entraves identificados",
    "natureza": "",
    "unidades": "Caixa Econômica Federal; Gabinete da Secretaria de Relações Institucionais da Presidência da República; Ministério da Agricultura e Pecuária; Ministério da Gestão e da Inovação Em Serviços Públicos; Ministério da Integração e do Desenvolvimento Regional; Ministério das Cidades; Ministério do Planejamento e Orçamento; Secretaria de Relações Institucionais da Presidência da República",
    "siglas": [
@@ -274,6 +250,24 @@
    "no_painel": true,
    "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1735120260",
    "assunto_painel": "Consulta sobre se os recebimentos decorrentes das novações dos créditos FCVS da Emgea constituem receitas que devem ser consideradas na geração de recursos próprios da empresa e compor o indicador NEFIL do PDG, ou são meras operações financeiras de troca de ativos que não devem influenciar o resultado fiscal."
+  },
+  {
+   "tc": "015.329/2026-7",
+   "sessao": 23218,
+   "quando": "proxima",
+   "data": "2026-11-03T15:00:00",
+   "colegiado": "Primeira Câmara",
+   "relator": "Walton Alencar Rodrigues",
+   "assunto": "Representação referente ao ato de gestão com Uasg 170500 (Objeto: Utilização de recursos oriundos da suspensão das parcelas da dívida do Estado do Rio Grande do Sul com a União no Programa de Subsídio de Juros para Investimentos em Grandes Empreendimentos Voltados ao Turismo no Estado do Rio Grande do Sul (PROGRANTUR).)",
+   "natureza": "REPRESENTAÇÃO",
+   "unidades": "",
+   "siglas": [],
+   "motivos": [
+    "no painel do MPO"
+   ],
+   "no_painel": true,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1532920267",
+   "assunto_painel": "Representação referente ao ato de gestão com Uasg 170500 (Objeto: Utilização de recursos oriundos da suspensão das parcelas da dívida do Estado do Rio Grande do Sul com a União no Programa de Subsídio de Juros para Investimentos em Grandes Empreendimentos Voltados ao Turismo no Estado do Rio Grande do Sul (PROGRANTUR).)"
   }
  ]
 }
