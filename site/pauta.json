@@ -1,6 +1,6 @@
 {
- "gerado_em": "2026-10-29T13:03:48-03:00",
- "hoje": "2026-10-29",
+ "gerado_em": "2026-10-30T12:41:50-03:00",
+ "hoje": "2026-10-30",
  "sessoes": [
   {
    "id": 23263,
@@ -43,7 +43,7 @@
    "natureza": "Ordinária",
    "situacao": "Encerrada",
    "reservada": false,
-   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23731-pauta.pdf",
+   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81326720",
    "processos_na_pauta": 85
   },
   {
@@ -69,17 +69,6 @@
    "processos_na_pauta": 114
   },
   {
-   "id": 23172,
-   "quando": "proxima",
-   "data": "2026-11-04T14:30:00",
-   "colegiado": "Plenário",
-   "natureza": "Ordinária",
-   "situacao": "Prevista",
-   "reservada": false,
-   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23172-pauta.pdf",
-   "processos_na_pauta": 105
-  },
-  {
    "id": 23531,
    "quando": "proxima",
    "data": "2026-11-04T14:30:00",
@@ -89,6 +78,17 @@
    "reservada": true,
    "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23531-pauta.pdf",
    "processos_na_pauta": null
+  },
+  {
+   "id": 23172,
+   "quando": "proxima",
+   "data": "2026-11-04T14:30:00",
+   "colegiado": "Plenário",
+   "natureza": "Ordinária",
+   "situacao": "Prevista",
+   "reservada": false,
+   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23172-pauta.pdf",
+   "processos_na_pauta": 105
   }
  ],
  "itens": [
@@ -135,11 +135,12 @@
     "MPO"
    ],
    "motivos": [
-    "na pauta: MPO"
+    "na pauta: MPO",
+    "no painel do MPO"
    ],
-   "no_painel": false,
+   "no_painel": true,
    "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1552020250",
-   "assunto_painel": null,
+   "assunto_painel": "Acompanhamento preventivo para evitar abandono de obras",
    "resultado": {
     "tipo": "pendente",
     "texto": "Acórdão ainda não publicado na Pesquisa Integrada."
@@ -198,18 +199,19 @@
    "data": "2026-11-04T14:30:00",
    "colegiado": "Plenário",
    "relator": "Benjamin Zymler",
-   "assunto": "Acompanhamento realizado com o objetivo de identificar obras públicas financiadas com recursos do Orçamento Geral da União que apresentem indícios de paralisação, examinar os fatores que possam comprometer sua continuidade e induzir a adoção tempestiva de providências destinadas à superação dos entraves identificados",
+   "assunto": "EXCLUÍDO DE PAUTA Acompanhamento realizado com o objetivo de identificar obras públicas financiadas com recursos do Orçamento Geral da União que apresentem indícios de paralisação, examinar os fatores que possam comprometer sua continuidade e induzir a adoção tempestiva de providências destinadas à superação dos entraves identificados",
    "natureza": "",
    "unidades": "Caixa Econômica Federal; Gabinete da Secretaria de Relações Institucionais da Presidência da República; Ministério da Agricultura e Pecuária; Ministério da Gestão e da Inovação Em Serviços Públicos; Ministério da Integração e do Desenvolvimento Regional; Ministério das Cidades; Ministério do Planejamento e Orçamento; Secretaria de Relações Institucionais da Presidência da República",
    "siglas": [
     "MPO"
    ],
    "motivos": [
-    "na pauta: MPO"
+    "na pauta: MPO",
+    "no painel do MPO"
    ],
-   "no_painel": false,
+   "no_painel": true,
    "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1552020250",
-   "assunto_painel": null
+   "assunto_painel": "Acompanhamento preventivo para evitar abandono de obras"
   },
   {
    "tc": "020.662/2023-8",
