@@ -1,6 +1,6 @@
 {
- "gerado_em": "2026-11-02T19:12:59.503320+00:00",
- "total": 700,
+ "gerado_em": "2026-11-03T17:03:06.164029+00:00",
+ "total": 701,
  "processos": [
   {
    "numero": "008.447/2024-1",
@@ -12803,6 +12803,32 @@
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1394120127",
    "data_primeiro_andamento": "2020-12-16",
    "data_ultimo_andamento": "2020-12-18",
+   "data_encerramento": "",
+   "motivo_encerramento": "",
+   "n_movimentacoes": 3
+  },
+  {
+   "numero": "014.010/2026-7",
+   "id": "01401020267",
+   "assunto": "Consulta acerca da legalidade de autarquia federal, com autonomia administrativa e financeira, que arrecade e seja custeada por receita de natureza jurídica de tarifa (preço público), elaborar sua proposta orçamentária própria.",
+   "natureza": "Consulta",
+   "relator": "Jhonatan de Jesus",
+   "unidade_tecnica": null,
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_unidade": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_interessado": [],
+   "vinculo": "unidade",
+   "estado": "Encerrado",
+   "acordao": null,
+   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1401020267",
+   "data_primeiro_andamento": "2026-10-13",
+   "data_ultimo_andamento": "2026-11-03",
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 3
