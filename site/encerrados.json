@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-03T17:03:06.164029+00:00",
+ "gerado_em": "2026-11-04T17:03:15.726744+00:00",
  "total": 701,
  "processos": [
   {
@@ -192,13 +192,11 @@
    "relator": "Jorge Oliveira",
    "unidade_tecnica": null,
    "orgaos": [
-    "MPO",
-    "SMA"
+    "MPO"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO",
-    "SMA"
+    "MPO"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -4913,7 +4911,6 @@
    "orgaos": [
     "MPO",
     "SE",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [
@@ -4921,8 +4918,7 @@
     "SOF"
    ],
    "orgaos_interessado": [
-    "SE",
-    "SMA"
+    "SE"
    ],
    "vinculo": "unidade",
    "estado": "Encerrado",
@@ -4967,13 +4963,11 @@
    "unidade_tecnica": null,
    "orgaos": [
     "MPO",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
     "MPO",
-    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
@@ -12586,30 +12580,6 @@
    "n_movimentacoes": 1
   },
   {
-   "numero": "013.444/2017-4",
-   "id": "01344420174",
-   "assunto": "Auditoria com objetivo de avaliar o Sistema de Obras do Governo Federal",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "2329/2018",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1344420174",
-   "data_primeiro_andamento": "2018-06-08",
-   "data_ultimo_andamento": "2019-01-24",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 5
-  },
-  {
    "numero": "013.479/2005-0",
    "id": "01347920050",
    "assunto": "CONVÊNIO N.º 268/97, CELEBRADO ENTRE O MINISTÉRIO DO PLANEJAMENTO E ORÇAMENTO E A PM JI-PARANÁ/RO",
@@ -14667,7 +14637,6 @@
     "MPO",
     "SE",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
@@ -14676,7 +14645,6 @@
     "MPO",
     "SE",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
@@ -16282,6 +16250,32 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 2
+  },
+  {
+   "numero": "027.654/2022-2",
+   "id": "02765420222",
+   "assunto": "Monitoramento das deliberações do Acórdão 1973/2022-Plenário, proferidas no âmbito do TC 038.685/2021-3, que tratou de auditoria operacional para avaliar o processo sancionador ambiental do Ibama",
+   "natureza": "Monitoramento",
+   "relator": "Marcos Bemquerer",
+   "unidade_tecnica": null,
+   "orgaos": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_unidade": [],
+   "orgaos_interessado": [
+    "MPO",
+    "SOF"
+   ],
+   "vinculo": "interessado",
+   "estado": "Encerrado",
+   "acordao": "2891/2026",
+   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2765420222",
+   "data_primeiro_andamento": "2026-10-23",
+   "data_ultimo_andamento": "2026-11-04",
+   "data_encerramento": "",
+   "motivo_encerramento": "",
+   "n_movimentacoes": 4
   },
   {
    "numero": "027.805/2011-5",
