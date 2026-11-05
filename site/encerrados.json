@@ -1,6 +1,6 @@
 {
- "gerado_em": "2026-11-04T17:03:15.726744+00:00",
- "total": 701,
+ "gerado_em": "2026-11-05T17:17:24.977148+00:00",
+ "total": 581,
  "processos": [
   {
    "numero": "008.447/2024-1",
@@ -50,30 +50,6 @@
    "data_ultimo_andamento": "2026-10-28",
    "data_encerramento": "2026-10-28",
    "motivo_encerramento": "Ausência pressupostos constituição/desenvolvimento",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "037.531/2021-2",
-   "id": "03753120212",
-   "assunto": "Representação apartada do TC 022.428/2019-4  para atendimento do item 9.2 do Acórdão 11253/2021-TCU-1ª Câmara",
-   "natureza": "Representação",
-   "relator": "Weder de Oliveira",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3753120212",
-   "data_primeiro_andamento": "2026-10-28",
-   "data_ultimo_andamento": "2026-10-28",
-   "data_encerramento": "2026-10-28",
-   "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
   },
   {
@@ -444,30 +420,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "013.453/2021-1",
-   "id": "01345320211",
-   "assunto": "Monitoramento do subitem 9.3 do Acórdão 2290/2020-TCU-Plenário, proferido no TC 015.278/2009-4, que trata de determinação à à Secretaria Especial do Esporte, vinculada ao Ministério da Cidadania, acerca da análise da prestação de contas final do termo de cooperação firmado com a UFRGS mediante o Processo 58701.001108/2008-68",
-   "natureza": "Monitoramento",
-   "relator": "Augusto Sherman",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1345320211",
-   "data_primeiro_andamento": "2026-08-31",
-   "data_ultimo_andamento": "2026-09-02",
-   "data_encerramento": "2026-09-02",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "017.463/2025-4",
    "id": "01746320254",
    "assunto": "Resultados Fiscais e Execução Orçamentária e Financeira da União no 4° Bimestre 2025 e Projeções Anuais",
@@ -597,30 +549,6 @@
    "data_encerramento": "2026-08-15",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
-  },
-  {
-   "numero": "032.462/2019-0",
-   "id": "03246220190",
-   "assunto": "Demandas judiciais com impacto na gestão fiscal da União",
-   "natureza": "Relatório de Levantamento",
-   "relator": "Benjamin Zymler",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "360/2026",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3246220190",
-   "data_primeiro_andamento": "2026-02-26",
-   "data_ultimo_andamento": "2026-08-15",
-   "data_encerramento": "2026-08-15",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
   },
   {
    "numero": "001.040/2017-0",
@@ -1574,30 +1502,6 @@
    "n_movimentacoes": 4
   },
   {
-   "numero": "009.557/2021-0",
-   "id": "00955720210",
-   "assunto": "Prestação de Contas Ordinária de Banco Central do Brasil relativa ao Exercício Financeiro de 2019",
-   "natureza": "Prestação de Contas",
-   "relator": "Jhonatan de Jesus",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "767/2026",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=955720210",
-   "data_primeiro_andamento": "2026-04-04",
-   "data_ultimo_andamento": "2026-04-17",
-   "data_encerramento": "2026-04-17",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
    "numero": "014.928/2025-6",
    "id": "01492820256",
    "assunto": "014.928/2025-6 - Denúncia",
@@ -1685,13 +1589,11 @@
    "relator": "Benjamin Zymler",
    "unidade_tecnica": null,
    "orgaos": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -1728,30 +1630,6 @@
    "data_primeiro_andamento": "2026-03-20",
    "data_ultimo_andamento": "2026-05-28",
    "data_encerramento": "2026-03-31",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "011.574/2021-6",
-   "id": "01157420216",
-   "assunto": "Acompanhamento do perfil de governança organizacional e gestão públicas de organizações jurisdicionadas ao TCU - Ciclo 2021",
-   "natureza": "Acompanhamento",
-   "relator": "Jhonatan de Jesus",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1157420216",
-   "data_primeiro_andamento": "2026-03-10",
-   "data_ultimo_andamento": "2026-03-10",
-   "data_encerramento": "2026-03-10",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
   },
@@ -1888,13 +1766,11 @@
    "relator": "Jhonatan de Jesus",
    "unidade_tecnica": null,
    "orgaos": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -2453,30 +2329,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "025.604/2021-0",
-   "id": "02560420210",
-   "assunto": "Acompanhamento da regulamentação do Novo Marco Legal do Saneamento Básico pela ANA e pelo executivo federal",
-   "natureza": "Acompanhamento",
-   "relator": "Jorge Oliveira",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2560420210",
-   "data_primeiro_andamento": "2025-04-11",
-   "data_ultimo_andamento": "2025-09-19",
-   "data_encerramento": "2025-09-19",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "016.428/2021-8",
    "id": "01642820218",
    "assunto": "MONITORAMENTO DAS DETERMINAÇÕES E/OU RECOMENDAÇÕES FEITAS A(AO) Secretaria Nacional de Renda de Cidadania, POR MEIO DO ACÓRDÃO 1947/2019-Plenário, NO ÂMBITO DO PROCESSO 021.408/2018-1",
@@ -2606,30 +2458,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "003.297/2022-5",
-   "id": "00329720225",
-   "assunto": "Levantamento - Financiamento da Educação a partir da Legislação do Novo Fundeb",
-   "natureza": "Relatório de Levantamento",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=329720225",
-   "data_primeiro_andamento": "2025-03-19",
-   "data_ultimo_andamento": "2025-08-12",
-   "data_encerramento": "2025-08-12",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "012.649/2021-0",
    "id": "01264920210",
    "assunto": "Questionamentos sobre a regularidade de emendas parlamentares que teriam promovido modificações no Projeto de Lei Orçamentária Anual (PLOA) do exercício de 2021",
@@ -2637,13 +2465,11 @@
    "relator": "Aroldo Cedraz",
    "unidade_tecnica": null,
    "orgaos": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -3898,30 +3724,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "015.399/2019-2",
-   "id": "01539920192",
-   "assunto": "Auditoria Integrada na Rede Brasileira de Metrologia Legal e Qualidade (RBMLQ-I)",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Weder de Oliveira",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1539920192",
-   "data_primeiro_andamento": "2024-04-01",
-   "data_ultimo_andamento": "2026-05-11",
-   "data_encerramento": "2024-10-03",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "010.005/2024-2",
    "id": "01000520242",
    "assunto": "Contas do Presidente da República do exercício de 2023",
@@ -4005,13 +3807,11 @@
    "relator": "Augusto Nardes",
    "unidade_tecnica": null,
    "orgaos": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -4077,30 +3877,6 @@
    "data_primeiro_andamento": "2024-08-28",
    "data_ultimo_andamento": "2024-09-02",
    "data_encerramento": "2024-09-02",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "033.235/2021-0",
-   "id": "03323520210",
-   "assunto": "PFC nº 10/2021 (Of. nº 420/2021-CSSF/DECOM/CD, de 13/8/21), Propõe que a Comissão de Seguridade Social e Família realize ato de fiscalização e controle, com o auxílio do TCU, dos recursos da União destinados ao estado do Rio Grande do Sul, no contexto do\r\ncombate à pandemia de Covid-19.",
-   "natureza": "Solicitação do Congresso Nacional",
-   "relator": "Jhonatan de Jesus",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3323520210",
-   "data_primeiro_andamento": "2024-08-19",
-   "data_ultimo_andamento": "2024-08-30",
-   "data_encerramento": "2024-08-30",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
   },
@@ -4179,30 +3955,6 @@
    "data_ultimo_andamento": "2024-07-29",
    "data_encerramento": "2024-07-29",
    "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "044.789/2021-1",
-   "id": "04478920211",
-   "assunto": "Representação acerca de Indicação de Emendas Parlamentares para os Hospitais Universitários Federais via Fundo Nacional de Saúde.",
-   "natureza": "Representação",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=4478920211",
-   "data_primeiro_andamento": "2024-07-22",
-   "data_ultimo_andamento": "2024-07-22",
-   "data_encerramento": "2024-07-22",
-   "motivo_encerramento": "Outros",
    "n_movimentacoes": 3
   },
   {
@@ -4291,14 +4043,12 @@
    "unidade_tecnica": null,
    "orgaos": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -4319,14 +4069,12 @@
    "unidade_tecnica": null,
    "orgaos": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -4515,30 +4263,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "013.225/2021-9",
-   "id": "01322520219",
-   "assunto": "MONITORAMENTO DAS DETERMINAÇÕES E/OU RECOMENDAÇÕES FEITAS A(AO) CONTROLADORIA-GERAL DA UNIÃO, POR MEIO DO ACÓRDÃO 12161/2020-Primeira Câmara, NO ÂMBITO DO PROCESSO 031.047/2019-0",
-   "natureza": "Monitoramento",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "2230/2024",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1322520219",
-   "data_primeiro_andamento": "2024-04-29",
-   "data_ultimo_andamento": "2024-06-03",
-   "data_encerramento": "2024-06-03",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
    "numero": "038.882/2023-0",
    "id": "03888220230",
    "assunto": "Ofício nº 274/2023-CFFC, de 9/11/2023, encaminha o REQ 416/2023-CFFC, de autoria do Deputado Evair de Melo, que solicita ao TCU informações sobre a legalidade da execução orçamentária referente ao bloqueio de R$ 116 milhões destinados à Capes em 2023",
@@ -4672,13 +4396,11 @@
    "relator": "Vital do Rêgo",
    "unidade_tecnica": null,
    "orgaos": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -4711,30 +4433,6 @@
    "data_primeiro_andamento": "2024-02-27",
    "data_ultimo_andamento": "2024-05-08",
    "data_encerramento": "2024-05-08",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "007.643/2022-5",
-   "id": "00764320225",
-   "assunto": "Of. nº 3/2022-CTFC, de 26/4/2022, encaminha a Proposta de Fiscalização e Controle nº 1,2019, \"que solicita ao Tribunal de Contas da União auditoria na área de Planejamento e Orçamento do Ministério da Educação e do Fundo Nacional de Desenvolvimento da Educação - FNDE\".",
-   "natureza": "Solicitação do Congresso Nacional",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=764320225",
-   "data_primeiro_andamento": "2024-04-30",
-   "data_ultimo_andamento": "2024-05-02",
-   "data_encerramento": "2024-05-02",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
   },
@@ -5369,30 +5067,6 @@
    "n_movimentacoes": 4
   },
   {
-   "numero": "033.445/2020-6",
-   "id": "03344520206",
-   "assunto": "Auditoria integrada, financeira e de conformidade, para compor a prestação de contas do Ministério da Economia referente ao exercício de 2020.",
-   "natureza": "Prestação de Contas",
-   "relator": "Jhonatan de Jesus",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "11834/2023",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3344520206",
-   "data_primeiro_andamento": "2023-10-26",
-   "data_ultimo_andamento": "2024-02-28",
-   "data_encerramento": "2024-01-17",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
    "numero": "033.889/2023-6",
    "id": "03388920236",
    "assunto": "Consulta sobre sobre a retroatividade de normas que, no curso do exercício financeiro, majorem os valores mínimos a serem\naplicados pela União em determinadas ações e serviços públicos (\"Regime Fiscal Sustentável\" - aplicabilidade de novos parâmetros ao exercício de 2023)",
@@ -5881,54 +5555,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "026.660/2020-2",
-   "id": "02666020202",
-   "assunto": "Determinação de acompanhamento (Gab. Min. Bruno Dantas e Semag) - RMS 61.997 - STJ (MS 0720114-20.2018.8.07.0000 - TJDF) - INTENSICARE GESTÃO EM SAÚDE LTDA. x TRIBUNAL DE CONTAS DO DISTRITO FEDERAL e DF",
-   "natureza": "Consulta",
-   "relator": null,
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2666020202",
-   "data_primeiro_andamento": "2023-08-24",
-   "data_ultimo_andamento": "2023-09-13",
-   "data_encerramento": "2023-09-13",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "013.061/2021-6",
-   "id": "01306120216",
-   "assunto": "Apurar notícia de que o processo de desestatização do Centro Nacional de Tecnologia Eletrônica Avançada S.A. ¿ Ceitec e de publicização, mediante transferência, a uma organização social ¿ OS, de suas atividades direcionadas à pesquisa científica, ao desenvolvimento tecnológico e à inovação no setor de microeletrônica, estaria eivado de graves irregularidades, por atender a interesses alheios aos interesses públicos e nacionais.",
-   "natureza": "Representação",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "1719/2023",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1306120216",
-   "data_primeiro_andamento": "2023-08-29",
-   "data_ultimo_andamento": "2023-09-12",
-   "data_encerramento": "2023-09-12",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
    "numero": "038.225/2021-2",
    "id": "03822520212",
    "assunto": "Representação para avaliar os reais impactos e riscos orçamentários, financeiros e fiscais da Proposta de Emenda à Constituição 23/2021, que propõe alterações no regime de pagamento dos precatórios e outras revisões nas regras orçamentárias e fiscais.",
@@ -5937,14 +5563,12 @@
    "unidade_tecnica": null,
    "orgaos": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -5978,30 +5602,6 @@
    "data_ultimo_andamento": "2023-08-22",
    "data_encerramento": "2023-08-22",
    "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "000.224/2021-9",
-   "id": "00022420219",
-   "assunto": "Representação formulada pela SeinfraCOM/TCU a respeito de possíveis irregularidades ocorridas na Codevasf relacionadas a pregões eletrônicos realizados no exercício de 2020 para o registro de preços de serviços de pavimentação de vias públicas localizadas em municípios diversos na área de atuação da companhia.",
-   "natureza": "Representação",
-   "relator": "Augusto Sherman",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=22420219",
-   "data_primeiro_andamento": "2023-08-11",
-   "data_ultimo_andamento": "2024-02-08",
-   "data_encerramento": "2023-08-11",
-   "motivo_encerramento": "Outros",
    "n_movimentacoes": 3
   },
   {
@@ -6105,30 +5705,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "032.080/2021-2",
-   "id": "03208020212",
-   "assunto": "Possíveis irregularidades na aplicação de recursos federais da modalidade \"0EC2 - Transferências Especiais\", decorrentes de emendas parlamentares impositivas.",
-   "natureza": "Consulta",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3208020212",
-   "data_primeiro_andamento": "2023-05-12",
-   "data_ultimo_andamento": "2023-07-14",
-   "data_encerramento": "2023-07-14",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "011.615/2010-9",
    "id": "01161520109",
    "assunto": "OBRAS DO EIXO LESTE",
@@ -6173,54 +5749,6 @@
    "data_primeiro_andamento": "2023-06-14",
    "data_ultimo_andamento": "2023-07-06",
    "data_encerramento": "2023-07-06",
-   "motivo_encerramento": "Outros",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "009.197/2019-2",
-   "id": "00919720192",
-   "assunto": "Representação, com pedido cautelar, acerca de possíveis violações a dispositivos legais referente à decisão do Ministro da Educação em proceder ao corte orçamentário em Universidades Federais",
-   "natureza": "Representação",
-   "relator": "Benjamin Zymler",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "1148/2023",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=919720192",
-   "data_primeiro_andamento": "2023-06-12",
-   "data_ultimo_andamento": "2023-06-27",
-   "data_encerramento": "2023-06-27",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
-   "numero": "022.781/2018-8",
-   "id": "02278120188",
-   "assunto": "Acompanhamento da estruturação da Agência Nacional de Mineração-ANM.",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2278120188",
-   "data_primeiro_andamento": "2023-06-16",
-   "data_ultimo_andamento": "2025-09-30",
-   "data_encerramento": "2023-06-23",
    "motivo_encerramento": "Outros",
    "n_movimentacoes": 3
   },
@@ -6325,54 +5853,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "042.403/2021-9",
-   "id": "04240320219",
-   "assunto": "Representação referente à licitação com número 22021, modalidade Concorrência e códigoUasg 926458 (nº da Representação no sistema: 453/2021)",
-   "natureza": "Representação",
-   "relator": "Antonio Anastasia",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=4240320219",
-   "data_primeiro_andamento": "2023-01-02",
-   "data_ultimo_andamento": "2023-06-12",
-   "data_encerramento": "2023-05-17",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "006.209/2019-0",
-   "id": "00620920190",
-   "assunto": "Consulta formulada pelo Presidente do Conselho da Justiça Federal a respeito da aplicação do modelo de locação built to suit (aluguel sob medida) para construções em terrenos pertencentes à União.",
-   "natureza": "Consulta",
-   "relator": "Antonio Anastasia",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=620920190",
-   "data_primeiro_andamento": "2023-05-03",
-   "data_ultimo_andamento": "2023-05-08",
-   "data_encerramento": "2023-05-08",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "020.545/2004-0",
    "id": "02054520040",
    "assunto": "TCE CONTRA O SENHOR FRANCISCO HÉLIO DE SOUZA -  - MOTIVO: IRREGULARIDADES NA APLICAÇÃO DO CONV. N° 209/97 - MPO/MIN/SEPRE(PROCESSO ORIGINAL N° 59000.002073/2003-30 ).",
@@ -6421,30 +5901,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "002.088/2022-3",
-   "id": "00208820223",
-   "assunto": "Acompanhamento Permanente da Dívida Pública Federal - 2º Sem2021",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=208820223",
-   "data_primeiro_andamento": "2023-03-07",
-   "data_ultimo_andamento": "2023-03-09",
-   "data_encerramento": "2023-03-09",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "020.613/2022-9",
    "id": "02061320229",
    "assunto": "Possíveis irregularidades no Projeto de Lei Orçamentária do exercício de 2023, encaminhado pelo Poder Executivo ao Congresso Nacional, relacionadas à redução de recursos para o Programa Farmácia Popular.",
@@ -6466,30 +5922,6 @@
    "data_ultimo_andamento": "2023-02-27",
    "data_encerramento": "2023-02-27",
    "motivo_encerramento": "Ausência pressupostos constituição/desenvolvimento",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "013.265/2021-0",
-   "id": "01326520210",
-   "assunto": "FCB 2021 - Auditoria Contenção de Encostas em 98 setores de alto risco em Salvador/BA",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Augusto Sherman",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1326520210",
-   "data_primeiro_andamento": "2023-02-10",
-   "data_ultimo_andamento": "2023-02-14",
-   "data_encerramento": "2023-02-14",
-   "motivo_encerramento": "Outros",
    "n_movimentacoes": 3
   },
   {
@@ -6597,126 +6029,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "044.220/2021-9",
-   "id": "04422020219",
-   "assunto": "Esclarecer se a  integralização de bens imóveis públicos em fundos de investimento imobiliário, conforme autorizado pelo art. 20 da Lei nº 13.240, de 2015, configura ou não despesa ou receita orçamentária, tendo em vista que a legislação não é explícita sobre o tratamento orçamentário a ser dado ao caso em tela, bem como a inexistência de precedentes no âmbito federal.",
-   "natureza": "Consulta",
-   "relator": "Jorge Oliveira",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=4422020219",
-   "data_primeiro_andamento": "2022-11-28",
-   "data_ultimo_andamento": "2023-09-21",
-   "data_encerramento": "2022-11-28",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "035.893/2019-2",
-   "id": "03589320192",
-   "assunto": "Monitoramento do cumprimento da determinação contida no item 9.5 do\nAcórdão 1.827/2017¿TCU¿Plenário (FISC-NE)",
-   "natureza": "Monitoramento",
-   "relator": "Antonio Anastasia",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "2261/2022",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3589320192",
-   "data_primeiro_andamento": "2022-10-19",
-   "data_ultimo_andamento": "2022-12-23",
-   "data_encerramento": "2022-11-25",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
-   "numero": "029.738/2018-0",
-   "id": "02973820180",
-   "assunto": "Representação com vistas a que o Tribunal apure indícios de manipulação dos resultados fiscais primários da União nos exercícios de 2008 a 2015, bem como a possível realização de despesas públicas sem a devida autorização legislativa.",
-   "natureza": "Representação",
-   "relator": "Antonio Anastasia",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2973820180",
-   "data_primeiro_andamento": "2022-11-01",
-   "data_ultimo_andamento": "2022-11-03",
-   "data_encerramento": "2022-11-03",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "004.557/2022-0",
-   "id": "00455720220",
-   "assunto": "Auditoria integrada para avaliar a legalidade das despesas processuais decorrentes da representação judicial da União feita pela Advocacia Geral da União",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Antonio Anastasia",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=455720220",
-   "data_primeiro_andamento": "2022-10-27",
-   "data_ultimo_andamento": "2022-10-31",
-   "data_encerramento": "2022-10-31",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "024.304/2020-4",
-   "id": "02430420204",
-   "assunto": "Natureza jurídica dos repasses federais a título de auxílio financeiro e apoio financeiro aos entes subnacionais com o objetivo de mitigar as dificuldades financeiras decorrentes do estado de calamidade pública nacional e da emergência de saúde pública de importância internacional decorrente do coronavírus (Covid-19).",
-   "natureza": "Representação",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2430420204",
-   "data_primeiro_andamento": "2022-09-26",
-   "data_ultimo_andamento": "2022-10-25",
-   "data_encerramento": "2022-10-25",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "047.592/2020-6",
    "id": "04759220206",
    "assunto": "Restos a pagar oriundos de créditos extraordinários do \"Orçamento de Guerra\" (EC 106/2020)",
@@ -6739,150 +6051,6 @@
    "data_primeiro_andamento": "2022-09-15",
    "data_ultimo_andamento": "2022-10-24",
    "data_encerramento": "2022-10-24",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "015.694/2019-4",
-   "id": "01569420194",
-   "assunto": "Auditoria operacional para avaliar a atuação da Secretaria de Coordenação e Governança das Empresas Estatais no exercício das atribuições tratadas no artigo 92 do Decreto 9.745/2019.",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "57/2022",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1569420194",
-   "data_primeiro_andamento": "2022-01-27",
-   "data_ultimo_andamento": "2022-12-06",
-   "data_encerramento": "2022-10-05",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 5
-  },
-  {
-   "numero": "012.887/2021-8",
-   "id": "01288720218",
-   "assunto": "Auditoria na Governança e Gestão do Fundo de Defesa da Economia Cafeeira (Funcafé)",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Marcos Bemquerer",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1288720218",
-   "data_primeiro_andamento": "2022-08-03",
-   "data_ultimo_andamento": "2026-04-30",
-   "data_encerramento": "2022-08-03",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "014.922/2021-5",
-   "id": "01492220215",
-   "assunto": "Exercício de 2020",
-   "natureza": "Contas do Presidente da República",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1492220215",
-   "data_primeiro_andamento": "2022-07-15",
-   "data_ultimo_andamento": "2023-10-11",
-   "data_encerramento": "2022-07-15",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "018.177/2020-4",
-   "id": "01817720204",
-   "assunto": "Prestação de Contas do Governo Federal, no exercício de 2019",
-   "natureza": "Contas do Presidente da República",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1817720204",
-   "data_primeiro_andamento": "2022-07-15",
-   "data_ultimo_andamento": "2022-07-15",
-   "data_encerramento": "2022-07-15",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "016.758/2020-0",
-   "id": "01675820200",
-   "assunto": "Acompanhamento das medidas adotadas pelo Ministério da Ciência, Tecnologia, Inovações e Comunicações (MCTIC) e suas respectivas unidades vinculadas para o combate à crise gerada pelo coronavírus (covid-19).",
-   "natureza": "Acompanhamento",
-   "relator": "Augusto Nardes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1675820200",
-   "data_primeiro_andamento": "2021-07-21",
-   "data_ultimo_andamento": "2022-06-27",
-   "data_encerramento": "2022-06-27",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "016.841/2020-4",
-   "id": "01684120204",
-   "assunto": "Acompanhamento Especial das medidas de resposta à crise do Coronavírus na arrecadação tributária e previdenciária federal.",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1684120204",
-   "data_primeiro_andamento": "2022-05-23",
-   "data_ultimo_andamento": "2022-05-27",
-   "data_encerramento": "2022-05-27",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
   },
@@ -6963,30 +6131,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "016.759/2020-6",
-   "id": "01675920206",
-   "assunto": "Acompanhamento das ações relacionadas à Educação Básica, especificamente no que tange ao Pnae e PDDE, em decorrência da pandemia do Covid-19",
-   "natureza": "Acompanhamento",
-   "relator": "Augusto Nardes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "2714/2021",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1675920206",
-   "data_primeiro_andamento": "2021-11-18",
-   "data_ultimo_andamento": "2022-03-09",
-   "data_encerramento": "2022-03-09",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
    "numero": "045.764/2020-4",
    "id": "04576420204",
    "assunto": "Verificação material das ações de manutenção e desenvolvimento do ensino, para fins de apuração do gasto mínimo em educação determinado pela CF/1988.",
@@ -6994,13 +6138,11 @@
    "relator": "Walton Alencar Rodrigues",
    "unidade_tecnica": null,
    "orgaos": [
-    "AECI",
-    "SOF"
+    "AECI"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "AECI",
-    "SOF"
+    "AECI"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -7011,30 +6153,6 @@
    "data_encerramento": "2022-03-04",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 4
-  },
-  {
-   "numero": "013.512/2021-8",
-   "id": "01351220218",
-   "assunto": "Possibilidade de não se enquadrar como renúncia de receita a isenção fiscal ao setor de eventos, pretendida no PL 5638/2020.",
-   "natureza": "Consulta",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1351220218",
-   "data_primeiro_andamento": "2022-02-07",
-   "data_ultimo_andamento": "2022-02-07",
-   "data_encerramento": "2022-02-07",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
   },
   {
    "numero": "005.283/2019-1",
@@ -7113,150 +6231,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "036.882/2020-8",
-   "id": "03688220208",
-   "assunto": "Auditoria no Programa de P&D de Energia Elétrica",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Jorge Oliveira",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3688220208",
-   "data_primeiro_andamento": "2021-12-07",
-   "data_ultimo_andamento": "2021-12-27",
-   "data_encerramento": "2021-12-27",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "033.311/2020-0",
-   "id": "03331120200",
-   "assunto": "Levantamento nos Fundos Federais Infra-Constitucionais que compõem Orçamento-Geral da União",
-   "natureza": "Relatório de Levantamento",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3331120200",
-   "data_primeiro_andamento": "2021-12-06",
-   "data_ultimo_andamento": "2021-12-10",
-   "data_encerramento": "2021-12-10",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "012.992/2021-6",
-   "id": "01299220216",
-   "assunto": "Acompanhamento - Projeto de Lei de Diretrizes Orçamentárias (PLDO) da União para o exercício financeiro de 2022",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1299220216",
-   "data_primeiro_andamento": "2021-12-08",
-   "data_ultimo_andamento": "2021-12-09",
-   "data_encerramento": "2021-12-09",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "047.579/2020-0",
-   "id": "04757920200",
-   "assunto": "Transposição e reprogramação de saldos financeiros constantes dos fundos de assistência social dos entes subnacionais provenientes de repasses federais realizados por meio do Fundo Nacional de Assistência Social.",
-   "natureza": "Representação",
-   "relator": "Marcos Bemquerer",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "12072/2021",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=4757920200",
-   "data_primeiro_andamento": "2021-08-31",
-   "data_ultimo_andamento": "2021-11-19",
-   "data_encerramento": "2021-11-19",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
-   "numero": "016.398/2021-1",
-   "id": "01639820211",
-   "assunto": "Representação referente ao ato de gestão com códigoUasg 200999 (nº da Representação no sistema: 110/2021)",
-   "natureza": "Representação",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1639820211",
-   "data_primeiro_andamento": "2021-09-01",
-   "data_ultimo_andamento": "2021-11-18",
-   "data_encerramento": "2021-11-18",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "008.162/2019-0",
-   "id": "00816220190",
-   "assunto": "FCB 2019_Fiscalização de edital da obra do Centro de Processamento Final de Imunobiológicos da Fiocruz",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Benjamin Zymler",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=816220190",
-   "data_primeiro_andamento": "2021-11-17",
-   "data_ultimo_andamento": "2022-07-20",
-   "data_encerramento": "2021-11-17",
-   "motivo_encerramento": "Matéria tratada em outro processo",
-   "n_movimentacoes": 2
-  },
-  {
    "numero": "013.117/2012-2",
    "id": "01311720122",
    "assunto": "PROCESSO 04330.000214/2009-41, TOMADA DE CONTAS ESPECIAL RELATIVA AO CONVÊNIO N. 542/1997 (SIAFI 344031) TENDO POR OBJETO A RECUPERAÇÃO DE CASAS",
@@ -7329,102 +6303,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "031.829/2017-1",
-   "id": "03182920171",
-   "assunto": "Orientação quanto aos procedimentos adotados pela Administração Central para o pagamento de serviços efetivados pelos extraquadros, focalizando o uso de recursos do Fundo Nacional de Saúde (FNS), no âmbito da ação orçamentária \"8585 - Atenção à Saúde da População para Procedimentos em Média e Alta Complexidade\"",
-   "natureza": "Representação",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3182920171",
-   "data_primeiro_andamento": "2021-09-16",
-   "data_ultimo_andamento": "2021-09-30",
-   "data_encerramento": "2021-09-30",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "006.748/2021-0",
-   "id": "00674820210",
-   "assunto": "Consulta formulada pelo Ministro de Estado da Economia acerca da caracterização de imprevisibilidade, para fins do disposto no art. 167, § 3º, da Constituição da República Federativa do Brasil (CRFB), das despesas, discricionárias ou obrigatórias, consideradas relevantes e urgentes, as quais não podem ser realizadas por estarem condicionadas à aprovação do projeto de lei orçamentária anual e do projeto de lei específico que demanda aprovação por maioria absoluta do Congresso Nacional (CN), colocando em risco a higidez de direitos fundamentais e a continuidade de serviços públicos essenciais, a exemplo de despesas com a Operação Carro Pipa e a folha de pessoal ativo",
-   "natureza": "Consulta",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=674820210",
-   "data_primeiro_andamento": "2021-06-23",
-   "data_ultimo_andamento": "2021-09-26",
-   "data_encerramento": "2021-09-26",
-   "motivo_encerramento": "Outros",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "026.274/2020-5",
-   "id": "02627420205",
-   "assunto": "Possíveis irregularidades na aplicação de recursos destinados em virtude da Lei 173/2020 - COVID-19.",
-   "natureza": "Representação",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2627420205",
-   "data_primeiro_andamento": "2021-09-03",
-   "data_ultimo_andamento": "2021-09-22",
-   "data_encerramento": "2021-09-22",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "016.865/2020-0",
-   "id": "01686520200",
-   "assunto": "Acompanhamento das ações do Ministério da Infraestrutura e Comando da Aeronáutica para o enfrentamento da Covid-19   Diferimento do pagamento das tarifas aeronáuticas.",
-   "natureza": "Acompanhamento",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1686520200",
-   "data_primeiro_andamento": "2021-09-08",
-   "data_ultimo_andamento": "2021-09-21",
-   "data_encerramento": "2021-09-21",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "012.888/2021-4",
    "id": "01288820214",
    "assunto": "Resultados Fiscais e Execução Orçamentária e Financeira da União - 1° Bimestre 2021",
@@ -7451,30 +6329,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "020.972/2019-9",
-   "id": "02097220199",
-   "assunto": "Reservas internacionais do Banco Central do Brasil",
-   "natureza": "Relatório de Levantamento",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2097220199",
-   "data_primeiro_andamento": "2021-06-08",
-   "data_ultimo_andamento": "2021-08-04",
-   "data_encerramento": "2021-08-04",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 2
-  },
-  {
    "numero": "000.283/2015-0",
    "id": "00028320150",
    "assunto": "Tomada de contas especial instaurada pela Caixa Econômica Federal contra a Sra. Silvana Weles de Oliveira por prejuízo causado por empregada pública.(Proc. 00190.004425/2014-10)",
@@ -7495,78 +6349,6 @@
    "data_primeiro_andamento": "2021-04-30",
    "data_ultimo_andamento": "2021-06-25",
    "data_encerramento": "2021-06-25",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "036.992/2019-4",
-   "id": "03699220194",
-   "assunto": "Prestação de Contas Ordinária de Indústria de Material Bélico do  Brasil relativa ao Exercício Financeiro de 2018",
-   "natureza": "Prestação de Contas",
-   "relator": "Augusto Sherman",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3699220194",
-   "data_primeiro_andamento": "2021-06-09",
-   "data_ultimo_andamento": "2021-06-14",
-   "data_encerramento": "2021-06-14",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "035.391/2020-0",
-   "id": "03539120200",
-   "assunto": "Relatórios de Gestão Fiscal (RGF) - 2º Quadrimestre 2020",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3539120200",
-   "data_primeiro_andamento": "2021-05-04",
-   "data_ultimo_andamento": "2021-05-04",
-   "data_encerramento": "2021-05-04",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "002.378/2018-3",
-   "id": "00237820183",
-   "assunto": "Auditoria em processos de aquisição e contratação de trens (material rodante) pela CBTU.",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=237820183",
-   "data_primeiro_andamento": "2021-04-20",
-   "data_ultimo_andamento": "2023-01-31",
-   "data_encerramento": "2021-04-23",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
   },
@@ -7597,30 +6379,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "017.727/2020-0",
-   "id": "01772720200",
-   "assunto": "Acompanhamento - Projeto de Lei de Diretrizes Orçamentárias (PLDO) da União para 2021",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1772720200",
-   "data_primeiro_andamento": "2021-02-11",
-   "data_ultimo_andamento": "2021-02-12",
-   "data_encerramento": "2021-02-12",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "030.532/2020-5",
    "id": "03053220205",
    "assunto": "Conformidade fiscal do Projeto de Lei Orçamentária Anual da União para o exercício financeiro de 2021 (PLOA 2021)",
@@ -7643,54 +6401,6 @@
    "data_primeiro_andamento": "2021-02-02",
    "data_ultimo_andamento": "2021-02-11",
    "data_encerramento": "2021-02-02",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "031.047/2019-0",
-   "id": "03104720190",
-   "assunto": "Prestação de Contas Ordinária de CONTROLADORIA-GERAL DA UNIÃO (VINCULADOR) relativa ao Exercício Financeiro de 2018",
-   "natureza": "Prestação de Contas",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "12161/2020",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3104720190",
-   "data_primeiro_andamento": "2020-11-09",
-   "data_ultimo_andamento": "2021-01-29",
-   "data_encerramento": "2021-01-29",
-   "motivo_encerramento": "Apensamento",
-   "n_movimentacoes": 4
-  },
-  {
-   "numero": "020.238/2020-7",
-   "id": "02023820207",
-   "assunto": "Acompanhamento - Relatórios de Gestão Fiscal (RGF) 1º Quadrimestre 2020",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2023820207",
-   "data_primeiro_andamento": "2021-01-21",
-   "data_ultimo_andamento": "2021-01-21",
-   "data_encerramento": "2021-01-21",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
   },
@@ -7823,102 +6533,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "012.691/2018-6",
-   "id": "01269120186",
-   "assunto": "Representação de membro do MPTCU, com pedido de medida cautelar, para avaliar a conformidade das concessões de benefícios tributários decorrentes da Lei 13.606/2018 e da Lei Complementar 162/2018",
-   "natureza": "Representação",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1269120186",
-   "data_primeiro_andamento": "2020-09-21",
-   "data_ultimo_andamento": "2023-02-28",
-   "data_encerramento": "2020-10-08",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "040.300/2019-6",
-   "id": "04030020196",
-   "assunto": "Acompanhamento - Relatórios de Gestão Fiscal (RGF) - 3º Quadrimestre 2019",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=4030020196",
-   "data_primeiro_andamento": "2020-09-23",
-   "data_ultimo_andamento": "2020-09-24",
-   "data_encerramento": "2020-09-24",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 2
-  },
-  {
-   "numero": "013.743/2019-8",
-   "id": "01374320198",
-   "assunto": "Ofício nº 52/2019/CFFC-P, de 5-6-2019. Presidente da Comissão de Fiscalização Financeira e Controle, encaminha cópia da PFC nº 5, de 2019 ,de autoria dos Deputados Patrus Ananias e outros, solicitando \"ato de fiscalização e controle sobre o Acordo de Assunção de Compromissos, firmado entre o Ministério Público Federal do Estado do Paraná e a Petróleo Brasileiro S.A. - Petrobrás\".",
-   "natureza": "Solicitação do Congresso Nacional",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1374320198",
-   "data_primeiro_andamento": "2020-08-26",
-   "data_ultimo_andamento": "2020-08-28",
-   "data_encerramento": "2020-08-28",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "025.656/2020-1",
-   "id": "02565620201",
-   "assunto": "Pedido de vista e cópia TC 033.5416/2014-6",
-   "natureza": "Solicitação",
-   "relator": "Weder de Oliveira",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2565620201",
-   "data_primeiro_andamento": "2020-08-12",
-   "data_ultimo_andamento": "2020-08-14",
-   "data_encerramento": "2020-08-14",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "023.716/2014-2",
    "id": "02371620142",
    "assunto": "Nos termos do ACÓRDÃO Nº 4492/2014 - TCU - 2ª Câmara (TC 015.306/2013-5), com fundamento no art. 47 da Lei nº 8.443/1992, c/c os arts.143, inciso V, alínea g, e 252 do Regimento Interno, e o art. 41 da Resolução TCU nº 259/2014 foi instaurada Tomada de Contas Especial a fim de reaver os valores pagos a maior e considerados superfaturados.",
@@ -7941,30 +6555,6 @@
    "data_encerramento": "2020-08-04",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 4
-  },
-  {
-   "numero": "005.557/2019-4",
-   "id": "00555720194",
-   "assunto": "005.557/2019-4 - Denúncia",
-   "natureza": "Denúncia",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=555720194",
-   "data_primeiro_andamento": "2020-06-04",
-   "data_ultimo_andamento": "2020-06-25",
-   "data_encerramento": "2020-06-25",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
   },
   {
    "numero": "033.654/2019-0",
@@ -8017,30 +6607,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "030.005/2017-5",
-   "id": "03000520175",
-   "assunto": "Auditoria operacional com o objetivo de avaliar o planejamento dos investimentos federais em infraestrutura hídrica voltados à mitigação da escassez de água",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Augusto Nardes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "10/2020",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3000520175",
-   "data_primeiro_andamento": "2020-01-23",
-   "data_ultimo_andamento": "2022-09-09",
-   "data_encerramento": "2020-05-04",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
    "numero": "016.654/2019-6",
    "id": "01665420196",
    "assunto": "Acompanhamento sobre o Fim da Compensação do Excesso de Despesas em relação aos Limites do Novo Regime Fiscal (Teto de Gastos)",
@@ -8063,54 +6629,6 @@
    "data_primeiro_andamento": "2020-05-02",
    "data_ultimo_andamento": "2020-06-22",
    "data_encerramento": "2020-05-02",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "009.727/2019-1",
-   "id": "00972720191",
-   "assunto": "FCB 2019 - Centro de Hematologia e Oncologia do Grupo Hospitalar Conceição (GHC) em Porto Alegre/RS",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=972720191",
-   "data_primeiro_andamento": "2020-04-23",
-   "data_ultimo_andamento": "2022-10-27",
-   "data_encerramento": "2020-04-24",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "034.518/2018-5",
-   "id": "03451820185",
-   "assunto": "Auditoria financeira dos demonstrativos do FRGPS relativos ao exercício 2018.",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Ana Arraes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3451820185",
-   "data_primeiro_andamento": "2019-09-17",
-   "data_ultimo_andamento": "2020-03-19",
-   "data_encerramento": "2020-03-19",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
   },
@@ -8141,54 +6659,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "027.900/2017-7",
-   "id": "02790020177",
-   "assunto": "Prestação de Contas Ordinária de Secretaria da Receita Federal do Brasil relativa ao Exercício Financeiro de 2016",
-   "natureza": "Prestação de Contas",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "12834/2019",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2790020177",
-   "data_primeiro_andamento": "2019-11-29",
-   "data_ultimo_andamento": "2026-10-15",
-   "data_encerramento": "2020-03-03",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
-   "numero": "033.615/2019-5",
-   "id": "03361520195",
-   "assunto": "Acompanhamento dos Relatórios de Gestão Fiscal do 2º Quadrimestre de 2019",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "47/2020",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3361520195",
-   "data_primeiro_andamento": "2020-01-24",
-   "data_ultimo_andamento": "2020-03-03",
-   "data_encerramento": "2020-03-03",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
    "numero": "025.397/2017-6",
    "id": "02539720176",
    "assunto": "Previsão de Receitas, Despesas e Resultado Primário no PLOA - 2018",
@@ -8213,30 +6683,6 @@
    "data_encerramento": "2020-02-21",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
-  },
-  {
-   "numero": "037.320/2018-1",
-   "id": "03732020181",
-   "assunto": "Acompanhamento do planejamento governamental com enfoque na elaboração do PPA 2020-2023",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "54/2020",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3732020181",
-   "data_primeiro_andamento": "2020-01-29",
-   "data_ultimo_andamento": "2020-03-19",
-   "data_encerramento": "2020-02-21",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
   },
   {
    "numero": "014.981/2017-3",
@@ -8265,30 +6711,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "009.306/2019-6",
-   "id": "00930620196",
-   "assunto": "Acompanhamento dos Relatórios de Gestão Fiscal do 3º Quadrimestre 2018",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Ana Arraes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "2901/2019",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=930620196",
-   "data_primeiro_andamento": "2019-12-06",
-   "data_ultimo_andamento": "2020-02-11",
-   "data_encerramento": "2020-02-11",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
-  },
-  {
    "numero": "021.655/2019-7",
    "id": "02165520197",
    "assunto": "Acompanhamento dos Resultados Fiscais do 3º Bimestre de 2019.",
@@ -8313,30 +6735,6 @@
    "data_encerramento": "2020-02-11",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
-  },
-  {
-   "numero": "036.342/2019-0",
-   "id": "03634220190",
-   "assunto": "Of. nº 1139/2019/SGM/P, de 7/10/2019, por intermédio do qual o Presidente da Câmara dos Deputados encaminha a SIT nº 3/2019, de autoria do Deputado Dr. Leonardo, requerendo informações sobre o monitoramento das determinações constantes no Acórdão 1.084/2018P, relativas a situação atual da dívida pública federal.",
-   "natureza": "Solicitação do Congresso Nacional",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "2833/2019",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3634220190",
-   "data_primeiro_andamento": "2019-11-29",
-   "data_ultimo_andamento": "2020-01-24",
-   "data_encerramento": "2020-01-24",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 4
   },
   {
    "numero": "012.177/2019-9",
@@ -8365,54 +6763,6 @@
    "n_movimentacoes": 4
   },
   {
-   "numero": "023.683/2018-0",
-   "id": "02368320180",
-   "assunto": "Representação com pedido de cautelar acerca de possíveis irregularidades na contratação da Visiona pela Telebrás para o segundo Satélite Geoestacionário de Defesa e Comunicações Estratégicas (SGDC 2).",
-   "natureza": "Representação",
-   "relator": "Ana Arraes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2368320180",
-   "data_primeiro_andamento": "2019-09-05",
-   "data_ultimo_andamento": "2019-10-22",
-   "data_encerramento": "2019-09-17",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "039.853/2018-7",
-   "id": "03985320187",
-   "assunto": "Consulta sobre a possibilidade de execução de despesa pública aprovada sem a adequação orçamentária e financeira.",
-   "natureza": "Consulta",
-   "relator": "Raimundo Carreiro",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3985320187",
-   "data_primeiro_andamento": "2019-09-05",
-   "data_ultimo_andamento": "2019-09-06",
-   "data_encerramento": "2019-09-06",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "040.239/2018-7",
    "id": "04023920187",
    "assunto": "Acompanhamento dos Resultados Fiscais - 5º Bimestre -2018",
@@ -8439,30 +6789,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "017.245/2017-6",
-   "id": "01724520176",
-   "assunto": "Levantamento Integrado de Governança Pública Organizacional 2017",
-   "natureza": "Relatório de Levantamento",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1724520176",
-   "data_primeiro_andamento": "2019-08-09",
-   "data_ultimo_andamento": "2019-08-09",
-   "data_encerramento": "2019-08-09",
-   "motivo_encerramento": "Outros",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "005.345/2019-7",
    "id": "00534520197",
    "assunto": "Acompanhamento dos Resultados Fiscais do 1º Bimestre - 2019",
@@ -8485,30 +6811,6 @@
    "data_primeiro_andamento": "2019-07-12",
    "data_ultimo_andamento": "2019-08-26",
    "data_encerramento": "2019-08-02",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "018.119/2018-2",
-   "id": "01811920182",
-   "assunto": "Acompanhamento do Relatório de Gestão Fiscal do 1º Quadrimestre - 2018",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Ana Arraes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1811920182",
-   "data_primeiro_andamento": "2019-07-19",
-   "data_ultimo_andamento": "2019-08-27",
-   "data_encerramento": "2019-07-19",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
   },
@@ -8539,54 +6841,6 @@
    "n_movimentacoes": 4
   },
   {
-   "numero": "036.547/2018-2",
-   "id": "03654720182",
-   "assunto": "Acompanhamento dos Relatórios de Gestão Fiscal do 2º Quadrimestre 2018",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Ana Arraes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3654720182",
-   "data_primeiro_andamento": "2019-06-10",
-   "data_ultimo_andamento": "2019-06-13",
-   "data_encerramento": "2019-06-13",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "035.433/2017-5",
-   "id": "03543320175",
-   "assunto": "OF. Nº 1262/2017-SF, de 28/11/2017.  1º Secretário, Senador José Pimentel, informa que o Relatório Final da CPI da Previdência, decorrente do Requerimento nº 161, de 2017, criada para investigar a contabilidade da previdência social, esclarecendo com precisão as receitas e as despesas do sistema, bem como todos os desvios de recursos, sejam anistias, desonerações, desvinculações, sonegação ou qualquer outro meio que propicie a retirada de fontes da previ., focando não somente nos valores, mas também nos beneficiários desses desvios,   está disponível  no endereço eletrônico http://bit.1y/cpiprev. as recomendações que constam na página 234 a 236 do referido Relatório, para providências cabíveis.",
-   "natureza": "Solicitação do Congresso Nacional",
-   "relator": "Raimundo Carreiro",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3543320175",
-   "data_primeiro_andamento": "2019-02-22",
-   "data_ultimo_andamento": "2019-04-16",
-   "data_encerramento": "2019-04-16",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "034.328/2018-1",
    "id": "03432820181",
    "assunto": "examinar a previsão dos principais agregados fiscais no PLOA-2019",
@@ -8609,54 +6863,6 @@
    "data_primeiro_andamento": "2019-03-29",
    "data_ultimo_andamento": "2019-09-03",
    "data_encerramento": "2019-03-29",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "012.191/2018-3",
-   "id": "01219120183",
-   "assunto": "Representação, com pedido de medida cautelar, contra os pregões eletrônicos nº 109 a 113/2017/GAMA/SUPEL/RO",
-   "natureza": "Representação",
-   "relator": "Weder de Oliveira",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1219120183",
-   "data_primeiro_andamento": "2018-12-20",
-   "data_ultimo_andamento": "2018-12-21",
-   "data_encerramento": "2018-12-21",
-   "motivo_encerramento": "Outros",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "008.530/2018-1",
-   "id": "00853020181",
-   "assunto": "Consulta formulada pelo ministro-substituto do Planejamento sobre a desvinculação do superávit financeiro apurado no Balanço Patrimonial da União.",
-   "natureza": "Consulta",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=853020181",
-   "data_primeiro_andamento": "2018-12-03",
-   "data_ultimo_andamento": "2018-12-11",
-   "data_encerramento": "2018-12-11",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 3
   },
@@ -10351,54 +8557,6 @@
    "n_movimentacoes": 0
   },
   {
-   "numero": "000.690/2020-1",
-   "id": "00069020201",
-   "assunto": "Objeto(s) do processo: \r\nNão classificado - Apurar a atuação do Ministério da Economia na contratação de militares da reserva para compor o quadro do Instituto Nacional do Seguro Social (INSS), ante os indícios de\r\ndescumprimento à disposição constitucional acerca da necessidade de contratação mediante concurso público e à sujeição aos princípios da legalidade e da impessoalidade, contidos nos artigos 37 e 37, II, da Constituição Federal.",
-   "natureza": "Representação",
-   "relator": "Jhonatan de Jesus",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=69020201",
-   "data_primeiro_andamento": "2023-06-26",
-   "data_ultimo_andamento": "2023-06-26",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 1
-  },
-  {
-   "numero": "001.202/2019-7",
-   "id": "00120220197",
-   "assunto": "001.202/2019-7 - Denúncia",
-   "natureza": "Denúncia",
-   "relator": "Raimundo Carreiro",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=120220197",
-   "data_primeiro_andamento": "2023-03-03",
-   "data_ultimo_andamento": "2023-04-10",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "001.438/2023-9",
    "id": "00143820239",
    "assunto": "Fiscobras 2023 - Ramal do Agreste Pernambucano",
@@ -10779,30 +8937,6 @@
    "n_movimentacoes": 0
   },
   {
-   "numero": "004.090/2018-7",
-   "id": "00409020187",
-   "assunto": "Acompanhamento dos Relatórios de Gestão Fiscal - 3º Quadrimestre 2017",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=409020187",
-   "data_primeiro_andamento": "2018-05-21",
-   "data_ultimo_andamento": "2018-05-22",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "004.282/1998-1",
    "id": "00428219981",
    "assunto": "PRESTAÇÃO DE CONTAS DO DNER -  EXERCÍCIO DE 1997",
@@ -10834,13 +8968,11 @@
    "relator": "Vital do Rêgo",
    "unidade_tecnica": null,
    "orgaos": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -10946,30 +9078,6 @@
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=503720038",
    "data_primeiro_andamento": "2011-06-06",
    "data_ultimo_andamento": "2012-03-27",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "005.182/2021-2",
-   "id": "00518220212",
-   "assunto": "Relatórios de Gestão Fiscal (RGF) - 3º Quadrimestre 2020",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=518220212",
-   "data_primeiro_andamento": "2022-04-20",
-   "data_ultimo_andamento": "2022-04-28",
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 3
@@ -11081,14 +9189,12 @@
    "unidade_tecnica": null,
    "orgaos": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -11249,30 +9355,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 4
-  },
-  {
-   "numero": "007.144/2022-9",
-   "id": "00714420229",
-   "assunto": "Acompanhamento - Projeto de Lei de Diretrizes Orçamentárias (PLDO) da União para o exercício financeiro de 2023",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=714420229",
-   "data_primeiro_andamento": "2023-02-01",
-   "data_ultimo_andamento": "2023-06-05",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 2
   },
   {
    "numero": "007.205/2022-8",
@@ -11748,30 +9830,6 @@
    "n_movimentacoes": 4
   },
   {
-   "numero": "009.376/2021-6",
-   "id": "00937620216",
-   "assunto": "Fiscobras 2021 - Fiscalização das obras de contenção do processo de erosão marinha da falésia do Cabo Branco em João Pessoa/PB, objeto da Transferência Legal SEDEC/MDR  203/2018, SIAFI 698487.",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Benjamin Zymler",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "544/2024",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=937620216",
-   "data_primeiro_andamento": "2024-03-27",
-   "data_ultimo_andamento": "2024-04-30",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 4
-  },
-  {
    "numero": "009.671/2013-7",
    "id": "00967120137",
    "assunto": "Levantamento de orçamento e gastos com aquisições logísticas",
@@ -11948,30 +10006,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "010.348/2018-2",
-   "id": "01034820182",
-   "assunto": "Auditoria Operacional sobre a Exposição da Administração Pública Federal a Fraude e Corrupção",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Jorge Oliveira",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1034820182",
-   "data_primeiro_andamento": "2023-08-11",
-   "data_ultimo_andamento": "2025-09-08",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "010.390/2024-3",
    "id": "01039020243",
    "assunto": "PROTEGE-TI-24: Controles de Segurança da Informação nas organizações do SISP - Avaliação via SGD: Auditoria - Tema Segurança da informação e segurança cibernética - LAR 2023-2024",
@@ -12098,30 +10132,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 3
-  },
-  {
-   "numero": "011.649/2018-6",
-   "id": "01164920186",
-   "assunto": "Descumprimento art. 45 LRF - Concorrência Pública n. 0051/2016-09, conduzida pela Superintendência Regional do DNIT no Estado do Paraná (DNIT/PR), cujo objeto é a contratação de empresa para a execução de serviços das obras de implantação e pavimentação na Rodovia BR-376/PR - Contorno Sul Metropolitano de Maringá/PR, com extensão de 32,3 km.",
-   "natureza": "Representação",
-   "relator": "Ana Arraes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1164920186",
-   "data_primeiro_andamento": "2020-12-14",
-   "data_ultimo_andamento": "2020-12-14",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 1
   },
   {
    "numero": "011.649/2020-8",
@@ -12274,30 +10284,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "012.352/2018-7",
-   "id": "01235220187",
-   "assunto": "RELATÓRIO DE RESULTADOS DE POLÍTICAS E PROGRAMAS DE GOVERNO (RePP) - 2018.",
-   "natureza": "Acompanhamento",
-   "relator": "Benjamin Zymler",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1235220187",
-   "data_primeiro_andamento": "2019-05-14",
-   "data_ultimo_andamento": "2019-09-26",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "012.358/2022-3",
    "id": "01235820223",
    "assunto": "Análise da PEC 1/2022 e da compatibilidade dos atos de gestão relacionados à aprovação de emenda à Constituição quanto à aderência às normas de Direito Financeiro, notadamente o Teto de Gastos e a LRF.",
@@ -12322,30 +10308,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 4
-  },
-  {
-   "numero": "012.535/2018-4",
-   "id": "01253520184",
-   "assunto": "Prestação de Contas do Presidente da República, relativa ao exercício financeiro de 2017.",
-   "natureza": "Contas do Presidente da República",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1253520184",
-   "data_primeiro_andamento": "2018-11-01",
-   "data_ultimo_andamento": "2021-06-07",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
   },
   {
    "numero": "012.712/2022-1",
@@ -12604,30 +10566,6 @@
    "n_movimentacoes": 0
   },
   {
-   "numero": "013.534/2019-0",
-   "id": "01353420190",
-   "assunto": "Acompanhamento dos Relatórios de Gestão Fiscal do 1º Quadrimestre de 2019",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1353420190",
-   "data_primeiro_andamento": "2020-05-07",
-   "data_ultimo_andamento": "2020-05-07",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 1
-  },
-  {
    "numero": "013.549/2016-2",
    "id": "01354920162",
    "assunto": "Solicitação de informações relativas ao julgamento das contas do Convênio nº 621/97-SEPRE/MPO, SIAFI nº 345730, firmado entre a Prefeitura Municipal de São José da Lagoa Tapada-PB e o Ministério do Planejamento e Orçamento/MPO. Solicitante: Ministério do Planejamento, Orçamento e Gestão-MPOG. Ana Maria do Nascimento Sivek - Coordenação Geral de Extinção e Convênios.",
@@ -12676,30 +10614,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 1
-  },
-  {
-   "numero": "013.643/2019-3",
-   "id": "01364320193",
-   "assunto": "Prestação de Contas do Presidente da República 2018",
-   "natureza": "Contas do Presidente da República",
-   "relator": "Ana Arraes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1364320193",
-   "data_primeiro_andamento": "2019-09-13",
-   "data_ultimo_andamento": "2019-10-03",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 2
   },
   {
    "numero": "013.707/2009-0",
@@ -13386,30 +11300,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "015.607/2021-6",
-   "id": "01560720216",
-   "assunto": "Solicitação de informação",
-   "natureza": "Solicitação",
-   "relator": "Raimundo Carreiro",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1560720216",
-   "data_primeiro_andamento": "2021-06-17",
-   "data_ultimo_andamento": "2021-07-14",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "015.635/2025-2",
    "id": "01563520252",
    "assunto": "PROTEGE-TI: Identificação e autenticação segura de usuários no Portal GOV.BR",
@@ -13512,30 +11402,6 @@
    "n_movimentacoes": 4
   },
   {
-   "numero": "015.940/2017-9",
-   "id": "01594020179",
-   "assunto": "Fiscalização de Orientação Centralizada (FOC) - Renúncia de Receita",
-   "natureza": "Relatório de Auditoria",
-   "relator": "José Mucio Monteiro",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "2431/2018",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1594020179",
-   "data_primeiro_andamento": "2018-10-26",
-   "data_ultimo_andamento": "2020-11-18",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 2
-  },
-  {
    "numero": "016.088/2026-3",
    "id": "01608820263",
    "assunto": "Representação referente ao ato de gestão (Objeto: Reclassificação administrativa das despesas com precatórios e da Anvisa após aprovação da LOA 2026 pelo Congresso Nacional.)",
@@ -13560,54 +11426,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 4
-  },
-  {
-   "numero": "016.327/2017-9",
-   "id": "01632720179",
-   "assunto": "FocTVs2017 - Auditoria Integrada",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "157/2019",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1632720179",
-   "data_primeiro_andamento": "2018-11-23",
-   "data_ultimo_andamento": "2024-05-27",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 5
-  },
-  {
-   "numero": "016.364/2021-0",
-   "id": "01636420210",
-   "assunto": "Apurar a ocorrência de ilegalidade na execução do orçamento da União pertinente ao presente exercício de 2021 relativamente ao contingenciamento de recursos do Fundo de Desenvolvimento da Ciência e Tecnologia (FNDCT), com limitação de empenho e movimentação financeira vedada pela Lei de Responsabilidade Fiscal, nos termos do seu art. 9º, §2º, segundo a nova redação dada pela Lei Complementar 177, de 12 de janeiro de 2021.",
-   "natureza": "Representação",
-   "relator": "Walton Alencar Rodrigues",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1636420210",
-   "data_primeiro_andamento": "2021-11-16",
-   "data_ultimo_andamento": "2021-11-17",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
   },
   {
    "numero": "016.375/2024-6",
@@ -13686,30 +11504,6 @@
    "n_movimentacoes": 1
   },
   {
-   "numero": "016.827/2020-1",
-   "id": "01682720201",
-   "assunto": "Acompanhamento Especial das medidas de resposta à crise do Coronavírus para proteção da renda de informais e pessoas de baixa renda",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1682720201",
-   "data_primeiro_andamento": "2025-01-28",
-   "data_ultimo_andamento": "2026-10-15",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "016.843/2006-1",
    "id": "01684320061",
    "assunto": "REPRESENTAÇÃO PELA NÃO PRESTAÇÃO DE CONTAS AO MINISTÉRIO DO PLANEJAMENTO E ORÇAMENTO DAS CONTAS REFERENTE  AO CONVÊNIO Nº 441/1997, CELEBRADO ENTRE O MUNICIPIO DE BARÃO DE MELGAÇO E O CITADO MINISTÉRIO",
@@ -13782,54 +11576,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 0
-  },
-  {
-   "numero": "017.054/2020-6",
-   "id": "01705420206",
-   "assunto": "Monitoramento dos itens 9.1.1, 9.1.2, 9.1.3 e 9.1.4 do Acórdão 2937/2018 (gestão dos riscos fiscais no âmbito do Poder Executivo Federal)",
-   "natureza": "Monitoramento",
-   "relator": "Raimundo Carreiro",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1705420206",
-   "data_primeiro_andamento": "2021-09-13",
-   "data_ultimo_andamento": "2021-09-14",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "017.192/2018-8",
-   "id": "01719220188",
-   "assunto": "FOC Inclusão Socioeconômica com objetivos de avaliar as políticas públicas de inclusão social e produtiva.",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Raimundo Carreiro",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1719220188",
-   "data_primeiro_andamento": "2025-10-10",
-   "data_ultimo_andamento": "2025-10-10",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
   },
   {
    "numero": "017.264/2005-5",
@@ -13958,102 +11704,6 @@
    "n_movimentacoes": 0
   },
   {
-   "numero": "018.047/2018-1",
-   "id": "01804720181",
-   "assunto": "Fiscalização de Orientação Centralizada (FOC). Fundo Penitenciário Nacional (Funpen).",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Ana Arraes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1804720181",
-   "data_primeiro_andamento": "2024-08-28",
-   "data_ultimo_andamento": "2026-07-15",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "018.218/2017-2",
-   "id": "01821820172",
-   "assunto": "FISCALIZAÇÕES DO RELATÓRIO DE POLÍTICAS E PROGRAMAS 2017.",
-   "natureza": "Acompanhamento",
-   "relator": "Ana Arraes",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1821820172",
-   "data_primeiro_andamento": "2018-01-02",
-   "data_ultimo_andamento": "2018-01-31",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "018.236/2017-0",
-   "id": "01823620170",
-   "assunto": "Relatório de Gestão Fiscal do 1º Quadrimestre de 2017",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1823620170",
-   "data_primeiro_andamento": "2017-12-05",
-   "data_ultimo_andamento": "2017-12-06",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 2
-  },
-  {
-   "numero": "018.272/2018-5",
-   "id": "01827220185",
-   "assunto": "Auditoria integrada acerca da eficiência e efetividade da aplicação dos recursos advindos de emendas parlamentares individuais impositivas.",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1827220185",
-   "data_primeiro_andamento": "2020-04-07",
-   "data_ultimo_andamento": "2021-10-27",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 2
-  },
-  {
    "numero": "018.302/2005-2",
    "id": "01830220052",
    "assunto": "METODOLOGIA DE SEGREGAÇÃO DAS RECEITAS DA SEGURIDADE SOCIAL",
@@ -14104,30 +11754,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 2
-  },
-  {
-   "numero": "018.667/2021-0",
-   "id": "01866720210",
-   "assunto": "Representação apartada do TC 025.461/2020-6, para atendimento ao item 9.1 do ACÓRDÃO Nº 1380/2021 -TCU - Plenário",
-   "natureza": "Representação",
-   "relator": "Marcos Bemquerer",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1866720210",
-   "data_primeiro_andamento": "2024-08-07",
-   "data_ultimo_andamento": "2024-08-07",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
   },
   {
    "numero": "018.932/2024-0",
@@ -14200,30 +11826,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 3
-  },
-  {
-   "numero": "019.364/2017-2",
-   "id": "01936420172",
-   "assunto": "Ofício nº 114/2017/CFFC-P, de 4/7/2017,    Presidente da CFFC, encaminha cópia da PFC nº 99, de 2016, de autoria do Dep. Laerte Bessa, solicitando. investigação dos Gastos de Verbas do Fundo Constitucional realizados pelo GDF  e promova ato de fiscalização e. controle para verificar as ilegalidades na aplicação dos recursos do FCDF por parte do GDF.",
-   "natureza": "Solicitação do Congresso Nacional",
-   "relator": "Raimundo Carreiro",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "1784/2020",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1936420172",
-   "data_primeiro_andamento": "2020-07-16",
-   "data_ultimo_andamento": "2025-04-30",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 4
   },
   {
    "numero": "019.688/2024-5",
@@ -14324,30 +11926,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 1
-  },
-  {
-   "numero": "020.385/2020-0",
-   "id": "02038520200",
-   "assunto": "Ofício 88/2020/PRESI - Conselho Nacional do Ministério Público - Informações referentes ao TC 040.306/2019-4 - Representação do Procurador-Geral da República acerca de possível erro no cálculo do Teto de Gastos destinado ao Ministério Público da União, que excluiu da base do órgão as despesas pagas a título de auxílio-moradia.",
-   "natureza": "Solicitação",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2038520200",
-   "data_primeiro_andamento": "2021-05-04",
-   "data_ultimo_andamento": "2021-05-13",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
   },
   {
    "numero": "020.527/2004-1",
@@ -14574,30 +12152,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 3
-  },
-  {
-   "numero": "020.750/2019-6",
-   "id": "02075020196",
-   "assunto": "Relatório de Resultado de Políticas e Programas Públicos 2019 (RePP 2019)",
-   "natureza": "Acompanhamento",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2075020196",
-   "data_primeiro_andamento": "2020-10-13",
-   "data_ultimo_andamento": "2020-10-13",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 1
   },
   {
    "numero": "020.764/2015-4",
@@ -14989,30 +12543,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "021.852/2019-7",
-   "id": "02185220197",
-   "assunto": "Ministério da Economia solicita relação dos subtítulos referentes a obras e serviços com indícios de irregularidades graves.",
-   "natureza": "Solicitação",
-   "relator": null,
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2185220197",
-   "data_primeiro_andamento": "2020-01-29",
-   "data_ultimo_andamento": "2020-01-29",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 1
-  },
-  {
    "numero": "021.853/2023-1",
    "id": "02185320231",
    "assunto": "Análise dos instrumentos de planejamento e orçamento do governo federal, bem como das informações de desempenho da atuação governamental.",
@@ -15035,30 +12565,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 2
-  },
-  {
-   "numero": "021.979/2021-9",
-   "id": "02197920219",
-   "assunto": "Auditoria financeira no passivo atuarial do RGPS, RPPS e SPSMFA (Demonstrações Financeiras da União de 2021)",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2197920219",
-   "data_primeiro_andamento": "2022-07-21",
-   "data_ultimo_andamento": "2022-08-01",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
   },
   {
    "numero": "022.059/2023-7",
@@ -15265,30 +12771,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 3
-  },
-  {
-   "numero": "022.649/2018-2",
-   "id": "02264920182",
-   "assunto": "Auditoria Operacional no Ministério do Esporte acerca da Política Nacional de Desporto Educacional",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "826/2020",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2264920182",
-   "data_primeiro_andamento": "2020-04-15",
-   "data_ultimo_andamento": "2022-02-10",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 4
   },
   {
    "numero": "022.805/2023-0",
@@ -15513,30 +12995,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 1
-  },
-  {
-   "numero": "023.687/2017-7",
-   "id": "02368720177",
-   "assunto": "Avaliação das remunerações pagas pelas empresas estatais não dependentes",
-   "natureza": "Relatório de Levantamento",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "1338/2022",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2368720177",
-   "data_primeiro_andamento": "2022-08-05",
-   "data_ultimo_andamento": "2025-05-30",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 4
   },
   {
    "numero": "023.874/2025-2",
@@ -15919,54 +13377,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "025.284/2017-7",
-   "id": "02528420177",
-   "assunto": "Consulta formulada pelo ministro do Planejamento, mediante o Aviso 120/MP, de 29/8/2017, sobre alterações orçamentárias durante a tramitação de projeto de lei de mudança de meta fiscal.",
-   "natureza": "Consulta",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2528420177",
-   "data_primeiro_andamento": "2017-11-20",
-   "data_ultimo_andamento": "2018-02-23",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "025.525/2018-2",
-   "id": "02552520182",
-   "assunto": "Avaliação do Modelo de TI Pública da Administração Pública Federal.",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Raimundo Carreiro",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2552520182",
-   "data_primeiro_andamento": "2024-01-29",
-   "data_ultimo_andamento": "2026-05-21",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "025.720/2017-1",
    "id": "02572020171",
    "assunto": "025.720/2017-1 - Relatório de Levantamento",
@@ -16154,30 +13564,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "027.478/2017-3",
-   "id": "02747820173",
-   "assunto": "Monitoramento FOC 2014, FOC 2015 e Levantamento governança e gestão das aquisições 2013.",
-   "natureza": "Monitoramento",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "1749/2024",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2747820173",
-   "data_primeiro_andamento": "2024-08-28",
-   "data_ultimo_andamento": "2024-09-09",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 4
-  },
-  {
    "numero": "027.496/2015-5",
    "id": "02749620155",
    "assunto": "Ofício sem número, referente ao processo 0000110-20.2006.8.05.0116, Juíza Mariana Ferreira Spina, solicitando cópia de processo referentes ao convênio nº 043/1997 firmado entre o Município de Itagi/BA e o Ministério do Planejamento e Orçamento.",
@@ -16330,30 +13716,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "028.551/2017-6",
-   "id": "02855120176",
-   "assunto": "Acompanhamento dos Relatórios de Gestão Fiscal - 2º Quadrimestre de 2017",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "159/2018",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2855120176",
-   "data_primeiro_andamento": "2018-02-01",
-   "data_ultimo_andamento": "2018-03-09",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 4
-  },
-  {
    "numero": "028.943/2022-8",
    "id": "02894320228",
    "assunto": "Resultados Fiscais e Execução Orçamentária e Financeira da União - 5° Bimestre 2022",
@@ -16375,30 +13737,6 @@
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2894320228",
    "data_primeiro_andamento": "2023-06-19",
    "data_ultimo_andamento": "2023-06-19",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 1
-  },
-  {
-   "numero": "029.350/2017-4",
-   "id": "02935020174",
-   "assunto": "Monitoramento com base nos itens 9.5.2 e 9.5.4 do Acórdão 809/2014-TCU-Plenário e no item 9.6 do Acórdão 793/2016-TCU-Plenário.",
-   "natureza": "Monitoramento",
-   "relator": "José Mucio Monteiro",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2935020174",
-   "data_primeiro_andamento": "2020-01-15",
-   "data_ultimo_andamento": "2020-01-15",
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 1
@@ -16428,30 +13766,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 4
-  },
-  {
-   "numero": "031.158/2020-0",
-   "id": "03115820200",
-   "assunto": "Acompanhamento de iniciativas estruturantes de transformação digital - Plataformas de compartilhamento de dados entre órgãos e entidades da APF (ex.: GovData, ConectaGov e Predic)",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3115820200",
-   "data_primeiro_andamento": "2024-06-10",
-   "data_ultimo_andamento": "2026-01-29",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
   },
   {
    "numero": "031.308/2011-2",
@@ -16502,54 +13816,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 1
-  },
-  {
-   "numero": "031.532/2020-9",
-   "id": "03153220209",
-   "assunto": "Auditoria Operacional para avaliar as estruturas de governança do Fundo Setorial do Audiovisual (FSA)",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Marcos Bemquerer",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3153220209",
-   "data_primeiro_andamento": "2023-11-21",
-   "data_ultimo_andamento": "2026-04-09",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "031.659/2019-5",
-   "id": "03165920195",
-   "assunto": "Auditoria no Programa Corvetas Tamandaré",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Augusto Sherman",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3165920195",
-   "data_primeiro_andamento": "2025-05-26",
-   "data_ultimo_andamento": "2025-05-26",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
   },
   {
    "numero": "031.690/2022-0",
@@ -16628,30 +13894,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 1
-  },
-  {
-   "numero": "032.740/2017-4",
-   "id": "03274020174",
-   "assunto": "Apuração de Irregularidades e falhas estruturais na política de comercialização do óleo e gás natural pertencentes à União provenientes de contratos de exploração no modelo de partilha de produção e verificação de possível descumprimento de Contrato de Prestação de Serviço celebrado entre a União e a Empresa Brasileira de Administração de Petróleo e Gás Natural S.A.  Pré-Sal Petróleo S.A - PPSA.",
-   "natureza": "Representação",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3274020174",
-   "data_primeiro_andamento": "2021-08-30",
-   "data_ultimo_andamento": "2021-08-30",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
   },
   {
    "numero": "032.858/2023-0",
@@ -16809,78 +14051,6 @@
    "n_movimentacoes": 1
   },
   {
-   "numero": "034.010/2020-3",
-   "id": "03401020203",
-   "assunto": "Auditoria financeira nas demonstrações do FRGPS 2020",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3401020203",
-   "data_primeiro_andamento": "2022-01-25",
-   "data_ultimo_andamento": "2022-01-25",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 1
-  },
-  {
-   "numero": "034.051/2018-0",
-   "id": "03405120180",
-   "assunto": "Monitoramento da auditoria dos precatórios da Justiça Federal - TC 001.961/2017-9",
-   "natureza": "Monitoramento",
-   "relator": "Benjamin Zymler",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "1712/2020",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3405120180",
-   "data_primeiro_andamento": "2020-07-15",
-   "data_ultimo_andamento": "2022-02-14",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "034.119/2017-5",
-   "id": "03411920175",
-   "assunto": "Consulta acerca da possibilidade de abertura de crédito extraordinário para transferência de recursos a outros entes federativos, em caso de grave crise financeira do ente.",
-   "natureza": "Consulta",
-   "relator": "Vital do Rêgo",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3411920175",
-   "data_primeiro_andamento": "2018-02-27",
-   "data_ultimo_andamento": "2018-03-21",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
    "numero": "034.368/2018-3",
    "id": "03436820183",
    "assunto": "Monitoramento das deliberações do Acórdão 709/2018 - Plenário (TC 029.427/2017-7 - Auditoria na preparação do governo brasileiro para a implementação da Agenda 2030 e da meta 2.4 dos Objetivos de Desenvolvimento Sustentável - ODS)",
@@ -17031,30 +14201,6 @@
    "n_movimentacoes": 3
   },
   {
-   "numero": "036.673/2019-6",
-   "id": "03667320196",
-   "assunto": "Acompanhamento de iniciativas estruturantes de transformação digital conduzidas pelo Governo Federal",
-   "natureza": "Relatório de Acompanhamento",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3667320196",
-   "data_primeiro_andamento": "2024-04-22",
-   "data_ultimo_andamento": "2024-04-22",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 1
-  },
-  {
    "numero": "036.805/2023-8",
    "id": "03680520238",
    "assunto": "Acompanhamento da elaboração do PPA 2024-2027",
@@ -17101,30 +14247,6 @@
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 3
-  },
-  {
-   "numero": "037.036/2020-3",
-   "id": "03703620203",
-   "assunto": "MONITORAMENTO DAS DETERMINAÇÕES E/OU RECOMENDAÇÕES FEITAS A(AO) Secretaria do Tesouro Nacional, POR MEIO DO ACÓRDÃO 3071/2012-Plenário, NO ÂMBITO DO PROCESSO 022.684/2010-7",
-   "natureza": "Monitoramento",
-   "relator": "Aroldo Cedraz",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": "2563/2023",
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3703620203",
-   "data_primeiro_andamento": "2023-12-11",
-   "data_ultimo_andamento": "2024-01-25",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 4
   },
   {
    "numero": "037.048/2011-2",
@@ -17386,13 +14508,11 @@
    "relator": "Jhonatan de Jesus",
    "unidade_tecnica": null,
    "orgaos": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO",
-    "SOF"
+    "MPO"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -17400,30 +14520,6 @@
    "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3836520197",
    "data_primeiro_andamento": "2023-03-23",
    "data_ultimo_andamento": "2025-08-20",
-   "data_encerramento": "",
-   "motivo_encerramento": "",
-   "n_movimentacoes": 3
-  },
-  {
-   "numero": "039.134/2019-9",
-   "id": "03913420199",
-   "assunto": "Auditoria Operacional - Controles sobre a expansão das obrigações de caráter continuado da União",
-   "natureza": "Relatório de Auditoria",
-   "relator": "Bruno Dantas",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "SOF"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "SOF"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=3913420199",
-   "data_primeiro_andamento": "2022-09-27",
-   "data_ultimo_andamento": "2022-09-27",
    "data_encerramento": "",
    "motivo_encerramento": "",
    "n_movimentacoes": 3
@@ -17463,14 +14559,12 @@
    "unidade_tecnica": null,
    "orgaos": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -17567,14 +14661,12 @@
    "unidade_tecnica": null,
    "orgaos": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
     "MPO",
-    "SE",
-    "SOF"
+    "SE"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
