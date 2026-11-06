@@ -1,6 +1,6 @@
 {
- "gerado_em": "2026-11-05T14:17:27-03:00",
- "hoje": "2026-11-05",
+ "gerado_em": "2026-11-06T13:43:42-03:00",
+ "hoje": "2026-11-06",
  "sessoes": [
   {
    "id": 23264,
@@ -32,8 +32,30 @@
    "natureza": "Ordinária",
    "situacao": "Encerrada",
    "reservada": false,
-   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23172-pauta.pdf",
+   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81355331",
    "processos_na_pauta": 107
+  },
+  {
+   "id": 23265,
+   "quando": "proxima",
+   "data": "2026-11-10T10:30:00",
+   "colegiado": "Segunda Câmara",
+   "natureza": "Ordinária",
+   "situacao": "Prevista",
+   "reservada": false,
+   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23265-pauta.pdf",
+   "processos_na_pauta": 72
+  },
+  {
+   "id": 23219,
+   "quando": "proxima",
+   "data": "2026-11-10T15:00:00",
+   "colegiado": "Primeira Câmara",
+   "natureza": "Ordinária",
+   "situacao": "Prevista",
+   "reservada": false,
+   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23219-pauta.pdf",
+   "processos_na_pauta": 124
   }
  ],
  "itens": [
