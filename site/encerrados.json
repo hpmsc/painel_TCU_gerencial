@@ -1,7 +1,39 @@
 {
- "gerado_em": "2026-11-10T16:58:32.860341+00:00",
- "total": 875,
+ "gerado_em": "2026-11-11T17:05:48.858060+00:00",
+ "total": 876,
  "processos": [
+  {
+   "numero": "014.609/2026-6",
+   "id": "01460920266",
+   "assunto": "3ª avaliação do cumprimento das regras fiscais e da consistência das projeções atualizadas de receitas e despesas primárias da União do exercício de 2026",
+   "natureza": "Relatório de Acompanhamento",
+   "relator": "Antonio Anastasia",
+   "unidade_tecnica": null,
+   "orgaos": [
+    "AECI",
+    "MPO",
+    "SE",
+    "SOF"
+   ],
+   "orgaos_unidade": [
+    "MPO",
+    "SOF"
+   ],
+   "orgaos_interessado": [
+    "AECI",
+    "MPO",
+    "SE"
+   ],
+   "vinculo": "unidade",
+   "estado": "Encerrado",
+   "acordao": null,
+   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1460920266",
+   "data_primeiro_andamento": "2026-11-10",
+   "data_ultimo_andamento": "2026-11-11",
+   "data_encerramento": "2026-11-11",
+   "motivo_encerramento": "Cumprimento de objetivo",
+   "n_movimentacoes": 3
+  },
   {
    "numero": "008.447/2024-1",
    "id": "00844720241",

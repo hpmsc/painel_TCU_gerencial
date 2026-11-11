@@ -1,29 +1,7 @@
 {
- "gerado_em": "2026-11-10T13:58:35-03:00",
- "hoje": "2026-11-10",
+ "gerado_em": "2026-11-11T14:05:51-03:00",
+ "hoje": "2026-11-11",
  "sessoes": [
-  {
-   "id": 23264,
-   "quando": "passada",
-   "data": "2026-11-03T10:30:00",
-   "colegiado": "Segunda Câmara",
-   "natureza": "Ordinária",
-   "situacao": "Encerrada",
-   "reservada": false,
-   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81343189",
-   "processos_na_pauta": 82
-  },
-  {
-   "id": 23218,
-   "quando": "passada",
-   "data": "2026-11-03T15:00:00",
-   "colegiado": "Primeira Câmara",
-   "natureza": "Ordinária",
-   "situacao": "Encerrada",
-   "reservada": false,
-   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81345899",
-   "processos_na_pauta": 114
-  },
   {
    "id": 23172,
    "quando": "passada",
@@ -37,22 +15,22 @@
   },
   {
    "id": 23265,
-   "quando": "proxima",
+   "quando": "passada",
    "data": "2026-11-10T10:30:00",
    "colegiado": "Segunda Câmara",
    "natureza": "Ordinária",
-   "situacao": "Em andamento",
+   "situacao": "Encerrada",
    "reservada": false,
-   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23265-pauta.pdf",
+   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81389181",
    "processos_na_pauta": 72
   },
   {
    "id": 23219,
-   "quando": "proxima",
+   "quando": "passada",
    "data": "2026-11-10T15:00:00",
    "colegiado": "Primeira Câmara",
    "natureza": "Ordinária",
-   "situacao": "Prevista",
+   "situacao": "Encerrada",
    "reservada": false,
    "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23219-pauta.pdf",
    "processos_na_pauta": 124
@@ -66,7 +44,7 @@
    "situacao": "Prevista",
    "reservada": false,
    "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23173-pauta.pdf",
-   "processos_na_pauta": 98
+   "processos_na_pauta": 99
   },
   {
    "id": 23588,
@@ -81,30 +59,6 @@
   }
  ],
  "itens": [
-  {
-   "tc": "015.329/2026-7",
-   "sessao": 23218,
-   "quando": "passada",
-   "data": "2026-11-03T15:00:00",
-   "colegiado": "Primeira Câmara",
-   "relator": "Walton Alencar Rodrigues",
-   "assunto": "Representação referente ao ato de gestão com Uasg 170500 (Objeto: Utilização de recursos oriundos da suspensão das parcelas da dívida do Estado do Rio Grande do Sul com a União no Programa de Subsídio de Juros para Investimentos em Grandes Empreendimentos Voltados ao Turismo no Estado do Rio Grande do Sul (PROGRANTUR).)",
-   "natureza": "REPRESENTAÇÃO",
-   "unidades": "",
-   "siglas": [],
-   "motivos": [
-    "no painel do MPO"
-   ],
-   "no_painel": true,
-   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1532920267",
-   "assunto_painel": "Representação referente ao ato de gestão com Uasg 170500 (Objeto: Utilização de recursos oriundos da suspensão das parcelas da dívida do Estado do Rio Grande do Sul com a União no Programa de Subsídio de Juros para Investimentos em Grandes Empreendimentos Voltados ao Turismo no Estado do Rio Grande do Sul (PROGRANTUR).)",
-   "resultado": {
-    "tipo": "acordao",
-    "acordao": "5806/2026",
-    "colegiado": "Primeira Câmara",
-    "dispositivo": "ACORDAM, por unanimidade, com fundamento nos arts. 143, inciso V, alínea \"a\", 235 e 237, inciso III, e parágrafo único, do Regimento Interno do TCU, e nos arts. 103, § 1º, e 105 da Resolução-TCU 259/2014, de acordo com os pareceres emitidos nos autos, em: a) não conhecer da documentação como representação, por não atender ao requisito de admissibilidade previsto no art. 235 do Regimento Interno do TCU, c/c o art. 103, § 1º, da Resolução-TCU 259/2014; b) encaminhar cópia desta deliberação, da representação, acompanhada da instrução da unidade técnica, ao Tribunal de Contas do Estado do Rio Grande do Sul e ao Ministério da Fazenda, por intermédio da Secretaria do Tesouro Nacional, para ciência e avaliação no âmbito de suas competências, bem como para acompanhamento das medidas previstas no art. 2º, §§ 4º, 6º e 7º, da Lei Complementar nº 206/2024 e no art. 8º do Decreto nº 12.118/2024; c) d…"
-   }
-  },
   {
    "tc": "015.520/2025-0",
    "sessao": 23172,
