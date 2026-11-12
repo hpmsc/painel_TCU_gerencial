@@ -1,18 +1,7 @@
 {
- "gerado_em": "2026-11-11T14:05:51-03:00",
- "hoje": "2026-11-11",
+ "gerado_em": "2026-11-12T14:30:07-03:00",
+ "hoje": "2026-11-12",
  "sessoes": [
-  {
-   "id": 23172,
-   "quando": "passada",
-   "data": "2026-11-04T14:30:00",
-   "colegiado": "Plenário",
-   "natureza": "Ordinária",
-   "situacao": "Encerrada",
-   "reservada": false,
-   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81355331",
-   "processos_na_pauta": 107
-  },
   {
    "id": 23265,
    "quando": "passada",
@@ -32,27 +21,27 @@
    "natureza": "Ordinária",
    "situacao": "Encerrada",
    "reservada": false,
-   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23219-pauta.pdf",
+   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81392751",
    "processos_na_pauta": 124
   },
   {
    "id": 23173,
-   "quando": "proxima",
+   "quando": "passada",
    "data": "2026-11-11T14:30:00",
    "colegiado": "Plenário",
    "natureza": "Ordinária",
-   "situacao": "Prevista",
+   "situacao": "Encerrada",
    "reservada": false,
-   "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23173-pauta.pdf",
+   "pdf": "https://contas.tcu.gov.br/egestao/ObterDocumentoSisdoc?codPapelTramitavel=81403011",
    "processos_na_pauta": 99
   },
   {
    "id": 23588,
-   "quando": "proxima",
+   "quando": "passada",
    "data": "2026-11-11T14:31:00",
    "colegiado": "Plenário",
    "natureza": "Extraordinária Reservada",
-   "situacao": "Prevista",
+   "situacao": "Encerrada",
    "reservada": true,
    "pdf": "https://portal.tcu.gov.br/uploads/pautas/sessao-23588-pauta.pdf",
    "processos_na_pauta": null
@@ -60,10 +49,87 @@
  ],
  "itens": [
   {
-   "tc": "015.520/2025-0",
-   "sessao": 23172,
+   "tc": "005.775/2026-4",
+   "sessao": 23173,
    "quando": "passada",
-   "data": "2026-11-04T14:30:00",
+   "data": "2026-11-11T14:30:00",
+   "colegiado": "Plenário",
+   "relator": "Jhonatan De Jesus",
+   "assunto": "Auditoria operacional com o objetivo de avaliar a sustentabilidade do Sistema Único de Assistência Social (SUAS), bem como a quantidade e a qualidade dos serviços prestados à população em situação de vulnerabilidade",
+   "natureza": "",
+   "unidades": "Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome",
+   "siglas": [],
+   "motivos": [
+    "no painel do MPO"
+   ],
+   "no_painel": true,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=577520264",
+   "assunto_painel": "Auditoria Coordenada no Sistema Único de Assistência Social (SUAS)",
+   "resultado": {
+    "tipo": "acordao",
+    "acordao": "3068/2026",
+    "colegiado": "Plenário",
+    "dispositivo": "ACORDAM os ministros do Tribunal de Contas da União, reunidos em sessão do Plenário, por unanimidade, e ante as razões expostas pelo relator, em: 9.1. recomendar ao Ministério do Desenvolvimento e Assistência Social, Família e Combate à Fome com fundamento no art. 11 da Resolução-TCU 315/2020, que: 9.1.1. submeta às instâncias de pactuação do SUAS metas e indicadores atualizados de cobertura da rede socioassistencial, adaptáveis às realidades regionais e locais, e monitore periodicamente a suficiência da rede, com metodologia publicada, para orientar o apoio técnico, a expansão, a reorganização, a regionalização e o cofinanciamento das ofertas, sem predeterminar equipamento fixo onde equipes móveis, oferta regionalizada ou outro arranjo territorial forem mais adequados; 9.1.2. aperfeiçoe e dissemine os referenciais e os instrumentos nacionais de execução e de monitoramento do Paif, inclu…"
+   }
+  },
+  {
+   "tc": "007.190/2024-7",
+   "sessao": 23173,
+   "quando": "passada",
+   "data": "2026-11-11T14:30:00",
+   "colegiado": "Plenário",
+   "relator": "Odair Cunha",
+   "assunto": "ACOMPANHAMENTO DOS RISCOS LEVANTADOS NO RELATÓRIO QUE CONDUZIU AO ACÓRDÃO 1.850/2023-2a C (TC 011.456/2022-1) E MONITORAMENTO DAS RECOMENDAÇÕES FEITAS A(AO) Ministério da Gestão e da Inovação em Serviços Públicos, Ministério do Planejamento e Orçamento, Secretaria de Governo Digital, POR MEIO DOS ACÓRDÃOS 3145/2020-P E 419/2021-TCU-P, NO ÂMBITO DOS TCs 036.673/2019-6 e 038.016/2019-2 (Acompanhamentos de iniciativas estruturantes de transformação digital do Governo Federal e das ações de desburocratização na APF).",
+   "natureza": "ACOMPANHAMENTO",
+   "unidades": "Ministério da Gestão e da Inovação em Serviços Públicos; Ministério do Planejamento e Orçamento; Secretaria de Governo Digital",
+   "siglas": [
+    "MPO"
+   ],
+   "motivos": [
+    "na pauta: MPO",
+    "no painel do MPO"
+   ],
+   "no_painel": true,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=719020247",
+   "assunto_painel": "ACOMPANHAMENTO DOS RISCOS LEVANTADOS NO RELATÓRIO QUE CONDUZIU AO ACÓRDÃO 1.850/2023-2a C (TC 011.456/2022-1) E MONITORAMENTO DAS RECOMENDAÇÕES FEITAS A(AO) Ministério da Gestão e da Inovação em Serviços Públicos, Ministério do Planejamento e Orçamento, Secretaria de Governo Digital, POR MEIO DOS ACÓRDÃOS 3145/2020-P E 419/2021-TCU-P, NO ÂMBITO DOS TCs 036.673/2019-6 e 038.016/2019-2 (Acompanhamentos de iniciativas estruturantes de transformação digital do Governo Federal e das ações de desburocratização na APF).",
+   "resultado": {
+    "tipo": "acordao",
+    "acordao": "3053/2026",
+    "colegiado": "Plenário",
+    "dispositivo": "ACORDAM, por unanimidade, em: a) dispensar o monitoramento das deliberações 9.2.1, 9.2.1.1, 9.2.1.2, 9.2.2.1, 9.2.2.2, 9.2.3, 9.2.10, 9.2.11, 9.2.12, 9.2.14.1, 9.2.14.2, 9.2.14.3.2, 9.2.15, 9.3 e 9.5 do Acórdão 3145/2020-TCU-Plenário; b) determinar o encerramento do presente processo; e c) encaminhar à Secretaria de Governo Digital do Ministério da Gestão e da Inovação em Serviços Públicos (SGD/MGI) cópia desta decisão, que estará disponível na íntegra para consulta, no dia seguinte ao de sua oficialização, em www.tcu.gov.br/acordaos. 1. Processo TC-007.190/2024-7 (ACOMPANHAMENTO) 1.1. Órgãos: Ministério da Gestão e da Inovação em Serviços Públicos; Ministério do Planejamento e Orçamento; Secretaria de Governo Digital. 1.2. Relator: Ministro Odair Cunha. 1.3. Representante do Ministério Público: não atuou. 1.4. Unidade Técnica: Unidade de Auditoria Especializada em Tecnologia da Informaç…"
+   }
+  },
+  {
+   "tc": "008.723/2023-0",
+   "sessao": 23173,
+   "quando": "passada",
+   "data": "2026-11-11T14:30:00",
+   "colegiado": "Plenário",
+   "relator": "Benjamin Zymler",
+   "assunto": "Representação acerca da utilização de contas vinculadas e mecanismos de investimento cruzado em projetos de desestatização e concessões de infraestrutura rodoviária e ferroviária",
+   "natureza": "",
+   "unidades": "Advocacia-Geral da União; Agência Nacional de Transportes Aquaviários; Agência Nacional de Transportes Terrestres; Ministério de Portos e Aeroportos; Ministério do Planejamento e Orçamento; Ministério dos Transportes; Secretaria Especial do Programa de Parcerias de Investimento; Secretaria do Tesouro Nacional; Valec Engenharia Construções e Ferrovias S/A",
+   "siglas": [
+    "MPO"
+   ],
+   "motivos": [
+    "na pauta: MPO",
+    "no painel do MPO",
+    "acompanhado pela SEAI"
+   ],
+   "no_painel": true,
+   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=872320230",
+   "assunto_painel": "Exame do impacto do mecanismo de mitigação de riscos com o emprego de contas vinculadas em desestatizações, em cumprimento ao item 9.5.3 do Acórdão 752/2023-TCU-Plenário.",
+   "resultado": {
+    "tipo": "retirado",
+    "texto": "Retirado de pauta (11/11)."
+   }
+  },
+  {
+   "tc": "015.520/2025-0",
+   "sessao": 23173,
+   "quando": "passada",
+   "data": "2026-11-11T14:30:00",
    "colegiado": "Plenário",
    "relator": "Benjamin Zymler",
    "assunto": "EXCLUÍDO DE PAUTA Acompanhamento realizado com o objetivo de identificar obras públicas financiadas com recursos do Orçamento Geral da União que apresentem indícios de paralisação, examinar os fatores que possam comprometer sua continuidade e induzir a adoção tempestiva de providências destinadas à superação dos entraves identificados",
@@ -83,94 +149,6 @@
     "tipo": "pendente",
     "texto": "Acórdão ainda não publicado na Pesquisa Integrada."
    }
-  },
-  {
-   "tc": "020.662/2023-8",
-   "sessao": 23172,
-   "quando": "passada",
-   "data": "2026-11-04T14:30:00",
-   "colegiado": "Plenário",
-   "relator": "Jorge Oliveira",
-   "assunto": "Solicitação de Solução Consensual da Anatel, para a resolução de contendas relacionada à concessionária do Serviço Telefônico Fixo Comutado (STFC) - Oi S.A - em Recuperação Judicial.",
-   "natureza": "SOLICITAÇÃO DE SOLUÇÃO CONSENSUAL",
-   "unidades": "Agência Nacional de Telecomunicações (Anatel) e Ministério das Comunicações (MCom)",
-   "siglas": [],
-   "motivos": [
-    "no painel do MPO"
-   ],
-   "no_painel": true,
-   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=2066220238",
-   "assunto_painel": "Solicitação de Solução Consensual da Anatel, para a resolução de contendas relacionada à concessionária do Serviço Telefônico Fixo Comutado (STFC) - Oi S.A - em Recuperação Judicial.",
-   "resultado": {
-    "tipo": "acordao",
-    "acordao": "2992/2026",
-    "colegiado": "Plenário",
-    "dispositivo": "ACORDAM, por unanimidade, em: a) autorizar a continuidade do presente monitoramento, devendo ser realizada nova atualização em julho de 2027, a fim de aferir a efetiva assunção das obrigações contidas no Termo de Autocomposição; b) manter o sigilo da instrução, conforme solicitação da Anatel, bem como das peças 189 e 190; e c) comunicar esta deliberação à Agência Nacional de Telecomunicações. 1. Processo TC-020.662/2023-8 (SOLICITAÇÃO DE SOLUÇÃO CONSENSUAL) 1.1. Interessada: Oi S.A. - em recuperação judicial (76.535.764/0001-43) 1.2. Unidades: Agência Nacional de Telecomunicações (Anatel) e Ministério das Comunicações (MCom) 1.3. Relator: Ministro Jorge Oliveira 1.4. Representante do Ministério Público: não atuou 1.5. Unidade Técnica: Secretaria de Controle Externo de Solução Consensual e Prevenção de Conflitos (SecexConsenso) 1.6. Representação legal: Jessica Baqui da Silva (OAB/DF 51.4…"
-   }
-  },
-  {
-   "tc": "007.190/2024-7",
-   "sessao": 23173,
-   "quando": "proxima",
-   "data": "2026-11-11T14:30:00",
-   "colegiado": "Plenário",
-   "relator": "Odair Cunha",
-   "assunto": "ACOMPANHAMENTO DOS RISCOS LEVANTADOS NO RELATÓRIO QUE CONDUZIU AO ACÓRDÃO 1.850/2023-2a C (TC 011.456/2022-1) E MONITORAMENTO DAS RECOMENDAÇÕES FEITAS A(AO) Ministério da Gestão e da Inovação em Serviços Públicos, Ministério do Planejamento e Orçamento, Secretaria de Governo Digital, POR MEIO DOS ACÓRDÃOS 3145/2020-P E 419/2021-TCU-P, NO ÂMBITO DOS TCs 036.673/2019-6 e 038.016/2019-2 (Acompanhamentos de iniciativas estruturantes de transformação digital do Governo Federal e das ações de desburocratização na APF).",
-   "natureza": "ACOMPANHAMENTO",
-   "unidades": "Ministério da Gestão e da Inovação em Serviços Públicos; Ministério do Planejamento e Orçamento; Secretaria de Governo Digital",
-   "siglas": [
-    "MPO"
-   ],
-   "motivos": [
-    "na pauta: MPO",
-    "no painel do MPO"
-   ],
-   "no_painel": true,
-   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=719020247",
-   "assunto_painel": "ACOMPANHAMENTO DOS RISCOS LEVANTADOS NO RELATÓRIO QUE CONDUZIU AO ACÓRDÃO 1.850/2023-2a C (TC 011.456/2022-1) E MONITORAMENTO DAS RECOMENDAÇÕES FEITAS A(AO) Ministério da Gestão e da Inovação em Serviços Públicos, Ministério do Planejamento e Orçamento, Secretaria de Governo Digital, POR MEIO DOS ACÓRDÃOS 3145/2020-P E 419/2021-TCU-P, NO ÂMBITO DOS TCs 036.673/2019-6 e 038.016/2019-2 (Acompanhamentos de iniciativas estruturantes de transformação digital do Governo Federal e das ações de desburocratização na APF)."
-  },
-  {
-   "tc": "008.723/2023-0",
-   "sessao": 23173,
-   "quando": "proxima",
-   "data": "2026-11-11T14:30:00",
-   "colegiado": "Plenário",
-   "relator": "Benjamin Zymler",
-   "assunto": "Representação acerca da utilização de contas vinculadas e mecanismos de investimento cruzado em projetos de desestatização e concessões de infraestrutura rodoviária e ferroviária",
-   "natureza": "",
-   "unidades": "Advocacia-Geral da União; Agência Nacional de Transportes Aquaviários; Agência Nacional de Transportes Terrestres; Ministério de Portos e Aeroportos; Ministério do Planejamento e Orçamento; Ministério dos Transportes; Secretaria Especial do Programa de Parcerias de Investimento; Secretaria do Tesouro Nacional; Valec Engenharia Construções e Ferrovias S/A",
-   "siglas": [
-    "MPO"
-   ],
-   "motivos": [
-    "na pauta: MPO",
-    "no painel do MPO",
-    "acompanhado pela SEAI"
-   ],
-   "no_painel": true,
-   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=872320230",
-   "assunto_painel": "Exame do impacto do mecanismo de mitigação de riscos com o emprego de contas vinculadas em desestatizações, em cumprimento ao item 9.5.3 do Acórdão 752/2023-TCU-Plenário."
-  },
-  {
-   "tc": "015.520/2025-0",
-   "sessao": 23173,
-   "quando": "proxima",
-   "data": "2026-11-11T14:30:00",
-   "colegiado": "Plenário",
-   "relator": "Benjamin Zymler",
-   "assunto": "EXCLUÍDO DE PAUTA Acompanhamento realizado com o objetivo de identificar obras públicas financiadas com recursos do Orçamento Geral da União que apresentem indícios de paralisação, examinar os fatores que possam comprometer sua continuidade e induzir a adoção tempestiva de providências destinadas à superação dos entraves identificados",
-   "natureza": "",
-   "unidades": "Caixa Econômica Federal; Gabinete da Secretaria de Relações Institucionais da Presidência da República; Ministério da Agricultura e Pecuária; Ministério da Gestão e da Inovação Em Serviços Públicos; Ministério da Integração e do Desenvolvimento Regional; Ministério das Cidades; Ministério do Planejamento e Orçamento; Secretaria de Relações Institucionais da Presidência da República",
-   "siglas": [
-    "MPO"
-   ],
-   "motivos": [
-    "na pauta: MPO",
-    "no painel do MPO"
-   ],
-   "no_painel": true,
-   "url": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1552020250",
-   "assunto_painel": "Acompanhamento preventivo para evitar abandono de obras"
   }
  ]
 }
