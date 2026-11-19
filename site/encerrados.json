@@ -1,5 +1,5 @@
 {
- "gerado_em": "2026-11-18T18:00:11.428514+00:00",
+ "gerado_em": "2026-11-19T18:12:53.763859+00:00",
  "total": 702,
  "processos": [
   {
@@ -224,13 +224,11 @@
    "relator": "Jorge Oliveira",
    "unidade_tecnica": null,
    "orgaos": [
-    "MPO",
-    "SMA"
+    "MPO"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
-    "MPO",
-    "SMA"
+    "MPO"
    ],
    "vinculo": "interessado",
    "estado": "Encerrado",
@@ -4945,7 +4943,6 @@
    "orgaos": [
     "MPO",
     "SE",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [
@@ -4953,8 +4950,7 @@
     "SOF"
    ],
    "orgaos_interessado": [
-    "SE",
-    "SMA"
+    "SE"
    ],
    "vinculo": "unidade",
    "estado": "Encerrado",
@@ -4999,13 +4995,11 @@
    "unidade_tecnica": null,
    "orgaos": [
     "MPO",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
    "orgaos_interessado": [
     "MPO",
-    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
@@ -14675,7 +14669,6 @@
     "MPO",
     "SE",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "orgaos_unidade": [],
@@ -14684,7 +14677,6 @@
     "MPO",
     "SE",
     "SEPLAN",
-    "SMA",
     "SOF"
    ],
    "vinculo": "interessado",
