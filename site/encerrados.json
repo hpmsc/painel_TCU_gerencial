@@ -1,7 +1,31 @@
 {
- "gerado_em": "2026-11-23T21:05:35.526460+00:00",
- "total": 703,
+ "gerado_em": "2026-11-24T20:07:51.402355+00:00",
+ "total": 704,
  "processos": [
+  {
+   "numero": "001.085/2026-3",
+   "id": "00108520263",
+   "assunto": "Gestão de Riscos e de Desastres (PNPDEC) - ciclo RePP 2026",
+   "natureza": "Relatório de Levantamento",
+   "relator": "Augusto Nardes",
+   "unidade_tecnica": null,
+   "orgaos": [
+    "MPO"
+   ],
+   "orgaos_unidade": [],
+   "orgaos_interessado": [
+    "MPO"
+   ],
+   "vinculo": "interessado",
+   "estado": "Encerrado",
+   "acordao": null,
+   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=108520263",
+   "data_primeiro_andamento": "2026-07-27",
+   "data_ultimo_andamento": "2026-11-23",
+   "data_encerramento": "2026-11-23",
+   "motivo_encerramento": "Cumprimento de objetivo",
+   "n_movimentacoes": 3
+  },
   {
    "numero": "019.579/2024-1",
    "id": "01957920241",
