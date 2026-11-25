@@ -1,6 +1,6 @@
 {
- "gerado_em": "2026-11-24T20:07:51.402355+00:00",
- "total": 704,
+ "gerado_em": "2026-11-25T19:14:52.864012+00:00",
+ "total": 703,
  "processos": [
   {
    "numero": "001.085/2026-3",
@@ -1112,30 +1112,6 @@
    "data_encerramento": "2026-07-09",
    "motivo_encerramento": "Cumprimento de objetivo",
    "n_movimentacoes": 2
-  },
-  {
-   "numero": "014.569/2026-4",
-   "id": "01456920264",
-   "assunto": "OFÍCIO SEI Nº 33962/2026/MF",
-   "natureza": "Solicitação",
-   "relator": "Antonio Anastasia",
-   "unidade_tecnica": null,
-   "orgaos": [
-    "MPO"
-   ],
-   "orgaos_unidade": [],
-   "orgaos_interessado": [
-    "MPO"
-   ],
-   "vinculo": "interessado",
-   "estado": "Encerrado",
-   "acordao": null,
-   "url_push": "https://pesquisa.apps.tcu.gov.br/#/push/processo?numero=1456920264",
-   "data_primeiro_andamento": "2026-07-08",
-   "data_ultimo_andamento": "2026-08-24",
-   "data_encerramento": "2026-07-08",
-   "motivo_encerramento": "Cumprimento de objetivo",
-   "n_movimentacoes": 3
   },
   {
    "numero": "017.836/2025-5",
